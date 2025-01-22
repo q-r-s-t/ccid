@@ -25,7 +25,7 @@ function GET(request) {
               client_email: serviceAccountEmail,
               private_key: privateKey
             },
-            scopes: ["https://www.googleapis.com/auth/spreadsheets"]
+            scopes: ["https://www.googleapis.com/auth/spreadsheets", "https://www.googleapis.com/auth/drive"]
           }));
 
         case 6:
@@ -52,6 +52,7 @@ function GET(request) {
             members: response.data.valueRanges[2].values
           }; // 데이터 출력
           // console.log("Fetched data from Google Sheets:", data);
+          // console.log("Environment Variables:", process.env);
           // JSON 응답 반환
 
           return _context.abrupt("return", new Response(JSON.stringify(data), {

@@ -13,7 +13,8 @@ export async function GET(request) {
         client_email: serviceAccountEmail,
         private_key: privateKey,
       },
-      scopes: ["https://www.googleapis.com/auth/spreadsheets"],
+      scopes: ["https://www.googleapis.com/auth/spreadsheets", "https://www.googleapis.com/auth/drive"],
+
     });
 
     // Google Sheets API 클라이언트 생성
@@ -35,6 +36,7 @@ export async function GET(request) {
 
     // 데이터 출력
     // console.log("Fetched data from Google Sheets:", data);
+    // console.log("Environment Variables:", process.env);
 
     // JSON 응답 반환
     return new Response(JSON.stringify(data), {
