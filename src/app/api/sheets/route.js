@@ -1,5 +1,6 @@
 import { google } from "googleapis";
 
+
 export async function GET(request) {
   try {
     // 환경 변수 가져오기
