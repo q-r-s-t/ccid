@@ -51,8 +51,8 @@ function GET(request) {
             works: response.data.valueRanges[1].values,
             members: response.data.valueRanges[2].values
           }; // 데이터 출력
-
-          console.log("Fetched data from Google Sheets:", data); // JSON 응답 반환
+          // console.log("Fetched data from Google Sheets:", data);
+          // JSON 응답 반환
 
           return _context.abrupt("return", new Response(JSON.stringify(data), {
             status: 200,
@@ -61,8 +61,8 @@ function GET(request) {
             }
           }));
 
-        case 17:
-          _context.prev = 17;
+        case 16:
+          _context.prev = 16;
           _context.t0 = _context["catch"](0);
           console.error("Error fetching spreadsheet data:", _context.t0);
           return _context.abrupt("return", new Response(JSON.stringify({
@@ -75,10 +75,10 @@ function GET(request) {
             }
           }));
 
-        case 21:
+        case 20:
         case "end":
           return _context.stop();
       }
     }
-  }, null, null, [[0, 17]]);
+  }, null, null, [[0, 16]]);
 }

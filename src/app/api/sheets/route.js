@@ -34,7 +34,7 @@ export async function GET(request) {
     };
 
     // 데이터 출력
-    console.log("Fetched data from Google Sheets:", data);
+    // console.log("Fetched data from Google Sheets:", data);
 
     // JSON 응답 반환
     return new Response(JSON.stringify(data), {
