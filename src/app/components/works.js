@@ -39,7 +39,7 @@ export default function Works() {
   useEffect(() => {
     const fetchWorksData = async () => {
       try {
-        const res = await fetch('/api/sheets');
+        const res = await fetch('https://qrstlab.vercel.app/api/sheets');
         const data = await res.json();
         setWorksInfo(data.works); // works 시트 데이터 저장
       } catch (error) {
