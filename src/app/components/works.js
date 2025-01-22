@@ -1,3 +1,4 @@
+
 // const works = [
 //   {
 //     title: "주요 국내 R&D 프로젝트",
@@ -30,6 +31,7 @@
 //     ]
 //   }
 // ];
+"use client"
 
 import { useEffect, useState } from 'react';
 
@@ -39,7 +41,7 @@ export default function Works() {
   useEffect(() => {
     const fetchWorksData = async () => {
       try {
-        const res = await fetch('https://qrstlab.vercel.app/api/sheets');
+        const res = await fetch('/api/sheets');
         const data = await res.json();
         setWorksInfo(data.works); // works 시트 데이터 저장
       } catch (error) {

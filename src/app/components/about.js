@@ -8,6 +8,7 @@
 //     description: "QrST는 국제적인 협력 관계를 가지며 스튜디오, 리서치, 랩으로 나뉩니다. 스튜디오 팀은 다양한 뉴미디어 에이전시, 디자인 스튜디오와 협업하며 트랜스미디어 브랜딩, 미디어 아트 등 커머셜 프로젝트를 진행합니다. 리서치 팀은 인공지능 상호작용 기반의 선행적인 컨셉 디자인과 사용자 경험 디자인 및 연구, 특히 정량, 정성 데이터 수집, 분석 및 시각화에 전문성을 가지고 있습니다. 랩 팀은 디자인 이외 공학, 의학 등 연구중심대학 및 연구소와 협력을 통해 다가올 미래의 새로운 가치를 탐색합니다."
 //   }
 // ];
+"use client"
 
 import { useEffect, useState } from 'react';
 
@@ -17,7 +18,7 @@ export default function About() {
   useEffect(() => {
     const fetchAboutData = async () => {
       try {
-        const res = await fetch('https://qrstlab.vercel.app/api/sheets');
+        const res = await fetch('/api/sheets');
         const data = await res.json();
         setAboutInfo(data.about); // about 시트 데이터 저장
       } catch (error) {
