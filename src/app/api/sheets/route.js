@@ -4,7 +4,7 @@ export async function GET(request) {
   try {
     // 환경 변수 가져오기
     const serviceAccountEmail = process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL;
-    const privateKey = process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, "\n"); // 줄 바꿈 처리
+    const privateKey = process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, "\n");
     const spreadsheetId = process.env.GOOGLE_SHEET_ID;
 
     // Google API 인증 설정
@@ -19,15 +19,25 @@ export async function GET(request) {
     // Google Sheets API 클라이언트 생성
     const sheets = google.sheets({ version: "v4", auth });
 
-    // 데이터 가져오기
-    const range = "Sheet1!A:D"; // 스프레드시트 범위 설정
-    const data = await sheets.spreadsheets.values.get({
+    // 여러 시트에서 데이터 가져오기
+    const ranges = ["about!A1:B2", "works!A1:J3", "members!A1:E100"];
+    const response = await sheets.spreadsheets.values.batchGet({
       spreadsheetId,
-      range,
+      ranges,
     });
 
+    // 데이터 정리
+    const data = {
+      about: response.data.valueRanges[0].values,
+      works: response.data.valueRanges[1].values,
+      members: response.data.valueRanges[2].values,
+    };
+
+    // 데이터 출력
+    console.log("Fetched data from Google Sheets:", data);
+
     // JSON 응답 반환
-    return new Response(JSON.stringify(data.data), {
+    return new Response(JSON.stringify(data), {
       status: 200,
       headers: { "Content-Type": "application/json" },
     });

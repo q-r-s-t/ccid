@@ -8,7 +8,7 @@ exports.GET = GET;
 var _googleapis = require("googleapis");
 
 function GET(request) {
-  var serviceAccountEmail, privateKey, spreadsheetId, auth, sheets, range, data;
+  var serviceAccountEmail, privateKey, spreadsheetId, auth, sheets, ranges, response, data;
   return regeneratorRuntime.async(function GET$(_context) {
     while (1) {
       switch (_context.prev = _context.next) {
@@ -16,8 +16,7 @@ function GET(request) {
           _context.prev = 0;
           // 환경 변수 가져오기
           serviceAccountEmail = process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL;
-          privateKey = process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, "\n"); // 줄 바꿈 처리
-
+          privateKey = process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, "\n");
           spreadsheetId = process.env.GOOGLE_SHEET_ID; // Google API 인증 설정
 
           _context.next = 6;
@@ -35,27 +34,35 @@ function GET(request) {
           sheets = _googleapis.google.sheets({
             version: "v4",
             auth: auth
-          }); // 데이터 가져오기
+          }); // 여러 시트에서 데이터 가져오기
 
-          range = "Sheet1!A:D"; // 스프레드시트 범위 설정
-
+          ranges = ["about!A1:B2", "works!A1:J3", "members!A1:E100"];
           _context.next = 11;
-          return regeneratorRuntime.awrap(sheets.spreadsheets.values.get({
+          return regeneratorRuntime.awrap(sheets.spreadsheets.values.batchGet({
             spreadsheetId: spreadsheetId,
-            range: range
+            ranges: ranges
           }));
 
         case 11:
-          data = _context.sent;
-          return _context.abrupt("return", new Response(JSON.stringify(data.data), {
+          response = _context.sent;
+          // 데이터 정리
+          data = {
+            about: response.data.valueRanges[0].values,
+            works: response.data.valueRanges[1].values,
+            members: response.data.valueRanges[2].values
+          }; // 데이터 출력
+
+          console.log("Fetched data from Google Sheets:", data); // JSON 응답 반환
+
+          return _context.abrupt("return", new Response(JSON.stringify(data), {
             status: 200,
             headers: {
               "Content-Type": "application/json"
             }
           }));
 
-        case 15:
-          _context.prev = 15;
+        case 17:
+          _context.prev = 17;
           _context.t0 = _context["catch"](0);
           console.error("Error fetching spreadsheet data:", _context.t0);
           return _context.abrupt("return", new Response(JSON.stringify({
@@ -68,10 +75,10 @@ function GET(request) {
             }
           }));
 
-        case 19:
+        case 21:
         case "end":
           return _context.stop();
       }
     }
-  }, null, null, [[0, 15]]);
+  }, null, null, [[0, 17]]);
 }
