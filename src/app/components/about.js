@@ -47,7 +47,7 @@ export default function About() {
               </li>
             ))
           ) : (
-            <p>Loading about information...</p>
+            <p>Loading...</p>
           )}
         </ul>
       </div>
