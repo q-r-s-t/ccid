@@ -93,7 +93,7 @@ export default function Members() {
   useEffect(() => {
     const fetchMembersData = async () => {
       try {
-        const res = await fetch('/api/sheets');
+        const res = await fetch('https://qrstlab.vercel.app/api/sheets');
         const data = await res.json();
         
         const labHead = data.members.filter(member => member[0] === 'Lab Head');

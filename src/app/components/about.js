@@ -18,7 +18,7 @@ export default function About() {
   useEffect(() => {
     const fetchAboutData = async () => {
       try {
-        const res = await fetch('/api/sheets');
+        const res = await fetch('https://qrstlab.vercel.app/api/sheets');
         const data = await res.json();
         setAboutInfo(data.about); // about 시트 데이터 저장
       } catch (error) {
