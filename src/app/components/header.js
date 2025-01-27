@@ -6,8 +6,8 @@ export default function Header() {
       <Image
         src="/img/cidc_logo.svg"
         alt="CIDC Logo"
-        width={40}
-        height={40}
+        width={30}
+        height={30}
         priority
       />
     </div>

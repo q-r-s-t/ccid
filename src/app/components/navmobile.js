@@ -17,23 +17,23 @@ export default function Navmobile({ textColor }) {
   return (
     <div className="z-[700] fixed top-8 right-6">
       <button
-        className={`sm:hidden fixed z-[800] top-8 right-6 w-auto h-5 flex flex-col justify-between transition-all duration-300 transform ${
-          isOpen ? "h-6" : ""
+        className={`sm:hidden fixed z-[800] top-6 right-6 w-auto h-4 flex flex-col justify-between transition-all duration-300 transform ${
+          isOpen ? "h-4" : ""
         }`}
         onClick={toggleMenu}
       >
         <div
-          className={`w-8 border-t-2 transition-all duration-300 transform origin-top-left ${
+          className={`w-5 border-t-2 transition-all duration-300 transform origin-top-left ${
             isOpen ? "rotate-45" : ""
           }`}
         ></div>
         <div
-          className={`w-8 border-t-2 transition-all duration-300 transform ${
+          className={`w-5 border-t-2 transition-all duration-300 transform ${
             isOpen ? "opacity-0" : ""
           }`}
         ></div>
         <div
-          className={`w-8 border-t-2 transition-all duration-300 transform origin-bottom-left ${
+          className={`w-5 border-t-2 transition-all duration-300 transform origin-bottom-left ${
             isOpen ? "-rotate-45" : ""
           }`}
         ></div>
