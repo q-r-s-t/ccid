@@ -59,7 +59,7 @@ export default function Works() {
         {worksInfo.length > 0 ? (
           worksInfo.map((work, index) => (
             <li key={index}>
-              <div className="lg:flex mb-9 md:mb-12 lg:mb-16">
+              <div className="lg:flex mb-8 md:mb-12 lg:mb-16">
                 {/* 제목 */}
                 <h1 className="md:w-[18rem] lg:w-[10rem] xl:w-[18rem] md:text-xl xl:text-2xl mb-2">{work[0]}</h1>
                 {/* 목록 */}

@@ -37,10 +37,10 @@ export default function About() {
         <ul>
           {aboutInfo.length > 0 ? (
             aboutInfo.map((item, index) => (
-              <li key={index} className="lg:flex gap-4 sm:py-8 lg:py-4 mb-12 lg:mb-0 xl:mb-12">
-                <div className="flex flex-col lg:flex-row gap-4">
+              <li key={index} className="lg:flex gap-4 sm:py-8 lg:py-4 mb-8 lg:mb-0 xl:mb-12">
+                <div className="flex flex-col lg:flex-row gap-2">
                   {/* 영문 텍스트 */}
-                  <h1 className="leading-tight font-semibold flex-1 lg:text-2xl xl:text-4xl text-xl mb-3">{item[0]}</h1>
+                  <h1 className="leading-tight font-semibold flex-1 lg:text-2xl xl:text-4xl text-xl">{item[0]}</h1>
                   {/* 한글 텍스트 */}
                   <p className="flex-[0.9] lg:ml-16 font-semibold text-xs leading-relaxed md:text-base lg:text-xs xl:text-lg lg:leading-relaxed">
                     {item[1]}
