@@ -164,6 +164,40 @@ export default function Members() {
 
   return (
     <div className="pt-10">
+      {firstCategory && (
+      <div>
+        <h1 className="text-xl md:text-2xl pb-8 md:pb-12">{firstCategory[0]}</h1>
+        {firstCategory[1].map((member, index) => (
+          <li key={index} className="md:flex gap-8 xl:mb-40 mb-24">
+            <img
+              src={member[2]}
+              alt={`${member[1]} profile`}
+              className="w-[150px] h-[150px] xl:w-[300px] xl:h-[300px] rounded-full object-cover object-top md:mr-10 mb-4"
+            />
+            <div className="text-sm md:flex-1 md:text-lg">
+              <h2 className="text-xl md:text-3xl">{member[1]}</h2>
+              <a
+                href={`mailto:${member[3]}`}
+                className="z-[100] text-xs md:text-base relative group md:pb-1"
+              >
+                {member[3]}
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
+              </a>
+              <p className="text-lg md:text-xl xl:2xl py-5">{member[4]}</p>
+              <div className="border-l pl-4 mt-4">
+                <h3 className="pb-4 leading-none text-md">Career</h3>
+                <ol className="text-sm+ leading-relaxed">
+                  <li>영국왕립예술대학 RCA Royal College of Art 시각커뮤니케이션전공 | 박사수료</li>
+                  <li>로드아일랜드디자인대학 RISD Rhode Island School of Design 디지털+미디어 | 석사졸업</li>
+                  <li>홍익대학교 조형대학 디지털미디어디자인전공 | 학사졸업</li>
+                </ol>
+              </div>
+            </div>
+          </li>
+          ))}
+      </div>
+      )}
+
       {otherCategories.map(([category, members]) => (
         <ul key={category} className="mb-12 md:mb-20 xl:mb-32">
           <h1 className="text-xl md:text-2xl md:pb-5">{category}</h1>

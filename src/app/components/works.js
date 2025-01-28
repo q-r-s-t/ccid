@@ -64,7 +64,7 @@ export default function Works() {
                 {/* 제목 */}
                 <h1 className="md:w-[18rem] lg:w-[10rem] xl:w-[18rem] md:text-xl xl:text-2xl mb-2">{work[0]}</h1>
                 {/* 목록 */}
-                <ol className="flex-1 leading-snug text-xs md:text-sm xl:text-lg font-semibold list-disc lg:list-none ml-4 lg:ml-0">
+                <ol className="flex-1 leading-snug text-xs- md:text-sm xl:text-lg font-semibold list-disc lg:list-none ml-4 lg:ml-0">
                   {work.slice(1).map((item, idx) => (
                     <li key={idx}>{item}</li>
                   ))}
