@@ -166,7 +166,7 @@ export default function Members() {
     <div className="pt-10">
       {firstCategory && (
       <div>
-        <h1 className="text-xl md:text-2xl pb-8 md:pb-12">{firstCategory[0]}</h1>
+        <h1 className="texty-xl md:text-2xl pb-8 md:pb-12">{firstCategory[0]}</h1>
         {firstCategory[1].map((member, index) => (
           <li key={index} className="md:flex gap-8 xl:mb-40 mb-24">
             <img
@@ -180,10 +180,10 @@ export default function Members() {
                 href={`mailto:${member[3]}`}
                 className="z-[100] text-xs md:text-base relative group md:pb-1"
               >
-                {member[3]} */}
+                {member[3]}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
-              {/* </a> */}
-              {/* <p className="text-lg md:text-xl xl:2xl py-5">{member[4]}</p> */}
+              </a> */}
+              <p className="text-lg md:text-xl xl:2xl py-5">{member[3]}</p>
               <div className="border-l pl-4 mt-4">
                 <h3 className="pb-4 leading-none text-md lg:text-xl lg:leading-none">Career</h3>
                 <div className="text-sm+ lg:text-lg leading-relaxed">
@@ -203,7 +203,7 @@ export default function Members() {
             {members.map((member, index) => (
               <li
                 key={index}
-                className="md:w-1/2 lg:w-1/3 my-2 flex gap-4 items-center xl:mb-2"
+                className="md:w-1/2 xl:w-1/3 my-2 flex gap-4 items-center xl:mb-2"
               >
                 <img
                   src={member[2]}
@@ -211,11 +211,10 @@ export default function Members() {
                   className="flex-shrink-0 w-[70px] h-[70px] lg:w-[100px] lg:h-[100px] rounded-full object-cover object-top"
                 />
                 <div className="flex flex-col justify-center pr-4">
-                  <h3 className="pb-2 pt-5 md:pt-3 md:text-lg xl:text-xl">{member[1]}</h3>
-                  {/* 이메일 - 삭제0128 */}
+                  <h3 className="pt-5 md:pt-3 md:text-md lg:text-lg xl:text-xl">{member[1]}</h3>
                   {/* <a href={`mailto:${member[3]}`} className="break-all leading-none mb-1 text-xs xl:mb-2">{member[3]}</a> */}
-                  {/* 학력 */}
-                  <pre className="whitespace-pre-wrap pb-5 xl:text-md xl:leading-tight font-pretendard">{member[4]}</pre>
+                  <h2 className='text-sm mb-1 md:mb-2 xl:text-lg xl:leading-none leading-none'>{member[3]}</h2>
+                  <pre className="whitespace-pre-wrap pb-5 text-xs- leading-tight xl:text-md xl:leading-snug font-pretendard">{member[4]}</pre>
                 </div>
               </li>
             ))}
