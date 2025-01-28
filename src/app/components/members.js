@@ -118,7 +118,7 @@ export default function Members() {
     <div className="pt-10">
       {/* Lab Head */}
       <ul>
-        <h1 className="text-xl md:text-2xl pb-8 md:pb-12">LAB Leader</h1>
+        {/* <h1 className="text-xl md:text-2xl pb-8 md:pb-12">LAB Leader</h1> */}
         {membersInfo.labHead.map((member, index) => (
           <li key={index} className="md:flex gap-8 xl:mb-40 mb-24">
             <img
@@ -151,7 +151,7 @@ export default function Members() {
 
       {/* Visiting Researchers */}
       <ul className="mb-12 md:mb-20 xl:mb-32">
-        <h1 className="text-xl md:text-2xl md:pb-4">Visiting Researcher</h1>
+        {/* <h1 className="text-xl md:text-2xl md:pb-4">Visiting Researcher</h1> */}
         <ul className="text-sm md:flex flex-wrap">
           {membersInfo.visitingResearcher.map((member, index) => (
             <li key={index} className="md:w-1/2 lg:w-1/3 my-2 flex gap-4 items-center xl:mb-2">
@@ -177,7 +177,7 @@ export default function Members() {
 
       {/* Student Researchers */}
       <ul>
-        <h1 className="text-xl md:text-2xl md:pb-5">Student Researcher</h1>
+        {/* <h1 className="text-xl md:text-2xl md:pb-5">Student Researcher</h1> */}
         <ul className="text-sm md:flex flex-wrap">
           {membersInfo.studentResearcher.map((member, index) => (
             <li key={index} className="md:w-1/2 lg:w-1/3 my-2 flex gap-4 items-center xl:mb-2">
