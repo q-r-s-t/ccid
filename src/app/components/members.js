@@ -185,8 +185,8 @@ export default function Members() {
               </a>
               <p className="text-lg md:text-xl xl:2xl py-5">{member[4]}</p>
               <div className="border-l pl-4 mt-4">
-                <h3 className="pb-4 leading-none text-md">Career</h3>
-                <ol className="text-sm+ leading-relaxed">
+                <h3 className="pb-4 leading-none text-md lg:text-xl lg:leading-none">Career</h3>
+                <ol className="text-sm+ lg:text-lg leading-relaxed">
                   <li>영국왕립예술대학 RCA Royal College of Art 시각커뮤니케이션전공 | 박사수료</li>
                   <li>로드아일랜드디자인대학 RISD Rhode Island School of Design 디지털+미디어 | 석사졸업</li>
                   <li>홍익대학교 조형대학 디지털미디어디자인전공 | 학사졸업</li>
@@ -214,13 +214,15 @@ export default function Members() {
                 />
                 <div className="flex flex-col justify-center pr-4">
                   <h3 className="pt-5 md:pt-3 md:text-lg xl:text-xl">{member[1]}</h3>
-                  <a
+                  {/* 이메일 - 삭제0128 */}
+                  {/* <a
                     href={`mailto:${member[3]}`}
                     className="break-all leading-none mb-1 text-xs xl:mb-2"
                   >
                     {member[3]}
-                  </a>
-                  <p className="pb-5 xl:text-lg">{member[4]}</p>
+                  </a> */}
+                  {/* 학력 */}
+                  <pre className="pb-5 xl:text-md font-pretendard">{member[4]}</pre>
                 </div>
               </li>
             ))}
