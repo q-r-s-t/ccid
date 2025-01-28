@@ -85,6 +85,7 @@ import { useEffect, useState } from 'react';
 
 export default function Members() {
   const [membersInfo, setMembersInfo] = useState({});
+  const [isLoading, setIsLoading] = useState(true); // 로딩 상태
 
   useEffect(() => {
     const fetchMembersData = async () => {
@@ -109,11 +110,21 @@ export default function Members() {
         setMembersInfo(categorizedMembers);
       } catch (error) {
         console.error("Error fetching members data:", error);
+      } finally {
+        setIsLoading(false); // 로딩 완료
       }
     };
 
     fetchMembersData();
   }, []);
+
+  if (isLoading) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <p className="text-lg md:text-xl font-semibold">Loading members...</p>
+      </div>
+    );
+  }
 
   // const [membersInfo, setMembersInfo] = useState({
   //   labHead: [],
@@ -147,9 +158,13 @@ export default function Members() {
   //   fetchMembersData();
   // }, []);
 
+  const categories = Object.entries(membersInfo);
+  const firstCategory = categories[0]; // 첫 번째 키
+  const otherCategories = categories.slice(1); // 나머지 키들
+
   return (
     <div className="pt-10">
-      {Object.entries(membersInfo).map(([category, members]) => (
+      {otherCategories.map(([category, members]) => (
         <ul key={category} className="mb-12 md:mb-20 xl:mb-32">
           <h1 className="text-xl md:text-2xl md:pb-5">{category}</h1>
           <ul className="text-sm md:flex flex-wrap">
@@ -159,19 +174,19 @@ export default function Members() {
                 className="md:w-1/2 lg:w-1/3 my-2 flex gap-4 items-center xl:mb-2"
               >
                 <img
-                  src={member[2]} // 이미지 URL
-                  alt={`${member[1]} profile`} // Alt 텍스트
+                  src={member[2]}
+                  alt={`${member[1]} profile`}
                   className="flex-shrink-0 w-[70px] h-[70px] lg:w-[100px] lg:h-[100px] rounded-full object-cover object-top"
                 />
                 <div className="flex flex-col justify-center pr-4">
                   <h3 className="pt-5 md:pt-3 md:text-lg xl:text-xl">{member[1]}</h3>
                   <a
-                    href={`mailto:${member[3]}`} // 이메일 링크
+                    href={`mailto:${member[3]}`}
                     className="break-all leading-none mb-1 text-xs xl:mb-2"
                   >
                     {member[3]}
                   </a>
-                  <p className="pb-5 xl:text-lg">{member[4]}</p> {/* 기타 정보 */}
+                  <p className="pb-5 xl:text-lg">{member[4]}</p>
                 </div>
               </li>
             ))}
