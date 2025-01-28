@@ -33,7 +33,7 @@ body {
   font-family: "Pretendard";
   src: url("/fonts/PretendardVariable.ttf") format("truetype");
   font-weight: 100 900;
-  /* 가변 폰트의 가중치 범위 */
+  /* 범위 */
   font-style: normal;
 }
 @media (max-width: 640px) {

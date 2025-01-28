@@ -53,23 +53,17 @@ export default function Home() {
       <Nav textColor={textColor} />
       <Navmobile textColor={textColor} />
 
-      {showIntro && (
-        <div
-          className={`bg-[#0f0f13] intro-overlay flex items-center justify-center fixed inset-0 z-[990] transition-opacity duration-1000 ${
-            isFading ? "opacity-0 pointer-events-none" : "opacity-100"
-          }`}
-          onClick={handleIntroClick}
-        >
-          <div className="fixed top-0 left-0">
-            <Header />
-          </div>
-          <Cover />
-        </div>
-      )}
+      {/* showintro comp */}
 
       <main
         className={`h-[100dvh] w-screen overflow-y-scroll snap-y snap-mandatory transition-colors duration-1000 ${bgColor} ${textColor}`}
       >
+        <section
+          id="cover"
+          className="w-screen h-[100dvh] snap-start flex items-center justify-center"
+        >
+          <Cover />
+        </section>
         <section
           id="about"
           className="w-screen h-[100dvh] snap-start md:pt-20 md:px-28 xl:px-52 px-6 content-center"
@@ -78,7 +72,7 @@ export default function Home() {
         </section>
         <section
           id="works"
-          className="w-screen h-[100dvh] snap-start md:p-28 xl:p-52 px-6 content-center"
+          className="w-screen min-h-[100dvh] snap-start md:p-28 xl:p-52 px-6 content-center"
         >
           <Works />
         </section>

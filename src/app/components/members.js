@@ -168,7 +168,7 @@ export default function Members() {
       <div>
         <h1 className="texty-xl md:text-2xl pb-8 md:pb-12">{firstCategory[0]}</h1>
         {firstCategory[1].map((member, index) => (
-          <li key={index} className="md:flex gap-8 xl:mb-40 mb-24">
+          <div key={index} className="md:flex gap-8 xl:mb-40 mb-24">
             <img
               src={member[2]}
               alt={`${member[1]} profile`}
@@ -191,7 +191,7 @@ export default function Members() {
                 </div>
               </div>
             </div>
-          </li>
+          </div>
           ))}
       </div>
       )}

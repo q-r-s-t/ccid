@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function Header() {
+export default function Header({ width = 30, height = 30, className }) {
   return (
     <a
       href="#"
@@ -8,14 +8,16 @@ export default function Header() {
         e.preventDefault();
         document.querySelector("html").scrollIntoView({ behavior: "smooth" });
       }}
-      className="logo-container p-6 fixed sm:hidden block"
+      className={`fixed logo-container p-6 m:hidden block ${className}`} // 부모에서 전달받은 className 추가
+
     >
-      <Image
+       <Image
         src="/img/cidc_logo.svg"
         alt="CIDC Logo"
-        width={30}
-        height={30}
+        width={width}
+        height={height}
         priority
+        style={{ objectFit: "contain" }}
       />
     </a>
   );
