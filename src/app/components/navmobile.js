@@ -89,7 +89,7 @@ export default function Navmobile({ textColor }) {
               closeMenu(); // 메뉴 닫기
             }}
           >
-            Members
+            People
           </a>
         </li>
         <li>

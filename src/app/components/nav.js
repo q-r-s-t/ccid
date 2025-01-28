@@ -63,7 +63,7 @@ export default function Nav({ textColor }) {
                 .scrollIntoView({ behavior: "smooth" });
             }}
           >
-            Members
+            People
           </a>
         </li>
         <li>
