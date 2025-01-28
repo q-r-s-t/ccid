@@ -176,21 +176,19 @@ export default function Members() {
             />
             <div className="text-sm md:flex-1 md:text-lg">
               <h2 className="text-xl md:text-3xl">{member[1]}</h2>
-              <a
+              {/* <a
                 href={`mailto:${member[3]}`}
                 className="z-[100] text-xs md:text-base relative group md:pb-1"
               >
-                {member[3]}
+                {member[3]} */}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
-              </a>
-              <p className="text-lg md:text-xl xl:2xl py-5">{member[4]}</p>
+              {/* </a> */}
+              {/* <p className="text-lg md:text-xl xl:2xl py-5">{member[4]}</p> */}
               <div className="border-l pl-4 mt-4">
                 <h3 className="pb-4 leading-none text-md lg:text-xl lg:leading-none">Career</h3>
-                <ol className="text-sm+ lg:text-lg leading-relaxed">
-                  <li>영국왕립예술대학 RCA Royal College of Art 시각커뮤니케이션전공 | 박사수료</li>
-                  <li>로드아일랜드디자인대학 RISD Rhode Island School of Design 디지털+미디어 | 석사졸업</li>
-                  <li>홍익대학교 조형대학 디지털미디어디자인전공 | 학사졸업</li>
-                </ol>
+                <div className="text-sm+ lg:text-lg leading-relaxed">
+                  <pre className="whitespace-pre-wrap font-pretendard">{member[4]}</pre>
+                </div>
               </div>
             </div>
           </li>
@@ -213,16 +211,11 @@ export default function Members() {
                   className="flex-shrink-0 w-[70px] h-[70px] lg:w-[100px] lg:h-[100px] rounded-full object-cover object-top"
                 />
                 <div className="flex flex-col justify-center pr-4">
-                  <h3 className="pt-5 md:pt-3 md:text-lg xl:text-xl">{member[1]}</h3>
+                  <h3 className="pb-2 pt-5 md:pt-3 md:text-lg xl:text-xl">{member[1]}</h3>
                   {/* 이메일 - 삭제0128 */}
-                  {/* <a
-                    href={`mailto:${member[3]}`}
-                    className="break-all leading-none mb-1 text-xs xl:mb-2"
-                  >
-                    {member[3]}
-                  </a> */}
+                  {/* <a href={`mailto:${member[3]}`} className="break-all leading-none mb-1 text-xs xl:mb-2">{member[3]}</a> */}
                   {/* 학력 */}
-                  <pre className="pb-5 xl:text-md font-pretendard">{member[4]}</pre>
+                  <pre className="whitespace-pre-wrap pb-5 xl:text-md xl:leading-tight font-pretendard">{member[4]}</pre>
                 </div>
               </li>
             ))}

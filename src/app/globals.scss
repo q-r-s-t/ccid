@@ -2,15 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+// 배경색 js로 조정
 :root {
-  --background: #000;
+  --background: #0f0f13;
   --foreground: #fff;
   --font-pretendard: "Pretendard", sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #0f0f13;
     --foreground: #ededed;
   }
 }
@@ -30,11 +31,6 @@ body {
   font-weight: 700;
 }
 
-// #sectionholder{
-//   >section{
-//   }
-// }
-
 @font-face {
   font-family: "Pretendard";
   src: url("/fonts/PretendardVariable.ttf") format("truetype");
@@ -48,11 +44,3 @@ body {
     font-size: 14px;
   }
 }
-
-// @media (min-width: 641px) and (max-width: 1024px) {
-
-// }
-
-// @media (min-width: 1025px) {
-
-// }

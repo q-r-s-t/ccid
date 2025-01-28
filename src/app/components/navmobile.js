@@ -92,7 +92,7 @@ export default function Navmobile({ textColor }) {
             People
           </a>
         </li>
-        <li>
+        {/* <li>
         <Link
             href="https://www.instagram.com/q.shim/"
             className="mx-6"
@@ -102,7 +102,7 @@ export default function Navmobile({ textColor }) {
           >
             News
           </Link>
-        </li>
+        </li> */}
       </ul>
     </div>
   );

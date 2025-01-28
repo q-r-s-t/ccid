@@ -12,7 +12,7 @@ import About from "./components/about";
 import Members from "./components/members";
 
 export default function Home() {
-  const [bgColor, setBgColor] = useState("bg-transparent");
+  const [bgColor, setBgColor] = useState("bg-[#0f0f13]");
   const [textColor, setTextColor] = useState("text-white"); // 기본 글자색
   const [showIntro, setShowIntro] = useState(true);
   const [isFading, setIsFading] = useState(false);
@@ -26,7 +26,7 @@ export default function Home() {
           setBgColor("bg-gray-300"); // Works 섹션 배경색
           setTextColor("text-gray-700"); // Works 섹션 글자색
         } else {
-          setBgColor("bg-transparent"); // 기본 배경색
+          setBgColor("bg-[#0f0f13]"); // 기본 배경색
           setTextColor("text-white"); // 기본 글자색
         }
       },
@@ -55,7 +55,7 @@ export default function Home() {
 
       {showIntro && (
         <div
-          className={`intro-overlay flex items-center justify-center fixed inset-0 bg-black z-[990] transition-opacity duration-1000 ${
+          className={`bg-[#0f0f13] intro-overlay flex items-center justify-center fixed inset-0 z-[990] transition-opacity duration-1000 ${
             isFading ? "opacity-0 pointer-events-none" : "opacity-100"
           }`}
           onClick={handleIntroClick}
