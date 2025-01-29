@@ -30,12 +30,12 @@ export default function Nav({ textColor }) {
       </div> */}
 
       <button
-        className={`hidden sm:flex fixed z-[800] top-6 right-10 w-auto h-5 flex-col justify-between transition-all duration-300 transform`}
+        className={`hidden sm:flex fixed z-[800] top-6 right-10 w-auto h-5 flex-col justify-between transition-all duration-300 transform ${isOpen ? "w-5" : ""}`}
         onClick={toggleMenu}
       >
         <div
           className={`w-5 border-t-2 transition-all duration-300 transform origin-top-left ${
-            isOpen ? "rotate-45" : ""
+            isOpen ? "rotate-45 w-6" : ""
           }`}
         ></div>
         <div
@@ -45,13 +45,13 @@ export default function Nav({ textColor }) {
         ></div>
         <div
           className={`w-5 border-t-2 transition-all duration-300 transform origin-bottom-left ${
-            isOpen ? "-rotate-45" : ""
+            isOpen ? "-rotate-45 w-6" : ""
           }`}
         ></div>
       </button>
 
       <ul
-        className={`hidden font-medium sm:flex justify-center gap-4 fixed top-6 mx-auto w-screen ${textColor} `}
+        className={`hidden font-medium sm:flex justify-center gap-4 fixed top-6 mx-auto w-screen ${textColor}`}
       >
         <li className="mx-3">
           <a
