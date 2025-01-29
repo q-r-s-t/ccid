@@ -8,7 +8,7 @@ export default function Header({ width = 30, height = 30, className }) {
         e.preventDefault();
         document.querySelector("html").scrollIntoView({ behavior: "smooth" });
       }}
-      className={`fixed logo-container p-6 m:hidden block ${className}`} // 부모에서 전달받은 className 추가
+      className={`fixed logo-container top-6 left-10 m:hidden block ${className}`} // 부모에서 전달받은 className 추가
 
     >
        <Image
