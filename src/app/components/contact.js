@@ -1,7 +1,8 @@
 export default function Contact(){
     return(
         <div>
-            qrstlab@gmail.com
+            <p>For business inquiries please contact:</p>
+            <a>qrstlab@gmail.com</a>
         </div>
     );
 }
