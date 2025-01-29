@@ -186,7 +186,7 @@ export default function Members() {
               <p className="text-lg md:text-xl xl:2xl py-5">{member[3]}</p>
               <div className="border-l pl-4 mt-4">
                 <h3 className="pb-4 leading-none text-md lg:text-xl lg:leading-none">Career</h3>
-                <div className="text-sm+ lg:text-lg leading-relaxed">
+                <div className="text-sm+ lg:text-lg leading-snug">
                   <pre className="whitespace-pre-wrap font-pretendard">{member[4]}</pre>
                 </div>
               </div>
@@ -213,8 +213,9 @@ export default function Members() {
                 <div className="flex flex-col justify-center pr-4">
                   <h3 className="pt-5 md:pt-3 md:text-md lg:text-lg xl:text-xl">{member[1]}</h3>
                   {/* <a href={`mailto:${member[3]}`} className="break-all leading-none mb-1 text-xs xl:mb-2">{member[3]}</a> */}
-                  <h2 className='text-sm mb-1 md:mb-2 xl:text-lg xl:leading-none leading-none'>{member[3]}</h2>
-                  <pre className="whitespace-pre-wrap pb-5 text-xs- leading-tight xl:text-md xl:leading-snug font-pretendard">{member[4]}</pre>
+                  <h2 className='text-xs mb-1 md:mb-2 xl:text-lg xl:leading-none leading-none'>{member[3]}</h2>
+                  <pre className="whitespace-pre-wrap font-medium
+ pb-5 text-xs- leading-tight xl:text-md xl:leading-snug font-pretendard">{member[4]}</pre>
                 </div>
               </li>
             ))}
