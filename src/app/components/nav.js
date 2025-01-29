@@ -1,17 +1,20 @@
 "use client";
 
-import Link from "next/link";
 // import Image from "next/image";
 import { useState } from "react";
+import Header from "./header";
 
 export default function Nav({ textColor }) {
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => {
     setIsOpen((prev) => !prev); // 메뉴 토글 열기닫기
   };
+  const closeMenu = () => {
+    setIsOpen(false); // 메뉴 닫기
+  };
 
   return (
-    <div className="z-[700]">
+    <div className="z-[500]">
       {/* <div className="logo fixed top-0 left-0 z-50">
         <div 
           onClick={() => {
@@ -30,7 +33,7 @@ export default function Nav({ textColor }) {
       </div> */}
 
       <button
-        className={`hidden sm:flex fixed z-[800] top-6 right-10 w-auto h-5 flex-col justify-between transition-all duration-300 transform ${isOpen ? "w-5" : ""}`}
+        className={`hidden sm:flex fixed z-[600] top-6 right-10 w-5 h-5 flex-col justify-between transition-all duration-300 transform ${isOpen ? "h-5" : ""}`}
         onClick={toggleMenu}
       >
         <div
@@ -51,17 +54,22 @@ export default function Nav({ textColor }) {
       </button>
 
       <ul
-        className={`hidden font-medium sm:flex justify-center gap-4 fixed top-6 mx-auto w-screen ${textColor}`}
+        className={`text-xl xl:text-2xl hidden font-normal sm:flex justify-center gap-4 fixed top-0 pt-4 mx-auto w-screen ${textColor} ${
+          isOpen
+            ? "opacity-100 bg-[rgba(0,0,0,0.5)] backdrop-blur w-full h-full"
+            : "hidden opacity-0"
+        }`}
       >
         <li className="mx-3">
           <a
             href="#about"
-            className="transition-all duration-300 hover:filter lg:hover:blur-md text-xl scroll-smooth"
+            className="transition-all duration-300 hover:filter lg:hover:blur-md scroll-smooth"
             onClick={(e) => {
               e.preventDefault();
               document
                 .querySelector("#about")
                 .scrollIntoView({ behavior: "smooth" });
+                closeMenu(); // 메뉴 닫기
             }}
           >
             About
@@ -70,12 +78,13 @@ export default function Nav({ textColor }) {
         <li className="mx-3">
           <a
             href="#works"
-            className="transition-all duration-300 hover:filter lg:hover:blur-md text-xl scroll-smooth"
+            className="transition-all duration-300 hover:filter lg:hover:blur-md scroll-smooth"
             onClick={(e) => {
               e.preventDefault();
               document
                 .querySelector("#works")
                 .scrollIntoView({ behavior: "smooth" });
+                closeMenu(); // 메뉴 닫기
             }}
           >
             Works
@@ -84,12 +93,13 @@ export default function Nav({ textColor }) {
         <li className="mx-3">
           <a
             href="#members"
-            className="transition-all duration-300 hover:filter lg:hover:blur-md text-xl scroll-smooth"
+            className="transition-all duration-300 hover:filter lg:hover:blur-md scroll-smooth"
             onClick={(e) => {
               e.preventDefault();
               document
                 .querySelector("#members")
                 .scrollIntoView({ behavior: "smooth" });
+                closeMenu(); // 메뉴 닫기
             }}
           >
             People
@@ -98,12 +108,13 @@ export default function Nav({ textColor }) {
         <li className="mx-3">
           <a
             href="#contact"
-            className="transition-all duration-300 hover:filter lg:hover:blur-md text-xl scroll-smooth"
+            className="transition-all duration-300 hover:filter lg:hover:blur-md scroll-smooth"
             onClick={(e) => {
               e.preventDefault();
               document
                 .querySelector("#contact")
                 .scrollIntoView({ behavior: "smooth" });
+                closeMenu(); // 메뉴 닫기
             }}
           >
             Contact
@@ -112,12 +123,14 @@ export default function Nav({ textColor }) {
         {/* <li>
           <Link
             href="https://www.instagram.com/q.shim/"
-            className="transition-all duration-300 hover:filter lg:hover:blur-md text-xl"
+            className="transition-all duration-300 hover:filter lg:hover:blur-md"
           >
             News
           </Link>
         </li> */}
       </ul>
+
+      <Header />
     </div>
   );
 }

@@ -1,5 +1,6 @@
 "use client";
 
+import Header from "./header";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -39,7 +40,7 @@ export default function Navmobile({ textColor }) {
       </button>
 
       <ul
-        className={`sm:hidden text-left font-normal text-3xl justify-center fixed top-0 left-0 p-6 
+        className={`sm:hidden text-left font-normal text-3xl justify-center fixed top-0 left-0 pt-24 p-6 
           transition duration-700 ease-in-out ${
             isOpen
               ? "opacity-100 bg-[rgba(0,0,0,0.5)] backdrop-blur w-full h-full"
@@ -117,6 +118,9 @@ export default function Navmobile({ textColor }) {
           </Link>
         </li> */}
       </ul>
+
+
+      <Header />
     </div>
   );
 }
