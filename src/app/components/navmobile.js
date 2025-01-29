@@ -40,7 +40,7 @@ export default function Navmobile({ textColor }) {
       </button>
 
       <ul
-        className={`sm:hidden text-left font-normal text-2xl justify-center fixed top-0 left-0 pt-24 p-6 
+        className={`sm:hidden text-left font-normal text-2xl justify-center fixed top-0 left-0 pt-24 p-6 transition-all duration-300 transform 
           transition duration-700 ease-in-out ${
             isOpen
               ? "opacity-100 bg-[rgba(0,0,0,0.5)] backdrop-blur w-full h-full"
