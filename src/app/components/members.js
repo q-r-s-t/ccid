@@ -163,7 +163,7 @@ export default function Members() {
   const otherCategories = categories.slice(1); // 나머지 키들
 
   return (
-    <div className="pt-16">
+    <div className="xl:pt-16">
       {firstCategory && (
       <div>
         <h1 className="text-xl md:text-2xl pb-8 md:pb-12">{firstCategory[0]}</h1>
@@ -175,7 +175,7 @@ export default function Members() {
               className="w-[150px] h-[150px] xl:w-[300px] xl:h-[300px] rounded-full object-cover object-top md:mr-10 mb-4"
             />
             <div className="text-sm md:flex-1 md:text-lg">
-              <h2 className="text-xl md:text-3xl">{member[1]}</h2>
+              <h2 className="text-xl md:text-3xl md:font-semibold">{member[1]}</h2>
               {/* <a
                 href={`mailto:${member[3]}`}
                 className="z-[100] text-xs md:text-base relative group md:pb-1"
@@ -184,7 +184,7 @@ export default function Members() {
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
               </a> */}
               <p className="text-md text-normal pb-2">{member[3]}</p>
-              <div className="border-l pl-4 mt-4">
+              <div className="border-l pl-3 mt-4">
                 <h3 className="pb-3 leading-none text-md lg:text-xl lg:leading-none">Career</h3>
                 <div className="text-sm+ lg:text-lg ">
                   <pre className="whitespace-pre-wrap leading-snug font-medium font-pretendard">{member[4]}</pre>
@@ -213,6 +213,7 @@ export default function Members() {
                 <div className="flex flex-col justify-center pr-4">
                   <h3 className="pt-5 md:pt-3 md:text-md lg:text-lg xl:text-xl">{member[1]}</h3>
                   {/* <a href={`mailto:${member[3]}`} className="break-all leading-none mb-1 text-xs xl:mb-2">{member[3]}</a> */}
+
                   <h2 className='text-xs mb-1 md:mb-2 xl:text-lg xl:leading-none leading-none'>{member[3]}</h2>
                   <pre className="whitespace-pre-wrap font-medium
  pb-5 text-xs- leading-tight xl:text-md xl:leading-snug font-pretendard">{member[4]}</pre>

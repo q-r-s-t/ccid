@@ -33,7 +33,7 @@ export default function Nav({ textColor }) {
       </div> */}
 
       <button
-        className={`hidden sm:flex fixed z-[600] top-6 right-10 w-5 h-5 flex-col justify-between transition-all duration-300 transform ${isOpen ? "h-[1rem] right-8" : ""}`}
+        className={`hidden sm:flex fixed z-[600] top-6 right-10 w-5 h-5 flex-col justify-between transition-all duration-300 transform ${isOpen ? "h-[1rem] right-9" : ""}`}
         onClick={toggleMenu}
       >
         <div

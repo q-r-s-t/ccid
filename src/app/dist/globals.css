@@ -6,6 +6,7 @@
   --background: #0f0f13;
   --foreground: #fff;
   --font-pretendard: "Pretendard", sans-serif;
+  --font-inter: "Inter", sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -13,6 +14,22 @@
     --background: #0f0f13;
     --foreground: #ededed;
   }
+}
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter-VariableFont_opsz,wght.ttf") format("truetype");
+  font-weight: 100 900;
+  /* Weight range */
+  font-style: normal;
+  font-variation-settings: "opsz" 12, "wght" 700;
+  /* Example for optical size and weight */
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("/fonts/PretendardVariable.ttf") format("truetype");
+  font-weight: 100 900;
+  /* 범위 */
+  font-style: normal;
 }
 * {
   word-break: keep-all;
@@ -25,17 +42,10 @@ html {
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: var(--font-pretendard);
+  font-family: var(--font-inter);
   font-weight: 700;
 }
 
-@font-face {
-  font-family: "Pretendard";
-  src: url("/fonts/PretendardVariable.ttf") format("truetype");
-  font-weight: 100 900;
-  /* 범위 */
-  font-style: normal;
-}
 @media (max-width: 640px) {
   html {
     font-size: 14px;
