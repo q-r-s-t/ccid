@@ -92,6 +92,21 @@ export default function Navmobile({ textColor }) {
             People
           </a>
         </li>
+        <li>
+          <a
+          href="#contact"
+          className="mx-6 scroll-smooth"
+          onClick={(e) => {
+            e.preventDefault();
+            document
+              .querySelector("#contact")
+              .scrollIntoView({ behavior: "smooth" });
+            closeMenu(); // 메뉴 닫기
+          }}
+          >
+        Contact
+        </a>
+        </li>
         {/* <li>
         <Link
             href="https://www.instagram.com/q.shim/"

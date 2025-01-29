@@ -23,7 +23,9 @@ export default function Nav({ textColor }) {
         </div>
       </div> */}
 
-      <ul className={`hidden sm:flex gap-4 justify-center fixed top-6 left-0 right-0 ${textColor} `}>
+      <ul
+        className={`hidden sm:flex gap-4 justify-center fixed top-6 left-0 right-0 ${textColor} `}
+      >
         <li>
           <a
             href="#about"
@@ -64,6 +66,20 @@ export default function Nav({ textColor }) {
             }}
           >
             People
+          </a>
+        </li>
+        <li>
+          <a
+            href="#contact"
+            className="transition-all duration-300 hover:filter lg:hover:blur-md mx-10 text-xl scroll-smooth"
+            onClick={(e) => {
+              e.preventDefault();
+              document
+                .querySelector("#contact")
+                .scrollIntoView({ behavior: "smooth" });
+            }}
+          >
+            Contact
           </a>
         </li>
         {/* <li>
