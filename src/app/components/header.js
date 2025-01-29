@@ -1,16 +1,19 @@
+"use client"; // 클라이언트 컴포넌트 지정
+
 import Image from "next/image";
 
-export default function Header({width = 40, height = 40, className }) {
+export default function Header({ width = 40, height = 40, className }) {
   return (
-    <a
-      href="#"
-      onClick={(e) => {
-        e.preventDefault();
-        document.querySelector("html").scrollIntoView({ behavior: "smooth" });
+    <button
+      onClick={() => {
+        const coverSection = document.getElementById("cover");
+        if (coverSection) {
+          coverSection.scrollIntoView({ behavior: "smooth" });
+        }
       }}
-      className={`z-[700] fixed logo-container top-6 left-6 md:left-10 m:hidden block ${className || ""}`} // 부모에서 전달받은 className 추가
+      className={`z-[700] fixed logo-container top-6 left-6 md:left-10 m:hidden block ${className || ""}`}
     >
-       <Image
+      <Image
         src="/img/cidc_logo.svg"
         alt="CIDC Logo"
         width={width}
@@ -18,6 +21,6 @@ export default function Header({width = 40, height = 40, className }) {
         priority
         style={{ objectFit: "contain" }}
       />
-    </a>
+    </button>
   );
 }

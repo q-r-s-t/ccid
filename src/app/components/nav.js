@@ -33,12 +33,12 @@ export default function Nav({ textColor }) {
       </div> */}
 
       <button
-        className={`hidden sm:flex fixed z-[600] top-6 right-10 w-5 h-5 flex-col justify-between transition-all duration-300 transform ${isOpen ? "h-5" : ""}`}
+        className={`hidden sm:flex fixed z-[600] top-6 right-10 w-5 h-5 flex-col justify-between transition-all duration-300 transform ${isOpen ? "h-[1rem] right-8" : ""}`}
         onClick={toggleMenu}
       >
         <div
           className={`w-5 border-t-2 transition-all duration-300 transform origin-top-left ${
-            isOpen ? "rotate-45 w-6" : ""
+            isOpen ? "rotate-45" : ""
           }`}
         ></div>
         <div
@@ -48,16 +48,16 @@ export default function Nav({ textColor }) {
         ></div>
         <div
           className={`w-5 border-t-2 transition-all duration-300 transform origin-bottom-left ${
-            isOpen ? "-rotate-45 w-6" : ""
+            isOpen ? "-rotate-45" : ""
           }`}
         ></div>
       </button>
 
       <ul
-        className={`text-xl xl:text-2xl hidden font-normal sm:flex justify-center gap-4 fixed top-0 pt-4 mx-auto w-screen ${textColor} ${
+        className={`z-[500] text-xl xl:text-2xl hidden font-normal sm:flex justify-center gap-4 fixed top-0 pt-4 mx-auto w-screen transition-all duration-300 transform ${textColor} ${
           isOpen
-            ? "opacity-100 bg-[rgba(0,0,0,0.5)] backdrop-blur w-full h-full"
-            : "hidden opacity-0"
+            ? "opacity-100 bg-[rgba(15,15,19,0.5)] backdrop-blur w-full h-full"
+            : "top-[-4rem] opacity-0"
         }`}
       >
         <li className="mx-3">
