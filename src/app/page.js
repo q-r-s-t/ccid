@@ -10,6 +10,7 @@ import Cover from "./components/cover";
 import Works from "./components/works";
 import About from "./components/about";
 import Members from "./components/members";
+import Contact from "./components/contact";
 
 export default function Home() {
   const [bgColor, setBgColor] = useState("bg-[#0f0f13]");
@@ -81,6 +82,12 @@ export default function Home() {
           className="w-screen snap-start md:p-28 xl:p-40 p-6"
         >
           <Members />
+        </section>
+        <section
+          id="contact"
+          className="w-screen max-h-screen snap-start pt-24 md:p-28 xl:p-40 p-6"
+          >
+          <Contact />
         </section>
         <footer className="w-screen h-auto snap-end text-center text-xs p-12">
           © 2025 QrST Lab. All rights reserved.

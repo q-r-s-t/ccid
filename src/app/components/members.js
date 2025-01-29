@@ -163,10 +163,10 @@ export default function Members() {
   const otherCategories = categories.slice(1); // 나머지 키들
 
   return (
-    <div className="pt-10">
+    <div className="pt-16">
       {firstCategory && (
       <div>
-        <h1 className="texty-xl md:text-2xl pb-8 md:pb-12">{firstCategory[0]}</h1>
+        <h1 className="text-xl md:text-2xl pb-8 md:pb-12">{firstCategory[0]}</h1>
         {firstCategory[1].map((member, index) => (
           <div key={index} className="md:flex gap-8 xl:mb-40 mb-24">
             <img
@@ -183,11 +183,11 @@ export default function Members() {
                 {member[3]}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
               </a> */}
-              <p className="text-lg md:text-xl xl:2xl py-5">{member[3]}</p>
+              <p className="text-md text-normal pb-2">{member[3]}</p>
               <div className="border-l pl-4 mt-4">
-                <h3 className="pb-4 leading-none text-md lg:text-xl lg:leading-none">Career</h3>
-                <div className="text-sm+ lg:text-lg leading-snug">
-                  <pre className="whitespace-pre-wrap font-pretendard">{member[4]}</pre>
+                <h3 className="pb-3 leading-none text-md lg:text-xl lg:leading-none">Career</h3>
+                <div className="text-sm+ lg:text-lg ">
+                  <pre className="whitespace-pre-wrap leading-snug font-medium font-pretendard">{member[4]}</pre>
                 </div>
               </div>
             </div>
