@@ -2,7 +2,7 @@ export default function Contact() {
   const email = "qrstlab@gmail.com";
 
   return (
-    <div className="w-full h-full flex flex-col justify-center text-lg font-medium lg:text-2xl lg:font-normal text-center">
+    <div className="w-full h-full flex flex-col justify-center text-lg font-medium md:text-2xl lg:font-normal text-center">
       <p className="leading-snug">For business inquiries please contact:</p>
 
 <div>
