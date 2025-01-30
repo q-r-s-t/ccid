@@ -163,10 +163,10 @@ export default function Members() {
   const otherCategories = categories.slice(1); // 나머지 키들
 
   return (
-    <div className="xl:pt-16">
+    <div className="pt-16 xl:pt-4">
       {firstCategory && (
       <div>
-        <h1 className="text-xl pt-20 md:pt-0 md:text-2xl pb-8 md:pb-12">{firstCategory[0]}</h1>
+        <h1 className="text-xl md:pt-0 md:text-2xl pb-8 md:pb-12">{firstCategory[0]}</h1>
         {firstCategory[1].map((member, index) => (
           <div key={index} className="md:flex gap-8 xl:mb-40 mb-24">
             <img
@@ -175,7 +175,7 @@ export default function Members() {
               className="w-[150px] h-[150px] xl:w-[300px] xl:h-[300px] rounded-full object-cover object-top md:mr-10 mb-4"
             />
             <div className="text-sm md:flex-1 md:text-lg">
-              <h2 className="text-xl md:text-3xl md:font-semibold">{member[1]}</h2>
+              <h2 className="text-xl md:text-3xl md:font-semibold mb-1">{member[1]}</h2>
               {/* <a
                 href={`mailto:${member[3]}`}
                 className="z-[100] text-xs md:text-base relative group md:pb-1"
@@ -183,8 +183,8 @@ export default function Members() {
                 {member[3]}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
               </a> */}
-              <p className="text-md text-normal pb-2">{member[3]}</p>
-              <div className="border-l pl-3 mt-4">
+              <p className="text-lg font-semibold lg:text-xl mb-8">{member[3]}</p>
+              <div className="border-l pl-3">
                 <h3 className="pb-3 leading-none text-md lg:text-xl lg:leading-none">Career</h3>
                 <div className="text-sm+ lg:text-lg ">
                   <pre className="whitespace-pre-wrap leading-snug font-medium font-pretendard">{member[4]}</pre>
