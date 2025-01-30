@@ -208,15 +208,15 @@ export default function Members() {
                 <img
                   src={member[2]}
                   alt={`${member[1]} profile`}
-                  className="flex-shrink-0 w-[70px] h-[70px] lg:w-[100px] lg:h-[100px] rounded-full object-cover object-top"
+                  className="flex-shrink-0 mr-2 w-[70px] h-[70px] lg:w-[100px] lg:h-[100px] rounded-full object-cover object-top"
                 />
                 <div className="flex flex-col justify-center pr-4">
-                  <h3 className="pt-5 md:pt-3 md:text-md lg:text-lg xl:text-xl">{member[1]}</h3>
+                  <h3 className="pt-2 md:pt-3 md:text-md lg:text-lg xl:text-xl">{member[1]}</h3>
                   {/* <a href={`mailto:${member[3]}`} className="break-all leading-none mb-1 text-xs xl:mb-2">{member[3]}</a> */}
 
                   <h2 className='text-xs mb-1 md:mb-2 xl:text-lg xl:leading-none leading-none'>{member[3]}</h2>
                   <pre className="whitespace-pre-wrap font-medium
- pb-5 text-xs- leading-tight xl:text-md xl:leading-snug font-pretendard">{member[4]}</pre>
+ pb-3 text-xs- leading-tight xl:text-md xl:leading-snug font-pretendard">{member[4]}</pre>
                 </div>
               </li>
             ))}
