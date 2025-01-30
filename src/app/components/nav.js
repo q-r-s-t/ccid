@@ -39,17 +39,17 @@ export default function Nav({ textColor }) {
         <div
           className={`w-5 border-t-2 transition-all duration-300 transform origin-top-left ${
             isOpen ? "rotate-45" : ""
-          }`}
+          } ${textColor === 'text-gray-700' ? 'border-gray-700' : 'border-white'}`}
         ></div>
         <div
           className={`w-5 border-t-2 transition-all duration-300 transform ${
             isOpen ? "opacity-0" : ""
-          }`}
+          } ${textColor === 'text-gray-700' ? 'border-gray-700' : 'border-white'}`}
         ></div>
         <div
           className={`w-5 border-t-2 transition-all duration-300 transform origin-bottom-left ${
             isOpen ? "-rotate-45" : ""
-          }`}
+          } ${textColor === 'text-gray-700' ? 'border-gray-700' : 'border-white'}`}
         ></div>
       </button>
 

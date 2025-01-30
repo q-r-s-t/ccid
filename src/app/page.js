@@ -15,6 +15,8 @@ import Contact from "./components/contact";
 export default function Home() {
   const [bgColor, setBgColor] = useState("bg-[#0f0f13]");
   const [textColor, setTextColor] = useState("text-white"); // 기본 글자색
+  const [borderColor, setBorderColor] = useState("border-white"); // 기본 border
+
   const [showIntro, setShowIntro] = useState(true);
   const [isFading, setIsFading] = useState(false);
 
@@ -26,12 +28,14 @@ export default function Home() {
         if (entry.isIntersecting) {
           setBgColor("bg-gray-300"); // Works 섹션 배경색
           setTextColor("text-gray-700"); // Works 섹션 글자색
+          setBorderColor("border-gray-700");
         } else {
           setBgColor("bg-[#0f0f13]"); // 기본 배경색
           setTextColor("text-white"); // 기본 글자색
+          setBorderColor("border-white");
         }
       },
-      { threshold: 0.1 } // Works 섹션 10% 보이면 작동
+      { threshold: 0.1 } // Works 섹션 15% 보이면 작동
     );
 
     if (worksSection) observer.observe(worksSection);
@@ -57,7 +61,7 @@ export default function Home() {
       {/* showintro comp */}
 
       <main
-        className={`h-[100dvh] w-screen overflow-y-scroll snap-y snap-mandatory transition-colors duration-1000 ${bgColor} ${textColor}`}
+        className={`h-[100dvh] w-screen overflow-y-scroll snap-y snap-mandatory transition-colors duration-1000 ${bgColor} ${textColor} ${borderColor}`}
       >
         <section
           id="cover"
