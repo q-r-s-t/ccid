@@ -197,7 +197,7 @@ export default function Members() {
       )}
 
       {otherCategories.map(([category, members]) => (
-        <ul key={category} className="mb-12 md:mb-20 xl:mb-32">
+        <ul key={category} className="mb-12 md:mb-16 xl:mb-32">
           <h1 className="text-xl md:text-2xl md:pb-5">{category}</h1>
           <ul className="text-sm md:flex flex-wrap">
             {members.map((member, index) => (

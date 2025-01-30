@@ -1,8 +1,8 @@
-"use client"; // 클라이언트 컴포넌트 지정
+"use client";
 
 import Image from "next/image";
 
-export default function Header({ width = 40, height = 40, className }) {
+export default function Header({ width = 40, height = 40, className, textColor }) {
   return (
     <button
       onClick={() => {

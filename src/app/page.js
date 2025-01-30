@@ -50,7 +50,7 @@ export default function Home() {
 
   return (
     <div className="scrollbar-hide">
-      <Header />
+      <Header textColor={textColor}/>
       <Nav textColor={textColor} />
       <Navmobile textColor={textColor} />
 
@@ -73,19 +73,19 @@ export default function Home() {
         </section>
         <section
           id="works"
-          className="w-screen min-h-[100dvh] snap-start snap-end md:px-28 xl:px-52 px-6 content-center"
+          className="w-screen min-h-[100dvh] snap-start md:px-28 xl:px-52 px-6 content-center"
         >
           <Works />
         </section>
         <section
           id="members"
-          className="w-screen snap-start snap-end md:p-28 xl:p-40 p-6"
+          className="w-screen snap-start md:p-28 xl:p-40 p-6"
         >
           <Members />
         </section>
         <section
           id="contact"
-          className="relative w-screen h-screen snap-start snap-end md:p-28 xl:p-40 p-6 content-center"
+          className="relative w-screen h-screen snap-end md:p-28 xl:p-40 p-6 content-center"
         >
           <Contact />
           <footer className="absolute bottom-0 left-0 w-screen h-auto text-center text-xs p-12">
