@@ -166,7 +166,7 @@ export default function Members() {
     <div className="xl:pt-16">
       {firstCategory && (
       <div>
-        <h1 className="text-xl md:text-2xl pb-8 md:pb-12">{firstCategory[0]}</h1>
+        <h1 className="text-xl pt-20 md:pt-0 md:text-2xl pb-8 md:pb-12">{firstCategory[0]}</h1>
         {firstCategory[1].map((member, index) => (
           <div key={index} className="md:flex gap-8 xl:mb-40 mb-24">
             <img
@@ -203,7 +203,7 @@ export default function Members() {
             {members.map((member, index) => (
               <li
                 key={index}
-                className="md:w-1/2 xl:w-1/3 my-2 flex gap-4 items-center xl:mb-2"
+                className="md:w-1/2 xl:w-1/3 my-1 flex gap-2 items-center xl:mb-2"
               >
                 <img
                   src={member[2]}

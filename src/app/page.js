@@ -85,10 +85,10 @@ export default function Home() {
         </section>
         <section
           id="contact"
-          className="relative w-screen h-screen snap-start md:p-28 xl:p-40 p-6 content-center"
+          className="relative w-screen h-screen snap-start snap-end md:p-28 xl:p-40 p-6 content-center"
         >
           <Contact />
-          <footer className="absolute bottom-0 left-0 w-screen h-auto snap-end text-center text-xs p-12">
+          <footer className="absolute bottom-0 left-0 w-screen h-auto text-center text-xs p-12">
             © 2025 QrST Lab. All rights reserved.
           </footer>
         </section>
