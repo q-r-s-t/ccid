@@ -175,7 +175,7 @@ export default function Members() {
               className="w-[150px] h-[150px] xl:w-[300px] xl:h-[300px] rounded-full object-cover object-top md:mr-10 mb-4"
             />
             <div className="text-sm md:flex-1 md:text-lg">
-              <h2 className="text-xl md:text-3xl md:font-semibold mb-1">{member[1]}</h2>
+              <h2 className="text-xl md:text-3xl md:font-semibold">{member[1]}</h2>
               {/* <a
                 href={`mailto:${member[3]}`}
                 className="z-[100] text-xs md:text-base relative group md:pb-1"

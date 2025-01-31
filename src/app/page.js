@@ -83,7 +83,7 @@ export default function Home() {
         </section>
         <section
           id="members"
-          className="w-screen snap-start md:p-28 xl:p-40 p-6"
+          className="w-screen snap-start md:p-20 xl:p-40 p-6"
         >
           <Members />
         </section>
