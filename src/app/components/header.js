@@ -3,8 +3,6 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 
 export default function Header({
-  width = 40,
-  height = 30,
   className,
   textColor,
 }) {
@@ -37,18 +35,18 @@ export default function Header({
           coverSection.scrollIntoView({ behavior: "smooth" });
         }
       }}
-      className={`z-[700] fixed logo-container top-6 left-6 md:left-10 m:hidden block ${
+      className={`z-[700] fixed logo-container top-6 left-6 w-[40px] h-[30px] 4xl:w-24 4xl:h-8 md:left-10 m:hidden block ${
         className || ""
       }`}
     >
       <Image
         src="/img/cidc_logo.svg"
         alt="CIDC Logo"
-        width={width}
-        height={height}
+        width={80}
+        height={60}
         priority
         style={{ objectFit: "contain" }}
-        className={`filter transition-all duration-300 ${isInWorksSection ? "invert" : ""}`}
+        className={`filter transition-all duration-300 absolute top-0 left-0 ${isInWorksSection ? "invert" : ""}`}
       />
        {/* <svg
         xmlns="http://www.w3.org/2000/svg"

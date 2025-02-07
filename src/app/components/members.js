@@ -163,30 +163,23 @@ export default function Members() {
   const otherCategories = categories.slice(1); // 나머지 키들
 
   return (
-    <div className="pt-16 xl:pt-4">
+    <div className="pt-8 xl:pt-0">
       {firstCategory && (
-      <div>
-        <h1 className="text-xl md:pt-0 md:text-2xl pb-8 md:pb-12">{firstCategory[0]}</h1>
+      <div className='mb-20 4xl:mb-28'>
+        <h1 className="text-xl md:pt-0 md:text-2xl pb-8 md:pb-12 4xl:text-[2rem]">{firstCategory[0]}</h1>
         {firstCategory[1].map((member, index) => (
-          <div key={index} className="md:flex gap-8 xl:mb-40 mb-24">
+          <div key={index} className="md:flex gap-8">
             <img
               src={member[2]}
               alt={`${member[1]} profile`}
-              className="w-[150px] h-[150px] xl:w-[300px] xl:h-[300px] rounded-full object-cover object-top md:mr-10 mb-4"
+              className="w-[150px] h-[150px] md:w-[190px] md:h-[190px] xl:w-[200px] xl:h-[200px] 4xl:h-[230px] 4xl:w-[230px] rounded-full object-cover object-top md:mr-10 mb-4"
             />
             <div className="text-sm md:flex-1 md:text-lg">
-              <h2 className="text-xl md:text-3xl md:font-semibold">{member[1]}</h2>
-              {/* <a
-                href={`mailto:${member[3]}`}
-                className="z-[100] text-xs md:text-base relative group md:pb-1"
-              >
-                {member[3]}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
-              </a> */}
-              <p className="text-lg font-semibold lg:text-xl mb-8">{member[3]}</p>
+              <h2 className="text-xl md:text-3xl md:font-semibold 4xl:text-[2rem] 4xl:leading-relaxed">{member[1]}</h2>
+              <p className="text-md font-semibold lg:text-xl mb-8 lg:mb-6 4xl:text-[1.6rem] 4xl:leading-tight">{member[3]}</p>
               <div className="border-l pl-3">
-                <h3 className="pb-3 leading-none text-md lg:text-xl lg:leading-none">Career</h3>
-                <div className="text-sm+ lg:text-lg ">
+                <h3 className="pb-3 leading-none text-md lg:text-lg lg:leading-none">Career</h3>
+                <div className="text-sm+ lg:text-md">
                   <pre className="whitespace-pre-wrap leading-snug font-medium font-pretendard">{member[4]}</pre>
                 </div>
               </div>
@@ -197,31 +190,29 @@ export default function Members() {
       )}
 
       {otherCategories.map(([category, members]) => (
-        <ul key={category} className="mb-12 md:mb-16 xl:mb-32">
-          <h1 className="text-xl md:text-2xl md:pb-5">{category}</h1>
+        <div key={category} className="mb-12 md:mb-20">
+          <h1 className="text-xl mb-4 md:text-2xl 4xl:text-[2rem] 4xl:mb-8">{category}</h1>
           <ul className="text-sm md:flex flex-wrap">
             {members.map((member, index) => (
               <li
                 key={index}
-                className="md:w-1/2 xl:w-1/3 my-1 flex gap-2 items-center xl:mb-2"
+                className="md:w-1/2 xl:w-1/3 mb-4 flex gap-2 3xl:gap-6 items-center xl:mb-2"
               >
                 <img
                   src={member[2]}
                   alt={`${member[1]} profile`}
-                  className="flex-shrink-0 mr-2 w-[70px] h-[70px] lg:w-[100px] lg:h-[100px] rounded-full object-cover object-top"
+                  className="flex-shrink-0 mr-2 w-[70px] h-[70px] lg:w-[90px] lg:h-[90px] 4xl:w-[120px] 4xl:h-[120px] rounded-full object-cover object-top"
                 />
-                <div className="flex flex-col justify-center pr-4">
-                  <h3 className="pt-2 md:pt-3 md:text-md lg:text-lg xl:text-xl">{member[1]}</h3>
-                  {/* <a href={`mailto:${member[3]}`} className="break-all leading-none mb-1 text-xs xl:mb-2">{member[3]}</a> */}
-
-                  <h2 className='text-xs mb-1 md:mb-2 xl:text-lg xl:leading-none leading-none'>{member[3]}</h2>
+                <div className="flex flex-col justify-center pr-4 lg:pl-2">
+                  <h3 className="md:pt-3 md:text-md lg:text-lg lg:leading-relaxed 4xl:text-[1.6rem]">{member[1]}</h3>
+                  <h2 className='text-xs mb-1 md:mb-2 lg:text-[1rem] lg:font-medium lg:leading-tight xl:text-[1rem] xl:leading-none leading-none 4xl:text-[1.4rem]'>{member[3]}</h2>
                   <pre className="whitespace-pre-wrap font-medium
- pb-3 text-xs- leading-tight xl:text-md xl:leading-snug font-pretendard">{member[4]}</pre>
+ pb-3 text-xs- leading-tight xl:text-md xl:leading-snug font-pretendard 4xl:text-[1rem]">{member[4]}</pre>
                 </div>
               </li>
             ))}
           </ul>
-        </ul>
+        </div>
       ))}
     </div>
   );

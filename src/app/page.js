@@ -71,19 +71,19 @@ export default function Home() {
         </section>
         <section
           id="about"
-          className="w-screen h-[100dvh] snap-start md:pt-10 md:px-28 xl:px-52 px-6 content-center"
+          className="w-screen h-[100dvh] snap-start md:pt-10 md:px-28 xl:px-52 4xl:px-[12%] px-6 content-center"
         >
           <About />
         </section>
         <section
           id="works"
-          className="w-screen min-h-[100dvh] snap-start md:px-28 xl:px-52 px-6 content-center"
+          className="w-screen min-h-[100dvh] snap-start md:px-28 xl:pl-52 xl:pr-44 px-6 4xl:px-[12%] content-center"
         >
           <Works />
         </section>
         <section
           id="members"
-          className="w-screen snap-start md:p-20 xl:p-40 p-6"
+          className="w-screen snap-start md:p-28 xl:pl-52 xl:pr-44 p-6 4xl:px-[12%]"
         >
           <Members />
         </section>

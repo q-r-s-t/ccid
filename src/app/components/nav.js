@@ -15,46 +15,30 @@ export default function Nav({ textColor }) {
 
   return (
     <div className="z-[500]">
-      {/* <div className="logo fixed top-0 left-0 z-50">
-        <div 
-          onClick={() => {
-            document.querySelector("#cover").scrollIntoView({ behavior: "smooth" });
-          }}
-          className="cursor-pointer"
-        >
-          <Image
-            src="/img/qrst_logo.svg"
-            alt="QRST Logo"
-            width={70}
-            height={50}
-            className={`mb-6 invert m-10 ${textColor}`}
-          />
-        </div>
-      </div> */}
 
       <button
-        className={`hidden sm:flex fixed z-[600] top-6 right-10 w-5 h-5 flex-col justify-between transition-all duration-300 transform ${isOpen ? "h-[1rem] right-9" : ""}`}
+        className={`hidden sm:flex fixed z-[600] top-6 right-10 w-5 h-5 4xl:w-8 4xl:h-8 flex-col justify-between transition-all duration-300 transform ${isOpen ? "h-[1rem] right-9 4xl:w-10" : ""}`}
         onClick={toggleMenu}
       >
         <div
-          className={`w-5 border-t-2 transition-all duration-300 transform origin-top-left ${
+          className={`w-full border-t-2 4xl:border-t-[3px] transition-all duration-300 transform origin-top-left ${
             isOpen ? "rotate-45" : ""
           } ${textColor === 'text-gray-700' ? 'border-gray-700' : 'border-white'}`}
         ></div>
         <div
-          className={`w-5 border-t-2 transition-all duration-300 transform ${
+          className={`w-full border-t-2 4xl:border-t-[3px] transition-all duration-300 transform ${
             isOpen ? "opacity-0" : ""
           } ${textColor === 'text-gray-700' ? 'border-gray-700' : 'border-white'}`}
         ></div>
         <div
-          className={`w-5 border-t-2 transition-all duration-300 transform origin-bottom-left ${
+          className={`w-full border-t-2 4xl:border-t-[3px] transition-all duration-300 transform origin-bottom-left ${
             isOpen ? "-rotate-45" : ""
           } ${textColor === 'text-gray-700' ? 'border-gray-700' : 'border-white'}`}
         ></div>
       </button>
 
       <ul
-        className={`z-[500] text-xl xl:text-2xl hidden font-normal sm:flex justify-center gap-4 fixed top-0 pt-4 mx-auto w-screen transition-all duration-300 transform ${textColor} ${
+        className={`z-[500] text-xl xl:text-2xl 4xl:text-[2rem] 4xl:gap-8 hidden font-normal sm:flex justify-center gap-4 fixed top-0 pt-4 mx-auto w-screen transition-all duration-300 transform ${textColor} ${
           isOpen
             ? "opacity-100 bg-[rgba(15,15,19,0.5)] backdrop-blur w-full h-full"
             : "top-[-4rem] opacity-0"

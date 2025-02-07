@@ -24,16 +24,16 @@ export default function About() {
   return (
     <div className="flex items-center justify-center w-full h-full pt-10">
       <div>
-        <p className="text-xl md:text-3xl font-semibold border-b-2 pb-1 md:pb-3 mb-8 mb-2 md:mb-3 xl:mb-6">Who We Are</p>
+        <p className="text-xl md:text-3xl 2xl:text-4xl 2xl:font-medium 3xl:text-5xl 4xl:text-6xl font-semibold border-b-[2px] pb-1 md:pb-3 mb-8 mb-2 md:mb-3 xl:mb-6 2xl:mb-10 4xl:mb-20">Who We Are</p>
         <ul>
           {aboutInfo.length > 0 ? (
             aboutInfo.map((item, index) => (
-              <li key={index} className="lg:flex gap-4 sm:py-8 lg:py-4 mb-8 lg:mb-0 xl:mb-12">
-                <div className="flex flex-col lg:flex-row gap-2">
+              <li key={index} className="lg:flex gap-4 md:py-4 lg:py-4 mb-8 lg:mb-0 xl:mb-12">
+                <div className="flex flex-col lg:flex-row gap-2 md:gap-6">
                   {/* 영문 텍스트 */}
-                  <h1 className="leading-tight font-semibold flex-1 lg:text-2xl xl:text-4xl text-xl">{item[0]}</h1>
+                  <h1 className="leading-tight font-semibold text-md flex-1 md:text-2xl lg:text-2xl lg:font-semibold lg:leading-tight xl:text-3xl xl:font-semibold 2xl:text-4xl 2xl:font-medium 3xl:text-5xl 3xl:leading-[1.2] 4xl:text-6xl 4xl:leading-[1.2]">{item[0]}</h1>
                   {/* 한글 텍스트 */}
-                  <p className="flex-[0.9] lg:ml-16 font-semibold text-xs leading-relaxed md:text-base lg:text-xs xl:text-lg lg:leading-relaxed">
+                  <p className="flex-[0.9] lg:ml-12 font-medium text-xs- leading-relaxed md:text-base md:leading-[1.75] lg:text-xs lg:leading-[1.7] xl:text-base xl:leading-[1.7] 2xl:text-[1.1rem] 2xl:leading-[1.8] 3xl:text-xl 3xl:leading-[1.85] 4xl:text-2xl 4xl:leading-[1.8] 4xl:ml-28">
                     {item[1]}
                   </p>
                 </div>
