@@ -24,7 +24,7 @@ export default function About() {
   return (
     <div className="flex items-center justify-center w-full h-full pt-10">
       <div>
-        <p className="text-xl md:text-3xl 2xl:text-4xl 2xl:font-medium 3xl:text-5xl 4xl:text-6xl font-semibold border-b-[2px] pb-1 md:pb-3 mb-8 mb-2 md:mb-3 xl:mb-6 2xl:mb-10 4xl:mb-20">Who We Are</p>
+        <p className="text-xl md:text-3xl 2xl:text-4xl 2xl:font-medium 3xl:text-5xl 4xl:text-6xl font-semibold border-b-[2px] md:pb-3 mb-4 xl:mb-6 2xl:mb-10 4xl:mb-20">Who We Are</p>
         <ul>
           {aboutInfo.length > 0 ? (
             aboutInfo.map((item, index) => (
