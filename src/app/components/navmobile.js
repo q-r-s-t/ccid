@@ -1,7 +1,6 @@
 "use client";
 
 import Header from "./header";
-import Link from "next/link";
 import { useState } from "react";
 
 export default function Navmobile({ textColor }) {
@@ -17,7 +16,7 @@ export default function Navmobile({ textColor }) {
   return (
     <div className="z-[700] fixed top-8 right-6">
       <button
-        className={`sm:hidden fixed z-[800] top-6 right-6 w-4 h-4 flex flex-col justify-between transition-all duration-300 transform ${
+        className={`lg:hidden fixed z-[800] top-6 right-6 w-4 h-4 flex flex-col justify-between transition-all duration-300 transform ${
           isOpen ? "h-4" : ""
         }`}
         onClick={toggleMenu}
@@ -40,7 +39,7 @@ export default function Navmobile({ textColor }) {
       </button>
 
       <ul
-        className={`sm:hidden text-left font-normal leading-normal text-2xl justify-center fixed top-0 left-0 pt-24 p-6 transition-all duration-300 transform 
+        className={`lg:hidden text-left font-normal leading-normal text-2xl justify-center fixed top-0 left-0 pt-24 p-6 transition-all duration-300 transform 
           transition duration-700 ease-in-out ${
             isOpen
               ? "opacity-100 bg-[rgba(0,0,0,0.5)] backdrop-blur w-full h-full"

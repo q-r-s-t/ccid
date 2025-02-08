@@ -35,7 +35,7 @@ export default function Header({
           coverSection.scrollIntoView({ behavior: "smooth" });
         }
       }}
-      className={`z-[700] fixed logo-container top-6 left-6 w-[40px] h-[30px] 4xl:w-24 4xl:h-8 md:left-10 m:hidden block ${
+      className={`z-[700] fixed logo-container top-6 left-6 w-[40px] h-[30px] 4xl:w-24 4xl:h-8 lg:left-10 m:hidden block ${
         className || ""
       }`}
     >

@@ -8,7 +8,7 @@ export default function Nav({ textColor }) {
   return (
     <div className="z-[500]">
       <ul
-        className={`z-[500] text-xl xl:text-2xl 4xl:text-[2rem] gap-12 4xl:gap-20 hidden font-normal sm:flex justify-center fixed top-0 pt-4 mx-auto w-screen transition-all duration-300 transform ${textColor}`}
+        className={`z-[500] text-xl xl:text-2xl 4xl:text-[2rem] gap-12 4xl:gap-20 hidden font-normal lg:flex justify-center fixed top-0 pt-4 mx-auto w-screen transition-all duration-300 transform ${textColor}`}
       >
         <li className="mx-5">
           <a
