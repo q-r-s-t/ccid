@@ -62,7 +62,7 @@ export default function Works() {
             <li key={index}>
               <div className="lg:flex mb-8 md:mb-12 lg:mb-16 4xl:mb-24">
                 {/* 제목 */}
-                <h1 className="md:w-[18rem] lg:w-[10rem] xl:w-1/5 md:text-xl lg:text-[1rem] lg:w-1/6 lg:font-semibold lg:leading-[1.3] xl:w-1/5 xl:text-2xl 3xl:text-[1.5rem] 3xl:w-1/6 3xl:leading-[1.3] 4xl:text-[2rem] 4xl:leading-[1.6] mb-2">{work[0]}</h1>
+                <h1 className="md:w-[18rem] md:pr-4 lg:w-[10rem] xl:w-1/5 md:text-xl lg:text-[1rem] lg:w-1/6 lg:font-semibold lg:leading-[1.3] xl:w-1/5 xl:text-2xl 3xl:text-[1.5rem] 3xl:w-1/6 3xl:leading-[1.3] 4xl:text-[2rem] 4xl:leading-[1.6] mb-2">{work[0]}</h1>
                 {/* 목록 */}
                 <ol className="flex-1 leading-snug text-xs- md:text-sm lg:text-[0.8rem] lg:font-medium lg:leading-relaxed xl:text-[1rem] 3xl:text-[1.25rem] 2xl:ml-4 4xl:text-2xl 4xl:leading-[1.8] 4xl:pl-8 font-medium list-disc lg:list-none ml-4 lg:ml-0">
                   {work.slice(1).map((item, idx) => (

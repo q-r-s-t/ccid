@@ -163,7 +163,7 @@ export default function Members() {
   const otherCategories = categories.slice(1); // 나머지 키들
 
   return (
-    <div className="pt-8 xl:pt-0">
+    <div className="pt-16 xl:pt-0">
       {firstCategory && (
       <div className='mb-20 4xl:mb-28'>
         <h1 className="text-xl md:pt-0 md:text-2xl pb-8 md:pb-12 4xl:text-[2rem]">{firstCategory[0]}</h1>
@@ -180,7 +180,7 @@ export default function Members() {
               <div className="border-l pl-3">
                 <h3 className="pb-3 leading-none text-md lg:text-lg lg:leading-none">Career</h3>
                 <div className="text-sm+ lg:text-md">
-                  <pre className="whitespace-pre-wrap leading-snug font-medium font-pretendard">{member[4]}</pre>
+                  <pre className="whitespace-pre-wrap leading-[1.5] font-medium font-pretendard">{member[4]}</pre>
                 </div>
               </div>
             </div>
@@ -196,18 +196,18 @@ export default function Members() {
             {members.map((member, index) => (
               <li
                 key={index}
-                className="md:w-1/2 xl:w-1/3 mb-4 flex gap-2 3xl:gap-6 items-center xl:mb-2"
+                className="md:w-1/2 xl:w-1/3 mb-4 flex gap-2 3xl:gap-4 items-center xl:mb-2"
               >
                 <img
                   src={member[2]}
                   alt={`${member[1]} profile`}
-                  className="flex-shrink-0 mr-2 w-[70px] h-[70px] lg:w-[90px] lg:h-[90px] 4xl:w-[120px] 4xl:h-[120px] rounded-full object-cover object-top"
+                  className="flex-shrink-0 mr-2 w-[70px] h-[70px] lg:w-[90px] lg:h-[90px] 3xl:h-[100px] 3xl:w-[100px] 4xl:w-[120px] 4xl:h-[120px] rounded-full object-cover object-top"
                 />
-                <div className="flex flex-col justify-center pr-4 lg:pl-2">
-                  <h3 className="md:pt-3 md:text-md lg:text-lg lg:leading-relaxed 4xl:text-[1.6rem]">{member[1]}</h3>
-                  <h2 className='text-xs mb-1 md:mb-2 lg:text-[1rem] lg:font-medium lg:leading-tight xl:text-[1rem] xl:leading-none leading-none 4xl:text-[1.4rem]'>{member[3]}</h2>
+                <div className="flex flex-col justify-center pt-2 pr-4 lg:pt-0 lg:pl-2">
+                  <h3 className="text-sm md:text-md lg:text-base+ lg:leading-relaxed xl:text-[1rem] 3xl:text-[1.1rem] 4xl:text-[1.6rem]">{member[1]}</h3>
+                  <h2 className='text-xs mb-2 md:mb-2 lg:text-[0.85rem] lg:font-medium lg:leading-tight xl:text-[0.9rem] 3xl:text-[1rem] xl:leading-none leading-none 4xl:text-[1.4rem]'>{member[3]}</h2>
                   <pre className="whitespace-pre-wrap font-medium
- pb-3 text-xs- leading-tight xl:text-md xl:leading-snug font-pretendard 4xl:text-[1rem]">{member[4]}</pre>
+ text-xs- leading-tight xl:text-md xl:leading-snug font-pretendard 4xl:text-[1rem]">{member[4]}</pre>
                 </div>
               </li>
             ))}
