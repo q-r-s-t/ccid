@@ -23,7 +23,6 @@ export default {
       fontFamily: {
         pretendard: ['Pretendard', 'sans-serif'],
         playwrite: ['Playwrite VN', 'sans-serif'], // Playwrite VN 추가
-
       },
     },
   },

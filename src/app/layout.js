@@ -1,4 +1,8 @@
 import "./globals.css";
+import { Playwrite_CU, Inter } from "next/font/google";
+
+const playwrite = Playwrite_CU({ subsets: ["latin"], weight: ["100", "200", "300", "400"] });
+const inter = Inter({ subsets: ["latin"], weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"] });
 
 export const metadata = {
   title: "QrST LAB",
@@ -23,8 +27,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="ko" className="scrollbar-hide">
       <body
-        className="scrollbar-hide antialiased scrollbar-hide"
-        style={{ fontFamily: "var(--font-inter)" }}
+        className={`${inter.className} scrollbar-hide antialiased`}
+       
       >
         {children}
       </body>
