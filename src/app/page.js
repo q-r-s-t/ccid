@@ -7,8 +7,9 @@ import Nav from "./components/nav";
 import Navmobile from "./components/navmobile";
 
 import Cover from "./components/cover";
-import Works from "./components/works";
 import About from "./components/about";
+import Keywords from "./components/keywords";
+import Works from "./components/works";
 import Members from "./components/members";
 import Contact from "./components/contact";
 
@@ -54,7 +55,7 @@ export default function Home() {
 
   return (
     <div className="scrollbar-hide">
-      <Header textColor={textColor}/>
+      <Header textColor={textColor} />
       <Nav textColor={textColor} />
       <Navmobile textColor={textColor} />
 
@@ -74,6 +75,12 @@ export default function Home() {
           className="w-screen h-[100dvh] snap-start md:pt-10 md:px-28 xl:px-52 4xl:px-[12%] px-6 content-center"
         >
           <About />
+        </section>
+        <section
+          id="keywords"
+          className="relative w-screen min-h-[100dvh] snap-start md:pt-10 4xl:px-[12%] px-6 content-center"
+        >
+          <Keywords />
         </section>
         <section
           id="works"

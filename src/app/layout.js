@@ -8,7 +8,7 @@ export const metadata = {
   title: "QrST LAB",
   description: "DESIGN CONVERGENCE COLLECTIVE QrST",
   keywords:
-    "cooperativeblue, graphic, web, development, designer, karts, design, 협조적블루, 장은아, 웹, 그래픽, 디자인, 디자이너, 한예종",
+    "qrst, karts, design, ai, lab, convergence",
   openGraph: {
     title: "QrST Lab",
     description: "DESIGN CONVERGENCE COLLECTIVE QrST",
