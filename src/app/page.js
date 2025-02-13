@@ -78,7 +78,7 @@ export default function Home() {
         </section>
         <section
           id="keywords"
-          className="relative w-screen min-h-[100dvh] snap-start md:pt-10 4xl:px-[12%] px-6 content-center"
+          className="relative w-screen min-h-[100dvh] snap-start pt-20 4xl:pt-[5%] px-6 content-center"
         >
           <Keywords />
         </section>

@@ -12,7 +12,7 @@ export default function About() {
           `${process.env.NODE_ENV === "production" ? "https://qrstlab.vercel.app" : ""}/api/sheets`
         );
         const data = await res.json();
-        setAboutInfo(data.about); // about 시트 데이터 저장
+        setAboutInfo(data.about); // about 시트 데이터 
       } catch (error) {
         console.error('Error fetching about data:', error);
       }
