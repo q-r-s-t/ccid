@@ -63,15 +63,15 @@ const keywords = [
 
 function KeywordItem({ id, title, description }) {
   return (
-    <li className="flex-0 hover:flex-2 flex group overflow-hidden transition-all duration-700 border-t-[1px] lg:border-t-[2px] py-2 lg:py-[0.8vh]">
+    <li className="flex-0 hover:flex-2 flex group overflow-hidden transition-all duration-700 border-t-[1px] lg:border-t-[2px] py-2 lg:py-[1.2vh]">
       <div className="flex-[0.15] lg:flex-[0.1] group-hover:text-[#90ff4b] font-[300] leading-none text-[6vw] lg:text-[4.5vw]">
         {id}
       </div>
       <div className="flex-1 lg:flex">
-        <h3 className="group-hover:mb-[2vh] lg:flex-[1.5] group-hover:text-[#90ff4b] font-[300] leading-none text-[6vw] lg:text-[4.5vw]">
+        <h3 className="group-hover:mb-[2vh] lg:flex-[2] group-hover:text-[#90ff4b] font-[300] leading-none text-[6vw] lg:text-[4.5vw]">
           {title}
         </h3>
-        <p className="lg:flex-1 font-[500] leading-[1.8] text-[3.3vw] lg:text-[1.2vw] lg:group-hover:h-[30vh] max-h-0 opacity-0 group-hover:max-h-[40vh] group-hover:opacity-100 transition-all duration-700">
+        <p className="lg:flex-1 font-[500] leading-[1.8] text-[3.3vw] lg:text-[1.2vw] lg:group-hover:h-[35vh] max-h-0 opacity-0 group-hover:max-h-[40vh] group-hover:opacity-100 transition-all duration-700">
           {description}
         </p>
       </div>
