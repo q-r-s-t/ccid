@@ -24,16 +24,18 @@ export default function About() {
   return (
     <div className="flex items-center justify-center w-full h-full pt-10">
       <div>
-        <p className="text-xl font-medium pb-1 mb-4 border-b-[1px] md:text-3xl 2xl:text-4xl 2xl:font-medium 3xl:text-5xl 4xl:text-6xl md:pb-3 mb-4 xl:mb-6 2xl:mb-10 4xl:mb-20">Who We Are</p>
+        <p className="font-[500] leading-tight text-[2vw] pb-1 mb-4 border-b-[1px] md:pb-3 mb-4 xl:mb-6 2xl:mb-10 4xl:mb-20">Who We Are</p>
         <ul>
           {aboutInfo.length > 0 ? (
             aboutInfo.map((item, index) => (
               <li key={index} className="lg:flex gap-4 md:py-4 lg:py-4 mb-8 lg:mb-0 xl:mb-12">
                 <div className="flex flex-col lg:flex-row gap-2 md:gap-6">
                   {/* 영문 텍스트 */}
-                  <h1 className="leading-[1.3] font-medium text-xl pb-1 flex-1 md:text-2xl lg:text-2xl lg:font-semibold lg:leading-tight xl:text-3xl xl:font-semibold 2xl:text-4xl 2xl:font-medium 3xl:text-4xl 3xl:leading-[1.2] 4xl:text-5xl 4xl:leading-[1.2]">{item[0]}</h1>
+                  <h1 className="flex-1 font-[500] leading-tight text-[2vw]">{item[0]}</h1>
+                  {/* <h1 className="leading-[1.3] font-medium text-xl pb-1 flex-1 md:text-2xl lg:text-2xl lg:font-semibold lg:leading-tight xl:text-3xl xl:font-semibold 2xl:text-4xl 2xl:font-medium 3xl:text-4xl 3xl:leading-[1.2] 4xl:text-5xl 4xl:leading-[1.2]">{item[0]}</h1> */}
                   {/* 한글 텍스트 */}
-                  <p className="flex-[0.9] lg:ml-12 font-medium text-xs leading-[1.8] md:text-sm+ md:leading-[1.9] lg:text-xs lg:leading-[1.9] xl:text-sm xl:leading-[1.8] 2xl:text-[1.1rem] 2xl:leading-[1.8] 3xl:text-xl 3xl:leading-[1.85] 4xl:text-2xl 4xl:leading-[1.8] 4xl:ml-28">
+                  <p className="flex-[0.9] font-[500] text-[0.9vw] leading-[1.8] lg:ml-12 4xl:ml-28">
+                  {/* <p className="flex-[0.9] lg:ml-12 font-medium text-xs leading-[1.8] md:text-sm+ md:leading-[1.9] lg:text-xs lg:leading-[1.9] xl:text-sm xl:leading-[1.8] 2xl:text-[1.1rem] 2xl:leading-[1.8] 3xl:text-xl 3xl:leading-[1.85] 4xl:text-2xl 4xl:leading-[1.8] 4xl:ml-28"> */}
                     {item[1]}
                   </p>
                 </div>
