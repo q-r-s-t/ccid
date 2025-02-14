@@ -134,24 +134,24 @@ export default function Members() {
   const otherCategories = categories.slice(1); // 나머지 키들
 
   return (
-    <div className="pt-16 xl:pt-0">
+    <div>
       {firstCategory && (
       <div className='mb-20 4xl:mb-28'>
-        <h1 className="text-xl md:pt-0 md:text-2xl pb-8 md:pb-12 4xl:text-[2rem]">{firstCategory[0]}</h1>
+        <h1 className="font-[600] leading-[1.8] text-[3.3vw] lg:text-[1.05vw] mb-[1vh]">{firstCategory[0]}</h1>
         {firstCategory[1].map((member, index) => (
           <div key={index} className="md:flex gap-8">
             <img
               src={member[2]}
               alt={`${member[1]} profile`}
-              className="w-[150px] h-[150px] md:w-[190px] md:h-[190px] xl:w-[200px] xl:h-[200px] 4xl:h-[230px] 4xl:w-[230px] rounded-full object-cover object-top md:mr-10 mb-4"
+              className="w-[150px] h-[150px] md:w-[190px] md:h-[190px] lg:w-[10vw] lg:h-[10vw] rounded-full object-cover object-top md:mr-10 mb-4"
             />
             <div className="text-sm md:flex-1 md:text-lg">
-              <h2 className="text-xl md:text-3xl md:font-semibold 4xl:text-[2rem] 4xl:leading-relaxed">{member[1]}</h2>
-              <p className="text-md font-semibold lg:text-xl mb-8 lg:mb-6 4xl:text-[1.6rem] 4xl:leading-tight">{member[3]}</p>
-              <div className="border-l pl-3">
-                <h3 className="pb-3 leading-none text-md lg:text-lg lg:leading-none">Career</h3>
-                <div className="text-sm+ lg:text-md">
-                  <pre className={`whitespace-pre-wrap leading-[1.5] font-medium ${inter.className}`}>{member[4]}</pre>
+              <h2 className="font-[500] leading-[1.5] text-[5vw] lg:text-[1.4vw]">{member[1]}</h2>
+              <p className="font-[500] leading-[1.5] text-[3.2vw] lg:text-[0.9vw]">{member[3]}</p>
+              <div className="border-l mt-6 lg:mt-4 pl-3">
+                <h3 className="pb-3 font-[700] leading-[1.3] text-[3vw] lg:text-[0.8vw]">Career</h3>
+                <div className="font-[500] leading-[1.5] text-[3vw] lg:text-[0.7vw]">
+                  <pre className={`whitespace-pre-wrap ${inter.className}`}>{member[4]}</pre>
                 </div>
               </div>
             </div>
@@ -162,23 +162,22 @@ export default function Members() {
 
       {otherCategories.map(([category, members]) => (
         <div key={category} className="mb-12 md:mb-20">
-          <h1 className="text-xl mb-4 md:text-2xl 4xl:text-[2rem] 4xl:mb-8">{category}</h1>
+          <h1 className="font-[600] leading-[1.8] text-[3.3vw] lg:text-[1.05vw] mb-[1vh]">{category}</h1>
           <ul className="text-sm md:flex flex-wrap">
             {members.map((member, index) => (
               <li
                 key={index}
-                className="md:w-1/2 xl:w-1/3 mb-4 flex gap-2 3xl:gap-4 items-center xl:mb-2"
+                className="pb-[1.5vh] md:w-1/2 xl:w-1/3 flex gap-2 3xl:gap-4 items-center"
               >
                 <img
                   src={member[2]}
                   alt={`${member[1]} profile`}
-                  className="flex-shrink-0 mr-2 w-[70px] h-[70px] lg:w-[90px] lg:h-[90px] 3xl:h-[100px] 3xl:w-[100px] 4xl:w-[120px] 4xl:h-[120px] rounded-full object-cover object-top"
+                  className="flex-shrink-0 mr-2 w-[70px] h-[70px] lg:w-[4vw] lg:h-[4vw] rounded-full object-cover object-top"
                 />
-                <div className="flex flex-col justify-center pt-2 pr-4 lg:pt-0 lg:pl-2">
-                  <h3 className="text-sm md:text-md lg:text-base+ lg:leading-relaxed xl:text-[1rem] 3xl:text-[1.1rem] 4xl:text-[1.6rem]">{member[1]}</h3>
-                  <h2 className='text-xs mb-2 md:mb-2 lg:text-[0.85rem] lg:font-medium lg:leading-tight xl:text-[0.9rem] 3xl:text-[1rem] xl:leading-none leading-none 4xl:text-[1.4rem]'>{member[3]}</h2>
-                  <pre className={`whitespace-pre-wrap font-medium
- text-xs- leading-tight xl:text-md xl:leading-snug 4xl:text-[1rem] ${inter.className}`}>{member[4]}</pre>
+                <div className="flex flex-col justify-center pr-4 lg:pt-0 lg:pl-2">
+                  <h3 className="font-[600] leading-none text-[2.8vw] lg:text-[0.8vw]">{member[1]}</h3>
+                  <h2 className="font-[600] leading-[1.5] text-[2.6vw] lg:text-[0.7vw] mb-1">{member[3]}</h2>
+                  <pre className={`whitespace-pre-wrap font-[400] leading-tight text-[1.8vw] lg:text-[0.5vw] ${inter.className}`}>{member[4]}</pre>
                 </div>
               </li>
             ))}
