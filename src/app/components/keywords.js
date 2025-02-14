@@ -63,15 +63,15 @@ const keywords = [
 
 function KeywordItem({ id, title, description }) {
   return (
-    <li className="flex group overflow-hidden transition-all duration-400 border-t-[1px]">
-      <span className="pr-4 lg:pr-12 lg:text-[2.5rem] lg:text-[2.5rem] lg:py-4 group-hover:text-[#90ff4b] 2xl:text-[4rem] 2xl:font-[300] 4xl:text-[7rem] 2xl:leading-none text-2xl py-1 font-normal">
+    <li className="flex-0 hover:flex-2 flex group overflow-hidden transition-all duration-700 border-t-[1px] lg:border-t-[2px] py-2 lg:py-[0.8vh]">
+      <div className="flex-[0.15] lg:flex-[0.1] group-hover:text-[#90ff4b] font-[300] leading-none text-[6vw] lg:text-[4.5vw]">
         {id}
-      </span>
-      <div className="lg:flex">
-        <h3 className="inline-block 2xl:w-1/2 lg:flex-[1.5] lg:text-[2.5rem] lg:py-4 group-hover:text-[#90ff4b] 2xl:text-[4rem] 2xl:font-[300] 2xl:leading-none 4xl:text-[7rem] text-2xl py-1 font-normal">
+      </div>
+      <div className="flex-1 lg:flex">
+        <h3 className="group-hover:mb-[2vh] lg:flex-[1.5] group-hover:text-[#90ff4b] font-[300] leading-none text-[6vw] lg:text-[4.5vw]">
           {title}
         </h3>
-        <p className="4xl:text-[2rem] lg:flex-1 lg:text-xl lg:group-hover:pb-4 lg:leading-[1.5] xl:text-2xl xl:leading-[1.6] xl:group-hover:pb-52 group-hover:pt-4 group-hover:pb-2 max-h-0 opacity-0 group-hover:max-h-[50rem] group-hover:opacity-100 transition-all duration-700 font-medium text-sm leading-[1.6]">
+        <p className="lg:flex-1 font-[500] leading-[1.8] text-[3.3vw] lg:text-[1.2vw] lg:group-hover:h-[30vh] max-h-0 opacity-0 group-hover:max-h-[40vh] group-hover:opacity-100 transition-all duration-700">
           {description}
         </p>
       </div>
@@ -81,7 +81,7 @@ function KeywordItem({ id, title, description }) {
 
 export default function Keywords() {
   return (
-    <ul className="w-full h-full border-b-[1px]">
+    <ul className="w-full h-full border-b-[1px] lg:border-b-[2px] flex flex-col">
       {keywords.map((keyword) => (
         <KeywordItem key={keyword.id} {...keyword} />
       ))}
