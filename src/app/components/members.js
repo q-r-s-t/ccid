@@ -136,7 +136,7 @@ export default function Members() {
   return (
     <div>
       {firstCategory && (
-      <div className='mb-20 4xl:mb-28'>
+      <div className='mb-20 lg:mb-[7vh]'>
         <h1 className="font-[600] leading-[1.8] text-[3.3vw] lg:text-[1.05vw] mb-[1.5vh]">{firstCategory[0]}</h1>
         {firstCategory[1].map((member, index) => (
           <div key={index} className="md:flex gap-8 lg:gap-6 xl:gap-[3vw]">
@@ -148,7 +148,7 @@ export default function Members() {
             <div className="md:flex-1">
               <h2 className="font-[500] leading-[1.5] text-[5vw] md:text-[3.3vw] lg:text-[1.4vw]">{member[1]}</h2>
               <p className="font-[500] leading-[1.5] text-[3.2vw] md:text-[2.1vw] lg:text-[0.9vw]">{member[3]}</p>
-              <div className="border-l mt-6 md:mt-4 pl-3">
+              <div className="border-l mt-6 md:mt-4 pl-3 lg:pl-[0.5vw]">
                 <h3 className="pb-3 md:pb-2 font-[700] leading-[1.3] text-[3vw] md:text-[2vw] lg:text-[0.8vw]">Career</h3>
                 <div className="font-[500] leading-[1.5] text-[3vw] md:text-[1.8vw] lg:text-[0.7vw]">
                   <pre className={`whitespace-pre-wrap ${inter.className}`}>{member[4]}</pre>
@@ -172,7 +172,7 @@ export default function Members() {
                 <img
                   src={member[2]}
                   alt={`${member[1]} profile`}
-                  className="flex-shrink-0 mr-2 w-[70px] h-[70px] lg:w-[6vw] lg:h-[6vw] rounded-full object-cover object-top"
+                  className="flex-shrink-0 mr-2 w-[70px] h-[70px] lg:w-[6vw] lg:h-[6vw] 2xl:w-[5vw] 2xl:h-[5vw] rounded-full object-cover object-top"
                 />
                 <div className="flex flex-col justify-center pr-4 lg:pt-0 lg:pl-2">
                   <h3 className="font-[600] leading-none text-[2.8vw] md:text-[2vw] lg:text-[1vw]">{member[1]}</h3>
