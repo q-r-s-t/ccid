@@ -175,9 +175,9 @@ export default function Members() {
                   className="flex-shrink-0 mr-2 w-[70px] h-[70px] lg:w-[6vw] lg:h-[6vw] 2xl:w-[5vw] 2xl:h-[5vw] rounded-full object-cover object-top"
                 />
                 <div className="flex flex-col justify-center pr-4 lg:pt-0 lg:pl-2">
-                  <h3 className="font-[600] leading-none text-[2.8vw] md:text-[2vw] lg:text-[1vw]">{member[1]}</h3>
-                  <h2 className="font-[600] leading-[1.5] text-[2.6vw] md:text-[1.8vw] lg:text-[0.9vw] mb-1">{member[3]}</h2>
-                  <pre className={`whitespace-pre-wrap font-[400] leading-tight text-[1.8vw] md:text-[1.4vw] lg:text-[0.7vw] ${inter.className}`}>{member[4]}</pre>
+                  <h3 className="font-[600] leading-none text-[2.8vw] md:text-[2vw] lg:text-[1vw] mb-2 xl:mb-[0.4vh]">{member[1]}</h3>
+                  <h2 className="font-[600] leading-none text-[2.6vw] md:text-[1.8vw] lg:text-[0.9vw]">{member[3]}</h2>
+                  <pre className={`whitespace-pre-wrap font-[400] leading-tight text-[1.8vw] md:text-[1.4vw] lg:text-[0.6vw] mt-2 xl:mt-[0.5vh] ${inter.className}`}>{member[4]}</pre>
                 </div>
               </li>
             ))}
