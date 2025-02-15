@@ -15,7 +15,7 @@ export default function Cover() {
 
   return (
     <div className="flex flex-col justify-center items-center h-full w-full px-6 lg:px-10">
-      <div className="relative block xl:hidden w-full h-full">
+      <div className="relative block lg:hidden w-full h-full">
         <Image
           src="/img/home_whole.svg"
           alt="Design Convergence Collective QrST"
@@ -27,7 +27,7 @@ export default function Cover() {
       {/* 대형 좌우 이미지 2개로 */}
       <div
         id="covertype_l"
-        className={`hidden xl:block relative w-full h-[10%] xl:h-[25%] max-h-[30%] transform transition-opacity duration-1000 ${
+        className={`hidden lg:block relative w-full h-[10%] lg:h-[25%] max-h-[30%] transform transition-opacity duration-1000 ${
           isVisible ? "opacity-100" : "opacity-0"
         }`}
         style={{ marginBottom: `${height}px` }} // 계산된 값으로 margin-bottom 설정
@@ -42,7 +42,7 @@ export default function Cover() {
       </div>
 
       <div
-        className={`hidden xl:block relative w-full h-[10%] xl:h-[25%] max-h-[30%] transform transition-opacity duration-1000 delay-500 ${
+        className={`hidden lg:block relative w-full h-[10%] lg:h-[25%] max-h-[30%] transform transition-opacity duration-1000 delay-500 ${
           isVisible ? "opacity-100" : "opacity-0"
         }`}
       >
