@@ -84,7 +84,7 @@ export default function Home() {
         </section>
         <section
           id="works"
-          className="w-screen min-h-[100dvh] snap-start md:px-28 xl:pl-52 xl:pr-44 px-6 4xl:px-[12%] content-center"
+          className="w-screen min-h-[100dvh] snap-start px-6 lg:px-28 xl:pl-52 xl:pr-44 4xl:px-[12%] content-center"
         >
           <Works />
         </section>
@@ -99,7 +99,7 @@ export default function Home() {
           className="relative w-screen h-screen snap-end md:p-28 xl:p-40 p-6 content-center"
         >
           <Contact />
-          <footer className="absolute bottom-0 left-0 w-full h-auto text-center p-4 md:p-8 font-[600] leading-[1.5] text-[2.6vw] lg:text-[0.7vw]">
+          <footer className="absolute bottom-0 left-0 w-full h-auto text-center p-4 md:p-8 font-[600] leading-[1.5] text-[2.6vw] md:text-[1.8vw] lg:text-[0.9vw]">
             © 2025 QrST Lab. All rights reserved.
           </footer>
         </section>

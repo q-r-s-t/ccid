@@ -137,20 +137,20 @@ export default function Members() {
     <div>
       {firstCategory && (
       <div className='mb-20 4xl:mb-28'>
-        <h1 className="font-[600] leading-[1.8] text-[3.3vw] lg:text-[1.05vw] mb-[1vh]">{firstCategory[0]}</h1>
+        <h1 className="font-[600] leading-[1.8] text-[3.3vw] lg:text-[1.05vw] mb-[1.5vh]">{firstCategory[0]}</h1>
         {firstCategory[1].map((member, index) => (
-          <div key={index} className="md:flex gap-8">
+          <div key={index} className="md:flex gap-8 lg:gap-6">
             <img
               src={member[2]}
               alt={`${member[1]} profile`}
-              className="w-[150px] h-[150px] md:w-[190px] md:h-[190px] lg:w-[10vw] lg:h-[10vw] rounded-full object-cover object-top md:mr-10 mb-4"
+              className="w-[150px] h-[150px] md:w-[190px] md:h-[190px] lg:w-[10vw] lg:h-[10vw] rounded-full object-cover object-top"
             />
-            <div className="text-sm md:flex-1 md:text-lg">
-              <h2 className="font-[500] leading-[1.5] text-[5vw] lg:text-[1.4vw]">{member[1]}</h2>
-              <p className="font-[500] leading-[1.5] text-[3.2vw] lg:text-[0.9vw]">{member[3]}</p>
-              <div className="border-l mt-6 lg:mt-4 pl-3">
-                <h3 className="pb-3 font-[700] leading-[1.3] text-[3vw] lg:text-[0.8vw]">Career</h3>
-                <div className="font-[500] leading-[1.5] text-[3vw] lg:text-[0.7vw]">
+            <div className="md:flex-1">
+              <h2 className="font-[500] leading-[1.5] text-[5vw] md:text-[3.3vw] lg:text-[1.4vw]">{member[1]}</h2>
+              <p className="font-[500] leading-[1.5] text-[3.2vw] md:text-[2.1vw] lg:text-[0.9vw]">{member[3]}</p>
+              <div className="border-l mt-6 md:mt-4 pl-3">
+                <h3 className="pb-3 md:pb-2 font-[700] leading-[1.3] text-[3vw] md:text-[2vw] lg:text-[0.8vw]">Career</h3>
+                <div className="font-[500] leading-[1.5] text-[3vw] md:text-[1.8vw] lg:text-[0.7vw]">
                   <pre className={`whitespace-pre-wrap ${inter.className}`}>{member[4]}</pre>
                 </div>
               </div>
@@ -161,23 +161,23 @@ export default function Members() {
       )}
 
       {otherCategories.map(([category, members]) => (
-        <div key={category} className="mb-12 md:mb-20">
-          <h1 className="font-[600] leading-[1.8] text-[3.3vw] lg:text-[1.05vw] mb-[1vh]">{category}</h1>
-          <ul className="text-sm md:flex flex-wrap">
+        <div key={category} className="mb-12 md:mb-20 lg:mb-[5vh]">
+          <h1 className="font-[600] leading-[1.8] text-[3.3vw] lg:text-[1.05vw] mb-[2vh]">{category}</h1>
+          <ul className="md:flex flex-wrap">
             {members.map((member, index) => (
               <li
                 key={index}
-                className="pb-[1.5vh] md:w-1/2 xl:w-1/3 flex gap-2 3xl:gap-4 items-center"
+                className="pb-[1.5vh] md:w-1/2 lg:w-1/3 flex gap-2 3xl:gap-4 items-center"
               >
                 <img
                   src={member[2]}
                   alt={`${member[1]} profile`}
-                  className="flex-shrink-0 mr-2 w-[70px] h-[70px] lg:w-[4vw] lg:h-[4vw] rounded-full object-cover object-top"
+                  className="flex-shrink-0 mr-2 w-[70px] h-[70px] lg:w-[6vw] lg:h-[6vw] rounded-full object-cover object-top"
                 />
                 <div className="flex flex-col justify-center pr-4 lg:pt-0 lg:pl-2">
-                  <h3 className="font-[600] leading-none text-[2.8vw] lg:text-[0.8vw]">{member[1]}</h3>
-                  <h2 className="font-[600] leading-[1.5] text-[2.6vw] lg:text-[0.7vw] mb-1">{member[3]}</h2>
-                  <pre className={`whitespace-pre-wrap font-[400] leading-tight text-[1.8vw] lg:text-[0.5vw] ${inter.className}`}>{member[4]}</pre>
+                  <h3 className="font-[600] leading-none text-[2.8vw] md:text-[2vw] lg:text-[1vw]">{member[1]}</h3>
+                  <h2 className="font-[600] leading-[1.5] text-[2.6vw] md:text-[1.8vw] lg:text-[0.9vw] mb-1">{member[3]}</h2>
+                  <pre className={`whitespace-pre-wrap font-[400] leading-tight text-[1.8vw] md:text-[1.4vw] lg:text-[0.7vw] ${inter.className}`}>{member[4]}</pre>
                 </div>
               </li>
             ))}
