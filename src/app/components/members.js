@@ -139,7 +139,7 @@ export default function Members() {
       <div className='mb-20 4xl:mb-28'>
         <h1 className="font-[600] leading-[1.8] text-[3.3vw] lg:text-[1.05vw] mb-[1.5vh]">{firstCategory[0]}</h1>
         {firstCategory[1].map((member, index) => (
-          <div key={index} className="md:flex gap-8 lg:gap-6">
+          <div key={index} className="md:flex gap-8 lg:gap-6 xl:gap-[3vw]">
             <img
               src={member[2]}
               alt={`${member[1]} profile`}
