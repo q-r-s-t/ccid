@@ -38,7 +38,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="ko" className="scrollbar-hide">
-      <body className={`${inter.className} scrollbar-hide antialiased`}>
+      <body className={`scrollbar-hide antialiased`}>
         {children}
       </body>
     </html>

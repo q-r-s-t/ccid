@@ -7,7 +7,7 @@
   --background: #0f0f13;
   --foreground: #fff;
   --font-pretendard: "Pretendard", sans-serif;
-  // --font-inter: "Inter", sans-serif;
+  --font-inter: "Inter", sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,13 +17,21 @@
   }
 }
 
-// @font-face {
-//   font-family: "Inter";
-//   src: url("/fonts/Inter-VariableFont_opsz,wght.ttf") format("truetype");
-//   font-weight: 100 900; /* Weight range */
-//   font-style: normal;
-//   font-variation-settings: "opsz" 12, "wght" 700; /* Example for optical size and weight */
-// }
+@font-face {
+  font-family: 'TinyGothic';
+  src: url('/fonts/TinyGothicLightTrial.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'VTFvictoriannaThin';
+  src: url('/fonts/VTFvictoriannathin.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
 @font-face {
   font-family: "Pretendard";
@@ -40,9 +48,11 @@ html {
   scroll-behavior: smooth;
 }
 
+
 body {
   color: var(--foreground);
   background: var(--background);
+  // font-family: 'TinyGothic', sans-serif;
   font-family: var(--font-inter);
   font-weight: 700;
 }

@@ -21,6 +21,8 @@ export default {
         'base+': '0.9375rem', // 15px (sm와 base 사이)
       },
       fontFamily: {
+        vtfvictorianna: ['VTFvictoriannaThin', 'sans-serif'],
+        tinygothic: ['TinyGothic', 'sans-serif'],
         pretendard: ['Pretendard', 'sans-serif'],
         playwrite: ['Playwrite VN', 'sans-serif'], // Playwrite VN 추가
       },

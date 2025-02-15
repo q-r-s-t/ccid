@@ -6,6 +6,7 @@
   --background: #0f0f13;
   --foreground: #fff;
   --font-pretendard: "Pretendard", sans-serif;
+  --font-inter: "Inter", sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -13,6 +14,20 @@
     --background: #0f0f13;
     --foreground: #ededed;
   }
+}
+@font-face {
+  font-family: "TinyGothic";
+  src: url("/fonts/TinyGothicLightTrial.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "VTFvictoriannaThin";
+  src: url("/fonts/VTFvictoriannathin.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "Pretendard";

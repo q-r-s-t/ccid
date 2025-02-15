@@ -7,6 +7,7 @@ import Nav from "./components/nav";
 import Navmobile from "./components/navmobile";
 
 import Cover from "./components/cover";
+import Aboutkeywords from "./components/about0215";
 import About from "./components/about";
 import Keywords from "./components/keywords";
 import Works from "./components/works";
@@ -17,9 +18,6 @@ export default function Home() {
   const [bgColor, setBgColor] = useState("bg-[#0f0f13]");
   const [textColor, setTextColor] = useState("text-white"); // 기본 글자색
   const [borderColor, setBorderColor] = useState("border-white"); // 기본 border
-
-  const [showIntro, setShowIntro] = useState(true);
-  const [isFading, setIsFading] = useState(false);
 
   useEffect(() => {
     const worksSection = document.querySelector("#works");
@@ -70,7 +68,13 @@ export default function Home() {
         >
           <Cover />
         </section>
-        <section
+
+        <section id="aboutkeywords" className="relative w-screen min-h-[100dvh] snap-start pt-20 4xl:pt-[5%] px-6 lg:px-10 content-center">
+          <Aboutkeywords />
+          <Keywords />
+        </section>
+
+        {/* <section
           id="about"
           className="w-screen h-[100dvh] snap-start md:pt-10 px-6 md:px-28 xl:px-52 4xl:px-[12%]  content-center"
         >
@@ -81,7 +85,8 @@ export default function Home() {
           className="relative w-screen min-h-[100dvh] snap-start pt-20 4xl:pt-[5%] px-6 lg:px-10 content-center"
         >
           <Keywords />
-        </section>
+        </section>  */}
+
         <section
           id="works"
           className="w-screen min-h-[100dvh] snap-start px-6 lg:px-28 xl:pl-52 xl:pr-44 4xl:px-[12%] content-center"
