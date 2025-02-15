@@ -1,5 +1,4 @@
 "use client"
-
 import { useEffect, useState } from 'react';
 
 export default function About() {
@@ -24,7 +23,7 @@ export default function About() {
   return (
     <div className="flex items-center justify-center w-full h-full pt-10">
       <div>
-        <p className="font-[500] leading-tight text-[5vw] sm:text-[4vw] lg:text-[2vw] pb-1 mb-[3vh] border-b-[1px] md:pb-3 mb-4 xl:mb-6 2xl:mb-10 4xl:mb-20">Who We Are</p>
+        <p className="font-[500] leading-tight text-[5vw] sm:text-[4vw] lg:text-[2vw] mb-[3vh] border-b-[1px] pb-1 md:pb-3 mb-4 xl:mb-6 2xl:mb-10 4xl:mb-20">Who We Are</p>
         <ul>
           {aboutInfo.length > 0 ? (
             aboutInfo.map((item, index) => (

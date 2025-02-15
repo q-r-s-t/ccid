@@ -72,7 +72,7 @@ export default function Home() {
         </section>
         <section
           id="about"
-          className="w-screen h-[100dvh] snap-start md:pt-10 md:px-28 xl:px-52 4xl:px-[12%] px-6 content-center"
+          className="w-screen h-[100dvh] snap-start md:pt-10 px-6 md:px-28 xl:px-52 4xl:px-[12%]  content-center"
         >
           <About />
         </section>
