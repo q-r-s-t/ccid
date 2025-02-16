@@ -29,7 +29,7 @@ export default function Home() {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setBgColor("rgba(15, 15, 19, 0)"); // Works 섹션 배경색
+          setBgColor("#90ff4b"); // Works 섹션 배경색
           setTextColor("#374151"); // Works 섹션 글자색
           setBorderColor("#374151");
         } else {
@@ -74,9 +74,7 @@ export default function Home() {
     <div
       className="scrollbar-hide"
       onMouseMove={handleMouseMove}
-      style={{
-        background: `linear-gradient(${angle}deg, #90ff4b 15%, #8adcc7 60%, #d2d5da 90%)`,
-      }}
+      // style={{background: `linear-gradient(${angle}deg, #90ff4b 15%, #8adcc7 60%, #d2d5da 90%)`,}}
     >
       <Header textColor={textColor} />
       <Nav textColor={textColor} />
@@ -98,7 +96,7 @@ export default function Home() {
           <Cover />
         </section>
         <section
-          id="aboutkeywords"
+          id="about"
           className="relative w-screen min-h-[100dvh] snap-start pt-20 4xl:pt-[5%] px-6 lg:px-10 content-center"
         >
           <Aboutkeywords />
@@ -127,7 +125,7 @@ export default function Home() {
         </section>
         <section
           id="members"
-          className="w-screen snap-start md:p-28 xl:pl-52 xl:pr-44 pt-20 4xl:pt-[5%] p-6 4xl:px-[12%]"
+          className="w-screen snap-start md:p-28 pt-20 4xl:pt-[5%] p-6 lg:px-[12%]"
         >
           <Members />
         </section>
