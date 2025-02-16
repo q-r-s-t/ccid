@@ -63,7 +63,7 @@ const keywords = [
 
 function KeywordItem({ id, title, description }) {
   return (
-    <li className="hover:bg-[linear-gradient(to_top,#27512e,#0CB30000_35%)] flex group overflow-hidden transition-all duration-700 border-b-[1px] lg:border-b-[2px] hover:border-b-0 py-2 lg:py-[0.9vh]">
+    <li className="hover:bg-gradient-to-t hover:from-[rgba(12,179,0,0.2)] hover:to-[rgba(12,179,0,0)] flex group overflow-hidden transition-all duration-700 border-b-[1px] lg:border-b-[2px] hover:border-b-0 py-2 lg:py-[0.9vh]">
       <div className="w-[50%] group-hover:w-[15%] group-hover:text-[#90ff4b] font-[300] leading-none text-[6vw] lg:text-[2.5vw]">
         {id}
       </div>

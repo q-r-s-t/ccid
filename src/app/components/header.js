@@ -46,7 +46,9 @@ export default function Header({
         height={60}
         priority
         style={{ objectFit: "contain" }}
-        className={`filter transition-all duration-300 absolute top-0 left-0 ${isInWorksSection ? "invert" : ""}`}
+        className={`filter transition-all duration-300 absolute top-0 left-0`}
+
+        // className={`filter transition-all duration-300 absolute top-0 left-0 ${isInWorksSection ? "invert" : ""}`}
       />
        {/* <svg
         xmlns="http://www.w3.org/2000/svg"
