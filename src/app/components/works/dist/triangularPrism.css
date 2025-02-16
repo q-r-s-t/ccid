@@ -28,7 +28,7 @@
 
 .triangle-face-front {
   background: black;
-  color: white;
+  color: #90ff4b;
   -webkit-transform: translate3d(0, 0, var(--translationDistance));
   transform: translate3d(0, 0, var(--translationDistance));
 }

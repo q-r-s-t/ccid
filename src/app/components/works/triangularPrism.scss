@@ -36,7 +36,8 @@
 
 .triangle-face-front {
   background: rgb(0, 0, 0);
-  color: rgb(255,255,255);
+  // background: rgb(144, 255, 75);
+  color: rgb(144, 255, 75);
   // background: url('https://picsum.photos/id/133/200/200');
   -webkit-transform: translate3d(0, 0, var(--translationDistance));
           transform: translate3d(0, 0, var(--translationDistance));
