@@ -79,7 +79,7 @@ function KeywordItem({ id, title, description }) {
 
 export default function Keywords() {
   return (
-    <ul className="w-full h-full border-t-[1px] lg:border-t-[2px] flex flex-col">
+    <ul className="w-full h-full border-t-[1px] lg:border-t-[2px] pb-[20%] flex flex-col">
       {keywords.map((keyword) => (
         <KeywordItem key={keyword.id} {...keyword} />
       ))}

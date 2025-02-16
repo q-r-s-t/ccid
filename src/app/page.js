@@ -15,26 +15,29 @@ import Members from "./components/members";
 import Contact from "./components/contact";
 
 export default function Home() {
-  const [bgColor, setBgColor] = useState("bg-[#0f0f13]");
-  const [textColor, setTextColor] = useState("text-white"); // 기본 글자색
-  const [borderColor, setBorderColor] = useState("border-white"); // 기본 border
+  const [bgColor, setBgColor] = useState("#0f0f13");
+  const [textColor, setTextColor] = useState("#ffffff"); // 기본 글자색
+  const [borderColor, setBorderColor] = useState("#ffffff"); // 기본 border
+  const [angle, setAngle] = useState(25);
+  const [lastPosition, setLastPosition] = useState({ x: 0, y: 0 });
+
+
 
   useEffect(() => {
     const worksSection = document.querySelector("#works");
-
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setBgColor("bg-gray-300"); // Works 섹션 배경색
-          setTextColor("text-gray-700"); // Works 섹션 글자색
-          setBorderColor("border-gray-700");
+          setBgColor("rgba(15, 15, 19, 0)"); // Works 섹션 배경색
+          setTextColor("#374151"); // Works 섹션 글자색
+          setBorderColor("#374151");
         } else {
-          setBgColor("bg-[#0f0f13]"); // 기본 배경색
-          setTextColor("text-white"); // 기본 글자색
-          setBorderColor("border-white");
+          setBgColor("#0f0f13"); // 기본 배경색
+          setTextColor("#ffffff"); // 기본 글자색
+          setBorderColor("#ffffff");
         }
       },
-      { threshold: 0.1 } // Works 섹션 15% 보이면 작동
+      { threshold: 0.1 } // Works 섹션 10% 보이면 작동
     );
 
     if (worksSection) observer.observe(worksSection);
@@ -51,16 +54,41 @@ export default function Home() {
     }, 1000); // Tailwind duration과 동일하게 설정 (1초)
   };
 
+  const handleMouseMove = (e) => {
+    const x = e.clientX;
+    const y = e.clientY;
+
+    // 마우스 이동 차이 계산
+    const deltaX = x - lastPosition.x;
+    const deltaY = y - lastPosition.y;
+
+    // 각도 변화율 적용 (적당히 낮은 비율로 천천히 변화)
+    const newAngle = angle + (deltaX + deltaY) * 0.2; // 비율을 줄여서 부드럽게
+
+    setAngle(newAngle);
+    setLastPosition({ x, y });
+  };
+
   return (
-    <div className="scrollbar-hide">
+    <div
+      className="scrollbar-hide"
+      onMouseMove={handleMouseMove}
+      style={{
+        background: `linear-gradient(${angle}deg, #90ff4b 15%, #8adcc7 60%, #d2d5da 90%)`,
+      }}
+    >
       <Header textColor={textColor} />
       <Nav textColor={textColor} />
       <Navmobile textColor={textColor} />
 
-      {/* showintro comp */}
-
       <main
-        className={`h-[100dvh] w-screen overflow-y-scroll snap-y snap-mandatory transition-colors duration-1000 ${bgColor} ${textColor} ${borderColor}`}
+        style={{
+          background: bgColor, // linear-gradient 포함해서 그냥 배경으로!
+          color: textColor,
+          borderColor: borderColor,
+          transition: "background-color 1s ease-in-out",
+        }}
+        className={`h-[100dvh] w-screen overflow-y-scroll snap-y snap-mandatory`}
       >
         <section
           id="cover"
@@ -68,8 +96,10 @@ export default function Home() {
         >
           <Cover />
         </section>
-
-        <section id="aboutkeywords" className="relative w-screen min-h-[100dvh] snap-start pt-20 4xl:pt-[5%] px-6 lg:px-10 content-center">
+        <section
+          id="aboutkeywords"
+          className="relative w-screen min-h-[100dvh] snap-start pt-20 4xl:pt-[5%] px-6 lg:px-10 content-center"
+        >
           <Aboutkeywords />
           <Keywords />
         </section>
@@ -89,7 +119,7 @@ export default function Home() {
 
         <section
           id="works"
-          className="w-screen min-h-[100dvh] snap-start px-6 lg:px-28 xl:pl-52 xl:pr-44 4xl:px-[12%] content-center"
+          className={`transition-all duration-1000 w-screen min-h-[100dvh] snap-start px-6 lg:px-28 xl:pl-52 xl:pr-44 4xl:px-[12%] content-center `}
         >
           <Works />
         </section>
