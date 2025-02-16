@@ -10,7 +10,8 @@ import Cover from "./components/cover";
 import Aboutkeywords from "./components/about0215";
 import About from "./components/about";
 import Keywords from "./components/keywords";
-import Works from "./components/works";
+import Works from "./components/works/works";
+import WorksMotion from "./components/works/worksmotion";
 import Members from "./components/members";
 import Contact from "./components/contact";
 
@@ -121,7 +122,8 @@ export default function Home() {
           id="works"
           className={`transition-all duration-1000 w-screen min-h-[100dvh] snap-start px-6 lg:px-28 xl:pl-52 xl:pr-44 4xl:px-[12%] content-center `}
         >
-          <Works />
+          {/* <Works /> */}
+          <WorksMotion />
         </section>
         <section
           id="members"

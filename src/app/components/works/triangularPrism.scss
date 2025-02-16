@@ -1,0 +1,95 @@
+:root {
+  --cotetriangle: 600px;
+  --translationDistance: 173px;
+}
+
+.scene {
+  position: relative;
+  width: var(--cotetriangle);
+  grid-row: 2/3;
+  grid-column: 2/3;
+  // 투시제거
+  // -webkit-perspective: 500px;
+  //         perspective: 500px;
+}
+
+.triangle {
+  width: inherit;
+  height: inherit;
+  position: relative;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-animation: rotateTriangle 10s linear infinite;
+          animation: rotateTriangle 10s linear infinite;
+  
+}
+
+.triangle-face {
+  width: inherit;
+  height: inherit;
+  position: absolute;
+  // background: red;
+  // border: solid white 2px;
+}
+
+.triangle-face-front {
+  background: rgb(138, 220, 200);
+  // background: url('https://picsum.photos/id/133/200/200');
+  -webkit-transform: translate3d(0, 0, var(--translationDistance));
+          transform: translate3d(0, 0, var(--translationDistance));
+}
+
+.triangle-face-left {
+  background: rgb(90, 233, 77);
+  // background: url('https://picsum.photos/id/677/200/200');
+  -webkit-transform: rotateY(-120deg) translate3d(0, 0, var(--translationDistance));
+          transform: rotateY(-120deg) translate3d(0, 0, var(--translationDistance));
+}
+
+.triangle-face-right {
+  background: rgb(230, 233, 220);
+  // background: url('https://picsum.photos/id/600/200/200');
+  -webkit-transform: rotateY(120deg) translate3d(0, 0, var(--translationDistance));
+          transform: rotateY(120deg) translate3d(0, 0, var(--translationDistance));
+}
+
+
+@-webkit-keyframes rotateTriangle {
+  0% {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+  24%,34%{
+    -webkit-transform: rotateY(120deg);
+            transform: rotateY(120deg);
+  }
+  58%,67%{
+    -webkit-transform: rotateY(240deg);
+            transform: rotateY(240deg);
+  }
+  91%, 100% {
+    -webkit-transform: rotateY(360deg);
+            transform: rotateY(360deg);
+  }
+}
+
+
+@keyframes rotateTriangle {
+  0% {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+  24%,34%{
+    -webkit-transform: rotateY(120deg);
+            transform: rotateY(120deg);
+  }
+  58%,67%{
+    -webkit-transform: rotateY(240deg);
+            transform: rotateY(240deg);
+  }
+  91%, 100% {
+    -webkit-transform: rotateY(360deg);
+            transform: rotateY(360deg);
+  }
+}
+
