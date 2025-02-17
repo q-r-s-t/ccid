@@ -33,7 +33,7 @@ export default function WorksMotion() {
     : 0;
 
   return (
-    <div className="flex flex-col items-center w-full h-full pt-20 z-[1000] font-[400] lg:font-[500]">
+    <div className="flex flex-col items-center w-full h-full pt-[10%] z-[1000] font-[400] lg:font-[500]">
       {[...Array(maxItemsLength)].map((_, i) => (
         <div key={`scene-${i}`} className="scene h-[12vw] lg:h-[2.5vw] overflow-hidden">
           <div className="triangle" style={{ animationDelay: `${(i * 50)}ms` }}>

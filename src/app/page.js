@@ -118,7 +118,7 @@ export default function Home() {
 
         <section
           id="works"
-          className={`transition-all duration-1000 w-screen min-h-[100dvh] snap-start px-6 lg:px-28 xl:pl-52 xl:pr-44 4xl:px-[12%]`}
+          className={`transition-all duration-1000 w-screen min-h-[100dvh] snap-start px-6 lg:px-28 xl:pl-52 xl:pr-44 4xl:px-[12%] content-center lg:content-normal`}
         >
           {/* <Works /> */}
           <WorksMotion />
