@@ -36,12 +36,12 @@ export default function WorksMotion() {
     <div className="flex flex-col items-center w-full h-full pt-20 z-[1000] font-[400]">
       {[...Array(maxItemsLength)].map((_, i) => (
         <div key={`scene-${i}`} className="scene h-[16vw] lg:h-[3vw] overflow-hidden">
-          <div className="triangle" style={{ animationDelay: `${(i * 200)}ms` }}>
+          <div className="triangle" style={{ animationDelay: `${(i * 75)}ms` }}>
             {worksInfo.map((work, index) => (
               <div
                 key={`item-${index}-${i}`}
-                className={`triangle-face triangle-face-${['front', 'left', 'right'][index]} leading-[1.3] text-[5vw] lg:text-[1.5vw] `}
-              >
+                className={`triangle-face triangle-face-${['front', 'left', 'right'][index]} leading-[1.3] text-[5vw] lg:text-[1.5vw] lg:pt-[-0.5vw] ${i === 0 ? 'pl-[10%] font-[600]' : 'pl-[1%]'}`}
+                >
                 {/* i === 0일 때는 제목(work[0]), 나머지는 내용 */}
                 {i === 0 ? work[0] : work[i] || ''}
               </div>

@@ -16,7 +16,7 @@ export default function Navmobile({ textColor }) {
   return (
     <div className="z-[700] fixed top-8 right-6">
       <button
-        className={`lg:hidden fixed z-[800] top-6 right-6 w-4 h-4 flex flex-col justify-between transition-all duration-300 transform ${
+        className={`lg:hidden fixed z-[800] top-6 right-6 w-4 h-4 flex flex-col items-end justify-between transition-all duration-300 transform ${
           isOpen ? "h-4" : ""
         }`}
         onClick={toggleMenu}
