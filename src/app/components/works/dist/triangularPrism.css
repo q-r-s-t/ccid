@@ -81,3 +81,9 @@
     transform: rotateY(360deg);
   }
 }
+@media (min-width: 768px) {
+  :root {
+    --cotetriangle: 100vw;
+    --translationDistance: 28.87vw;
+  }
+}

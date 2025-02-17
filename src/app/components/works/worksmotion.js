@@ -33,14 +33,14 @@ export default function WorksMotion() {
     : 0;
 
   return (
-    <div className="flex flex-col items-center w-full h-full pt-20 z-[1000] font-[400]">
+    <div className="flex flex-col items-center w-full h-full pt-20 z-[1000] font-[400] lg:font-[500]">
       {[...Array(maxItemsLength)].map((_, i) => (
-        <div key={`scene-${i}`} className="scene h-[16vw] lg:h-[3vw] overflow-hidden">
-          <div className="triangle" style={{ animationDelay: `${(i * 75)}ms` }}>
+        <div key={`scene-${i}`} className="scene h-[12vw] lg:h-[2.5vw] overflow-hidden">
+          <div className="triangle" style={{ animationDelay: `${(i * 50)}ms` }}>
             {worksInfo.map((work, index) => (
               <div
                 key={`item-${index}-${i}`}
-                className={`triangle-face triangle-face-${['front', 'left', 'right'][index]} leading-[1.3] text-[5vw] lg:text-[1.5vw] lg:pt-[-0.5vw] ${i === 0 ? 'pl-[10%] font-[600]' : 'pl-[1%]'}`}
+                className={`triangle-face triangle-face-${['front', 'left', 'right'][index]} leading-[1.3] text-[3.5vw] lg:text-[1.2vw] lg:pt-[-0.5vw] ${i === 0 ? 'pl-[10%] font-[600] lg:font-[700]' : 'px-[1.5%]'}`}
                 >
                 {/* i === 0일 때는 제목(work[0]), 나머지는 내용 */}
                 {i === 0 ? work[0] : work[i] || ''}

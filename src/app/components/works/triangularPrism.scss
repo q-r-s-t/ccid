@@ -1,11 +1,14 @@
 :root {
   // --cotetriangle: 1200px;
   // --translationDistance: 346px;
+
   --cotetriangle: 76vw;
   --translationDistance: 21.94vw;
   // --cotetriangle: 50vw;
   // --translationDistance: 14.43vw;
 }
+
+
 
 .scene {
   position: relative;
@@ -54,6 +57,7 @@
 
 .triangle-face-right {
   background: rgb(230, 233, 220);
+  // background: rgb(144, 255, 75);
   // background: url('https://picsum.photos/id/600/200/200');
   -webkit-transform: rotateY(120deg) translate3d(0, 0, var(--translationDistance));
           transform: rotateY(120deg) translate3d(0, 0, var(--translationDistance));
@@ -99,3 +103,9 @@
   }
 }
 
+@media (min-width: 768px) {
+  :root {
+    --cotetriangle: 100vw;
+    --translationDistance: 28.87vw;
+  }
+}
