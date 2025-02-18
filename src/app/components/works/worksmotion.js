@@ -42,23 +42,23 @@ export default function WorksMotion() {
           Array.from({ length: 15 }, (_, i) => (
             <div
               key={i}
-              className={`scene h-[12vw] overflow-hidden ${i === 0 ? 'lg:h-[30dvh]' : 'lg:h-[5dvh]' }`}
+              className={`scene h-[12vw] overflow-hidden text-[#000] ${i === 0 ? 'lg:h-[30dvh]' : 'hover:text-[#fff] lg:h-[5dvh]' }`}
             >
-              <div className="triangle" style={{ animationDelay: `${(i * 40)}ms` }}>
+              <div className="triangle" style={{ animationDelay: `${(i * 75)}ms` }}>
                 {/* front */}
-                <div className="flex triangle-face flex triangle-face-front leading-none text-[6vw] lg:text-[1.25vw] lg:leading-[1.3]  bg-[#90ff4b] text-[#000] hover:bg-[#0f0f13]">
+                <div className="flex triangle-face flex triangle-face-front leading-none text-[6vw] lg:text-[1.25vw] lg:leading-[1.3]  bg-[#90ff4b] ">
                   <div className=" flex-[0.1] pl-12">{worksInfo[0][i]}</div>
-                  <div className={`flex-1 ${i === 0 ? 'font-[600] flex items-end pb-[3dvh]' : ''}`}>{worksInfo[1][i]}</div>
+                  <span className={`flex-1 ${i === 0 ? 'font-[600] flex items-end pb-[3dvh]' : ''}`}>{worksInfo[1][i]}</span>
                 </div>
                 {/* left */}
-                <div className="flex triangle-face flex triangle-face-left leading-none text-[6vw] lg:text-[1.25vw] lg:leading-[1.3] bg-[#0f0f13] text-[#90ff4b]">
+                <div className="flex triangle-face flex triangle-face-left leading-none text-[6vw] lg:text-[1.25vw] lg:leading-[1.3] bg-[#0f0f13] text-[#90ff4b] hover:text-[#fff] ">
                   <div className="flex-[0.1] pl-12">{worksInfo[2][i]}</div>
-                  <div className={`flex-1 ${i === 0 ? 'font-[600] flex items-end pb-[3dvh]' : ''}`}>{worksInfo[3][i]}</div>
+                  <span className={`flex-1 ${i === 0 ? 'text-[#90ff4b] font-[600] flex items-end pb-[3dvh]' : ''}`}>{worksInfo[3][i]}</span>
                 </div>
                 {/* right */}
                 <div className="flex triangle-face flex triangle-face-right leading-none text-[6vw] lg:text-[1.25vw] lg:leading-[1.3] bg-[#8ADCC8] text-[#fff]">
                   <div className="flex-[0.1] pl-12">{worksInfo[4][i]}</div>
-                  <div className={`flex-1 ${i === 0 ? 'font-[600] flex items-end pb-[3dvh]' : ''}`}>{worksInfo[5][i]}</div>
+                  <span className={`hover:bg-[#0f0f13] flex-1 ${i === 0 ? 'font-[600] flex items-end pb-[3dvh]' : ''}`}>{worksInfo[5][i]}</span>
                 </div>
               </div>
             </div>
