@@ -1,6 +1,6 @@
-"use client"; // 클라이언트 컴포넌트 명시 (App Router에서는 필요!)
+"use client";
 
-import "./dist/style.css";
+import "./style.css";
 import { useEffect } from "react";
 import Header from "../components/header";
 import Nav from "../components/nav";

@@ -13,7 +13,7 @@ import Keywords from "./components/keywords";
 import Works from "./components/works/works";
 import WorksMotion from "./components/works/worksmotion";
 import Members from "./components/members";
-import Contact from "./components/contact";
+import Contact from "./components/contact/contact";
 
 export default function Home() {
   const [bgColor, setBgColor] = useState("#0f0f13");
