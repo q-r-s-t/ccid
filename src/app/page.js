@@ -29,7 +29,7 @@ export default function Home() {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setBgColor("#90ff4b"); // Works 섹션 배경색
+          setBgColor("#0f0f13"); // Works 섹션 배경색
           setTextColor("#374151"); // Works 섹션 글자색
           setBorderColor("#374151");
         } else {
@@ -118,7 +118,7 @@ export default function Home() {
 
         <section
           id="works"
-          className={`transition-all duration-1000 w-screen min-h-[100dvh] snap-start px-6 lg:px-28 xl:pl-52 xl:pr-44 4xl:px-[12%] content-center lg:content-normal`}
+          className={`transition-all duration-1000 w-screen relative overflow-hidden h-[100dvh] snap-start px-6 lg:px-28 xl:pl-52 xl:pr-44 4xl:px-[12%] content-center lg:content-normal`}
         >
           {/* <Works /> */}
           <WorksMotion />

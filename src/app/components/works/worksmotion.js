@@ -5,7 +5,6 @@ import "./triangularPrism.css";
 export default function WorksMotion() {
   const [worksInfo, setWorksInfo] = useState([]);
 
-  console.log(worksInfo);
   useEffect(() => {
     const fetchWorksData = async () => {
       try {
@@ -26,29 +25,46 @@ export default function WorksMotion() {
     fetchWorksData();
   }, []);
 
-  // 가장 긴 items 배열 길이를 구함
+  
+  // 가장 긴 items 배열 길이(9)
   const maxItemsLength =
   worksInfo.length > 0
     ? Math.max(...worksInfo.map((work) => work.length - 1))
     : 0;
 
-  return (
-    <div className="flex flex-col items-center w-full h-full pt-[10%] z-[1000] font-[400] lg:font-[500]">
-      {[...Array(maxItemsLength)].map((_, i) => (
-        <div key={`scene-${i}`} className="scene h-[12vw] lg:h-[2.5vw] overflow-hidden">
-          <div className="triangle" style={{ animationDelay: `${(i * 50)}ms` }}>
-            {worksInfo.map((work, index) => (
-              <div
-                key={`item-${index}-${i}`}
-                className={`triangle-face triangle-face-${['front', 'left', 'right'][index]} leading-[1.3] text-[3.5vw] lg:text-[1.2vw] lg:pt-[-0.5vw] ${i === 0 ? 'pl-[10%] font-[600] lg:font-[700]' : 'px-[1.5%]'}`}
-                >
-                {/* i === 0일 때는 제목(work[0]), 나머지는 내용 */}
-                {i === 0 ? work[0] : work[i] || ''}
+    // console.log(worksInfo[0][0]);
+  
+    return (
+      <div className="flex flex-col items-center w-full h-full z-[1000] font-[400] lg:font-[200]">
+        {worksInfo.length < 6 ? (
+          <div>Loading...</div>
+        ) : (
+          Array.from({ length: 18 }, (_, i) => (
+            <div
+              key={i}
+              className={`scene h-[12vw] overflow-hidden ${i === 0 ? 'lg:h-[20dvh]' : ' lg:h-[10dvh]' }`}
+            >
+              <div className="triangle" style={{ animationDelay: `${(i * 75)}ms` }}>
+                {/* front */}
+                <div className="flex triangle-face flex triangle-face-front leading-none text-[6vw] lg:text-[1.25vw] lg:leading-[1.3] bg-[#90ff4b] text-[#000]">
+                  <div className="flex-[0.09]">{worksInfo[0][i]}</div>
+                  <div className={`flex-1 ${i === 0 ? 'font-[600]' : ''}`}>{worksInfo[1][i]}</div>
+                </div>
+                {/* left */}
+                <div className="flex triangle-face flex triangle-face-left leading-none text-[6vw] lg:text-[1.25vw] lg:leading-[1.3] bg-[#0f0f13] text-[#90ff4b]">
+                  <div className="flex-[0.09]">{worksInfo[2][i]}</div>
+                  <div className={`flex-1 ${i === 0 ? 'font-[600]' : ''}`}>{worksInfo[3][i]}</div>
+                </div>
+                {/* right */}
+                <div className="flex triangle-face flex triangle-face-right leading-none text-[6vw] lg:text-[1.25vw] lg:leading-[1.3] bg-[#fff] text-[#90ff4b]">
+                  <div className="flex-[0.09]">{worksInfo[4][i]}</div>
+                  <div className={`flex-1 ${i === 0 ? 'font-[600]' : ''}`}>{worksInfo[5][i]}</div>
+                </div>
               </div>
-            ))}
-          </div>
-        </div>
-      ))}
-    </div>
-  );
+            </div>
+          ))
+        )}
+      </div>
+    );
+    
 }

@@ -13,15 +13,17 @@ export async function GET(request) {
         client_email: serviceAccountEmail,
         private_key: privateKey,
       },
-      scopes: ["https://www.googleapis.com/auth/spreadsheets", "https://www.googleapis.com/auth/drive"],
-
+      scopes: [
+        "https://www.googleapis.com/auth/spreadsheets",
+        "https://www.googleapis.com/auth/drive",
+      ],
     });
 
     // Google Sheets API 클라이언트 생성
     const sheets = google.sheets({ version: "v4", auth });
 
     // 여러 시트에서 데이터 가져오기
-    const ranges = ["about!A1:B2", "works!A1:J3", "members!A1:E100"];
+    const ranges = ["about!A1:B2", "works!A1:J6", "members!A1:E100"];
     const response = await sheets.spreadsheets.values.batchGet({
       spreadsheetId,
       ranges,
@@ -37,7 +39,7 @@ export async function GET(request) {
     // 데이터 출력
     // console.log("Fetched data from Google Sheets:", data);
     // console.log("Environment Variables:", process.env);
-
+    // console.log(members)
     // JSON 응답 반환
     return new Response(JSON.stringify(data), {
       status: 200,
@@ -46,7 +48,10 @@ export async function GET(request) {
   } catch (error) {
     console.error("Error fetching spreadsheet data:", error);
     return new Response(
-      JSON.stringify({ message: "Failed to fetch spreadsheet data", success: false }),
+      JSON.stringify({
+        message: "Failed to fetch spreadsheet data",
+        success: false,
+      }),
       { status: 500, headers: { "Content-Type": "application/json" } }
     );
   }

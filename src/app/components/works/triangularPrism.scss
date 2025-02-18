@@ -40,23 +40,26 @@
 }
 
 .triangle-face-front {
-  background: rgb(0, 0, 0);
   // background: rgb(144, 255, 75);
-  color: rgb(144, 255, 75);
+  // color: rgb(144, 255, 75);
   // background: url('https://picsum.photos/id/133/200/200');
   -webkit-transform: translate3d(0, 0, var(--translationDistance));
           transform: translate3d(0, 0, var(--translationDistance));
 }
 
 .triangle-face-left {
-  background: rgb(144, 255, 75);
+  // background: rgb(15, 15, 19);
+  // color: rgb(255, 255, 255);
+  // background: rgb(144, 255, 75);
   // background: url('https://picsum.photos/id/677/200/200');
   -webkit-transform: rotateY(-120deg) translate3d(0, 0, var(--translationDistance));
           transform: rotateY(-120deg) translate3d(0, 0, var(--translationDistance));
 }
 
 .triangle-face-right {
-  background: rgb(230, 233, 220);
+  // background: rgb(15, 15, 19);
+  // color: rgb(255, 255, 255);
+  // background: rgb(230, 233, 220);
   // background: rgb(144, 255, 75);
   // background: url('https://picsum.photos/id/600/200/200');
   -webkit-transform: rotateY(120deg) translate3d(0, 0, var(--translationDistance));
@@ -69,15 +72,15 @@
     -webkit-transform: rotateY(0deg);
             transform: rotateY(0deg);
   }
-  8%,34%{
+  7%,34%{
     -webkit-transform: rotateY(120deg);
             transform: rotateY(120deg);
   }
-  41%,67%{
+  40%,67%{
     -webkit-transform: rotateY(240deg);
             transform: rotateY(240deg);
   }
-  74%, 100% {
+  73%, 100% {
     -webkit-transform: rotateY(360deg);
             transform: rotateY(360deg);
   }
@@ -89,15 +92,15 @@
     -webkit-transform: rotateY(0deg);
             transform: rotateY(0deg);
   }
-  8%,34%{
+  7%,34%{
     -webkit-transform: rotateY(120deg);
             transform: rotateY(120deg);
   }
-  41%,67%{
+  40%,67%{
     -webkit-transform: rotateY(240deg);
             transform: rotateY(240deg);
   }
-  74%, 100% {
+  73%, 100% {
     -webkit-transform: rotateY(360deg);
             transform: rotateY(360deg);
   }

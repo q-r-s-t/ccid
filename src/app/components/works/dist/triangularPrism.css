@@ -27,20 +27,16 @@
 }
 
 .triangle-face-front {
-  background: black;
-  color: #90ff4b;
   -webkit-transform: translate3d(0, 0, var(--translationDistance));
   transform: translate3d(0, 0, var(--translationDistance));
 }
 
 .triangle-face-left {
-  background: #90ff4b;
   -webkit-transform: rotateY(-120deg) translate3d(0, 0, var(--translationDistance));
   transform: rotateY(-120deg) translate3d(0, 0, var(--translationDistance));
 }
 
 .triangle-face-right {
-  background: #e6e9dc;
   -webkit-transform: rotateY(120deg) translate3d(0, 0, var(--translationDistance));
   transform: rotateY(120deg) translate3d(0, 0, var(--translationDistance));
 }
@@ -50,15 +46,15 @@
     -webkit-transform: rotateY(0deg);
     transform: rotateY(0deg);
   }
-  8%, 34% {
+  7%, 34% {
     -webkit-transform: rotateY(120deg);
     transform: rotateY(120deg);
   }
-  41%, 67% {
+  40%, 67% {
     -webkit-transform: rotateY(240deg);
     transform: rotateY(240deg);
   }
-  74%, 100% {
+  73%, 100% {
     -webkit-transform: rotateY(360deg);
     transform: rotateY(360deg);
   }
@@ -68,15 +64,15 @@
     -webkit-transform: rotateY(0deg);
     transform: rotateY(0deg);
   }
-  8%, 34% {
+  7%, 34% {
     -webkit-transform: rotateY(120deg);
     transform: rotateY(120deg);
   }
-  41%, 67% {
+  40%, 67% {
     -webkit-transform: rotateY(240deg);
     transform: rotateY(240deg);
   }
-  74%, 100% {
+  73%, 100% {
     -webkit-transform: rotateY(360deg);
     transform: rotateY(360deg);
   }
