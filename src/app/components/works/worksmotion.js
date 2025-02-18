@@ -44,9 +44,9 @@ export default function WorksMotion() {
               key={i}
               className={`scene h-[12vw] overflow-hidden ${i === 0 ? 'lg:h-[30dvh]' : 'lg:h-[5dvh]' }`}
             >
-              <div className="triangle" style={{ animationDelay: `${(i * 75)}ms` }}>
+              <div className="triangle" style={{ animationDelay: `${(i * 40)}ms` }}>
                 {/* front */}
-                <div className="flex triangle-face flex triangle-face-front leading-none text-[6vw] lg:text-[1.25vw] lg:leading-[1.3] bg-[#90ff4b] text-[#000]">
+                <div className="flex triangle-face flex triangle-face-front leading-none text-[6vw] lg:text-[1.25vw] lg:leading-[1.3]  bg-[#90ff4b] text-[#000] hover:bg-[#0f0f13]">
                   <div className=" flex-[0.1] pl-12">{worksInfo[0][i]}</div>
                   <div className={`flex-1 ${i === 0 ? 'font-[600] flex items-end pb-[3dvh]' : ''}`}>{worksInfo[1][i]}</div>
                 </div>
