@@ -37,7 +37,7 @@ export default function Cover() {
           alt="Design Convergence"
           layout="fill"
           objectFit="contain"
-          objectPosition="top left"
+          objectPosition="bottom left"
         />
       </div>
 

@@ -145,9 +145,9 @@ export default function Members() {
               alt={`${member[1]} profile`}
               className="w-[150px] h-[150px] md:w-[190px] md:h-[190px] lg:w-[10vw] lg:h-[10vw] rounded-full object-cover object-top"
             />
-            <div className="md:flex-1">
-              <h2 className="font-[500] leading-[1.5] text-[5vw] md:text-[3.3vw] lg:text-[1.4vw]">{member[1]}</h2>
-              <p className="font-[500] leading-[1.5] text-[3.2vw] md:text-[2.1vw] lg:text-[0.9vw]">{member[3]}</p>
+            <div className="md:flex-1 font-[500]">
+              <h2 className="leading-[1.5] text-[5vw] md:text-[3.3vw] lg:text-[1.4vw]">{member[1]}</h2>
+              <p className="leading-[1.5] text-[3.2vw] md:text-[2.1vw] lg:text-[1vw]">{member[3]}</p>
               <div className="border-l mt-6 md:mt-4 pl-3 lg:pl-[0.5vw]">
                 <h3 className="pb-3 md:pb-2 font-[700] leading-[1.3] text-[3vw] md:text-[2vw] lg:text-[0.8vw]">Career</h3>
                 <div className="font-[500] leading-[1.5] text-[3vw] md:text-[1.8vw] lg:text-[0.7vw]">
@@ -167,17 +167,17 @@ export default function Members() {
             {members.map((member, index) => (
               <li
                 key={index}
-                className="pb-[1.5vh] md:w-1/2 lg:w-1/3 flex gap-2 3xl:gap-4 items-center"
+                className="pb-[1.5vh] md:w-1/2 lg:w-1/4 flex items-center"
               >
                 <img
                   src={member[2]}
                   alt={`${member[1]} profile`}
-                  className="flex-shrink-0 mr-2 w-[70px] h-[70px] lg:w-[6vw] lg:h-[6vw] 2xl:w-[5vw] 2xl:h-[5vw] rounded-full object-cover object-top"
+                  className="flex-shrink-0 mr-4 lg:mr-[0.7vw] w-[70px] h-[70px] lg:w-[6vw] lg:h-[6vw] 2xl:w-[5vw] 2xl:h-[5vw] rounded-full object-cover object-top"
                 />
-                <div className="flex flex-col justify-center pr-4 lg:pt-0 lg:pl-2">
-                  <h3 className="font-[600] leading-none text-[2.8vw] md:text-[2vw] lg:text-[1vw] mb-2 xl:mb-[0.4vh]">{member[1]}</h3>
-                  <h2 className="font-[600] leading-none text-[2.6vw] md:text-[1.8vw] lg:text-[0.9vw]">{member[3]}</h2>
-                  <pre className={`whitespace-pre-wrap font-[400] leading-tight text-[1.8vw] md:text-[1.4vw] lg:text-[0.6vw] mt-2 xl:mt-[0.5vh] ${inter.className}`}>{member[4]}</pre>
+                <div className="font-[500] flex flex-col justify-center pr-4 lg:pt-0 lg:pl-2">
+                  <h3 className="leading-relaxed lg:leading-none text-[3vw] md:text-[2vw] lg:text-[1vw] xl:mb-[0.4vh] font-[600]">{member[1]}</h3>
+                  <h2 className="leading-none text-[2.6vw] md:text-[1.8vw] lg:leading-[1.2] lg:text-[0.7vw] font-[550]">{member[3]}</h2>
+                  <pre className={`pt-[0.4vh] lg:pt-0 whitespace-pre-wrap font-[400] leading-tight text-[2.4vw] md:text-[1.4vw] lg:text-[0.6vw] xl:mt-[0.5vh] ${inter.className}`}>{member[4]}</pre>
                 </div>
               </li>
             ))}
