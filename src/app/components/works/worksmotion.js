@@ -42,7 +42,7 @@ export default function WorksMotion() {
           Array.from({ length: 17 }, (_, i) => (
             <div
               key={i}
-              className={`flex-shrink-0 scene overflow-hidden text-[#000] leading-[1.3] text-[3vw] md:text-[2.4vw] lg:text-[1.25vw] lg:leading-[1.3]  ${i === 0 ? 'h-[20dvh] lg:h-[25dvh]' : 'lg:hover:text-[#fff] h-[7dvh] lg:h-[5dvh]'}`}
+              className={`pointer-events-none xl:pointer-events-auto flex-shrink-0 scene overflow-hidden text-[#000] leading-[1.3] text-[3vw] md:text-[2.4vw] lg:text-[1.25vw] lg:leading-[1.3]  ${i === 0 ? 'h-[20dvh] lg:h-[25dvh]' : 'lg:hover:text-[#fff] h-[7dvh] lg:h-[5dvh]'}`}
             >
               <div className="triangle lg:hover:font-[400]" style={{ animationDelay: `${(i * 75)}ms` }}>
                 {/* front 국내 */}
