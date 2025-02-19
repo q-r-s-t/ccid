@@ -46,19 +46,19 @@ export default function WorksMotion() {
             >
               <div className="triangle lg:hover:font-[400]" style={{ animationDelay: `${(i * 75)}ms` }}>
                 {/* front 국내 */}
-                <div className="flex triangle-face flex triangle-face-front bg-[#90ff4b] ">
+                <div className="flex triangle-face flex triangle-face-front bg-[#0f0f13] text-[#90ff4b] hover:text-[#fff]">
                   <div className=" flex-[0.1] pl-12">{worksInfo[0][i]}</div>
-                  <span className={`flex-1 ${i === 0 ? 'font-[600] flex items-end pb-[3dvh]' : ''}`}>{worksInfo[1][i]}</span>
+                  <span className={`flex-1 ${i === 0 ? ' text-[#90ff4b] font-[600] flex items-end pb-[5dvh]' : ''}`}>{worksInfo[1][i]}</span>
                 </div>
                 {/* left 해외 */}
-                <div className="flex triangle-face flex triangle-face-left bg-[#0f0f13] text-[#90ff4b] hover:text-[#fff] ">
+                <div className="flex triangle-face flex triangle-face-left bg-[#90ff4b] ">
                   <div className="flex-[0.1] pl-12">{worksInfo[2][i]}</div>
-                  <span className={`flex-1 ${i === 0 ? 'text-[#90ff4b] font-[600] flex items-end pb-[3dvh]' : ''}`}>{worksInfo[3][i]}</span>
+                  <span className={`flex-1 ${i === 0 ? 'font-[600] flex items-end pb-[5dvh]' : ''}`}>{worksInfo[3][i]}</span>
                 </div>
                 {/* right 주요 논문 */}
                 <div className="flex triangle-face flex triangle-face-right bg-[#d4d4d4] text-[#fff] hover:text-[#666666] ">
                   <div className="flex-[0.1] pl-12">{worksInfo[4][i]}</div>
-                  <span className={`flex-1 ${i === 0 ? 'font-[600] flex items-end pb-[3dvh]' : ''}`}>{worksInfo[5][i]}</span>
+                  <span className={`flex-1 ${i === 0 ? 'text-[#fff] font-[600] flex items-end pb-[5dvh]' : ''}`}>{worksInfo[5][i]}</span>
                 </div>
               </div>
             </div>
