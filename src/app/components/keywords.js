@@ -70,7 +70,7 @@ function KeywordItem({ id, title, description }) {
       <h3 className="w-[50%] group-hover:w-[40%] group-hover:mb-[2vh] group-hover:text-[#90ff4b] font-[300] leading-none text-[6vw] md:text-[5vw] lg:text-[2.5vw]">
         {title}
       </h3>
-      <div className="w-0 group-hover:w-[50%] font-[400] leading-[1.7] text-[3vw] lg:text-[1.15vw] group-hover:h-[30vh] lg:group-hover:h-[30vh] h-0 opacity-0 group-hover:opacity-100 transition-all duration-700">
+      <div className="w-0 group-hover:w-[50%] font-[400] leading-[1.7] text-[3vw] md:text-[2.85vw] lg:text-[1.15vw] group-hover:h-[30vh] lg:group-hover:h-[30vh] h-0 opacity-0 group-hover:opacity-100 transition-all duration-700">
         {description}
       </div>
     </li>
