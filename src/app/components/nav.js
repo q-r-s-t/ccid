@@ -19,7 +19,7 @@ export default function Nav({ textColor }) {
               document
                 .querySelector("#about")
                 .scrollIntoView({ behavior: "smooth" });
-                closeMenu(); // 메뉴 닫기
+                // closeMenu(); // 메뉴 닫기
             }}
           >
             About
@@ -49,7 +49,7 @@ export default function Nav({ textColor }) {
               document
                 .querySelector("#members")
                 .scrollIntoView({ behavior: "smooth" });
-                closeMenu(); // 메뉴 닫기
+                // closeMenu(); // 메뉴 닫기
             }}
           >
             People
