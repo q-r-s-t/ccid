@@ -42,23 +42,23 @@ export default function WorksMotion() {
           Array.from({ length: 17 }, (_, i) => (
             <div
               key={i}
-              className={`flex-shrink-0 scene overflow-hidden text-[#000] leading-[1.3] text-[3vw] lg:text-[1.25vw] lg:leading-[1.3]  ${i === 0 ? 'h-[20dvh] lg:h-[25dvh]' : 'lg:hover:text-[#fff] h-[7dvh] lg:h-[5dvh]'}`}
+              className={`flex-shrink-0 scene overflow-hidden text-[#000] leading-[1.3] text-[3vw] md:text-[2.4vw] lg:text-[1.25vw] lg:leading-[1.3]  ${i === 0 ? 'h-[20dvh] lg:h-[25dvh]' : 'lg:hover:text-[#fff] h-[7dvh] lg:h-[5dvh]'}`}
             >
               <div className="triangle lg:hover:font-[400]" style={{ animationDelay: `${(i * 75)}ms` }}>
                 {/* front 국내 */}
                 <div className="flex triangle-face flex triangle-face-front bg-[#0f0f13] text-[#90ff4b] lg:hover:text-[#fff]">
                   <div className=" flex-[0.3] lg:flex-[0.1] pl-6 lg:pl-12">{worksInfo[0][i]}</div>
-                  <span className={`pr-4 flex-1 ${i === 0 ? ' text-[#90ff4b]  lg:font-[600] font-[700] flex items-end text-[3.3vw] lg:text-[1.25vw] pb-[3dvh] lg:pb-[5dvh]' : ''}`}>{worksInfo[1][i]}</span>
+                  <span className={`pr-4 flex-1 ${i === 0 ? ' text-[#90ff4b]  lg:font-[600] font-[700] flex items-end text-[3.3vw] md:text-[2.6vw] lg:text-[1.25vw] pb-[3dvh] lg:pb-[5dvh]' : ''}`}>{worksInfo[1][i]}</span>
                 </div>
                 {/* left 해외 */}
                 <div className="flex triangle-face flex triangle-face-left bg-[#90ff4b] ">
                   <div className="flex-[0.3] lg:flex-[0.1] pl-6 lg:pl-12">{worksInfo[2][i]}</div>
-                  <span className={`pr-4 flex-1 ${i === 0 ? 'lg:font-[600] font-[700] flex items-end text-[3.3vw] lg:text-[1.25vw] pb-[3dvh] lg:pb-[5dvh]' : ''}`}>{worksInfo[3][i]}</span>
+                  <span className={`pr-4 flex-1 ${i === 0 ? 'lg:font-[600] font-[700] flex items-end text-[3.3vw] md:text-[2.6vw] lg:text-[1.25vw] pb-[3dvh] lg:pb-[5dvh]' : ''}`}>{worksInfo[3][i]}</span>
                 </div>
                 {/* right 주요 논문 */}
                 <div className="flex triangle-face flex triangle-face-right bg-[#d4d4d4] text-[#fff] lg:hover:text-[#666666] ">
                   <div className="flex-[0.3] lg:flex-[0.1] pl-6 lg:pl-12">{worksInfo[4][i]}</div>
-                  <span className={`pr-4 flex-1 ${i === 0 ? 'text-[#fff] lg:font-[600] font-[700] flex items-end text-[3.3vw] lg:text-[1.25vw] pb-[3dvh] lg:pb-[5dvh]' : ''}`}>{worksInfo[5][i]}</span>
+                  <span className={`pr-4 flex-1 ${i === 0 ? 'text-[#fff] lg:font-[600] font-[700] flex items-end text-[3.3vw] md:text-[2.6vw] lg:text-[1.25vw] pb-[3dvh] lg:pb-[5dvh]' : ''}`}>{worksInfo[5][i]}</span>
                 </div>
               </div>
             </div>

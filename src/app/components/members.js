@@ -149,8 +149,8 @@ export default function Members() {
               <h2 className="leading-[1.5] text-[5vw] md:text-[3.3vw] lg:text-[1.4vw]">{member[1]}</h2>
               <p className="leading-[1.5] text-[3.2vw] md:text-[2.1vw] lg:text-[1vw]">{member[3]}</p>
               <div className="border-l mt-6 md:mt-4 pl-3 lg:pl-[0.5vw]">
-                <h3 className="pb-3 md:pb-2 font-[700] leading-[1.3] text-[3vw] md:text-[2vw] lg:text-[0.8vw]">Career</h3>
-                <div className="font-[500] leading-[1.5] text-[3vw] md:text-[1.8vw] lg:text-[0.7vw]">
+                <h3 className="pb-3 md:pb-2 font-[700] leading-[1.3] text-[3vw] md:text-[1.9vw] lg:text-[0.8vw]">Career</h3>
+                <div className="font-[500] leading-[1.5] text-[3vw] md:text-[1.7vw] lg:text-[0.7vw]">
                   <pre className={`whitespace-pre-wrap ${inter.className}`}>{member[4]}</pre>
                 </div>
               </div>
@@ -175,9 +175,9 @@ export default function Members() {
                   className="flex-shrink-0 mr-4 lg:mr-[0.7vw] w-[70px] h-[70px] lg:w-[6vw] lg:h-[6vw] 2xl:w-[5vw] 2xl:h-[5vw] rounded-full object-cover object-top"
                 />
                 <div className="font-[500] flex flex-col justify-center pr-4 lg:pt-0 lg:pl-2">
-                  <h3 className="leading-relaxed lg:leading-none text-[3vw] md:text-[2vw] lg:text-[1vw] xl:mb-[0.4vh] font-[600]">{member[1]}</h3>
-                  <h2 className="leading-none text-[2.6vw] md:text-[1.8vw] lg:leading-[1.2] lg:text-[0.7vw] font-[550]">{member[3]}</h2>
-                  <pre className={`pt-[0.4vh] lg:pt-0 whitespace-pre-wrap font-[400] leading-tight text-[2.4vw] md:text-[1.4vw] lg:text-[0.6vw] xl:mt-[0.5vh] ${inter.className}`}>{member[4]}</pre>
+                  <h3 className="leading-relaxed lg:leading-none text-[3vw] md:text-[1.9vw] lg:text-[1vw] xl:mb-[0.4vh] font-[600]">{member[1]}</h3>
+                  <h2 className="leading-none text-[2.6vw] md:text-[1.6vw] md:leading-[1.2] lg:text-[0.7vw] font-[550]">{member[3]}</h2>
+                  <pre className={`pt-[0.4vh] lg:pt-0 whitespace-pre-wrap font-[400] leading-tight text-[2.4vw] md:text-[1.3vw] lg:text-[0.6vw] xl:mt-[0.5vh] ${inter.className}`}>{member[4]}</pre>
                 </div>
               </li>
             ))}
