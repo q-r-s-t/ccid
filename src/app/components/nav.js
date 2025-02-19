@@ -34,7 +34,7 @@ export default function Nav({ textColor }) {
               document
                 .querySelector("#works")
                 .scrollIntoView({ behavior: "smooth" });
-                closeMenu(); // 메뉴 닫기
+                // closeMenu(); // 메뉴 닫기
             }}
           >
             Works
@@ -64,7 +64,7 @@ export default function Nav({ textColor }) {
               document
                 .querySelector("#contact")
                 .scrollIntoView({ behavior: "smooth" });
-                closeMenu(); // 메뉴 닫기
+                // closeMenu(); // 메뉴 닫기
             }}
           >
             Contact
