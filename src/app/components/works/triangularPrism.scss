@@ -2,13 +2,11 @@
   // --cotetriangle: 1200px;
   // --translationDistance: 346px;
 
-  --cotetriangle: 76vw;
-  --translationDistance: 21.94vw;
+  --cotetriangle: 100vw;
+  --translationDistance: 28.87vw;
   // --cotetriangle: 50vw;
   // --translationDistance: 14.43vw;
 }
-
-
 
 .scene {
   position: relative;
@@ -27,8 +25,7 @@
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
   -webkit-animation: rotateTriangle 12s linear infinite;
-          animation: rotateTriangle 12s linear infinite;
-  
+  animation: rotateTriangle 12s linear infinite;
 }
 
 .triangle-face {
@@ -44,7 +41,7 @@
   // color: rgb(144, 255, 75);
   // background: url('https://picsum.photos/id/133/200/200');
   -webkit-transform: translate3d(0, 0, var(--translationDistance));
-          transform: translate3d(0, 0, var(--translationDistance));
+  transform: translate3d(0, 0, var(--translationDistance));
 }
 
 .triangle-face-left {
@@ -52,8 +49,9 @@
   // color: rgb(255, 255, 255);
   // background: rgb(144, 255, 75);
   // background: url('https://picsum.photos/id/677/200/200');
-  -webkit-transform: rotateY(-120deg) translate3d(0, 0, var(--translationDistance));
-          transform: rotateY(-120deg) translate3d(0, 0, var(--translationDistance));
+  -webkit-transform: rotateY(-120deg)
+    translate3d(0, 0, var(--translationDistance));
+  transform: rotateY(-120deg) translate3d(0, 0, var(--translationDistance));
 }
 
 .triangle-face-right {
@@ -62,53 +60,51 @@
   // background: rgb(230, 233, 220);
   // background: rgb(144, 255, 75);
   // background: url('https://picsum.photos/id/600/200/200');
-  -webkit-transform: rotateY(120deg) translate3d(0, 0, var(--translationDistance));
-          transform: rotateY(120deg) translate3d(0, 0, var(--translationDistance));
+  -webkit-transform: rotateY(120deg)
+    translate3d(0, 0, var(--translationDistance));
+  transform: rotateY(120deg) translate3d(0, 0, var(--translationDistance));
 }
-
 
 @-webkit-keyframes rotateTriangle {
   0% {
     -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
+    transform: rotateY(0deg);
   }
-  7%,34%{
+  7%,
+  34% {
     -webkit-transform: rotateY(120deg);
-            transform: rotateY(120deg);
+    transform: rotateY(120deg);
   }
-  40%,67%{
+  40%,
+  67% {
     -webkit-transform: rotateY(240deg);
-            transform: rotateY(240deg);
+    transform: rotateY(240deg);
   }
-  73%, 100% {
+  73%,
+  100% {
     -webkit-transform: rotateY(360deg);
-            transform: rotateY(360deg);
+    transform: rotateY(360deg);
   }
 }
-
 
 @keyframes rotateTriangle {
   0% {
     -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
+    transform: rotateY(0deg);
   }
-  7%,34%{
+  7%,
+  34% {
     -webkit-transform: rotateY(120deg);
-            transform: rotateY(120deg);
+    transform: rotateY(120deg);
   }
-  40%,67%{
+  40%,
+  67% {
     -webkit-transform: rotateY(240deg);
-            transform: rotateY(240deg);
+    transform: rotateY(240deg);
   }
-  73%, 100% {
+  73%,
+  100% {
     -webkit-transform: rotateY(360deg);
-            transform: rotateY(360deg);
-  }
-}
-
-@media (min-width: 768px) {
-  :root {
-    --cotetriangle: 100vw;
-    --translationDistance: 28.87vw;
+    transform: rotateY(360deg);
   }
 }

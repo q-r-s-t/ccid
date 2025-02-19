@@ -35,30 +35,30 @@ export default function WorksMotion() {
     // console.log(worksInfo[0][0]);
   
     return (
-      <div className="absolute top-0 left-0 flex flex-col items-center w-full h-full font-[400] lg:font-[300]">
+      <div className="absolute top-0 left-0 flex flex-col justify-start items-start w-full h-full font-[400] lg:font-[300]">
         {worksInfo.length < 6 ? (
           <div>Loading...</div>
         ) : (
           Array.from({ length: 17 }, (_, i) => (
             <div
               key={i}
-              className={`scene overflow-hidden text-[#000] leading-none text-[4vw] lg:text-[1.25vw] lg:leading-[1.3]  ${i === 0 ? 'h-[25dvh]' : 'hover:text-[#fff] h-[5dvh]' }`}
+              className={`flex-shrink-0 scene overflow-hidden text-[#000] leading-[1.3] text-[3vw] lg:text-[1.25vw] lg:leading-[1.3]  ${i === 0 ? 'h-[20dvh] lg:h-[25dvh]' : 'hover:text-[#fff] h-[7dvh] lg:h-[5dvh]'}`}
             >
               <div className="triangle lg:hover:font-[400]" style={{ animationDelay: `${(i * 75)}ms` }}>
                 {/* front 국내 */}
                 <div className="flex triangle-face flex triangle-face-front bg-[#0f0f13] text-[#90ff4b] hover:text-[#fff]">
-                  <div className=" flex-[0.1] pl-12">{worksInfo[0][i]}</div>
-                  <span className={`flex-1 ${i === 0 ? ' text-[#90ff4b] font-[600] flex items-end pb-[5dvh]' : ''}`}>{worksInfo[1][i]}</span>
+                  <div className=" flex-[0.3] lg:flex-[0.1] pl-6 lg:pl-12">{worksInfo[0][i]}</div>
+                  <span className={`pr-4 flex-1 ${i === 0 ? ' text-[#90ff4b] font-[600] flex items-end text-[3.3vw] pb-[3dvh] lg:pb-[5dvh]' : ''}`}>{worksInfo[1][i]}</span>
                 </div>
                 {/* left 해외 */}
                 <div className="flex triangle-face flex triangle-face-left bg-[#90ff4b] ">
-                  <div className="flex-[0.1] pl-12">{worksInfo[2][i]}</div>
-                  <span className={`flex-1 ${i === 0 ? 'font-[600] flex items-end pb-[5dvh]' : ''}`}>{worksInfo[3][i]}</span>
+                  <div className="flex-[0.3] lg:flex-[0.1] pl-6 lg:pl-12">{worksInfo[2][i]}</div>
+                  <span className={`pr-4 flex-1 ${i === 0 ? 'font-[600] flex items-end text-[3.3vw] pb-[3dvh] lg:pb-[5dvh]' : ''}`}>{worksInfo[3][i]}</span>
                 </div>
                 {/* right 주요 논문 */}
                 <div className="flex triangle-face flex triangle-face-right bg-[#d4d4d4] text-[#fff] hover:text-[#666666] ">
-                  <div className="flex-[0.1] pl-12">{worksInfo[4][i]}</div>
-                  <span className={`flex-1 ${i === 0 ? 'text-[#fff] font-[600] flex items-end pb-[5dvh]' : ''}`}>{worksInfo[5][i]}</span>
+                  <div className="flex-[0.3] lg:flex-[0.1] pl-6 lg:pl-12">{worksInfo[4][i]}</div>
+                  <span className={`pr-4 flex-1 ${i === 0 ? 'text-[#fff] font-[600] flex items-end text-[3.3vw] pb-[3dvh] lg:pb-[5dvh]' : ''}`}>{worksInfo[5][i]}</span>
                 </div>
               </div>
             </div>

@@ -1,6 +1,6 @@
 :root {
-  --cotetriangle: 76vw;
-  --translationDistance: 21.94vw;
+  --cotetriangle: 100vw;
+  --translationDistance: 28.87vw;
 }
 
 .scene {
@@ -75,11 +75,5 @@
   73%, 100% {
     -webkit-transform: rotateY(360deg);
     transform: rotateY(360deg);
-  }
-}
-@media (min-width: 768px) {
-  :root {
-    --cotetriangle: 100vw;
-    --translationDistance: 28.87vw;
   }
 }
