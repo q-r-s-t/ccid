@@ -177,7 +177,7 @@ export default function Members() {
                 <div className="font-[500] flex flex-col justify-center pr-4 lg:pt-0 lg:pl-2">
                   <h3 className="leading-relaxed lg:leading-none text-[3vw] md:text-[1.9vw] lg:text-[1vw] xl:mb-[0.4vh] font-[600]">{member[1]}</h3>
                   <h2 className="leading-none text-[2.6vw] md:text-[1.6vw] md:leading-[1.2] lg:text-[0.7vw] font-[550]">{member[3]}</h2>
-                  <pre className={`pt-[0.4vh] lg:pt-0 whitespace-pre-wrap font-[400] leading-tight text-[2.4vw] md:text-[1.3vw] lg:text-[0.6vw] xl:mt-[0.5vh] ${inter.className}`}>{member[4]}</pre>
+                  <pre className={`pt-[0.7vh] xl:pt-0 whitespace-pre-wrap font-[400] leading-tight text-[2.4vw] md:text-[1.3vw] lg:text-[0.6vw] xl:mt-[0.5vh] ${inter.className}`}>{member[4]}</pre>
                 </div>
               </li>
             ))}
