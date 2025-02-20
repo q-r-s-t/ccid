@@ -6,7 +6,6 @@ export default function Header({
   textColor = "#0f0f13",
 }) {
 
-  console.log(textColor);
   return (
     <button
       onClick={() => {

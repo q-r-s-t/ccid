@@ -68,16 +68,16 @@ function KeywordItem({ id, title, description }) {
   return (
     <li className="hover:bg-gradient-to-t hover:from-[rgba(93,0,156,0.2)] hover:via-[rgba(93,0,156,0)] hover:to-[rgba(93,0,156,0)] flex group overflow-hidden transition-all duration-700 ease-out border-b-[1px] lg:border-b-[2px] border-inherit hover:border-transparent py-2 lg:py-[0.9vh]">
       <div
-        className={`w-[50%] group-hover:w-[10%] ${textStyle}`}
+        className={`font-founders w-[50%] group-hover:w-[10%] ${textStyle}`}
       >
         {id}
       </div>
       <h3
-        className={`w-[50%] group-hover:w-[40%] group-hover:mb-[2vh] ${textStyle}`}
+        className={`tracking-[-0.04em] lg:tracking-[-0.02em] font-[370] w-[50%] group-hover:pt-[2px] group-hover:w-[40%] text-[5.5vw] group-hover:mb-[2vh] ${textStyle}`}
       >
         {title}
       </h3>
-      <div className="w-0 group-hover:w-[50%] font-[400] leading-[1.7] text-[3vw] md:text-[2.85vw] lg:text-[1.15vw] group-hover:h-[30vh] lg:group-hover:h-[30vh] h-0 opacity-0 group-hover:opacity-100 transition-all duration-700">
+      <div className="w-0 ml-[4px] group-hover:w-[50%] font-[400] leading-[1.7] text-[3vw] md:text-[2.85vw] lg:text-[1.15vw] group-hover:h-[30vh] lg:group-hover:h-[30vh] h-0 opacity-0 group-hover:opacity-100 transition-all duration-700">
         {description}
       </div>
     </li>

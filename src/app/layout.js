@@ -5,10 +5,8 @@ const playwrite = Playwrite_CU({
   subsets: ["latin"],
   weight: ["100", "200", "300", "400"],
 });
-const inter = Inter({
-  subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-});
+
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "QrST LAB",
@@ -37,7 +35,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="ko" className="scrollbar-hide">
+    <html lang="ko" className={inter.className}>
       <body className={`scrollbar-hide antialiased`}>
         {children}
       </body>

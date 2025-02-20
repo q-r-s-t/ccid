@@ -8,9 +8,9 @@ import Navmobile from "./components/navmobile";
 
 import Cover from "./components/cover";
 import Aboutkeywords from "./components/about0215";
-import About from "./components/about";
+// import About from "./components/about";
 import Keywords from "./components/keywords";
-import Works from "./components/works/works_";
+// import Works from "./components/works/works_";
 import WorksMotion from "./components/works/worksmotion";
 import Members from "./components/members";
 import Contact from "./components/contact/contact";

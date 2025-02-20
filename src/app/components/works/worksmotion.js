@@ -30,12 +30,12 @@ export default function WorksMotion() {
           i % 2 === 0 ? (row.map((col, j) => (
             <div
               key={`${i}-${j}`}
-              className={`flex lg:hover:text-[#ff0] text-[3vw] md:text-[2.4vw] lg:text-[1vw] leading-[1.7]  ${
+              className={`flex lg:hover:text-[#ff0] text-[3vw] md:text-[2.4vw] lg:text-[1vw] leading-[1.7] ${
                 j === 0 ? "lg:h-[7dvh]" : ""
               }`}
             >
               {/* 국내 + 해외 + 논문 */}
-              <div className="flex-[0.35] lg:flex-[0.085] pl-6 lg:pl-12">
+              <div className="flex-[0.35] font-founders lg:flex-[0.085] pl-6 lg:pl-12">
                 {worksInfo[i][j]}
               </div>
               <span

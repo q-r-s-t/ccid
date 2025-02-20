@@ -25,9 +25,9 @@ export default function Aboutkeywords() {
   }, []);
 
   return (
-    <div className="flex gap-[4vw] items-start justify-start w-full h-[50dvh] py-[6vh] lg:py-[14vh] font-[300] leading-[1.1] text-[6vw] md:text-[5vw] lg:text-[3.5vw]">
+    <div className="font-[400] flex gap-[4vw] items-start justify-start w-full h-[50dvh] py-[6vh] lg:py-[14vh] leading-[1.1] text-[6vw] md:text-[5vw] lg:text-[3.5vw]">
       <h1 className="flex-1 leading-none text-[6vw] mt-[-0.5vh] lg:mt-[-3vh]">Who We Are</h1>
-      <ul className="flex-1 leading-[1.4] text-[3.3vw] lg:text-[1.3vw] ">
+      <ul className="font-[400] flex-1 leading-[1.4] text-[3.3vw] lg:text-[1.3vw] ">
         {aboutInfo.length > 0 ? (
           aboutInfo.map((item, index) => <li key={index} className="mb-[4vh]">{item[0]}</li>)
         ) : (

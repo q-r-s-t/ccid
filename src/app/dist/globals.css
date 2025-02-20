@@ -16,6 +16,12 @@
   }
 }
 @font-face {
+  font-family: "FoundersGroteskMono";
+  src: url("/fonts/FoundersGroteskMono-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
   font-family: "TinyGothic";
   src: url("/fonts/TinyGothicLightTrial.otf") format("opentype");
   font-weight: normal;
@@ -47,8 +53,6 @@ html {
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: var(--font-inter);
-  font-weight: 700;
 }
 
 @media (max-width: 640px) {
