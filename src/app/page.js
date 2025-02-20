@@ -20,6 +20,8 @@ export default function Home() {
   const [textColor, setTextColor] = useState("#0f0f13"); // 기본 글자색
   const [angle, setAngle] = useState(25);
   const [lastPosition, setLastPosition] = useState({ x: 0, y: 0 });
+  const [contactClassName, setContactClassName] = useState('');
+
 
   useEffect(() => {
     const worksSection = document.querySelector("#works");
@@ -42,6 +44,27 @@ export default function Home() {
       if (worksSection) observer.unobserve(worksSection);
     };
   }, []);
+
+  useEffect(() => {
+    const contactSection = document.querySelector("#contact");
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setContactClassName('rounded-none');
+        } else {
+          setContactClassName('rounded-full');
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (contactSection) observer.observe(contactSection);
+
+    return () => {
+      if (contactSection) observer.unobserve(contactSection);
+    };
+  }, []);
+
 
   const handleIntroClick = () => {
     setIsFading(true); // fade-out 시작
@@ -114,7 +137,7 @@ export default function Home() {
           id="contact"
           className="relative w-screen h-[100dvh] snap-end md:p-28 xl:p-40 p-6 content-center"
         >
-          <Contact />
+          <Contact className={contactClassName}/>
           <footer className="absolute bottom-0 left-0 w-full h-auto text-center p-4 md:p-8 font-[400] leading-[1.5] text-[2.6vw] md:text-[1.8vw] lg:text-[0.9vw] xl:text-[0.75vw]">
             © 2025 QrST Lab. All rights reserved.
           </footer>

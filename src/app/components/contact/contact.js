@@ -1,7 +1,7 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect} from "react";
 import "./contact.css"
-export default function Contact() {
+export default function Contact({ className = '' }) {
   const email = "qrstlab@gmail.com";
 
   useEffect(() => {
@@ -36,7 +36,7 @@ export default function Contact() {
   }, []);
   
   return (
-    <div className="absolute top-0 left-0 w-full h-full bg-gray-200 gradient-bg">
+    <div className={`${className} transition-all duration-[2000ms] ease-out absolute top-0 left-0 w-full h-full bg-gray-200 gradient-bg`}>
     <svg xmlns="http://www.w3.org/2000/svg">
       <defs>
         <filter id="goo">
