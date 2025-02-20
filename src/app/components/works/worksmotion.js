@@ -24,24 +24,24 @@ export default function WorksMotion() {
   }, []);
 
   return (
-    <div className="text-white absolute top-[12%] left-0 w-full h-full font-[400]">
+    <div className="text-white pt-[12%] pb-[40%] lg:pt-[5%] w-full h-full font-[400]">
       {worksInfo.length > 0 ? (
         worksInfo.map((row, i) =>
           i % 2 === 0 ? (row.map((col, j) => (
             <div
               key={`${i}-${j}`}
-              className={`flex lg:hover:text-[#ff0] leading-[1.3] text-[3vw] md:text-[2.4vw] lg:text-[1vw] lg:leading-[1.7]  ${
-                j === 0 ? "h-[7dvh]" : ""
+              className={`flex lg:hover:text-[#ff0] text-[3vw] md:text-[2.4vw] lg:text-[1vw] leading-[1.7]  ${
+                j === 0 ? "lg:h-[7dvh]" : ""
               }`}
             >
               {/* 국내 + 해외 + 논문 */}
-              <div className="lg:flex-[0.085] pl-6 lg:pl-12">
+              <div className="flex-[0.35] lg:flex-[0.085] pl-6 lg:pl-12">
                 {worksInfo[i][j]}
               </div>
               <span
-                className={`flex-1 pr-4 ${
+                className={`flex-1 pr-6 ${
                   j === 0
-                    ? "lg:font-[600] flex items-end text-[3.3vw] md:text-[2.6vw] lg:text-[1.03vw] pb-[3dvh] lg:pb-[0.7dvh]"
+                    ? "font-[600] flex items-end text-[3.3vw] md:text-[2.6vw] lg:text-[1.03vw] pt-[8dvh] lg:pt-[3dvh] pb-[1dvh] lg:pb-[0.7dvh]"
                     : ""
                 }`}
               >

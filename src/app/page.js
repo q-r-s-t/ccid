@@ -10,7 +10,7 @@ import Cover from "./components/cover";
 import Aboutkeywords from "./components/about0215";
 import About from "./components/about";
 import Keywords from "./components/keywords";
-import Works from "./components/works/works";
+import Works from "./components/works/works_";
 import WorksMotion from "./components/works/worksmotion";
 import Members from "./components/members";
 import Contact from "./components/contact/contact";
@@ -71,7 +71,7 @@ export default function Home() {
       onMouseMove={handleMouseMove}
       // style={{background: `linear-gradient(${angle}deg, #90ff4b 15%, #8adcc7 60%, #d2d5da 90%)`,}}
     >
-      <Header textColor={textColor || "#0f0f13"} />
+      <Header textColor={textColor} />
       <Nav textColor={textColor} />
       <Navmobile textColor={textColor} />
 
@@ -99,7 +99,7 @@ export default function Home() {
         </section>
         <section
           id="works"
-          className={`transition-all duration-1000 w-screen relative min-h-[100dvh] snap-start`}
+          className={`transition-all duration-1000 w-screen relative min-h-[100dvh] lg:h-[100dvh] snap-start`}
         >
           {/* <Works /> */}
           <WorksMotion />

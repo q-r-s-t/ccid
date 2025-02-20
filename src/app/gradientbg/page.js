@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import Header from "../components/header";
 import Nav from "../components/nav";
 import Navmobile from "../components/navmobile";
-import Works from "../components/works/works";
+import Works from "../components/works/works_";
 
 export default function BgPage() {
   useEffect(() => {

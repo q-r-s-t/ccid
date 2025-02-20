@@ -1,10 +1,9 @@
 "use client";
 
-import Header from "./header";
 import { useState } from "react";
+import Header from "./header";
 
 export default function Navmobile({ textColor }) {
-  
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => {
     setIsOpen((prev) => !prev); // 메뉴 토글 열기닫기
@@ -15,6 +14,7 @@ export default function Navmobile({ textColor }) {
 
   return (
     <div className="z-[700] fixed top-8 right-6">
+      {isOpen && <Header textColor="#f0f0ec"/>}
       <button
         className={`lg:hidden fixed z-[800] top-6 right-6 w-4 h-4 flex flex-col items-end justify-between transition-all duration-300 transform ${
           isOpen ? "h-4" : ""
@@ -23,18 +23,18 @@ export default function Navmobile({ textColor }) {
       >
         <div
           className={`w-5 border-t-2 transition-all duration-300 transform origin-top-left ${
-            isOpen ? "rotate-45" : ""
-          } ${textColor === 'text-gray-700' ? 'border-gray-700' : 'border-white'}`}
+            isOpen ? "rotate-45 border-white" : ""
+          } ${textColor === '#0f0f13' ? 'border-black' : 'border-white'}`}
         ></div>
         <div
           className={`w-5 border-t-2 transition-all duration-300 transform ${
             isOpen ? "opacity-0" : ""
-          } ${textColor === 'text-gray-700' ? 'border-gray-700' : 'border-white'}`}
+          } ${textColor === '#0f0f13' ? 'border-black' : 'border-white'}`}
         ></div>
         <div
           className={`w-5 border-t-2 transition-all duration-300 transform origin-bottom-left ${
-            isOpen ? "-rotate-45" : ""
-          } ${textColor === 'text-gray-700' ? 'border-gray-700' : 'border-white'}`}
+            isOpen ? "-rotate-45 border-white" : ""
+          } ${textColor === '#0f0f13' ? 'border-black' : 'border-white'}`}
         ></div>
       </button>
 
@@ -106,17 +106,8 @@ export default function Navmobile({ textColor }) {
         Contact
         </a>
         </li>
-        {/* <li>
-        <Link
-            href="https://www.instagram.com/q.shim/"
-            target="_blank" // 외부 링크는 새 창으로 열기
-            rel="noopener noreferrer" // 보안을 위한 속성
-            onClick={closeMenu} // 메뉴 닫기
-          >
-            News
-          </Link>
-        </li> */}
       </ul>
+
     </div>
   );
 }
