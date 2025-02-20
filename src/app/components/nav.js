@@ -8,7 +8,8 @@ export default function Nav({ textColor }) {
   return (
     <div className="z-[500]">
       <ul
-        className={`z-[500] gap-12 4xl:gap-20 hidden lg:flex font-[300] leading-tight lg:text-[1.2vw] justify-center fixed top-0 pt-4 mx-auto w-screen transition-all duration-300 transform ${textColor}`}
+      style={{ color: textColor }}
+        className={`z-[500] gap-12 4xl:gap-20 hidden lg:flex font-[300] leading-tight lg:text-[1.2vw] justify-center fixed top-0 pt-4 mx-auto w-screen transition-all duration-300 transform`}
       >
         <li className="mx-5">
           <a
@@ -80,7 +81,7 @@ export default function Nav({ textColor }) {
         </li> */}
       </ul>
 
-      <Header />
+      {/* <Header /> */}
     </div>
   );
 }

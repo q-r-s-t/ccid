@@ -14,7 +14,7 @@ export default function Cover() {
   }, []);
 
   return (
-    <div className="flex flex-col justify-center items-center h-full w-full px-6 lg:px-10">
+    <div className="filter invert flex flex-col justify-center items-center h-full w-full px-6 lg:px-10">
       <div className="relative block lg:hidden w-full h-full">
         <Image
           src="/img/home_whole.svg"

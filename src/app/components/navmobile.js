@@ -117,9 +117,6 @@ export default function Navmobile({ textColor }) {
           </Link>
         </li> */}
       </ul>
-
-
-      <Header />
     </div>
   );
 }

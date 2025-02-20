@@ -14,6 +14,7 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        primaryC: 'rgba(93,0,156,1)',
       },
       fontSize: {
         'xs-': '0.625rem', // 11px (xs보다 작음)

@@ -16,26 +16,21 @@ import Members from "./components/members";
 import Contact from "./components/contact/contact";
 
 export default function Home() {
-  const [bgColor, setBgColor] = useState("#0f0f13");
-  const [textColor, setTextColor] = useState("#ffffff"); // 기본 글자색
-  const [borderColor, setBorderColor] = useState("#ffffff"); // 기본 border
+  const [bgColor, setBgColor] = useState("#f0f0ec");
+  const [textColor, setTextColor] = useState("#0f0f13"); // 기본 글자색
   const [angle, setAngle] = useState(25);
   const [lastPosition, setLastPosition] = useState({ x: 0, y: 0 });
-
-
 
   useEffect(() => {
     const worksSection = document.querySelector("#works");
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setBgColor("#0f0f13"); // Works 섹션 배경색
-          setTextColor("#374151"); // Works 섹션 글자색
-          setBorderColor("#374151");
+          setBgColor("#5d009c"); // Works 섹션 배경색
+          setTextColor("#f0f0ec"); // Works 섹션 글자색
         } else {
-          setBgColor("#0f0f13"); // 기본 배경색
-          setTextColor("#ffffff"); // 기본 글자색
-          setBorderColor("#ffffff");
+          setBgColor("#f0f0ec"); // 기본 배경색
+          setTextColor("#0f0f13"); // 기본 글자색
         }
       },
       { threshold: 0.1 } // Works 섹션 10% 보이면 작동
@@ -76,7 +71,7 @@ export default function Home() {
       onMouseMove={handleMouseMove}
       // style={{background: `linear-gradient(${angle}deg, #90ff4b 15%, #8adcc7 60%, #d2d5da 90%)`,}}
     >
-      <Header textColor={textColor} />
+      <Header textColor={textColor || "#0f0f13"} />
       <Nav textColor={textColor} />
       <Navmobile textColor={textColor} />
 
@@ -84,7 +79,7 @@ export default function Home() {
         style={{
           background: bgColor, // linear-gradient 포함해서 그냥 배경으로!
           color: textColor,
-          borderColor: borderColor,
+          borderColor: textColor,
           transition: "background-color 1s ease-in-out",
         }}
         className={`h-[100dvh] w-screen overflow-y-scroll snap-y snap-mandatory`}
@@ -100,32 +95,18 @@ export default function Home() {
           className="relative w-screen min-h-[100dvh] snap-start pt-20 4xl:pt-[5%] px-6 lg:px-10 content-center"
         >
           <Aboutkeywords />
-          <Keywords />
+          <Keywords textColor={textColor}/>
         </section>
-
-        {/* <section
-          id="about"
-          className="w-screen h-[100dvh] snap-start md:pt-10 px-6 md:px-28 xl:px-52 4xl:px-[12%]  content-center"
-        >
-          <About />
-        </section>
-        <section
-          id="keywords"
-          className="relative w-screen min-h-[100dvh] snap-start pt-20 4xl:pt-[5%] px-6 lg:px-10 content-center"
-        >
-          <Keywords />
-        </section>  */}
-
         <section
           id="works"
-          className={`transition-all duration-1000 w-screen relative overflow-hidden h-[100dvh] snap-start content-normal`}
+          className={`transition-all duration-1000 w-screen relative min-h-[100dvh] snap-start`}
         >
           {/* <Works /> */}
           <WorksMotion />
         </section>
         <section
           id="members"
-          className="w-screen snap-start md:p-28 pt-20 4xl:pt-[5%] p-6 lg:px-[12%]"
+          className="w-screen min-h-[100dvh] snap-start md:p-28 p-6 lg:px-[12%]"
         >
           <Members />
         </section>
