@@ -131,7 +131,7 @@ export default function Home() {
         </section>
         <section
           id="contact"
-          className="relative w-screen h-screen snap-end md:p-28 xl:p-40 p-6 content-center"
+          className="relative w-screen h-[100dvh] snap-end md:p-28 xl:p-40 p-6 content-center"
         >
           <Contact />
           <footer className="absolute bottom-0 left-0 w-full h-auto text-center p-4 md:p-8 font-[400] leading-[1.5] text-[2.6vw] md:text-[1.8vw] lg:text-[0.9vw] xl:text-[0.75vw]">

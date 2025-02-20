@@ -5,7 +5,6 @@ import "./triangularPrism.css";
 export default function WorksMotion() {
   const [worksInfo, setWorksInfo] = useState([]);
 
-  console.log(worksInfo);
   useEffect(() => {
     const fetchWorksData = async () => {
       try {
@@ -26,29 +25,46 @@ export default function WorksMotion() {
     fetchWorksData();
   }, []);
 
-  // 가장 긴 items 배열 길이를 구함
+  
+  // 가장 긴 items 배열 길이(9)
   const maxItemsLength =
   worksInfo.length > 0
     ? Math.max(...worksInfo.map((work) => work.length - 1))
     : 0;
 
-  return (
-    <div className="flex flex-col items-center w-full h-full pt-[10%] z-[1000] font-[400] lg:font-[500]">
-      {[...Array(maxItemsLength)].map((_, i) => (
-        <div key={`scene-${i}`} className="scene h-[12vw] lg:h-[2.5vw] overflow-hidden">
-          <div className="triangle" style={{ animationDelay: `${(i * 50)}ms` }}>
-            {worksInfo.map((work, index) => (
-              <div
-                key={`item-${index}-${i}`}
-                className={`triangle-face triangle-face-${['front', 'left', 'right'][index]} leading-[1.3] text-[3.5vw] lg:text-[1.2vw] lg:pt-[-0.5vw] ${i === 0 ? 'pl-[10%] font-[600] lg:font-[700]' : 'px-[1.5%]'}`}
-                >
-                {/* i === 0일 때는 제목(work[0]), 나머지는 내용 */}
-                {i === 0 ? work[0] : work[i] || ''}
+    // console.log(worksInfo[0][0]);
+  
+    return (
+      <div className="absolute top-0 left-0 flex flex-col justify-start items-start w-full h-full font-[400] lg:font-[300]">
+        {worksInfo.length < 6 ? (
+          <div>Loading...</div>
+        ) : (
+          Array.from({ length: 17 }, (_, i) => (
+            <div
+              key={i}
+              className={`pointer-events-none xl:pointer-events-auto flex-shrink-0 scene overflow-hidden text-[#000] leading-[1.3] text-[3vw] md:text-[2.4vw] lg:text-[1.25vw] lg:leading-[1.3]  ${i === 0 ? 'h-[20dvh] lg:h-[25dvh]' : 'lg:hover:text-[#fff] h-[7dvh] lg:h-[5dvh]'}`}
+            >
+              <div className="triangle lg:hover:font-[400]" style={{ animationDelay: `${Math.pow(i, 1.1) * 50}ms` }}>
+                {/* front 국내 */}
+                <div className="flex triangle-face flex triangle-face-front bg-[#0f0f13] text-[#90ff4b] lg:hover:text-[#fff]">
+                  <div className=" flex-[0.3] lg:flex-[0.1] pl-6 lg:pl-12">{worksInfo[0][i]}</div>
+                  <span className={`pr-4 flex-1 ${i === 0 ? ' text-[#90ff4b]  lg:font-[600] font-[700] flex items-end text-[3.3vw] md:text-[2.6vw] lg:text-[1.25vw] pb-[3dvh] lg:pb-[5dvh]' : ''}`}>{worksInfo[1][i]}</span>
+                </div>
+                {/* left 해외 */}
+                <div className="flex triangle-face flex triangle-face-left bg-[#90ff4b] ">
+                  <div className="flex-[0.3] lg:flex-[0.1] pl-6 lg:pl-12">{worksInfo[2][i]}</div>
+                  <span className={`pr-4 flex-1 ${i === 0 ? 'lg:font-[600] font-[700] flex items-end text-[3.3vw] md:text-[2.6vw] lg:text-[1.25vw] pb-[3dvh] lg:pb-[5dvh]' : ''}`}>{worksInfo[3][i]}</span>
+                </div>
+                {/* right 주요 논문 */}
+                <div className="flex triangle-face flex triangle-face-right bg-[#d4d4d4] text-[#fff] lg:hover:text-[#666666] ">
+                  <div className="flex-[0.3] lg:flex-[0.1] pl-6 lg:pl-12">{worksInfo[4][i]}</div>
+                  <span className={`pr-4 flex-1 ${i === 0 ? 'text-[#fff] lg:font-[600] font-[700] flex items-end text-[3.3vw] md:text-[2.6vw] lg:text-[1.25vw] pb-[3dvh] lg:pb-[5dvh]' : ''}`}>{worksInfo[5][i]}</span>
+                </div>
               </div>
-            ))}
-          </div>
-        </div>
-      ))}
-    </div>
-  );
+            </div>
+          ))
+        )}
+      </div>
+    );
+    
 }
