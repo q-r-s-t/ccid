@@ -24,7 +24,7 @@ export default function WorksMotion() {
   }, []);
 
   return (
-    <div className="text-white pt-[12%] pb-[40%] lg:pt-[5%] w-full h-full font-[400]">
+    <div className="text-primaryC pt-[12%] pb-[40%] lg:pt-[5%] w-full h-full font-[400]">
       {worksInfo.length > 0 ? (
         worksInfo.map((row, i) =>
           i % 2 === 0 ? (row.map((col, j) => (

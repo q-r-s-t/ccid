@@ -26,11 +26,11 @@ export default function Home() {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setBgColor("#5d009c"); // Works 섹션 배경색
-          setTextColor("#f0f0ec"); // Works 섹션 글자색
+          setBgColor("#c1b8fb"); // Works 섹션 배경색
+          setTextColor("#5d009c"); // Works 섹션 글자색
         } else {
-          setBgColor("#f0f0ec"); // 기본 배경색
-          setTextColor("#0f0f13"); // 기본 글자색
+          setBgColor("#f0f0ec"); // 기본 배경
+          setTextColor("#0f0f13"); // 기본 글자
         }
       },
       { threshold: 0.1 } // Works 섹션 10% 보이면 작동
