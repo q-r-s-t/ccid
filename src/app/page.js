@@ -21,6 +21,7 @@ export default function Home() {
   const [angle, setAngle] = useState(25);
   const [lastPosition, setLastPosition] = useState({ x: 0, y: 0 });
   const [contactClassName, setContactClassName] = useState('');
+  const [borderRadius, setBorderRadius] = useState(9999); // 초기값: rounded-full
 
 
   useEffect(() => {
@@ -47,22 +48,24 @@ export default function Home() {
 
   useEffect(() => {
     const contactSection = document.querySelector("#contact");
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setContactClassName('rounded-none');
-        } else {
-          setContactClassName('rounded-full');
-        }
-      },
-      { threshold: 0.6 }
-    );
 
-    if (contactSection) observer.observe(contactSection);
+    if (!contactSection) return;
 
-    return () => {
-      if (contactSection) observer.unobserve(contactSection);
-    };
+    const observer = new IntersectionObserver(([entry]) => {
+      window.requestAnimationFrame(() => {
+        const ratio = Math.min(entry.intersectionRatio, 0.8);
+        const maxRadius = 9999; // rounded-full (최대)
+        const mappedRadius = Math.round(maxRadius * (1 - ratio / 0.8));
+
+        console.log(`Ratio: ${ratio}, Radius: ${mappedRadius}px`);
+
+        setBorderRadius(mappedRadius); // 상태 업데이트
+      });
+    }, { threshold: Array.from({ length: 9 }, (_, i) => i * 0.1) });
+
+    observer.observe(contactSection);
+
+    return () => observer.unobserve(contactSection);
   }, []);
 
 
@@ -136,7 +139,7 @@ export default function Home() {
           id="contact"
           className="relative w-screen h-[100dvh] snap-end md:p-28 xl:p-40 p-6 content-center"
         >
-          <Contact className={contactClassName}/>
+          <Contact borderRadius={borderRadius}/>
           <footer className="absolute bottom-0 left-0 w-full h-auto text-center p-4 md:p-8 font-[400] leading-[1.5] text-[2.6vw] md:text-[1.8vw] lg:text-[0.9vw] xl:text-[0.75vw]">
             © 2025 QrST Lab. All rights reserved.
           </footer>

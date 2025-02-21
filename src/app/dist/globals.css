@@ -7,6 +7,11 @@
   --foreground: #fff;
   --font-pretendard: "Pretendard", sans-serif;
   --font-inter: "Inter", sans-serif;
+  --rounded-radius: 9999px;
+}
+
+.dynamic-rounded {
+  border-radius: var(--rounded-radius);
 }
 
 @media (prefers-color-scheme: dark) {

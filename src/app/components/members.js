@@ -98,7 +98,7 @@ export default function Members() {
         );
 
         const data = await res.json();
-        console.log(data);
+        // console.log(data);
 
         // 동적으로 분류
         const categorizedMembers = data.members.reduce((acc, member) => {

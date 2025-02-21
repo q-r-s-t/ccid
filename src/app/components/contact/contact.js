@@ -1,7 +1,7 @@
 "use client";
 import { useEffect} from "react";
 import "./contact.css"
-export default function Contact({ className = '' }) {
+export default function Contact({ borderRadius }) {
   const email = "qrstlab@gmail.com";
 
   useEffect(() => {
@@ -36,7 +36,7 @@ export default function Contact({ className = '' }) {
   }, []);
   
   return (
-    <div className={`${className} transition-all duration-[1000ms] ease-out absolute top-0 left-0 w-full h-full bg-gray-200 gradient-bg`}>
+    <div style={{ borderRadius: `${borderRadius}px` }} className={`transition-all duration-[600ms] ease-out absolute top-0 left-0 w-full h-full bg-gray-200 gradient-bg`}>
     <svg xmlns="http://www.w3.org/2000/svg">
       <defs>
         <filter id="goo">
