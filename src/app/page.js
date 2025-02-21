@@ -11,7 +11,7 @@ import Aboutkeywords from "./components/about0215";
 // import About from "./components/about";
 import Keywords from "./components/keywords";
 // import Works from "./components/works/works_";
-import WorksMotion from "./components/works/worksmotion";
+import Works from "./components/works/works";
 import Members from "./components/members";
 import Contact from "./components/contact/contact";
 
@@ -55,7 +55,7 @@ export default function Home() {
           setContactClassName('rounded-full');
         }
       },
-      { threshold: 0.2 }
+      { threshold: 0.6 }
     );
 
     if (contactSection) observer.observe(contactSection);
@@ -122,10 +122,9 @@ export default function Home() {
         </section>
         <section
           id="works"
-          className={`transition-all duration-1000 w-screen relative min-h-[100dvh] lg:h-[100dvh] snap-start`}
+          className={`transition-all duration-1000 w-full relative min-h-[100dvh] snap-start`}
         >
-          {/* <Works /> */}
-          <WorksMotion />
+          <Works />
         </section>
         <section
           id="members"

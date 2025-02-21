@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Header({
   className,
-  textColor = "#0f0f13",
+  textColor,
 }) {
 
   return (
@@ -25,8 +25,8 @@ export default function Header({
         width={80}
         height={60}
         priority
-        style={{ objectFit: "contain" }}
-        className={`${textColor === "#f0f0ec" ? '' : 'invert'} filter transition-all duration-300 absolute top-0 left-0`}
+        style={{ objectFit: "contain",  }}
+        className={`${textColor === "#0f0f13" ? 'invert' : ''} filter transition-all duration-300 absolute top-0 left-0`}
       />
     </button>
   );
