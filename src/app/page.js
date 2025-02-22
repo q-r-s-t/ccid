@@ -20,7 +20,6 @@ export default function Home() {
   const [textColor, setTextColor] = useState("#0f0f13"); // 기본 글자색
   const [angle, setAngle] = useState(25);
   const [lastPosition, setLastPosition] = useState({ x: 0, y: 0 });
-  const [contactClassName, setContactClassName] = useState('');
   const [borderRadius, setBorderRadius] = useState(9999); // 초기값: rounded-full
 
 

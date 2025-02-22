@@ -7,7 +7,6 @@ export default function Contact({ borderRadius }) {
   useEffect(() => {
     const interBubble = document.querySelector(".interactive");
     if (!interBubble) return;
-
     let curX = 0;
     let curY = 0;
     let tgX = 0;

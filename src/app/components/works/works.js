@@ -33,7 +33,7 @@ export default function Works() {
                   <div
                     key={`${i}-${j}`}
                     className={`relative flex lg:hover:text-[#ff0] text-[3vw] md:text-[2.4vw] lg:text-[1vw] leading-[1.8] ${
-                      j === 0 ? "lg:pl-10 lg:h-[7dvh] lg:absolute lg:top-0 pl-6 lg:left-0 lg:w-[10vw]" : ""
+                      j === 0 ? "lg:pl-10 lg:h-[7dvh] lg:absolute lg:top-0 pl-6 lg:left-0 lg:w-[20vw]" : ""
                     }`}
                   >
                     {/* 국내 + 해외 + 논문 */}
