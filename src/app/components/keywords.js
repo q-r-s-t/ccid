@@ -66,7 +66,7 @@ function KeywordItem({ id, title, description }) {
     "font-[300] leading-none text-[6vw] md:text-[5vw] lg:text-[2.5vw] group-hover:text-primaryC";
 
   return (
-    <li className="hover:bg-gradient-to-t hover:from-[rgba(93,0,156,0.2)] hover:via-[rgba(93,0,156,0)] hover:to-[rgba(93,0,156,0)] flex group overflow-hidden transition-all duration-700 ease-out border-b-[1px] xl:border-b-[2px] border-inherit hover:border-transparent py-2 lg:py-[0.9vh]">
+    <li className="hover:bg-gradient-to-t hover:from-[rgba(93,0,156,0.2)] hover:via-[rgba(93,0,156,0)] hover:to-[rgba(93,0,156,0)] flex group overflow-hidden transition-all duration-700 ease-out border-b-[1px] border-inherit hover:border-transparent py-2 lg:py-[0.9vh]">
       <div
         className={`font-founders w-[50%] group-hover:w-[10%] ${textStyle}`}
       >
@@ -87,7 +87,7 @@ function KeywordItem({ id, title, description }) {
 export default function Keywords({ textColor }) {
   return (
     <ul
-      className="w-full h-full border-t-[1px] xl:border-t-[2px] pb-[20%] flex flex-col"
+      className="w-full h-full border-t-[1px] pb-[40%] flex flex-col"
       style={{ borderColor: textColor }}
     >
       {keywords.map((keyword) => (
