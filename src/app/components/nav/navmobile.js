@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Header from "./header";
+import Header from "../header";
 
 export default function Navmobile({ textColor }) {
   const [isOpen, setIsOpen] = useState(false);

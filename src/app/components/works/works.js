@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 
-export default function Works() {
+export default function Works({textColor}) {
   const [worksInfo, setWorksInfo] = useState([]);
 
   useEffect(() => {
@@ -24,7 +24,7 @@ export default function Works() {
   }, []);
 
   return (
-    <div className="text-primaryC pt-[12%] pb-[40%] lg:pt-[8%] lg:pb-[10%] w-full h-full font-[400]">
+    <div className={`${textColor == '#0f0f13' ? 'text-[#0f0f13]' : ''} text-[#0f0f13] pt-[12%] pb-[40%] lg:pt-[8%] lg:pb-[10%] w-full h-full font-[400]`}>
       {worksInfo.length > 0 ? (
         worksInfo.map((row, i) =>
           i % 2 === 0
@@ -33,7 +33,7 @@ export default function Works() {
                   <div
                     key={`${i}-${j}`}
                     className={`relative flex lg:hover:text-[#ff0] text-[3vw] md:text-[2.4vw] lg:text-[1vw] leading-[1.8] ${
-                      j === 0 ? "lg:pl-10 lg:h-[7dvh] lg:absolute lg:top-0 pl-6 lg:left-0 lg:w-[20vw]" : ""
+                      j === 0 ? "text-primaryC lg:pl-10 lg:h-[7dvh] lg:absolute lg:top-0 pl-6 lg:left-0 lg:w-[20vw]" : ""
                     }`}
                   >
                     {/* 국내 + 해외 + 논문 */}
@@ -43,7 +43,7 @@ export default function Works() {
                     <span
                       className={`flex-1 pr-6 ${
                         j === 0
-                          ? "font-[600] lg:block flex items-end text-[3.3vw] md:text-[2.6vw] lg:text-[1.03vw] pt-[8dvh] lg:pt-[0dvh] pb-[1dvh] lg:pb-[0.7dvh]"
+                          ? "text-primaryC font-[600] lg:block flex items-end text-[3.3vw] md:text-[2.6vw] lg:text-[1.03vw] pt-[8dvh] lg:pt-[0dvh] pb-[1dvh] lg:pb-[0.7dvh]"
                           : ""
                       }`}
                     >

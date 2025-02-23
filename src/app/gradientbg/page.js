@@ -3,8 +3,8 @@
 import "./style.css";
 import { useEffect } from "react";
 import Header from "../components/header";
-import Nav from "../components/nav";
-import Navmobile from "../components/navmobile";
+import Nav from "../components/nav/nav";
+import Navmobile from "../components/nav/navmobile";
 import Works from "../components/works/works_";
 
 export default function BgPage() {

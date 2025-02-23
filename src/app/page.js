@@ -3,8 +3,8 @@
 import { useEffect, useState } from "react";
 
 import Header from "./components/header";
-import Nav from "./components/nav";
-import Navmobile from "./components/navmobile";
+import Nav from "./components/nav/nav";
+import Navmobile from "./components/nav/navmobile";
 
 import Cover from "./components/cover";
 import Aboutkeywords from "./components/about0215";
@@ -126,7 +126,7 @@ export default function Home() {
           id="works"
           className={`transition-all duration-1000 w-full relative min-h-[100dvh] snap-start`}
         >
-          <Works />
+          <Works textColor={textColor}/>
         </section>
         <section
           id="members"
