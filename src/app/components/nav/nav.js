@@ -5,11 +5,12 @@ export default function Nav({ textColor }) {
 
   return (
     <div className="hidden lg:block z-[500]">
-      <LanguageToggle textColor={textColor}/>
+      
       <ul
         // style={{ color: textColor }}
         className={`${ textColor == "#0f0f13" ? 'text-[#0f0f13]' : ''} z-[500] gap-12 4xl:gap-20 lg:flex font-[300] leading-tight lg:text-[1.2vw] justify-center fixed top-0 pt-4 mx-auto w-screen transition-all duration-300 transform`}
       >
+        <LanguageToggle textColor={textColor}/>
         <li className="mx-5">
           <a
             href="#about"

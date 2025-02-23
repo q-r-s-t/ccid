@@ -24,7 +24,7 @@ export default function Works({textColor}) {
   }, []);
 
   return (
-    <div className={`${textColor == '#0f0f13' ? 'text-[#0f0f13]' : ''} text-[#0f0f13] pt-[12%] pb-[40%] lg:pt-[8%] lg:pb-[10%] w-full h-full font-[400]`}>
+    <div className={`${textColor == '#0f0f13' ? 'text-[#0f0f13]' : ''} text-[#0f0f13] pt-[12%] pb-[80%] lg:pt-[8%] lg:pb-[10%] w-full h-full font-[400]`}>
       {worksInfo.length > 0 ? (
         worksInfo.map((row, i) =>
           i % 2 === 0

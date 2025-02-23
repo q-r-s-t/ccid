@@ -36,7 +36,7 @@ function GET(request) {
             auth: auth
           }); // 여러 시트에서 데이터 가져오기
 
-          ranges = ["about!A1:B2", "works!A1:J6", "members!A1:E100"];
+          ranges = ["about!A1:D12", "works!A1:J6", "members!A1:E100"];
           _context.next = 11;
           return regeneratorRuntime.awrap(sheets.spreadsheets.values.batchGet({
             spreadsheetId: spreadsheetId,

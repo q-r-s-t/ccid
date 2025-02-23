@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Header from "../header";
+import LanguageToggle from "./lang";
 
 export default function Navmobile({ textColor }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,8 +14,9 @@ export default function Navmobile({ textColor }) {
   };
 
   return (
-    <div className="z-[700] fixed top-8 right-6">
-      {isOpen && <Header textColor="#f0f0ec"/>}
+    <div className="relative z-[700] fixed top-8 right-6">
+      {isOpen && <LanguageToggle textColor="#f0f0ec"/> }
+      
       <button
         className={`lg:hidden fixed z-[800] top-6 right-6 w-4 h-4 flex flex-col items-end justify-between transition-all duration-300 transform ${
           isOpen ? "h-4" : ""
@@ -38,14 +40,16 @@ export default function Navmobile({ textColor }) {
         ></div>
       </button>
 
+
       <ul
-        className={`lg:hidden text-left font-normal leading-normal text-2xl justify-center fixed top-0 left-0 pt-24 p-6 transition-all duration-300 transform 
+        className={`lg:hidden text-left font-normal leading-relaxed text-2xl justify-center fixed top-0 left-0 pt-24 p-6 transition-all duration-300 transform 
           transition duration-700 ease-in-out ${
             isOpen
               ? "opacity-100 bg-[rgba(0,0,0,0.5)] backdrop-blur w-full h-full"
               : "hidden opacity-0"
           }`}
       >
+        <Header textColor="#f0f0ec"/> 
         <li>
           <a
             href="#about"

@@ -1,3 +1,6 @@
+"use client";
+import { useEffect, useState } from "react";
+
 const keywords = [
   {
     id: "01",
@@ -61,6 +64,8 @@ const keywords = [
   },
 ];
 
+
+
 function KeywordItem({ id, title, description }) {
   const textStyle =
     "font-[300] leading-none text-[6vw] md:text-[5vw] lg:text-[2.5vw] group-hover:text-primaryC";
@@ -85,13 +90,36 @@ function KeywordItem({ id, title, description }) {
 }
 
 export default function Keywords({ textColor }) {
+  const [aboutInfo, setAboutInfo] = useState([]);
+
+  useEffect(() => {
+    const fetchAboutData = async () => {
+      try {
+        const res = await fetch(
+          `${
+            process.env.NODE_ENV === "production"
+              ? "https://qrstlab.vercel.app"
+              : ""
+          }/api/sheets`
+        );
+        const data = await res.json();
+        setAboutInfo(data.about); // about 시트 데이터
+      } catch (error) {
+        console.error("Error fetching about data:", error);
+      }
+    };
+
+    fetchAboutData();
+  }, []);
+
+  console.log(aboutInfo);
   return (
     <ul
       className="w-full h-full border-t-[1px] pb-[40%] flex flex-col"
       style={{ borderColor: textColor }}
     >
-      {keywords.map((keyword) => (
-        <KeywordItem key={keyword.id} {...keyword} />
+      {aboutInfo.slice(1).map((item, i) => (
+        <KeywordItem key={i} id={String(i + 1).padStart(2, "0")} title={item[0]} description={item[1]} />
       ))}
     </ul>
   );
