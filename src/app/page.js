@@ -56,7 +56,7 @@ export default function Home() {
         const maxRadius = 9999; // rounded-full (최대)
         const mappedRadius = Math.round(maxRadius * (1 - ratio / 0.8));
 
-        console.log(`Ratio: ${ratio}, Radius: ${mappedRadius}px`);
+        // console.log(`Ratio: ${ratio}, Radius: ${mappedRadius}px`);
 
         setBorderRadius(mappedRadius); // 상태 업데이트
       });

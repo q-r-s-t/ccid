@@ -17,7 +17,7 @@ function KeywordItem({ id, title, description }) {
         {id}
       </div>
       <h3
-        className={`${lang === 'en' ? textStyle : textStyleKr} tracking-[-0.04em] lg:tracking-[-0.02em] font-[370] w-[50%] group-hover:w-[40%] group-hover:pt-[2px] group-hover:mb-[2vh]`}
+        className={`${lang === 'en' ? textStyle : textStyleKr} tracking-[-0.02em] group-hover:pl-2 font-[370] w-[50%] group-hover:w-[40%] group-hover:pt-[2px] group-hover:mb-[2vh]`}
       >
         {title}
       </h3>
