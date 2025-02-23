@@ -11,7 +11,7 @@ var _zustand = require("zustand");
 var useLanguageStore = (0, _zustand.create)(function (set) {
   return {
     lang: "en",
-    toggleLanguage: function toggleLanguage() {
+    toggleLang: function toggleLang() {
       return set(function (state) {
         return {
           lang: state.lang === "ko" ? "en" : "ko"

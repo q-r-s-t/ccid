@@ -1,8 +1,10 @@
 "use client";
 import { useEffect, useState } from "react";
+import { useLanguageStore } from "../store/languageStore";
 
 export default function Aboutkeywords() {
   const [aboutInfo, setAboutInfo] = useState([]);
+  const { lang } = useLanguageStore();
 
   useEffect(() => {
     const fetchAboutData = async () => {
@@ -23,15 +25,18 @@ export default function Aboutkeywords() {
 
     fetchAboutData();
   }, []);
-
+  
+  // console.log(lang)
   // console.log(aboutInfo);
 
   return (
     <div className="font-[400] flex gap-[4vw] items-start justify-start w-full h-[50dvh] py-[6vh] lg:py-[14vh] leading-[1.1] text-[6vw] md:text-[5vw] lg:text-[3.5vw]">
-      <h1 className="flex-1 leading-none text-[6vw] mt-[-0.5vh] lg:mt-[-3vh]">Who We Are</h1>
-      <ul className="font-[400] flex-1 leading-[1.4] text-[3.3vw] lg:text-[1.3vw] ">
+      <h1 className="flex-1 leading-none text-[6vw] mt-[-0.5vh] lg:mt-[-3vh]">
+        Who We Are
+      </h1>
+      <ul className={`${lang === 'en' ? 'leading-[1.4] text-[3.3vw] lg:text-[1.3vw]' : 'leading-[1.8] text-[3.1vw] lg:text-[1.1vw]'} font-[400] flex-1`}>
         {aboutInfo.length > 0 ? (
-           <li className="mb-[4vh]">{aboutInfo[0][0]}</li>
+          <li className="mb-[4vh]">{lang === 'en' ? aboutInfo[0][0] : aboutInfo[0][1]}</li>
         ) : (
           <p>Loading...</p>
         )}

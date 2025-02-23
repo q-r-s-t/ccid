@@ -4,6 +4,6 @@ import { create } from "zustand";
 
 export const useLanguageStore = create((set) => ({
   lang: "en",
-  toggleLanguage: () =>
+  toggleLang: () =>
     set((state) => ({ lang: state.lang === "ko" ? "en" : "ko" })),
 }));
