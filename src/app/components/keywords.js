@@ -12,16 +12,16 @@ function KeywordItem({ id, title, description }) {
   return (
     <li className="hover:bg-gradient-to-t hover:from-[rgba(93,0,156,0.2)] hover:via-[rgba(93,0,156,0)] hover:to-[rgba(93,0,156,0)] flex group overflow-hidden transition-all duration-700 ease-out border-b-[1px] border-inherit hover:border-transparent py-2 lg:py-[0.9vh]">
       <div
-        className={`font-founders w-[50%] group-hover:w-[10%] ${textStyle}`}
+        className={`transition-all duration-700 font-founders w-[52%] group-hover:w-[10%] ${textStyle}`}
       >
-        {id}
+        {/* {id} */}
       </div>
       <h3
-        className={`${lang === 'en' ? textStyle : textStyleKr} tracking-[-0.02em] group-hover:pl-2 font-[370] w-[50%] group-hover:w-[40%] group-hover:pt-[2px] group-hover:mb-[2vh]`}
+        className={`${lang === 'en' ? textStyle : textStyleKr} transition-all duration-700 w-[48%] group-hover:w-[42%] tracking-[-0.02em] group-hover:pl-2 font-[370] group-hover:pt-[2px] group-hover:mb-[2vh]`}
       >
         {title}
       </h3>
-      <div className={`${lang === 'en' ? 'leading-[1.55] text-[3vw] md:text-[2.85vw] lg:text-[1.15vw]' : 'leading-[1.8] text-[3.1vw] lg:text-[1.1vw]'} w-0 ml-[4px] group-hover:w-[50%] font-[400] group-hover:h-[30vh] lg:group-hover:h-[30vh] h-0 opacity-0 group-hover:opacity-100 transition-all duration-700`}>
+      <div className={`${lang === 'en' ? 'leading-[1.55] text-[3vw] md:text-[2.85vw] lg:text-[1.15vw]' : 'leading-[1.8] text-[3.1vw] lg:text-[1.1vw]'} transition-all duration-700 w-0 ml-[4px] group-hover:w-[48%] font-[400] group-hover:h-[30vh] lg:group-hover:h-[30vh] h-0 opacity-0 group-hover:opacity-100 transition-all duration-700`}>
         {description}
       </div>
     </li>

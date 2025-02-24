@@ -1,8 +1,29 @@
 "use client";
-import { useEffect} from "react";
+import { useEffect, useState } from "react";
 import "./contact.css"
 export default function Contact({ borderRadius }) {
-  const email = "qrstlab@gmail.com";
+  // const email = "qrstlab@gmail.com";
+  const [aboutInfo, setAboutInfo] = useState([]);
+
+  useEffect(() => {
+    const fetchAboutData = async () => {
+      try {
+        const res = await fetch(
+          `${
+            process.env.NODE_ENV === "production"
+              ? "https://qrstlab.vercel.app"
+              : ""
+          }/api/sheets`
+        );
+        const data = await res.json();
+        setAboutInfo(data.about); // about 시트 데이터
+      } catch (error) {
+        console.error("Error fetching about data:", error);
+      }
+    };
+
+    fetchAboutData();
+  }, []);
 
   useEffect(() => {
     const interBubble = document.querySelector(".interactive");
@@ -62,17 +83,14 @@ export default function Contact({ borderRadius }) {
 
       <div>
         <a
-          href={`mailto:${email}`}
+          href={`mailto:${aboutInfo?.[0]?.[2] || ''}`}
           className="leading-snug pb-1 relative hover:text-white group"
         >
-          {email}
+          {aboutInfo?.[0]?.[2] || 'Loading...'}
           <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 ease-in-out group-hover:w-full inline-block"></span>
         </a>
       </div>
     </div>
-  </div>
-
-
-    
+  </div>    
   );
 }
