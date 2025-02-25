@@ -34,7 +34,7 @@ export default function Aboutkeywords() {
       <h1 className="flex-1 leading-none text-[6vw] mt-[-0.5vh] lg:mt-[-3vh]">
         Who We Are
       </h1>
-      <ul className={`${lang === 'en' ? 'leading-[1.4] text-[3.3vw] lg:text-[1.3vw]' : 'leading-[1.8] text-[3.1vw] lg:text-[1.1vw]'} font-[400] flex-1`}>
+      <ul className={`${lang === 'en' ? 'leading-[1.55] text-[3vw] md:text-[2.85vw] lg:text-[1.15vw]' : 'leading-[1.8] text-[3.1vw] lg:text-[1.1vw]'} font-[400] flex-1`}>
         {aboutInfo.length > 0 ? (
           <li className="mb-[4vh]">{lang === 'en' ? aboutInfo[0][0] : aboutInfo[0][1]}</li>
         ) : (

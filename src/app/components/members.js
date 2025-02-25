@@ -134,7 +134,7 @@ export default function Members() {
   const otherCategories = categories.slice(1); // 나머지 키들
 
   return (
-    <div className='py-[10dvh]'>
+    <div className='py-[10dvh] text-primaryC'>
       {firstCategory && (
       <div className='mb-20 lg:mb-[7vh]'>
         <h1 className="font-[600] leading-[1.8] text-[3.3vw] lg:text-[1.05vw] mb-[1.5vh]">{firstCategory[0]}</h1>
@@ -172,12 +172,12 @@ export default function Members() {
                 <img
                   src={member[2]}
                   alt={`${member[1]} profile`}
-                  className="flex-shrink-0 mr-4 lg:mr-[0.7vw] w-[70px] h-[70px] lg:w-[6vw] lg:h-[6vw] 2xl:w-[5vw] 2xl:h-[5vw] rounded-full object-cover object-top"
+                  className="filter grayscale flex-shrink-0 mr-4 lg:mr-[0.7vw] w-[70px] h-[70px] lg:w-[6vw] lg:h-[6vw] 2xl:w-[5vw] 2xl:h-[5vw] rounded-full object-cover object-top"
                 />
                 <div className="font-[500] flex flex-col justify-center pr-4 lg:pt-0 lg:pl-2">
                   <h3 className="leading-relaxed lg:leading-none text-[3vw] md:text-[1.9vw] lg:text-[1vw] xl:mb-[0.4vh] font-[600]">{member[1]}</h3>
                   <h2 className="leading-none text-[2.6vw] md:text-[1.6vw] md:leading-[1.2] lg:text-[0.7vw] font-[550]">{member[3]}</h2>
-                  <pre className={`pt-[0.7vh] xl:pt-0 whitespace-pre-wrap font-[500] leading-tight text-[2.4vw] md:text-[1.3vw] lg:text-[0.6vw] xl:mt-[0.5vh] ${inter.className}`}>{member[4]}</pre>
+                  <pre className={` pt-[0.7vh] xl:pt-0 whitespace-pre-wrap font-[500] leading-tight text-[2.4vw] md:text-[1.3vw] lg:text-[0.6vw] xl:mt-[0.5vh] ${inter.className}`}>{member[4]}</pre>
                 </div>
               </li>
             ))}

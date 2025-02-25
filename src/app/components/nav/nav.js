@@ -1,14 +1,15 @@
 "use client";
 import LanguageToggle from "./lang";
+import { programme } from "@/fonts/fonts";
 
 export default function Nav({ textColor }) {
 
   return (
-    <div className="hidden lg:block z-[500]">
+    <div className={`${programme.className} hidden lg:block z-[500]`}>
       
       <ul
         // style={{ color: textColor }}
-        className={`${ textColor == "#0f0f13" ? 'text-[#0f0f13]' : ''} z-[500] gap-12 4xl:gap-20 lg:flex font-[300] leading-tight lg:text-[1.2vw] justify-center fixed top-0 pt-4 mx-auto w-screen transition-all duration-300 transform`}
+        className={`${ textColor == "#0f0f13" ? 'text-[#0f0f13]' : ''} z-[500] gap-12 4xl:gap-20 lg:flex font-[300] leading-tight lg:text-[1.2vw] justify-center fixed top-0 pt-2 mx-auto w-screen transition-all duration-300 transform`}
       >
         <LanguageToggle textColor={textColor}/>
         <li className="mx-5">
@@ -23,7 +24,7 @@ export default function Nav({ textColor }) {
                 // closeMenu(); // 메뉴 닫기
             }}
           >
-            About
+            about
           </a>
         </li>
         <li className="mx-5">
@@ -38,7 +39,7 @@ export default function Nav({ textColor }) {
                 // closeMenu(); // 메뉴 닫기
             }}
           >
-            Works
+            works
           </a>
         </li>
         <li className="mx-5">
@@ -53,7 +54,7 @@ export default function Nav({ textColor }) {
                 // closeMenu(); // 메뉴 닫기
             }}
           >
-            People
+            people
           </a>
         </li>
         <li className="mx-5">
@@ -68,7 +69,7 @@ export default function Nav({ textColor }) {
                 // closeMenu(); // 메뉴 닫기
             }}
           >
-            Contact
+            contact
           </a>
         </li>
       </ul>

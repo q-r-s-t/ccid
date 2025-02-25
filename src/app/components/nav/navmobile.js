@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Header from "../header";
 import LanguageToggle from "./lang";
+import { programme } from "@/fonts/fonts";
 
 export default function Navmobile({ textColor }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,7 +15,7 @@ export default function Navmobile({ textColor }) {
   };
 
   return (
-    <div className="relative z-[700] fixed top-8 right-6">
+    <div className={`${programme.className} relative z-[700] fixed top-8 right-6`}>
       {isOpen && <LanguageToggle textColor="#f0f0ec"/> }
       
       <button

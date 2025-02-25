@@ -1,12 +1,15 @@
 import "./globals.css";
 import { Playwrite_CU, Inter } from "next/font/google";
-
-const playwrite = Playwrite_CU({
-  subsets: ["latin"],
-  weight: ["100", "200", "300", "400"],
-});
+import localFont from 'next/font/local';
 
 const inter = Inter({ subsets: ["latin"] });
+
+const pxGrotesk = localFont({
+  src: '../fonts/Px-Grotesk-Regular.woff', // 경로 확인 (src 내부에서 접근)
+  weight: '400',
+  style: 'normal',
+  display: 'swap',
+});
 
 export const metadata = {
   title: "QrST LAB",
@@ -35,7 +38,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="ko" className={inter.className}>
+    <html lang="ko" className={pxGrotesk.className}>
       <body className={`scrollbar-hide antialiased`}>
         {children}
       </body>
