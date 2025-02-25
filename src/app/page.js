@@ -1,6 +1,6 @@
 "use client";
 
-import "./multilingual.css";
+// import "./multilingual.css";
 import { useEffect, useState } from "react";
 
 import Header from "./components/header";
@@ -17,12 +17,12 @@ import Members from "./components/members";
 import Contact from "./components/contact/contact";
 
 export default function Home() {
-  const MultiLingual = require("multilingual.js");
+  // const MultiLingual = require("multilingual.js");
 
-  const ml = new MultiLingual({
-    containers: document.getElementsByClassName("content"), // 배열 형태를 띈 dom 요소를 불러옵니다. $(".content") 와 같은 형태
-    configuration: ["ko", "en", "num"],
-  });
+  // const ml = new MultiLingual({
+  //   containers: document.getElementsByClassName("content"), // 배열 형태를 띈 dom 요소를 불러옵니다. $(".content") 와 같은 형태
+  //   configuration: ["ko", "en", "num"],
+  // });
   
 
   const [bgColor, setBgColor] = useState("#f0f0ec");

@@ -12,17 +12,11 @@
 
 span.ml-ko {
   font-family: 'pretendardB', sans-serif;
-  /*below two lines are for baseline shift */
-  position: relative;
-  top: 0;
 }
 
 span.ml-num {
   font-family: 'Nanum Gothic', Arial, sans-serif;
   font-size: 15px;
-  /*below two lines are for baseline shift */
-  position: relative;
-  top: 0;
 }
 
 span.ml-punct {
