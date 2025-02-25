@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-
+import { pretendardB } from "@/fonts/fonts";
 export default function Works({textColor}) {
   const [worksInfo, setWorksInfo] = useState([]);
 
@@ -33,7 +33,7 @@ export default function Works({textColor}) {
                   <div
                     key={`${i}-${j}`}
                     className={`relative flex lg:hover:text-[#ff0] text-[3vw] md:text-[2.4vw] lg:text-[1vw] leading-[1.8] ${
-                      j === 0 ? "text-primaryC lg:pl-10 lg:h-[7dvh] lg:absolute lg:top-0 pl-6 lg:left-0 lg:w-[20vw]" : ""
+                      j === 0 ? pretendardB.className + " text-primaryC lg:pl-10 lg:h-[7dvh] lg:absolute lg:top-0 pl-6 lg:left-0 lg:w-[20vw]" : ""
                     }`}
                   >
                     {/* 국내 + 해외 + 논문 */}

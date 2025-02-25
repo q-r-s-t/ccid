@@ -138,7 +138,7 @@ export default function Members() {
     <div className='py-[10dvh] text-primaryC'>
       {firstCategory && (
       <div className='mb-20 lg:mb-[7vh]'>
-        <h1 className="leading-[1.8] text-[3.3vw] lg:text-[1.05vw] mb-[1.5vh]">{firstCategory[0]}</h1>
+        <h1 className="leading-[1.8] text-[3.7vw] lg:text-[1.05vw] mb-[1.5vh]">{firstCategory[0]}</h1>
         {firstCategory[1].map((member, index) => (
           <div key={index} className="md:flex gap-8 lg:gap-6 xl:gap-[3vw]">
             <img
@@ -163,7 +163,7 @@ export default function Members() {
 
       {otherCategories.map(([category, members]) => (
         <div key={category} className="mb-12 md:mb-20 lg:mb-[5vh]">
-          <h1 className="leading-[1.8] text-[3.3vw] lg:text-[1.05vw] mb-[2vh]">{category}</h1>
+          <h1 className="leading-[1.8] text-[3.7vw] lg:text-[1.05vw] mb-[2vh]">{category}</h1>
           <ul className="md:flex flex-wrap">
             {members.map((member, index) => (
               <li
