@@ -1,8 +1,7 @@
 "use client";
 
-// import "./multilingual.css";
 import { useEffect, useState } from "react";
-
+// import "./multilingual.css";
 import Header from "./components/header";
 import Nav from "./components/nav/nav";
 import Navmobile from "./components/nav/navmobile";
