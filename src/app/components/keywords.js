@@ -4,7 +4,7 @@ import { useLanguageStore } from "../store/languageStore";
 
 function KeywordItem({ id, title, description }) {
   const textStyle =
-    "font-[300] leading-none text-[6vw] md:text-[5vw] lg:text-[2.5vw] group-hover:text-primaryC";
+    "font-[300] leading-none text-[6vw] md:text-[5vw] lg:text-[2.4vw] group-hover:text-primaryC";
     const textStyleKr =
     "font-[450] leading-none text-[5vw] md:text-[4.5vw] lg:text-[2.2vw] group-hover:text-primaryC";
     const { lang } = useLanguageStore();

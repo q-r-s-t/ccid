@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "googleapis": "39.2.0",
+    "multilingual.js": "^0.1.41",
     "next": "15.1.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
