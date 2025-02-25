@@ -1,6 +1,6 @@
 "use client";
 
-import "./multilingual.css";
+// import "./multilingual.css";
 import { useEffect, useState } from "react";
 
 import Header from "./components/header";
@@ -26,12 +26,12 @@ export default function Home() {
 
 
   useEffect(() => {
-    const MultiLingual = require("multilingual.js");
+    // const MultiLingual = require("multilingual.js");
 
-    const ml = new MultiLingual({
-      containers: document.getElementsByClassName("content"), // 배열 형태를 띈 dom 요소를 불러옵니다.
-      configuration: ["ko", "en", "num"],
-    });
+    // const ml = new MultiLingual({
+    //   containers: document.getElementsByClassName("content"), // 배열 형태를 띈 dom 요소를 불러옵니다.
+    //   configuration: ["ko", "en", "num"],
+    // });
 
     const worksSection = document.querySelector("#works");
     const observer = new IntersectionObserver(
