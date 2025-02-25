@@ -40,15 +40,15 @@ export default function Works({textColor}) {
                     <div className={`${j === 0 ? 'hidden': ''} flex-[0.35] lg:flex-[0.5] lg:pl-[20%] lg:text-[1.1vw] font-founders lg:flex-[0.085] pl-6 lg:pl-12`}>
                       {worksInfo[i][j]}
                     </div>
-                    <span
+                    <p
                       className={`flex-1 pr-6 ${
                         j === 0
-                          ? "text-primaryC font-[600] lg:block flex items-end text-[3.3vw] md:text-[2.6vw] lg:text-[1.03vw] pt-[8dvh] lg:pt-[0dvh] pb-[1dvh] lg:pb-[0.7dvh]"
+                          ? "text-primaryC lg:block flex items-end text-[3.3vw] md:text-[2.6vw] lg:text-[1.03vw] pt-[8dvh] lg:pt-[0dvh] pb-[1dvh] lg:pb-[0.7dvh]"
                           : ""
                       }`}
                     >
                       {worksInfo[i + 1]?.[j]}
-                    </span>
+                    </p>
                   </div>
                 </div>
               ))

@@ -1,6 +1,6 @@
 "use client";
 
-// import "./multilingual.css";
+import "./multilingual.css";
 import { useEffect, useState } from "react";
 
 import Header from "./components/header";
@@ -16,14 +16,7 @@ import Works from "./components/works/works";
 import Members from "./components/members";
 import Contact from "./components/contact/contact";
 
-export default function Home() {
-  // const MultiLingual = require("multilingual.js");
-
-  // const ml = new MultiLingual({
-  //   containers: document.getElementsByClassName("content"), // 배열 형태를 띈 dom 요소를 불러옵니다. $(".content") 와 같은 형태
-  //   configuration: ["ko", "en", "num"],
-  // });
-  
+export default function Home() {  
 
   const [bgColor, setBgColor] = useState("#f0f0ec");
   const [textColor, setTextColor] = useState("#0f0f13"); // 기본 글자색
@@ -33,6 +26,13 @@ export default function Home() {
 
 
   useEffect(() => {
+    const MultiLingual = require("multilingual.js");
+
+    const ml = new MultiLingual({
+      containers: document.getElementsByClassName("content"), // 배열 형태를 띈 dom 요소를 불러옵니다.
+      configuration: ["ko", "en", "num"],
+    });
+
     const worksSection = document.querySelector("#works");
     const observer = new IntersectionObserver(
       ([entry]) => {
