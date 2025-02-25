@@ -10,7 +10,6 @@ import Cover from "./components/cover";
 import Aboutkeywords from "./components/about0215";
 // import About from "./components/about";
 import Keywords from "./components/keywords";
-// import Works from "./components/works/works_";
 import Works from "./components/works/works";
 import Members from "./components/members";
 import Contact from "./components/contact/contact";
