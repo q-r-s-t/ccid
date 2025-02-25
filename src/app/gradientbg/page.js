@@ -40,7 +40,7 @@ export default function BgPage() {
   }, []);
 
   return (
-    <div className="w-screen h-screen bg-gray-200 gradient-bg">
+    <div className="w-[100%] h-screen bg-gray-200 gradient-bg">
       <svg xmlns="http://www.w3.org/2000/svg">
         <defs>
           <filter id="goo">

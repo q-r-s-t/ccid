@@ -38,7 +38,7 @@ export default function Nav({ textColor }) {
       </button>
 
       <ul
-        className={`z-[500] text-xl xl:text-2xl 4xl:text-[2rem] 4xl:gap-8 hidden font-normal sm:flex justify-center gap-4 fixed top-0 pt-4 mx-auto w-screen transition-all duration-300 transform ${textColor} ${
+        className={`z-[500] text-xl xl:text-2xl 4xl:text-[2rem] 4xl:gap-8 hidden font-normal sm:flex justify-center gap-4 fixed top-0 pt-4 mx-auto w-[100%] transition-all duration-300 transform ${textColor} ${
           isOpen
             ? "opacity-100 bg-[rgba(15,15,19,0.5)] backdrop-blur w-full h-full"
             : "top-[-4rem] opacity-0"

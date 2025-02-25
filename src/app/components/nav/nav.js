@@ -9,7 +9,7 @@ export default function Nav({ textColor }) {
       
       <ul
         // style={{ color: textColor }}
-        className={`${ textColor == "#0f0f13" ? 'text-[#0f0f13]' : ''} z-[500] gap-12 4xl:gap-20 lg:flex font-[300] leading-tight lg:text-[1.2vw] justify-center fixed top-0 pt-2 mx-auto w-screen transition-all duration-300 transform`}
+        className={`${ textColor == "#0f0f13" ? 'text-[#0f0f13]' : ''} z-[500] gap-12 4xl:gap-20 lg:flex font-[300] leading-tight lg:text-[1.2vw] justify-center fixed top-0 pt-2 mx-auto w-[100%] transition-all duration-300 transform`}
       >
         <LanguageToggle textColor={textColor}/>
         <li className="mx-5">
