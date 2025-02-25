@@ -33,9 +33,6 @@ export default function RootLayout({ children }) {
     <html lang="ko" className={pxGrotesk.className}>
       <body
         className={`scrollbar-hide antialiased`}
-        style={{
-          fontFamily: `${pxGrotesk.className}, ${pretendardB.className}, ${inter.className}, sans-serif`,
-        }}
       >
         {children}
       </body>
