@@ -13,3 +13,10 @@ export const pxGrotesk = localFont({
   style: 'normal',
   display: 'swap',
 });
+
+export const pretendardB = localFont({
+  src: '../fonts/Pretendard-Bold.subset.woff2', // 경로 확인 (src 내부에서 접근)
+  weight: '800',
+  style: 'normal',
+  display: 'swap',
+});

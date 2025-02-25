@@ -1,6 +1,6 @@
 import "./globals.css";
 import { Playwrite_CU, Inter } from "next/font/google";
-import { pxGrotesk } from "@/fonts/fonts";
+import { pxGrotesk, pretendardB } from "@/fonts/fonts";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -20,18 +20,23 @@ export const metadata = {
     ],
   },
   viewport: {
-    width: 'device-width',
+    width: "device-width",
     initialScale: 1.0,
     minimumScale: 1.0,
     maximumScale: 1.0,
-    userScalable: 'no',
+    userScalable: "no",
   },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="ko" className={pxGrotesk.className}>
-      <body className={`scrollbar-hide antialiased`}>
+      <body
+        className={`scrollbar-hide antialiased`}
+        style={{
+          fontFamily: `${pxGrotesk.className}, ${pretendardB.className}, ${inter.className}, sans-serif`,
+        }}
+      >
         {children}
       </body>
     </html>

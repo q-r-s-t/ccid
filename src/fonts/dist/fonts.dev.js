@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.pxGrotesk = exports.programme = void 0;
+exports.pretendardB = exports.pxGrotesk = exports.programme = void 0;
 
 var _local = _interopRequireDefault(require("next/font/local"));
 
@@ -24,3 +24,11 @@ var pxGrotesk = (0, _local["default"])({
   display: 'swap'
 });
 exports.pxGrotesk = pxGrotesk;
+var pretendardB = (0, _local["default"])({
+  src: '../fonts/Pretendard-Bold.subset.woff2',
+  // 경로 확인 (src 내부에서 접근)
+  weight: '800',
+  style: 'normal',
+  display: 'swap'
+});
+exports.pretendardB = pretendardB;
