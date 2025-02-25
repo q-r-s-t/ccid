@@ -1,15 +1,7 @@
 import "./globals.css";
 import { Playwrite_CU, Inter } from "next/font/google";
-import localFont from 'next/font/local';
-
+import { pxGrotesk } from "@/fonts/fonts";
 const inter = Inter({ subsets: ["latin"] });
-
-const pxGrotesk = localFont({
-  src: '../fonts/Px-Grotesk-Regular.woff', // 경로 확인 (src 내부에서 접근)
-  weight: '400',
-  style: 'normal',
-  display: 'swap',
-});
 
 export const metadata = {
   title: "QrST LAB",
