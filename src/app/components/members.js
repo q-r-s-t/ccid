@@ -138,7 +138,7 @@ export default function Members() {
     <div className='py-[10dvh] text-primaryC'>
       {firstCategory && (
       <div className='mb-20 lg:mb-[7vh]'>
-        <h1 className="leading-[1.8] text-[3.7vw] lg:text-[1.05vw] mb-[1.5vh]">{firstCategory[0]}</h1>
+        <h1 className="leading-[1.8] text-[3.7vw] md:text-[2.9vw] lg:text-[1.05vw] mb-[1.6vh]">{firstCategory[0]}</h1>
         {firstCategory[1].map((member, index) => (
           <div key={index} className="md:flex gap-8 lg:gap-6 xl:gap-[3vw]">
             <img
@@ -148,7 +148,7 @@ export default function Members() {
             />
             <div className="md:flex-1 ">
               <h2 className="leading-[1.5] text-[5vw] md:text-[3.3vw] lg:text-[1.4vw]">{member[1]}</h2>
-              <p className="leading-[1.5] text-[3.2vw] md:text-[2.1vw] lg:text-[1vw]">{member[3]}</p>
+              <p className="leading-[1.5] text-[3.45vw] md:text-[2.1vw] lg:text-[1vw]">{member[3]}</p>
               <div className="border-l border-current mt-6 md:mt-4 pl-3 lg:pl-[0.5vw]">
                 <h3 className="pb-3 md:pb-2 leading-[1.3] text-[3vw] md:text-[1.9vw] lg:text-[0.8vw]">Career</h3>
                 <div className="leading-[1.45] text-[3vw] md:text-[1.7vw] lg:text-[0.7vw]">
@@ -163,7 +163,7 @@ export default function Members() {
 
       {otherCategories.map(([category, members]) => (
         <div key={category} className="mb-12 md:mb-20 lg:mb-[5vh]">
-          <h1 className="leading-[1.8] text-[3.7vw] lg:text-[1.05vw] mb-[2vh]">{category}</h1>
+          <h1 className="leading-[1.8] text-[3.7vw] md:text-[2.9vw] lg:text-[1.05vw] mb-[2vh]">{category}</h1>
           <ul className="md:flex flex-wrap">
             {members.map((member, index) => (
               <li
@@ -177,8 +177,8 @@ export default function Members() {
                 />
                 <div className="flex flex-col justify-center pr-4 lg:pt-0 lg:pl-2">
                   <h3 className={`${pretendardB.className} leading-relaxed lg:leading-none text-[3vw] md:text-[1.9vw] lg:text-[0.9vw] xl:mb-[0.4vh] `}>{member[1]}</h3>
-                  <h2 className="leading-none text-[3.1vw] md:text-[1.6vw] lg:text-[0.75vw]">{member[3]}</h2>
-                  <pre className={` pt-[0.5vh] xl:pt-0 whitespace-pre-wrap leading-tight text-[2.4vw] md:text-[1.3vw] lg:text-[0.65vw] xl:mt-[0.5vh] ${pxGrotesk.className}`}>{member[4]}</pre>
+                  <h2 className="leading-none text-[3.2vw] md:text-[1.6vw] lg:text-[0.75vw]">{member[3]}</h2>
+                  <pre className={` pt-[0.7vh] xl:pt-0 whitespace-pre-wrap leading-tight text-[2.4vw] md:text-[1.3vw] lg:text-[0.65vw] xl:mt-[0.5vh] ${pxGrotesk.className}`}>{member[4]}</pre>
                 </div>
               </li>
             ))}
