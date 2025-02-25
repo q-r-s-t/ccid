@@ -10,14 +10,14 @@ var _local = _interopRequireDefault(require("next/font/local"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var programme = (0, _local["default"])({
-  src: "./Programme-Light.woff",
+  src: "../Programme-Light.woff",
   weight: "400",
   style: "normal",
   display: "swap"
 });
 exports.programme = programme;
 var pxGrotesk = (0, _local["default"])({
-  src: './fonts/Px-Grotesk-Regular.woff',
+  src: '../fonts/Px-Grotesk-Regular.woff',
   // 경로 확인 (src 내부에서 접근)
   weight: '400',
   style: 'normal',
@@ -25,7 +25,7 @@ var pxGrotesk = (0, _local["default"])({
 });
 exports.pxGrotesk = pxGrotesk;
 var pretendardB = (0, _local["default"])({
-  src: './fonts/Pretendard-Bold.subset.woff2',
+  src: '../fonts/Pretendard-Bold.subset.woff2',
   // 경로 확인 (src 내부에서 접근)
   weight: '800',
   style: 'normal',
