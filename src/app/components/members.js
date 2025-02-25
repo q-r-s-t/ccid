@@ -83,7 +83,7 @@
 
 import { useEffect, useState } from 'react';
 import { Inter } from "next/font/google";
-import { pxGrotesk, pretendardB } from '@/fonts/fonts';
+import { pxGrotesk } from '@/fonts/fonts';
 
 const inter = Inter({ subsets: ["latin"], weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"] });
 
@@ -176,7 +176,7 @@ export default function Members() {
                   className="filter grayscale flex-shrink-0 mr-4 lg:mr-[0.7vw] w-[70px] h-[70px] lg:w-[6vw] lg:h-[6vw] 2xl:w-[5vw] 2xl:h-[5vw] rounded-full object-cover object-top"
                 />
                 <div className="flex flex-col justify-center pr-4 lg:pt-0 lg:pl-2">
-                  <h3 className={`${pretendardB.className} leading-relaxed lg:leading-none text-[3vw] md:text-[1.9vw] lg:text-[0.9vw] xl:mb-[0.4vh]`}>{member[1]}</h3>
+                  <h3 className="leading-relaxed lg:leading-none text-[3vw] md:text-[1.9vw] lg:text-[1vw] xl:mb-[0.4vh] ">{member[1]}</h3>
                   <h2 className="leading-none text-[2.6vw] md:text-[1.6vw] lg:text-[0.75vw]">{member[3]}</h2>
                   <pre className={` pt-[0.6vh] xl:pt-0 whitespace-pre-wrap leading-tight text-[2.4vw] md:text-[1.3vw] lg:text-[0.65vw] xl:mt-[0.5vh] ${pxGrotesk.className}`}>{member[4]}</pre>
                 </div>
