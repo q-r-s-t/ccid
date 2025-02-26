@@ -1,3 +1,5 @@
+// import { transform } from 'next/dist/build/swc/generated-native';
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -8,18 +10,13 @@ export default {
   theme: {
     extend: {
       animation: {
-        fadeIn: "fadeIn 1.5s ease-in-out forwards",
+        drop: "drop 0.3s ease-in-out forwards",
       },
       keyframes: {
-        fadeIn: {
-          "0%": { opacity: "0" },
-          "100%": { opacity: "1" },
+        drop: {
+          "0%": { opacity: "0", transform: "translateY(-100%)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
         },
-      },
-      spacing: {
-        300: '300ms',
-        600: '600ms',
-        900: '900ms',
       },
       screens: {
         '3xl': '1920px',

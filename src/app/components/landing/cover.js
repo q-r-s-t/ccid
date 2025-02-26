@@ -1,13 +1,39 @@
+'use client'
 import { programme } from "@/fonts/fonts";
+import { useEffect, useState } from 'react';
+
+const AnimatedText = ({ text, className, delay = 0 }) => {
+  const [animatedText, setAnimatedText] = useState([]);
+
+  useEffect(() => {
+    const chars = text.split('').map((char, index) => (
+      <span
+        key={index}
+        className="opacity-0 translate-y-[-100%] inline-block animate-drop"
+        style={{ animationDelay: `${delay + index * 0.05}s` }}
+      >
+        {char}
+      </span>
+    ));
+    setAnimatedText(chars);
+  }, [text]);
+
+  return (
+    <div className={`${className} overflow-y-hidden relative w-full`}>
+      {animatedText}
+    </div>
+  );
+};
+
 export default function Cover() {
   return (
     <div
-      className={`${programme.className} leading-[0.9] text-[9vw] flex flex-col justify-center items-center h-full w-full px-6 lg:px-10`}
+      className={`${programme.className} leading-[0.9] text-[11.5vw] lg:text-[9vw] flex flex-col justify-center items-center h-full w-full px-6 lg:px-10`}
     >
-      <div className="animate-fadeIn z-10 w-full text-left">DESIGN</div>
-      <div className="animate-fadeIn z-10 w-full text-left delay-[300ms]">CONVERGENCE</div>
-      <div className="animate-fadeIn z-10 w-full text-right delay-[600ms]">COLLECTIVE</div>
-      <div className="animate-fadeIn z-10 w-full text-right delay-[900ms]">QrST</div>
+      <AnimatedText text="DESIGN" className="text-left" delay={0}/>
+      <AnimatedText text="CONVERGENCE" className="text-left" delay={0.3}/>
+      <AnimatedText text="COLLECTIVE" className="text-right" delay={0.8}/>
+      <AnimatedText text="QrST" className="text-right" delay={1.3}/>
     </div>
   );
 }
