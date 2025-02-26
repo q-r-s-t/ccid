@@ -7,6 +7,20 @@ export default {
   ],
   theme: {
     extend: {
+      animation: {
+        fadeIn: "fadeIn 1.5s ease-in-out forwards",
+      },
+      keyframes: {
+        fadeIn: {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
+      },
+      spacing: {
+        300: '300ms',
+        600: '600ms',
+        900: '900ms',
+      },
       screens: {
         '3xl': '1920px',
         '4xl': '2560px',

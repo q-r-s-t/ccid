@@ -118,6 +118,8 @@ export default function Home() {
             loop
             muted
             playsInline
+            webkit-playsinline
+            disablePictureInPicture
             className="absolute top-0 left-0 w-full h-full object-cover"
           />
           <Cover />
