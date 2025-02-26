@@ -104,9 +104,9 @@ export default function Home() {
         loop
         muted
         playsInline
-        webkit-playsinline
         disablePictureInPicture
-        className="absolute z-[-1] top-0 left-0 w-full h-screen object-cover"
+        webkit-playsinline
+        className="block absolute z-[-1] top-0 left-0 w-full h-screen object-cover"
       />
       <Cover />
 
