@@ -28,7 +28,7 @@ const AnimatedText = ({ text, className, delay = 0 }) => {
 export default function Cover() {
   return (
     <div
-      className={`${programme.className} text-[#0f0f13] z-[-1] fixed leading-[0.9] text-[11.5vw] lg:text-[9vw] flex flex-col justify-center items-center h-full w-full px-6 lg:px-10`}
+      className={`${programme.className} mix-blend-difference text-white z-[-1] fixed leading-[0.9] text-[11.5vw] lg:text-[9vw] flex flex-col justify-center items-center h-full w-full px-6 lg:px-10`}
     >
       <AnimatedText text="DESIGN" className="text-left" delay={0}/>
       <AnimatedText text="CONVERGENCE" className="text-left" delay={0.5}/>
