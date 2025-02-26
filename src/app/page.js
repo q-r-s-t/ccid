@@ -6,7 +6,7 @@ import Header from "./components/header";
 import Nav from "./components/nav/nav";
 import Navmobile from "./components/nav/navmobile";
 
-import Cover from "./components/cover";
+import Cover from "./components/landing/cover";
 import Aboutkeywords from "./components/about0215";
 // import About from "./components/about";
 import Keywords from "./components/keywords";
@@ -14,14 +14,12 @@ import Works from "./components/works/works";
 import Members from "./components/members";
 import Contact from "./components/contact/contact";
 
-export default function Home() {  
-
+export default function Home() {
   const [bgColor, setBgColor] = useState("#f0f0ec");
   const [textColor, setTextColor] = useState("#0f0f13"); // 기본 글자색
   const [angle, setAngle] = useState(25);
   const [lastPosition, setLastPosition] = useState({ x: 0, y: 0 });
   const [borderRadius, setBorderRadius] = useState(9999); // 초기값: rounded-full
-
 
   useEffect(() => {
     const worksSection = document.querySelector("#works");
@@ -50,22 +48,24 @@ export default function Home() {
 
     if (!contactSection) return;
 
-    const observer = new IntersectionObserver(([entry]) => {
-      window.requestAnimationFrame(() => {
-        const ratio = Math.min(entry.intersectionRatio, 0.8);
-        const maxRadius = 9999; // rounded-full (최대)
-        const mappedRadius = Math.round(maxRadius * (1 - ratio / 0.8));
-        // console.log(`Ratio: ${ratio}, Radius: ${mappedRadius}px`);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        window.requestAnimationFrame(() => {
+          const ratio = Math.min(entry.intersectionRatio, 0.8);
+          const maxRadius = 9999; // rounded-full (최대)
+          const mappedRadius = Math.round(maxRadius * (1 - ratio / 0.8));
+          // console.log(`Ratio: ${ratio}, Radius: ${mappedRadius}px`);
 
-        setBorderRadius(mappedRadius); // 상태 업데이트
-      });
-    }, { threshold: Array.from({ length: 9 }, (_, i) => i * 0.1) });
+          setBorderRadius(mappedRadius); // 상태 업데이트
+        });
+      },
+      { threshold: Array.from({ length: 9 }, (_, i) => i * 0.1) }
+    );
 
     observer.observe(contactSection);
 
     return () => observer.unobserve(contactSection);
   }, []);
-
 
   const handleIntroClick = () => {
     setIsFading(true); // fade-out 시작
@@ -110,8 +110,16 @@ export default function Home() {
       >
         <section
           id="cover"
-          className="w-[100%] h-[100dvh] snap-start flex items-center justify-center"
+          className="relative w-[100%] h-[100%] snap-start flex items-center justify-center"
         >
+          <video
+            src="/video/5.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute top-0 left-0 w-full h-full object-cover"
+          />
           <Cover />
         </section>
         <section
@@ -119,13 +127,13 @@ export default function Home() {
           className="relative w-[100%] min-h-[100dvh] snap-start pt-20 4xl:pt-[5%] px-6 lg:px-10 content-center"
         >
           <Aboutkeywords />
-          <Keywords textColor={textColor}/>
+          <Keywords textColor={textColor} />
         </section>
         <section
           id="works"
           className={`transition-all duration-1000 w-full relative min-h-[100dvh] snap-start`}
         >
-          <Works textColor={textColor}/>
+          <Works textColor={textColor} />
         </section>
         <section
           id="members"
@@ -137,7 +145,7 @@ export default function Home() {
           id="contact"
           className="relative w-[100%] h-[100dvh] snap-end md:p-28 xl:p-40 p-6 content-center"
         >
-          <Contact borderRadius={borderRadius}/>
+          <Contact borderRadius={borderRadius} />
           <footer className="absolute bottom-0 left-0 w-full h-auto text-center p-4 md:p-8 font-[400] leading-[1.5] text-[2.6vw] md:text-[1.8vw] lg:text-[0.9vw] xl:text-[0.75vw]">
             © 2025 QrST Lab. All rights reserved.
           </footer>

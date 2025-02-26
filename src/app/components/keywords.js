@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useLanguageStore } from "../store/languageStore";
+import { programme } from "@/fonts/fonts";
 
 function KeywordItem({ id, title, description }) {
   const textStyle =
@@ -55,7 +56,7 @@ export default function Keywords({ textColor }) {
   // console.log(aboutInfo);
   return (
     <ul
-      className="w-full h-full border-t-[1px] pb-[40%] flex flex-col"
+      className={`w-full h-full border-t-[1px] pb-[40%] flex flex-col`}
       style={{ borderColor: textColor }}
     >
       {aboutInfo.slice(1).map((item, i) => (
