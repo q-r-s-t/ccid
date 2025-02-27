@@ -31,9 +31,9 @@ export default function Cover() {
       className={`${programme.className} mix-blend-difference text-white z-[-1] fixed leading-[0.9] text-[11.5vw] lg:text-[9vw] flex flex-col justify-center items-center h-full w-full px-6 lg:px-10`}
     >
       <AnimatedText text="DESIGN" className="text-left" delay={0}/>
-      <AnimatedText text="CONVERGENCE" className="text-left" delay={0.5}/>
-      <AnimatedText text="COLLECTIVE" className="text-right" delay={1.2}/>
-      <AnimatedText text="QrST" className="text-right" delay={1.9}/>
+      <AnimatedText text="CONVERGENCE" className="text-left" delay={0.4}/>
+      <AnimatedText text="COLLECTIVE" className="text-right" delay={1.1}/>
+      <AnimatedText text="QrST" className="text-right" delay={1.8}/>
     </div>
   );
 }
