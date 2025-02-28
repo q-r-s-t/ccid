@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 :root {
-  --background: #0f0f13;
-  --foreground: #fff;
   --font-inter: "Inter", sans-serif;
   --rounded-radius: 9999px;
 }
@@ -12,12 +10,6 @@
   border-radius: var(--rounded-radius);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0f0f13;
-    --foreground: #ededed;
-  }
-}
 @font-face {
   font-family: "FoundersGroteskMono";
   src: url("/fonts/FoundersGroteskMono-Regular.otf") format("opentype");
@@ -30,11 +22,6 @@
 
 html {
   scroll-behavior: smooth;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
 }
 
 @media (max-width: 640px) {

@@ -4,8 +4,8 @@
 
 // 배경색 js로 조정
 :root {
-  --background: #0f0f13;
-  --foreground: #fff;
+  // --background: #0f0f13;
+  // --foreground: #fff;
   --font-inter: "Inter", sans-serif;
   --rounded-radius: 9999px;
 }
@@ -14,12 +14,19 @@
   border-radius: var(--rounded-radius);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0f0f13;
-    --foreground: #ededed;
-  }
-}
+// .typing{
+//   width: 6ch;
+//   animation: typing 2s steps(6), blink .5s step-end infinite alternate;
+//   border-right: 1px solid black;
+//   // animation: blink 0.8s steps(1, end) infinite, typing 4s steps(40, end);
+// }
+
+// @media (prefers-color-scheme: dark) {
+//   :root {
+//     --background: #0f0f13;
+//     --foreground: #ededed;
+//   }
+// }
 
 @font-face {
   font-family: 'FoundersGroteskMono';
@@ -37,13 +44,13 @@ html {
 }
 
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  // font-family: 'TinyGothic', sans-serif;
-  // font-family: var(--font-inter);
-  // font-weight: 700;
-}
+// body {
+//   color: var(--foreground);
+//   background: var(--background);
+//   font-family: 'TinyGothic', sans-serif;
+//   font-family: var(--font-inter);
+//   font-weight: 700;
+// }
 
 // 반응형
 @media (max-width: 640px) {
@@ -51,3 +58,13 @@ body {
     font-size: 14px;
   }
 }
+
+// @keyframes blink {
+//   0%{border-color: transparent;}
+//   50%{border-color: black;}
+//   100%{border-color: transparent;}  
+// }
+
+// @keyframes typing {
+//   0%{width:0;}
+// }

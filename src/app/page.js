@@ -91,72 +91,58 @@ export default function Home() {
 
   return (
     <div
-      className="scrollbar-hide"
+      className="absolute scrollbar-hide bg-white z-[-2]"
       onMouseMove={handleMouseMove}
       // style={{background: `linear-gradient(${angle}deg, #90ff4b 15%, #8adcc7 60%, #d2d5da 90%)`,}}
     >
       <Header textColor={textColor} />
       <Nav textColor={textColor} />
       <Navmobile textColor={textColor} />
-      <video
-        src="/video/5.mp4"
-        autoPlay
-        loop
-        muted
-        playsInline
-        disablePictureInPicture
-        webkit-playsinline
-        className="block absolute z-[-10] top-0 left-0 w-full h-screen object-cover"
-      />
-      <div className="z-[-5] animate-fadeOut fixed bg-[#f0f0ec] w-[100%] h-[100%]" style={{ animationDelay: `1.5s` }}>
-      </div>
-      <Cover />
+      
 
       <main
+        style={{
+          background: bgColor, // linear-gradient 포함해서 그냥 배경으로!
+          color: textColor,
+          borderColor: textColor,
+          transition: "background-color 1s ease-in-out",
+        }}
         className={`scrollbar-hide z-10 h-[100dvh] w-[100%] overflow-y-scroll snap-y snap-mandatory`}
       >
         <section
           id="cover"
           className="relative w-[100%] h-[100%] snap-start flex items-center justify-center"
-        ></section>
-
-        <div
-          style={{
-            background: bgColor, // linear-gradient 포함해서 그냥 배경으로!
-            color: textColor,
-            borderColor: textColor,
-            transition: "background-color 1s ease-in-out",
-          }}
         >
-          <section
-            id="about"
-            className="relative w-[100%] min-h-[100dvh] snap-start pt-20 4xl:pt-[5%] px-6 lg:px-10 content-center"
-          >
-            <Aboutkeywords />
-            <Keywords textColor={textColor} />
-          </section>
-          <section
-            id="works"
-            className={`transition-all duration-1000 w-full relative min-h-[100dvh] snap-start`}
-          >
-            <Works textColor={textColor} />
-          </section>
-          <section
-            id="members"
-            className="w-[100%] min-h-[100dvh] snap-start md:p-28 p-6 lg:px-[12%]"
-          >
-            <Members />
-          </section>
-          <section
-            id="contact"
-            className="relative w-[100%] h-[100dvh] snap-end md:p-28 xl:p-40 p-6 content-center"
-          >
-            <Contact borderRadius={borderRadius} />
-            <footer className="absolute bottom-0 left-0 w-full h-auto text-center p-4 md:p-8 font-[400] leading-[1.5] text-[2.6vw] md:text-[1.8vw] lg:text-[0.9vw] xl:text-[0.75vw]">
-              © 2025 QrST Lab. All rights reserved.
-            </footer>
-          </section>
-        </div>
+          <Cover textColor={textColor} />
+        </section>
+        <section
+          id="about"
+          className="relative w-[100%] min-h-[100dvh] snap-start pt-20 4xl:pt-[5%] px-6 lg:px-10 content-center"
+        >
+          <Aboutkeywords />
+          <Keywords textColor={textColor} />
+        </section>
+        <section
+          id="works"
+          className={`transition-all duration-1000 w-full relative min-h-[100dvh] snap-start`}
+        >
+          <Works textColor={textColor} />
+        </section>
+        <section
+          id="members"
+          className="w-[100%] min-h-[100dvh] snap-start md:p-28 p-6 lg:px-[12%]"
+        >
+          <Members />
+        </section>
+        <section
+          id="contact"
+          className="relative w-[100%] h-[100dvh] snap-end md:p-28 xl:p-40 p-6 content-center"
+        >
+          <Contact borderRadius={borderRadius} />
+          <footer className="absolute bottom-0 left-0 w-full h-auto text-center p-4 md:p-8 font-[400] leading-[1.5] text-[2.6vw] md:text-[1.8vw] lg:text-[0.9vw] xl:text-[0.75vw]">
+            © 2025 QrST Lab. All rights reserved.
+          </footer>
+        </section>
       </main>
     </div>
   );

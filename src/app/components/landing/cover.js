@@ -1,39 +1,62 @@
-'use client'
-import { programme } from "@/fonts/fonts";
-import { useEffect, useState } from 'react';
+"use client";
 
-const AnimatedText = ({ text, className, delay = 0 }) => {
-  const [animatedText, setAnimatedText] = useState([]);
+import { useState, useEffect } from "react";
+import { programme } from "@/fonts/fonts";
+
+export default function Cover({ textColor }) {
+  const words = ["DESIGN", "CONVERGENCE", "COLLECTIVE", "QrST"];
+  const [typedWords, setTypedWords] = useState(words.map(() => ""));
+  const [currentWordIndex, setCurrentWordIndex] = useState(0);
+  const [currentCharIndex, setCurrentCharIndex] = useState(0);
 
   useEffect(() => {
-    const chars = text.split('').map((char, index) => (
-      <span
-        key={index}
-        className="opacity-0 translate-y-[-100%] inline-block animate-drop"
-        style={{ animationDelay: `${delay + index * 0.05}s` }}
-      >
-        {char}
-      </span>
-    ));
-    setAnimatedText(chars);
-  }, [text]);
+    if (currentWordIndex >= words.length) return;
 
-  return (
-    <div className={`${className} overflow-y-hidden relative w-full`}>
-      {animatedText}
-    </div>
-  );
-};
+    let charIndex = 0;
+    const word = words[currentWordIndex];
 
-export default function Cover() {
+    const interval = setInterval(() => {
+      setTypedWords((prev) => {
+        const newWords = [...prev];
+        newWords[currentWordIndex] = word.slice(0, charIndex + 1);
+        return newWords;
+      });
+      setCurrentCharIndex(charIndex);
+
+      charIndex++;
+
+      if (charIndex === word.length) {
+        clearInterval(interval);
+        setTimeout(() => {
+          setCurrentWordIndex((prev) => prev + 1);
+          setCurrentCharIndex(0);
+        }, 500);
+      }
+    }, 100);
+
+    return () => clearInterval(interval);
+  }, [currentWordIndex]);
+
   return (
     <div
-      className={`${programme.className} mix-blend-difference text-white z-[-1] fixed leading-[0.9] text-[11.5vw] lg:text-[9vw] flex flex-col justify-center items-center h-full w-full px-6 lg:px-10`}
+      style={{
+        color: textColor,
+        background: "linear-gradient(to top, #f0f0ec, #0f0f13 15%)",
+      }}
+      className={`${programme.className} flex flex-col justify-center items-center w-[100%] h-[100%] whitespace-nowrap overflow-hidden left-0 top-0 px-6 lg:px-10`}
     >
-      <AnimatedText text="DESIGN" className="text-left" delay={0}/>
-      <AnimatedText text="CONVERGENCE" className="text-left" delay={0.4}/>
-      <AnimatedText text="COLLECTIVE" className="text-right" delay={1.1}/>
-      <AnimatedText text="QrST" className="text-right" delay={1.8}/>
+      {typedWords.map((word, index) => (
+        <div
+          key={index}
+          style={{ borderColor: textColor }}
+          className="relative inline-block w-full h-[10.35vw] lg:h-[8.1vw] leading-[0.9] text-[11.5vw] lg:text-[9vw] text-[#f0f0ec]"
+        >
+          <span className={`absolute top-0 inline-block ${index === currentWordIndex ? "border-r-2" : ""} ${index < 2 ? 'left-0' : 'right-0'}` }>
+            {word}
+          </span>
+        </div>
+      ))}
+     
     </div>
   );
 }
