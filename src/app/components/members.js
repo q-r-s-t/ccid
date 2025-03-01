@@ -177,8 +177,11 @@ export default function Members() {
                 />
                 <div className="flex flex-col justify-center pr-4 lg:pt-0 lg:pl-2">
                   <h3 className={`${pretendardB.className} lg:pb-1 leading-none text-[3vw] md:text-[1.9vw] lg:text-[0.95vw]`}>{member[1]}</h3>
-                  <h2 className="py-1 leading-none text-[3.2vw] md:text-[1.6vw] lg:text-[0.75vw]">{member[3]}</h2>
-                  <pre className={`whitespace-pre-wrap leading-tight text-[2.4vw] md:text-[1.3vw] lg:text-[0.65vw] ${pxGrotesk.className}`}>{member[4]}</pre>
+                  {member[3] && (
+    <h2 className="py-1 leading-none text-[3.2vw] md:text-[1.6vw] lg:text-[0.75vw]">
+      {member[3]}
+    </h2>
+  )}                  <pre className={`whitespace-pre-wrap leading-tight text-[2.4vw] md:text-[1.3vw] lg:text-[0.65vw] ${pxGrotesk.className}`}>{member[4]}</pre>
                 </div>
               </li>
             ))}

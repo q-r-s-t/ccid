@@ -7,8 +7,7 @@ import Nav from "./components/nav/nav";
 import Navmobile from "./components/nav/navmobile";
 
 import Cover from "./components/landing/cover";
-import Aboutkeywords from "./components/about0215";
-// import About from "./components/about";
+import Aboutkeywords from "./components/about";
 import Keywords from "./components/keywords";
 import Works from "./components/works/works";
 import Members from "./components/members";
@@ -20,7 +19,25 @@ export default function Home() {
   const [angle, setAngle] = useState(25);
   const [lastPosition, setLastPosition] = useState({ x: 0, y: 0 });
   const [borderRadius, setBorderRadius] = useState(9999); // 초기값: rounded-full
+  const [sectionOn, setSectionOn] = useState("cover");
 
+  useEffect(() => {
+    const sections = document.querySelectorAll("section");
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setSectionOn(entry.target.id); // 보이는 섹션의 ID를 저장
+        }
+      },
+      { threshold: 0.1 } // 10% 이상 보일 때 작동
+    );
+  
+    sections.forEach((section) => observer.observe(section));
+  
+    return () => sections.forEach((section) => observer.unobserve(section));
+  }, []);
+
+  
   useEffect(() => {
     const worksSection = document.querySelector("#works");
     const observer = new IntersectionObserver(
@@ -96,7 +113,7 @@ export default function Home() {
       // style={{background: `linear-gradient(${angle}deg, #90ff4b 15%, #8adcc7 60%, #d2d5da 90%)`,}}
     >
       <Header textColor={textColor} />
-      <Nav textColor={textColor} />
+      <Nav sectionOn={sectionOn} />
       <Navmobile textColor={textColor} />
       
 
