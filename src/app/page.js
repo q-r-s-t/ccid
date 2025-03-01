@@ -83,12 +83,12 @@ export default function Home() {
     return () => observer.unobserve(contactSection);
   }, []);
 
-  const handleIntroClick = () => {
-    setIsFading(true); // fade-out 시작
-    setTimeout(() => {
-      setShowIntro(false); // 완전히 사라진 후 DOM 제거
-    }, 1000); // Tailwind duration과 동일하게 설정 (1초)
-  };
+  // const handleIntroClick = () => {
+  //   setIsFading(true); // fade-out 시작
+  //   setTimeout(() => {
+  //     setShowIntro(false); // 완전히 사라진 후 DOM 제거
+  //   }, 1000); // Tailwind duration과 동일하게 설정 (1초)
+  // };
 
   const handleMouseMove = (e) => {
     const x = e.clientX;
@@ -107,9 +107,8 @@ export default function Home() {
 
   return (
     <div
-      className="absolute scrollbar-hide bg-white z-[-2]"
+      className="w-[100%] absolute scrollbar-hide bg-white z-[-2]"
       onMouseMove={handleMouseMove}
-      // style={{background: `linear-gradient(${angle}deg, #90ff4b 15%, #8adcc7 60%, #d2d5da 90%)`,}}
     >
       <Header textColor={textColor} />
       <Nav sectionOn={sectionOn} />

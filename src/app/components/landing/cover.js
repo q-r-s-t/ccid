@@ -42,6 +42,7 @@ export default function Cover({ textColor }) {
       style={{
         color: textColor,
         background: "linear-gradient(to top, #f0f0ec, #5f00e1 15%)",
+        // fontFeatureSettings: '"salt" 1',
       }}
       className={`${programme.className} flex flex-col w-[100%] h-[100%] overflow-hidden pt-[42vh] px-6 lg:px-10`}
     >

@@ -32,7 +32,7 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="ko" className={pxGrotesk.className}>
-      <body className={`scrollbar-hide antialiased cursor-help select-none`}>{children}</body>
+      <body className={`w-[100%] scrollbar-hide antialiased cursor-help select-none`}>{children}</body>
     </html>
   );
 }
