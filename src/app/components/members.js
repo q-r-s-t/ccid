@@ -134,6 +134,7 @@ export default function Members() {
   const firstCategory = categories[0]; // 첫 번째 키
   const otherCategories = categories.slice(1); // 나머지 키들
 
+  console.log(otherCategories[0])
   return (
     <div className='py-[10dvh] text-primaryC'>
       {firstCategory && (
@@ -144,7 +145,7 @@ export default function Members() {
             <img
               src={member[2]}
               alt={`${member[1]} profile`}
-              className="w-[150px] h-[150px] md:w-[190px] md:h-[190px] lg:w-[10vw] lg:h-[10vw] rounded-full object-cover object-top"
+              className="filter grayscale w-[150px] h-[150px] md:w-[190px] md:h-[190px] lg:w-[10vw] lg:h-[10vw] rounded-full object-cover object-top"
             />
             <div className="md:flex-1 ">
               <h2 className="leading-[1.5] text-[5vw] md:text-[3.3vw] lg:text-[1.4vw]">{member[1]}</h2>
@@ -176,9 +177,9 @@ export default function Members() {
                   className="filter grayscale flex-shrink-0 mr-4 lg:mr-[0.7vw] w-[70px] h-[70px] lg:w-[6vw] lg:h-[6vw] 2xl:w-[5vw] 2xl:h-[5vw] rounded-full object-cover object-top"
                 />
                 <div className="flex flex-col justify-center pr-4 lg:pt-0 lg:pl-2">
-                  <h3 className={`${pretendardB.className} leading-relaxed lg:leading-none text-[3vw] md:text-[1.9vw] lg:text-[0.9vw] xl:mb-[0.4vh] `}>{member[1]}</h3>
-                  <h2 className="leading-none text-[3.2vw] md:text-[1.6vw] lg:text-[0.75vw]">{member[3]}</h2>
-                  <pre className={` pt-[0.7vh] xl:pt-0 whitespace-pre-wrap leading-tight text-[2.4vw] md:text-[1.3vw] lg:text-[0.65vw] xl:mt-[0.5vh] ${pxGrotesk.className}`}>{member[4]}</pre>
+                  <h3 className={`${pretendardB.className} lg:pb-1 leading-none text-[3vw] md:text-[1.9vw] lg:text-[0.95vw]`}>{member[1]}</h3>
+                  <h2 className="py-1 leading-none text-[3.2vw] md:text-[1.6vw] lg:text-[0.75vw]">{member[3]}</h2>
+                  <pre className={`whitespace-pre-wrap leading-tight text-[2.4vw] md:text-[1.3vw] lg:text-[0.65vw] ${pxGrotesk.className}`}>{member[4]}</pre>
                 </div>
               </li>
             ))}
