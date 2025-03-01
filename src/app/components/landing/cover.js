@@ -41,7 +41,7 @@ export default function Cover({ textColor }) {
     <div
       style={{
         color: textColor,
-        background: "linear-gradient(to top, #f0f0ec, #0f0f13 15%)",
+        background: "linear-gradient(to top, #f0f0ec, #5f00e1 15%)",
       }}
       className={`${programme.className} flex flex-col justify-center items-center w-[100%] h-[100%] whitespace-nowrap overflow-hidden left-0 top-0 px-6 lg:px-10`}
     >
