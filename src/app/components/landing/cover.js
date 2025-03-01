@@ -49,7 +49,7 @@ export default function Cover({ textColor }) {
         <div
           key={index}
           style={{ borderColor: textColor }}
-          className="relative inline-block w-full h-[10.35vw] lg:h-[3.5vw] leading-[0.9] text-[7vw] lg:text-[3.5vw]"
+          className="relative inline-block w-full h-[10.35vw] lg:h-[4.5vw] leading-[1] text-[7vw] lg:text-[3.5vw]"
         >
           <span className={`absolute top-0 inline-block ${index === currentWordIndex ? "border-r-2" : ""} ${index < 2 ? 'left-0' : 'right-0'}` }>
             {word}
