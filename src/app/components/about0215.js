@@ -31,8 +31,8 @@ export default function Aboutkeywords() {
   // console.log(aboutInfo);
 
   return (
-    <div className="font-[400] flex gap-[4vw] items-start justify-start w-full min-h-[40dvh] lg:h-[50dvh] py-[6vh] lg:py-[14vh] leading-[1.1] text-[6vw] md:text-[5vw] lg:text-[3.5vw]">
-      <h1 className={`${programme.className} flex-1 leading-none text-[6vw] mt-[-0.5vh] lg:mt-[-3.5vh]`}>
+    <div className="font-[400] lg:flex gap-[4vw] items-start justify-start w-full min-h-[40dvh] lg:h-[50dvh] py-[6vh] lg:py-[14vh] leading-[1.1] text-[6vw] md:text-[5vw] lg:text-[3.5vw]">
+      <h1 className={`${programme.className} mb-4 flex-1 leading-none text-[6vw] mt-[-0.5vh] lg:mt-[-3.5vh]`}>
         Who We Are
       </h1>
       <ul className={`${lang === 'en' ? 'leading-[1.55] text-[3vw] md:text-[2.85vw] lg:text-[1.15vw]' : 'leading-[1.8] text-[3.1vw] lg:text-[1.1vw]'} font-[400] flex-1`}>
