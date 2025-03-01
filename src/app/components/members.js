@@ -134,7 +134,6 @@ export default function Members() {
   const firstCategory = categories[0]; // 첫 번째 키
   const otherCategories = categories.slice(1); // 나머지 키들
 
-  console.log(otherCategories[0])
   return (
     <div className='py-[10dvh] text-primaryC'>
       {firstCategory && (
@@ -150,7 +149,7 @@ export default function Members() {
             <div className="md:flex-1 ">
               <h2 className="leading-[1.5] text-[5vw] md:text-[3.3vw] lg:text-[1.4vw]">{member[1]}</h2>
               <p className="leading-[1.5] text-[3.45vw] md:text-[2.1vw] lg:text-[1vw]">{member[3]}</p>
-              <div className="border-l border-current mt-6 md:mt-4 pl-3 lg:pl-[0.5vw]">
+              <div className="border-l-[1px] border-current mt-6 md:mt-4 pl-3 lg:pl-[0.5vw]">
                 {/* <h3 className="pb-3 md:pb-2 leading-[1.3] text-[3vw] md:text-[1.9vw] lg:text-[0.8vw]">Career</h3> */}
                 <div className="leading-[1.45] text-[3vw] md:text-[1.7vw] lg:text-[0.7vw]">
                   <pre className={`whitespace-pre-wrap ${pxGrotesk.className}`}>{member[4]}</pre>
