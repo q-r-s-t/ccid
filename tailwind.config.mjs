@@ -9,20 +9,20 @@ export default {
   ],
   theme: {
     extend: {
-      animation: {
-        drop: "drop 0.3s ease-in-out forwards",
-        fadeOut: "fadeOut 1s ease-in-out forwards",
-      },
-      keyframes: {
-        drop: {
-          "0%": { opacity: "0", transform: "translateY(-100%)" },
-          "100%": { opacity: "1", transform: "translateY(0)" },
-        },
-        fadeOut: {
-          "0%": { opacity: "1" },
-          "100%": { opacity: "0" },
-        },
-      },
+      // animation: {
+      //   drop: "drop 0.3s ease-in-out forwards",
+      //   fadeOut: "fadeOut 1s ease-in-out forwards",
+      // },
+      // keyframes: {
+      //   drop: {
+      //     "0%": { opacity: "0", transform: "translateY(-100%)" },
+      //     "100%": { opacity: "1", transform: "translateY(0)" },
+      //   },
+      //   fadeOut: {
+      //     "0%": { opacity: "1" },
+      //     "100%": { opacity: "0" },
+      //   },
+      // },
       screens: {
         '3xl': '1920px',
         '4xl': '2560px',

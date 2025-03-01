@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { programme } from "@/fonts/fonts";
 
 export default function Cover({ textColor }) {
-  const words = ["Creative Intelligence Center", "We analyze the present to prototype the future",];
+  const words = ["DESIGN", "CONVERGENCE", "COLLECTIVE", "QrST"];
   const [typedWords, setTypedWords] = useState(words.map(() => ""));
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [currentCharIndex, setCurrentCharIndex] = useState(0);
@@ -43,13 +43,13 @@ export default function Cover({ textColor }) {
         color: textColor,
         background: "linear-gradient(to top, #f0f0ec, #5f00e1 15%)",
       }}
-      className={`${programme.className} flex flex-col justify-center items-center w-[100%] h-[100%] overflow-hidden left-0 top-0 px-6 lg:px-10`}
+      className={`${programme.className} flex flex-col justify-center items-center w-[100%] h-[100%] whitespace-nowrap overflow-hidden left-0 top-0 px-6 lg:px-10`}
     >
       {typedWords.map((word, index) => (
         <div
           key={index}
           style={{ borderColor: textColor }}
-          className="relative inline-block w-full h-[10.35vw] lg:h-[8.1vw] leading-[0.9] text-[11.5vw] lg:text-[5.5vw]"
+          className="relative inline-block w-full h-[10.35vw] lg:h-[8.1vw] leading-[0.9] text-[11.5vw] lg:text-[9vw] text-[#f0f0ec]"
         >
           <span className={`absolute top-0 inline-block ${index === currentWordIndex ? "border-r-2" : ""} ${index < 2 ? 'left-0' : 'right-0'}` }>
             {word}
