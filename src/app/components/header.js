@@ -3,7 +3,6 @@ import Image from "next/image";
 
 export default function Header({
   className,
-  textColor,
 }) {
 
   return (
@@ -19,14 +18,14 @@ export default function Header({
       }`}
     >
       <Image
-        key = {textColor}
+        
         src="/img/cidc_logo.svg"
         alt="CIDC Logo"
         width={80}
         height={60}
         priority
-        style={{ objectFit: "contain",  }}
-        className={`${textColor === "#0f0f13" ? 'invert' : ''} filter transition-all duration-300 absolute top-0 left-0`}
+        style={{ objectFit: "contain" }}
+        className={`filter transition-all duration-300 absolute top-0 left-0`}
       />
     </button>
   );

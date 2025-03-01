@@ -15,9 +15,11 @@ export default function Navmobile({ textColor }) {
   };
 
   return (
-    <div className={`${programme.className} relative z-[700] fixed top-8 right-6`}>
-      {isOpen && <LanguageToggle textColor="#f0f0ec"/> }
-      
+    <div
+      className={`${programme.className} relative z-[700] fixed top-8 right-6`}
+    >
+      {isOpen && <LanguageToggle textColor="#f0f0ec" />}
+
       <button
         className={`lg:hidden fixed z-[800] top-6 right-6 w-4 h-4 flex flex-col items-end justify-between transition-all duration-300 transform ${
           isOpen ? "h-4" : ""
@@ -26,21 +28,20 @@ export default function Navmobile({ textColor }) {
       >
         <div
           className={`w-5 border-t-2 transition-all duration-300 transform origin-top-left ${
-            isOpen ? "rotate-45 border-white" : ""
-          } ${textColor === '#0f0f13' ? 'border-black' : 'border-white'}`}
+            isOpen ? "rotate-45 border-white" : "border-[#0f0f13]"
+          } `}
         ></div>
         <div
           className={`w-5 border-t-2 transition-all duration-300 transform ${
-            isOpen ? "opacity-0" : ""
-          } ${textColor === '#0f0f13' ? 'border-black' : 'border-white'}`}
+            isOpen ? "opacity-0" : "border-[#0f0f13]"
+          } `}
         ></div>
         <div
           className={`w-5 border-t-2 transition-all duration-300 transform origin-bottom-left ${
-            isOpen ? "-rotate-45 border-white" : ""
-          } ${textColor === '#0f0f13' ? 'border-black' : 'border-white'}`}
+            isOpen ? "-rotate-45 border-white" : "border-[#0f0f13]"
+          } `}
         ></div>
       </button>
-
 
       <ul
         className={`lg:hidden text-left font-normal leading-relaxed text-2xl justify-center fixed top-0 left-0 pt-24 p-6 transition-all duration-300 transform 
@@ -50,7 +51,7 @@ export default function Navmobile({ textColor }) {
               : "hidden opacity-0"
           }`}
       >
-        <Header textColor="#f0f0ec"/> 
+        <Header />
         <li>
           <a
             href="#about"
@@ -98,21 +99,20 @@ export default function Navmobile({ textColor }) {
         </li>
         <li>
           <a
-          href="#contact"
-          className="scroll-smooth"
-          onClick={(e) => {
-            e.preventDefault();
-            document
-              .querySelector("#contact")
-              .scrollIntoView({ behavior: "smooth" });
-            closeMenu(); // 메뉴 닫기
-          }}
+            href="#contact"
+            className="scroll-smooth"
+            onClick={(e) => {
+              e.preventDefault();
+              document
+                .querySelector("#contact")
+                .scrollIntoView({ behavior: "smooth" });
+              closeMenu(); // 메뉴 닫기
+            }}
           >
-        Contact
-        </a>
+            Contact
+          </a>
         </li>
       </ul>
-
     </div>
   );
 }
