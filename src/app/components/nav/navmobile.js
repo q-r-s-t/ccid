@@ -45,11 +45,7 @@ export default function Navmobile({ textColor }) {
 
       <ul
         className={`lg:hidden text-left font-normal leading-relaxed text-2xl justify-center fixed top-0 left-0 pt-24 p-6 transition-all duration-300 transform 
-          transition duration-700 ease-in-out ${
-            isOpen
-              ? "text-white opacity-100 bg-[rgba(0,0,0,0.5)] backdrop-blur w-full h-full"
-              : "hidden opacity-0"
-          }`}
+          transition duration-700 ease-in-out ${isOpen ? "text-white opacity-100 bg-[rgba(132,116,232,0.5)] backdrop-blur w-full h-full" : "hidden opacity-0"}`}
       >
         <HeaderW />
         <li>
@@ -64,7 +60,7 @@ export default function Navmobile({ textColor }) {
               closeMenu(); // 메뉴 닫기
             }}
           >
-            About
+            about
           </a>
         </li>
         <li>
@@ -79,7 +75,7 @@ export default function Navmobile({ textColor }) {
               closeMenu(); // 메뉴 닫기
             }}
           >
-            Works
+            works
           </a>
         </li>
         <li>
@@ -94,7 +90,7 @@ export default function Navmobile({ textColor }) {
               closeMenu(); // 메뉴 닫기
             }}
           >
-            People
+            people
           </a>
         </li>
         <li>
@@ -109,7 +105,7 @@ export default function Navmobile({ textColor }) {
               closeMenu(); // 메뉴 닫기
             }}
           >
-            Contact
+            contact
           </a>
         </li>
       </ul>

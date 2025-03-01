@@ -43,15 +43,15 @@ export default function Cover({ textColor }) {
         color: textColor,
         background: "linear-gradient(to top, #f0f0ec, #5f00e1 15%)",
       }}
-      className={`${programme.className} flex flex-col w-[100%] h-[100%] overflow-hidden pt-[18vh] px-6 lg:px-10`}
+      className={`${programme.className} flex flex-col w-[100%] h-[100%] overflow-hidden pt-[42vh] px-6 lg:px-10`}
     >
       {typedWords.map((word, index) => (
         <div
           key={index}
           style={{ borderColor: textColor }}
-          className="relative inline-block w-full h-[10.35vw] lg:h-[4.5vw] leading-[1] text-[7vw] lg:text-[3.5vw]"
+          className="text-center relative inline-block w-full h-[10.35vw] lg:h-[4.5vw] leading-[1.1] text-[7vw] lg:text-[3.5vw]"
         >
-          <span className={`absolute top-0 inline-block ${index === currentWordIndex ? "border-r-2" : ""} ${index < 2 ? 'left-0' : 'right-0'}` }>
+          <span className={`inline-block ${index === currentWordIndex ? "border-r-2" : ""} ${index < 2 ? 'left-0' : 'right-0'}` }>
             {word}
           </span>
         </div>

@@ -14,7 +14,6 @@
   border-radius: var(--rounded-radius);
 }
 
-
 @font-face {
   font-family: 'FoundersGroteskMono';
   src: url('/fonts/FoundersGroteskMono-Regular.otf') format('opentype');
@@ -27,31 +26,12 @@
 }
 
 html {
+  font-feature-settings: "salt" 1; 
   scroll-behavior: smooth;
 }
 
-
-// body {
-//   color: var(--foreground);
-//   background: var(--background);
-//   font-family: 'TinyGothic', sans-serif;
-//   font-family: var(--font-inter);
-//   font-weight: 700;
-// }
-
-// 반응형
 @media (max-width: 640px) {
   html{
     font-size: 14px;
   }
 }
-
-// @keyframes blink {
-//   0%{border-color: transparent;}
-//   50%{border-color: black;}
-//   100%{border-color: transparent;}  
-// }
-
-// @keyframes typing {
-//   0%{width:0;}
-// }

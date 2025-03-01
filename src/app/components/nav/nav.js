@@ -52,7 +52,7 @@ export default function Nav({ sectionOn }) {
             height: "1.6vw",
             width: `${boxWidth}px`,
             left: `${boxPosition}px`,
-            border: sectionOn === "cover" ? "2px solid transparent" : "2px solid #0f0f13", // Change border color
+            border: sectionOn === "cover" ? ".12vw solid transparent" : ".12vw solid #0f0f13", // Change border color
           }}
         ></span>
         {[
