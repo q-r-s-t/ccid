@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 
-export default function Header({
+export default function HeaderW({
   className,
 }) {
 
@@ -19,7 +19,7 @@ export default function Header({
     >
       <Image
         
-        src="/img/cidc_logo.svg"
+        src="/img/cidc_logo_White.svg"
         alt="CIDC Logo"
         width={80}
         height={60}

@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 // import "./multilingual.css";
-import Header from "./components/header";
+import Header from "./components/header/header";
 import Nav from "./components/nav/nav";
 import Navmobile from "./components/nav/navmobile";
 
@@ -15,8 +15,8 @@ import Members from "./components/members";
 import Contact from "./components/contact/contact";
 
 export default function Home() {
-  const [bgColor, setBgColor] = useState("#f0f0ec");
-  const [textColor, setTextColor] = useState("#0f0f13"); // 기본 글자색
+  const [bgColor, setBgColor] = useState("#f0f0ec"); // 기본 화이트
+  const [textColor, setTextColor] = useState("#0f0f13"); // 기본 블랙
   const [angle, setAngle] = useState(25);
   const [lastPosition, setLastPosition] = useState({ x: 0, y: 0 });
   const [borderRadius, setBorderRadius] = useState(9999); // 초기값: rounded-full

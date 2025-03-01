@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Header from "../header";
+import HeaderW from "../header/headerW";
 import LanguageToggle from "./lang";
 import { programme } from "@/fonts/fonts";
 
@@ -51,7 +51,7 @@ export default function Navmobile({ textColor }) {
               : "hidden opacity-0"
           }`}
       >
-        <Header />
+        <HeaderW />
         <li>
           <a
             href="#about"

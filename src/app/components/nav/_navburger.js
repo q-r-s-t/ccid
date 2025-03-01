@@ -2,7 +2,7 @@
 
 // import Image from "next/image";
 import { useState } from "react";
-import Header from "../header";
+import Header from "../header/header";
 
 export default function Nav({ textColor }) {
   const [isOpen, setIsOpen] = useState(false);
