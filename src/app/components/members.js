@@ -208,8 +208,8 @@ export default function Members() {
                   <pre
                     className={`whitespace-pre-wrap  ${
                       member[3]
-                        ? "pt-0 leading-tight text-[2.4vw] md:text-[1.3vw] lg:text-[0.65vw]"
-                        : "md:pt-2 leading-[1.3] text-[2.3vw] md:text-[1.2vw] lg:text-[0.6vw]"
+                        ? "leading-tight text-[2.4vw] md:text-[1.3vw] lg:text-[0.65vw]"
+                        : "leading-[1.3] text-[2.3vw] md:text-[1.2vw] lg:text-[0.6vw]"
                     } ${pxGrotesk.className}`}
                   >
                     {member[4]}
