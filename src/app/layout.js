@@ -34,7 +34,7 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="ko" className={pxGrotesk.className}>
-      <body className={`scrollbar-hide antialiased cursor-help`}>{children}</body>
+      <body className={`scrollbar-hide antialiased cursor-help select-none`}>{children}</body>
     </html>
   );
 }
