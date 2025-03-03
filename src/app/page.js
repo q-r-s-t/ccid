@@ -47,7 +47,7 @@ export default function Home() {
           setTextColor("#5d009c"); // Works 섹션 글자색
         } else {
           setBgColor("#f0f0ec"); // 기본 배경
-          setTextColor("#0f0f13"); // 기본 글자
+          setTextColor("#f0f0ec"); // 기본 글자
         }
       },
       { threshold: 0.1 } // Works 섹션 10% 보이면 작동
@@ -110,8 +110,9 @@ export default function Home() {
       className="w-[100%] absolute scrollbar-hide bg-white z-[-2]"
       onMouseMove={handleMouseMove}
     >
-      <Header textColor={textColor} />
+      <Header sectionOn={sectionOn} />
       <Nav sectionOn={sectionOn} />
+
       <Navmobile textColor={textColor} />
       
 
@@ -135,7 +136,7 @@ export default function Home() {
           className="relative w-[100%] min-h-[100dvh] snap-start pt-20 4xl:pt-[5%] px-6 lg:px-10 content-center"
         >
           <Aboutkeywords />
-          <Keywords textColor={textColor} />
+          <Keywords />
         </section>
         <section
           id="works"
@@ -154,7 +155,7 @@ export default function Home() {
           className="relative w-[100%] h-[100dvh] snap-end md:p-28 xl:p-40 p-6 content-center"
         >
           <Contact borderRadius={borderRadius} />
-          <footer className="absolute bottom-0 left-0 w-full h-auto text-center p-4 md:p-8 font-[400] leading-[1.5] text-[2.6vw] md:text-[1.8vw] lg:text-[0.9vw] xl:text-[0.75vw]">
+          <footer className="text-primaryB absolute bottom-0 left-0 w-full h-auto text-center p-4 md:p-8 font-[400] leading-[1.5] text-[2.6vw] md:text-[1.8vw] lg:text-[0.9vw] xl:text-[0.75vw]">
             © 2025 QrST Lab. All rights reserved.
           </footer>
         </section>

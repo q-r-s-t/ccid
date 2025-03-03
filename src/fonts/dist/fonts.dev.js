@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.pretendardB = exports.pxGrotesk = exports.programme = void 0;
+exports.neuehaas = exports.pretendardB = exports.pxGrotesk = exports.programme = void 0;
 
 var _local = _interopRequireDefault(require("next/font/local"));
 
@@ -32,3 +32,11 @@ var pretendardB = (0, _local["default"])({
   display: 'swap'
 });
 exports.pretendardB = pretendardB;
+var neuehaas = (0, _local["default"])({
+  src: '../fonts/NeueHaasGrotText-55Roman-Web.woff2',
+  // 경로 확인 (src 내부에서 접근)
+  weight: '400',
+  style: 'normal',
+  display: 'swap'
+});
+exports.neuehaas = neuehaas;

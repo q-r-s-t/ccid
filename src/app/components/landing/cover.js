@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { programme } from "@/fonts/fonts";
+import { neuehaas } from "@/fonts/fonts";
 
 export default function Cover({ textColor }) {
   const words = ["Creative Intelligence Center", "We analyze the present to prototype the future",];
@@ -40,17 +40,17 @@ export default function Cover({ textColor }) {
   return (
     <div
       style={{
-        color: textColor,
+        
         background: "linear-gradient(to top, #f0f0ec, #5f00e1 15%)",
         // fontFeatureSettings: '"salt" 1',
       }}
-      className={`${programme.className} flex flex-col w-[100%] h-[100%] overflow-hidden lg:pt-[42vh] pt-[37vh] px-6 lg:px-10`}
+      className={`${neuehaas.className} flex flex-col w-[100%] h-[100%] overflow-hidden lg:pt-[40dvh] pt-[37vh] px-6 lg:px-10`}
     >
       {typedWords.map((word, index) => (
         <div
           key={index}
-          style={{ borderColor: textColor }}
-          className="text-center relative inline-block w-full h-[10.35vw] lg:h-[4.5vw] leading-[1.1] text-[7vw] lg:text-[3.5vw]"
+          style={{ color: textColor, borderColor: textColor }}
+          className="text-center lg:text-left relative inline-block w-full h-[10.35vw] lg:h-[4.5vw] leading-[1.1] text-[7vw] lg:text-[3.5vw]"
         >
           <span className={`inline-block ${index === currentWordIndex ? "border-r-2" : ""} ${index < 2 ? 'left-0' : 'right-0'}` }>
             {word}

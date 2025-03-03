@@ -13,7 +13,9 @@ export default function Nav({ sectionOn }) {
     if (linkElement) {
       const linkWidth = linkElement.offsetWidth;
       const linkOffsetLeft = linkElement.offsetLeft;
-      const remToPx = parseFloat(getComputedStyle(document.documentElement).fontSize);
+      const remToPx = parseFloat(
+        getComputedStyle(document.documentElement).fontSize
+      );
       const additionalWidth = 1.5 * remToPx;
 
       return {
@@ -42,17 +44,22 @@ export default function Nav({ sectionOn }) {
   };
 
   return (
-    <div className={`${programme.className} hidden lg:block z-[500]`}>
+    <div
+      className={`${programme.className} ${
+        sectionOn === "cover" ? "text-primaryW" : "text-primaryB"
+      } text-white hidden lg:block z-[500]`}
+    >
       <ul className="z-[500] gap-12 4xl:gap-20 lg:flex font-[300] leading-tight lg:text-[1.2vw] justify-center fixed top-0 pt-4 mx-auto w-[100%] transition-all duration-300 transform">
         <LanguageToggle />
 
         <span
-          className="select-none z-[-1] transition-all duration-300 ease-out absolute px-2"
+          className={`select-none z-[-1] transition-all duration-300 ease-out absolute px-2 border-[.12vw] ${
+            sectionOn === "cover" ? "border-transparent" : "border-primaryB"
+          }`}
           style={{
             height: "1.6vw",
             width: `${boxWidth}px`,
             left: `${boxPosition}px`,
-            border: sectionOn === "cover" ? ".12vw solid transparent" : ".12vw solid #0f0f13", // Change border color
           }}
         ></span>
         {[

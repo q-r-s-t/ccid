@@ -5,13 +5,13 @@ import { programme } from "@/fonts/fonts";
 
 function KeywordItem({ id, title, description }) {
   const textStyle =
-    "font-[300] leading-none text-[6vw] md:text-[5vw] lg:text-[2.4vw] group-hover:text-primaryC";
+    "font-[300] leading-none text-[6vw] md:text-[5vw] lg:text-[2.4vw] group-hover:text-primaryC text-primaryB";
     const textStyleKr =
     "font-[450] leading-none text-[5vw] md:text-[4.5vw] lg:text-[2.2vw] group-hover:text-primaryC";
     const { lang } = useLanguageStore();
 
   return (
-    <li className="h-auto hover:bg-gradient-to-t hover:from-[rgba(93,0,156,0.2)] hover:via-[rgba(93,0,156,0)] hover:to-[rgba(93,0,156,0)] flex group overflow-hidden transition-all duration-700 ease-out border-b-[1px] border-inherit hover:border-transparent py-2 lg:py-[0.9vh]">
+    <li className="h-auto hover:bg-gradient-to-t hover:from-[rgba(93,0,156,0.2)] hover:via-[rgba(93,0,156,0)] hover:to-[rgba(93,0,156,0)] flex group overflow-hidden transition-all duration-700 ease-out border-b-[1px] border-primaryB hover:border-transparent py-2 lg:py-[0.9vh]">
       <div
         className={`transition-all duration-700 font-founders w-0 lg:w-[52%] group-hover:w-0 ${textStyle}`}
       >
@@ -22,14 +22,14 @@ function KeywordItem({ id, title, description }) {
       >
         {title}
       </h3>
-      <div className={`${lang === 'en' ? 'leading-[1.55] text-[3vw] md:text-[2.85vw] lg:text-[1.15vw]' : 'leading-[1.8] text-[3.1vw] lg:text-[1.1vw]'} transition-all duration-700 w-0 ml-[4px] group-hover:w-[48%] font-[400] lg:group-hover:h-[30vh] group-hover:h-[37vh] h-0 opacity-0 group-hover:opacity-100 transition-all duration-700`}>
+      <div className={`${lang === 'en' ? 'leading-[1.55] text-[3vw] md:text-[2.85vw] lg:text-[1.15vw]' : 'leading-[1.8] text-[3.1vw] lg:text-[1.1vw]'} text-primaryB transition-all duration-700 w-0 ml-[4px] group-hover:w-[48%] font-[400] lg:group-hover:h-[30vh] group-hover:h-[37vh] h-0 opacity-0 group-hover:opacity-100 transition-all duration-700`}>
         {description}
       </div>
     </li>
   );
 }
 
-export default function Keywords({ textColor }) {
+export default function Keywords() {
   const [aboutInfo, setAboutInfo] = useState([]);
   const { lang } = useLanguageStore();
 
@@ -56,8 +56,7 @@ export default function Keywords({ textColor }) {
   // console.log(aboutInfo);
   return (
     <ul
-      className={`w-full h-full border-t-[1px] pb-[40%] flex flex-col`}
-      style={{ borderColor: textColor }}
+      className={`w-full h-full border-t-[1px] border-primaryB pb-[40%] flex flex-col`}
     >
       {aboutInfo.slice(1).map((item, i) => (
         <KeywordItem key={i} id={String(i + 1).padStart(2, "0")} title={lang == 'en' ? item[0] : item[2]} description={lang === 'en' ? item[1] : item[3]} />

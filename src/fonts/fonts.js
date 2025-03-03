@@ -20,3 +20,10 @@ export const pretendardB = localFont({
   style: 'normal',
   display: 'swap',
 });
+
+export const neuehaas = localFont({
+  src: '../fonts/NeueHaasGrotText-55Roman-Web.woff2', // 경로 확인 (src 내부에서 접근)
+  weight: '400',
+  style: 'normal',
+  display: 'swap',
+});
