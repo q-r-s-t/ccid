@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { neuehaas } from "@/fonts/fonts";
 
-export default function Cover({ textColor }) {
+export default function Cover() {
   const words = ["Creative Intelligence Center", "We analyze the present to prototype the future",];
   const [typedWords, setTypedWords] = useState(words.map(() => ""));
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
@@ -40,7 +40,6 @@ export default function Cover({ textColor }) {
   return (
     <div
       style={{
-        
         background: "linear-gradient(to top, #f0f0ec, #5f00e1 15%)",
         // fontFeatureSettings: '"salt" 1',
       }}
@@ -49,10 +48,9 @@ export default function Cover({ textColor }) {
       {typedWords.map((word, index) => (
         <div
           key={index}
-          style={{ color: textColor, borderColor: textColor }}
-          className="text-center lg:text-left relative inline-block w-full h-[10.35vw] lg:h-[4.5vw] leading-[1.1] text-[7vw] lg:text-[3.5vw]"
+          className="text-center lg:text-left relative inline-block w-full h-[10.35vw] lg:h-[4.5vw] leading-[1.1] text-[6.3vw] lg:text-[3.5vw]"
         >
-          <span className={`inline-block ${index === currentWordIndex ? "border-r-2" : ""} ${index < 2 ? 'left-0' : 'right-0'}` }>
+          <span className={` ${index === currentWordIndex ? "border-r-2" : ""}` }>
             {word}
           </span>
         </div>

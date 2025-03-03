@@ -7,7 +7,7 @@ function KeywordItem({ id, title, description }) {
   const textStyle =
     "font-[300] leading-none text-[6vw] md:text-[5vw] lg:text-[2.4vw] group-hover:text-primaryC text-primaryB";
     const textStyleKr =
-    "font-[450] leading-none text-[5vw] md:text-[4.5vw] lg:text-[2.2vw] group-hover:text-primaryC";
+    "font-[450] leading-none group-hover:leading-[1.3] group-hover:mt-[-0.3vh] text-[5vw] md:text-[4.5vw] lg:text-[2.2vw] group-hover:text-primaryC";
     const { lang } = useLanguageStore();
 
   return (
@@ -56,7 +56,7 @@ export default function Keywords() {
   // console.log(aboutInfo);
   return (
     <ul
-      className={`w-full h-full border-t-[1px] border-primaryB pb-[40%] flex flex-col`}
+      className={`w-full h-full border-t-[1px] text-primaryB border-primaryB pb-[40%] flex flex-col`}
     >
       {aboutInfo.slice(1).map((item, i) => (
         <KeywordItem key={i} id={String(i + 1).padStart(2, "0")} title={lang == 'en' ? item[0] : item[2]} description={lang === 'en' ? item[1] : item[3]} />

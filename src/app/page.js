@@ -113,7 +113,7 @@ export default function Home() {
       <Header sectionOn={sectionOn} />
       <Nav sectionOn={sectionOn} />
 
-      <Navmobile textColor={textColor} />
+      <Navmobile sectionOn={sectionOn} />
       
 
       <main

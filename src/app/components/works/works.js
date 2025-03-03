@@ -36,12 +36,7 @@ export default function Works({ textColor }) {
                 <div key={`${i}-${j}`} className="relative">
                   <div
                     key={`${i}-${j}`}
-                    className={`relative flex lg:hover:text-[#ff0] text-[3vw] md:text-[2.4vw] lg:text-[1vw] leading-[2] ${
-                      j === 0
-                        ? pretendardB.className +
-                          " text-primaryC lg:pl-10 lg:h-[7dvh] lg:absolute lg:top-0 pl-6 lg:left-0 lg:w-[20vw]"
-                        : ""
-                    }`}
+                    className={`${lang === 'en' ? 'leading-[1.4] mb-[0.5vh]' : 'lg:leading-[1.8] leading-[1.6] mb-[0.9vh] lg:mb-[0.2vh]'} relative flex lg:hover:text-[#ff0] text-[3vw] md:text-[2.4vw] lg:text-[1vw]  ${j === 0 ? " text-primaryC lg:pl-10 lg:h-[7dvh] lg:absolute lg:top-0 pl-6 lg:left-0 lg:w-[20vw]" : ""}`}
                   >
                     {/* 년도 */}
                     <div

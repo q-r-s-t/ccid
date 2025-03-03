@@ -156,13 +156,9 @@ export default function Members() {
                 className="mb-2 filter grayscale w-[150px] h-[150px] md:w-[190px] md:h-[190px] lg:w-[10vw] lg:h-[10vw] rounded-full object-cover object-top"
               />
               <div className="md:flex-1 ">
-                <h2 className="leading-[1.3] text-[5vw] md:text-[3.3vw] lg:text-[1.4vw]">
-                  {member[1]}
-                </h2>
-                <p className="leading-[1.3] text-[3.45vw] md:text-[2.1vw] lg:text-[1vw]">
-                  {member[3]}
-                </p>
-                <div className="border-l-[1px] border-current mt-4 pl-3 lg:pl-[0.5vw]">
+                <h2 className="leading-[1.3] text-[5vw] md:text-[3.3vw] lg:text-[1.4vw]">{member[1]}</h2>
+                <p className="leading-[1.3] text-[3.45vw] md:text-[2.1vw] lg:text-[1vw]">{member[3]}</p>
+                <div className="border-l-[1px] border-current mt-3 pl-3 lg:pl-[0.5vw]">
                   {/* <h3 className="pb-3 md:pb-2 leading-[1.3] text-[3vw] md:text-[1.9vw] lg:text-[0.8vw]">Career</h3> */}
                   <div className="leading-[1.3] text-[3vw] md:text-[1.7vw] lg:text-[0.7vw]">
                     <pre

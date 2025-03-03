@@ -45,12 +45,10 @@ export default function Nav({ sectionOn }) {
 
   return (
     <div
-      className={`${programme.className} ${
-        sectionOn === "cover" ? "text-primaryW" : "text-primaryB"
-      } text-white hidden lg:block z-[500]`}
+      className={`${programme.className} text-white hidden lg:block z-[500]`}
     >
       <ul className="z-[500] gap-12 4xl:gap-20 lg:flex font-[300] leading-tight lg:text-[1.2vw] justify-center fixed top-0 pt-4 mx-auto w-[100%] transition-all duration-300 transform">
-        <LanguageToggle />
+        <LanguageToggle sectionOn = { sectionOn }/>
 
         <span
           className={`select-none z-[-1] transition-all duration-300 ease-out absolute px-2 border-[.12vw] ${
@@ -72,7 +70,9 @@ export default function Nav({ sectionOn }) {
             <a
               href={id}
               ref={(el) => (linkRefs.current[index] = el)}
-              className="transition-all mx-3 duration-300"
+              className={`transition-all mx-3 duration-300 ${
+                sectionOn === "cover" ? "text-primaryW" : "text-primaryB"
+              }`}
               onClick={(e) => {
                 e.preventDefault();
                 document
