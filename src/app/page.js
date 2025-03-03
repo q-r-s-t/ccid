@@ -16,8 +16,6 @@ import Contact from "./components/contact/contact";
 export default function Home() {
   const [bgColor, setBgColor] = useState("#f0f0ec"); // 기본 화이트
   const [textColor, setTextColor] = useState("#0f0f13"); // 기본 블랙
-  const [angle, setAngle] = useState(25);
-  const [lastPosition, setLastPosition] = useState({ x: 0, y: 0 });
   const [borderRadius, setBorderRadius] = useState(9999); // 초기값: rounded-full
   const [sectionOn, setSectionOn] = useState("cover");
 

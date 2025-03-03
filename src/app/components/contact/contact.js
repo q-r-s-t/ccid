@@ -1,8 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
-import "./contact.css"
+import "./contact.css";
 export default function Contact({ borderRadius }) {
-  // const email = "qrstlab@gmail.com";
   const [aboutInfo, setAboutInfo] = useState([]);
 
   useEffect(() => {
@@ -54,43 +53,55 @@ export default function Contact({ borderRadius }) {
       window.removeEventListener("mousemove", onMouseMove);
     };
   }, []);
-  
+
   return (
-    <div style={{ borderRadius: `${borderRadius}px` }} className={`transition-all duration-[1000ms] ease-out absolute top-0 left-0 w-full h-full bg-gray-200 gradient-bg`}>
-    <svg xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <filter id="goo">
-          <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur" />
-          <feColorMatrix
-            in="blur"
-            mode="matrix"
-            values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8"
-            result="goo"
-          />
-          <feBlend in="SourceGraphic" in2="goo" />
-        </filter>
-      </defs>
-    </svg>
-    <div className="gradients-container">
-      <div className="g1"></div>
-      <div className="g2"></div>
-      <div className="g5"></div>
-      <div className="interactive"></div>
-    </div>
+    <div
+      style={{ borderRadius: `${borderRadius}px` }}
+      className={`transition-all duration-[1000ms] ease-out absolute top-0 left-0 w-full h-full gradient-bg`}
+    >
+      <svg xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <filter id="goo">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur" />
+            <feColorMatrix
+              in="blur"
+              mode="matrix"
+              values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8"
+              result="goo"
+            />
+            <feBlend in="SourceGraphic" in2="goo" />
+          </filter>
+        </defs>
+      </svg>
+      <div className="gradients-container">
+        <div className="g1"></div>
+        <div className="g2"></div>
+        <div className="g5"></div>
+        <div className="interactive"></div>
+      </div>
 
-    <div className="text-primaryB absolute w-full h-full top-0 left-0 flex flex-col justify-center text-center font-[400] leading-[1.8] text-[3.5vw] md:text-[3vw] lg:text-[1.05vw]">
-      <p className="leading-snug">For business inquiries please contact:</p>
+      {/* purple tone layer */}
+      <div
+        className="bg-[rgba(164,106,251,0.3)] absolute top-0 left-0 w-full h-full"
+        style={{ mixBlendMode: "darker" }}
+      ></div>
 
-      <div>
-        <a
-          href={`mailto:${aboutInfo?.[0]?.[2] || ''}`}
-          className="leading-snug pb-1 relative hover:text-primaryB group"
-        >
-          {aboutInfo?.[0]?.[2] || 'Loading...'}
-          <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primaryB transition-all duration-300 ease-in-out group-hover:w-full inline-block"></span>
-        </a>
+      {/* 텍스트 */}
+      <div className="text-primaryB absolute w-full h-full top-0 left-0 flex flex-col justify-center text-center font-[400] leading-[1.8] text-[3.5vw] md:text-[3vw] lg:text-[1.05vw]">
+        <p className="leading-snug z-[1]">
+          For business inquiries please contact:
+        </p>
+
+        <div className="z-[1]">
+          <a
+            href={`mailto:${aboutInfo?.[0]?.[2] || ""}`}
+            className="leading-snug pb-1 relative hover:text-primaryB group"
+          >
+            {aboutInfo?.[0]?.[2] || "Loading..."}
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primaryB transition-all duration-300 ease-in-out group-hover:w-full inline-block"></span>
+          </a>
+        </div>
       </div>
     </div>
-  </div>    
   );
 }
