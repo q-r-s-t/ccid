@@ -31,13 +31,12 @@ export default function Home() {
       },
       { threshold: 0.1 } // 10% 이상 보일 때 작동
     );
-  
+
     sections.forEach((section) => observer.observe(section));
-  
+
     return () => sections.forEach((section) => observer.unobserve(section));
   }, []);
 
-  
   useEffect(() => {
     const worksSection = document.querySelector("#works");
     const observer = new IntersectionObserver(
@@ -83,38 +82,47 @@ export default function Home() {
     return () => observer.unobserve(contactSection);
   }, []);
 
-  // const handleIntroClick = () => {
-  //   setIsFading(true); // fade-out 시작
-  //   setTimeout(() => {
-  //     setShowIntro(false); // 완전히 사라진 후 DOM 제거
-  //   }, 1000); // Tailwind duration과 동일하게 설정 (1초)
+  const [bgopacity, setbgOpacity] = useState(1);
+
+  useEffect(() => {
+    if (sectionOn !== 'cover') {
+      const timer = setTimeout(() => {
+        setbgOpacity(0);
+      }, 3000); // 3 seconds delay
+
+      // Cleanup the timer if the component unmounts or `sectionOn` changes
+      return () => clearTimeout(timer);
+    } else {
+      setbgOpacity(1); // Reset opacity if sectionOn is 'cover'
+    }
+  }, [sectionOn]);
+
+  // const handleMouseMove = (e) => {
+  //   const x = e.clientX;
+  //   const y = e.clientY;
+
+  //   // 마우스 이동 차이 계산
+  //   const deltaX = x - lastPosition.x;
+  //   const deltaY = y - lastPosition.y;
+
+  //   // 각도 변화율 적용 (적당히 낮은 비율로 천천히 변화)
+  //   const newAngle = angle + (deltaX + deltaY) * 0.2; // 비율을 줄여서 부드럽게
+
+  //   setAngle(newAngle);
+  //   setLastPosition({ x, y });
   // };
-
-  const handleMouseMove = (e) => {
-    const x = e.clientX;
-    const y = e.clientY;
-
-    // 마우스 이동 차이 계산
-    const deltaX = x - lastPosition.x;
-    const deltaY = y - lastPosition.y;
-
-    // 각도 변화율 적용 (적당히 낮은 비율로 천천히 변화)
-    const newAngle = angle + (deltaX + deltaY) * 0.2; // 비율을 줄여서 부드럽게
-
-    setAngle(newAngle);
-    setLastPosition({ x, y });
-  };
 
   return (
     <div
       className="w-[100%] absolute scrollbar-hide bg-white z-[-2]"
-      onMouseMove={handleMouseMove}
+      // onMouseMove={handleMouseMove}
     >
       <Header sectionOn={sectionOn} />
       <Nav sectionOn={sectionOn} />
 
       <Navmobile sectionOn={sectionOn} />
-      
+
+      <div style={{ opacity:bgopacity }} className={`${sectionOn === 'cover' ? 'top-0' : 'top-[-100%]'} transition-all duration-500 ease-in-out left-0 fixed bg-[url('/img/bgt.png')] bg-repeat bg-contain bg-center w-full h-[118dvh]`}></div>
 
       <main
         style={{
