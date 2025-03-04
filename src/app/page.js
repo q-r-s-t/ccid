@@ -80,36 +80,6 @@ export default function Home() {
     return () => observer.unobserve(contactSection);
   }, []);
 
-  const [bgopacity, setbgOpacity] = useState(1);
-
-  useEffect(() => {
-    if (sectionOn !== 'cover') {
-      const timer = setTimeout(() => {
-        setbgOpacity(0);
-      }, 3000); // 3 seconds delay
-
-      // Cleanup the timer if the component unmounts or `sectionOn` changes
-      return () => clearTimeout(timer);
-    } else {
-      setbgOpacity(1); // Reset opacity if sectionOn is 'cover'
-    }
-  }, [sectionOn]);
-
-  // const handleMouseMove = (e) => {
-  //   const x = e.clientX;
-  //   const y = e.clientY;
-
-  //   // 마우스 이동 차이 계산
-  //   const deltaX = x - lastPosition.x;
-  //   const deltaY = y - lastPosition.y;
-
-  //   // 각도 변화율 적용 (적당히 낮은 비율로 천천히 변화)
-  //   const newAngle = angle + (deltaX + deltaY) * 0.2; // 비율을 줄여서 부드럽게
-
-  //   setAngle(newAngle);
-  //   setLastPosition({ x, y });
-  // };
-
   return (
     <div
       className="w-[100%] absolute scrollbar-hide bg-white z-[-2]"
@@ -120,7 +90,14 @@ export default function Home() {
 
       <Navmobile sectionOn={sectionOn} />
 
-      <div style={{ opacity:bgopacity }} className={`${sectionOn === 'cover' ? 'top-0' : 'top-[-100%]'} transition-all duration-500 ease-in-out left-0 fixed bg-[url('/img/bgt.png')] bg-repeat bg-contain bg-center w-full h-[118dvh]`}></div>
+      <div
+        style={{
+          transition: "top 0.5s ease-in-out, opacity 3s ease-in-out",
+          opacity: sectionOn === "cover" ? "1" : "0",
+          top: sectionOn === "cover" ? "0" : "-100%",
+        }}
+        className={`left-0 fixed bg-[url('/img/bgt.png')] bg-repeat bg-contain bg-center w-full h-[118dvh]`}
+      ></div>
 
       <main
         style={{

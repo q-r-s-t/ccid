@@ -14,6 +14,10 @@
   border-radius: var(--rounded-radius);
 }
 
+.transition-bg {
+  transition: background-color 2s ease-in-out;
+}
+
 @font-face {
   font-family: 'FoundersGroteskMono';
   src: url('/fonts/FoundersGroteskMono-Regular.otf') format('opentype');

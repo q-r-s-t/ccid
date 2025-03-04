@@ -33,34 +33,43 @@ export default function Works({ textColor }) {
       {worksInfo.length > 0 ? (
         worksInfo.map((row, i) =>
           i % 3 === 0
-            ? row.map((col, j) => (
-                <div key={`${i}-${j}`} className="relative">
-                  <div
-                    key={`${i}-${j}`}
-                    className={`${lang === 'en' ? 'leading-[1.4] mb-[0.5vh]' : 'lg:leading-[1.8] leading-[1.6] mb-[0.9vh] lg:mb-[0.2vh]'} relative flex lg:hover:text-[#ff0] text-[3vw] md:text-[2.4vw] lg:text-[1vw]  ${j === 0 ? " text-primaryC lg:pl-10 lg:h-[7dvh] lg:absolute lg:top-0 pl-6 lg:left-0 lg:w-[20vw]" : ""}`}
-                  >
-                    {/* 년도 */}
-                    <div
-                      className={`${
-                        j === 0 ? "hidden" : ""
-                      } flex-[0.35] lg:flex-[0.5] lg:pl-[20%] lg:text-[1.1vw] font-founders lg:flex-[0.085] pl-6 lg:pl-12`}
-                    >
-                      {worksInfo[i][j]}
+            ? row.map((col, j) => {
+                const year = worksInfo[i][j];
+                const international = lang === 'en' ? worksInfo[i + 1]?.[j] : worksInfo[i + 2]?.[j];
+  
+                // Check if both values are not empty
+                if (year !== "" || international !== "") {
+                  return (
+                    <div key={`${i}-${j}`} className="relative">
+                      <div
+                        className={`${lang === 'en' ? 'leading-[1.4] mb-[0.5vh]' : 'lg:leading-[1.8] leading-[1.6] mb-[0.9vh] lg:mb-[0.2vh]'} relative flex lg:hover:text-[#ff0] text-[3vw] md:text-[2.4vw] lg:text-[1vw]  
+                        ${j === 0 ? " text-primaryC lg:pl-10 lg:h-[7dvh] lg:absolute lg:top-0 pl-6 lg:left-0 lg:w-[20vw]" : ""}`}
+                      >
+                        {/* 년도 */}
+                        <div
+                          className={`${
+                            j === 0 ? "hidden" : ""
+                          } flex-[0.35] lg:flex-[0.1] lg:pl-[20%] lg:text-[1.1vw] font-founders lg:flex-[0.085] pl-6 lg:pl-12`}
+                        >
+                          {year}
+                        </div>
+  
+                        {/* 국내 + 해외 */}
+                        <p
+                          className={`flex-1 pr-6 ${
+                            j === 0
+                              ? "text-primaryC lg:block flex items-end text-[3.3vw] md:text-[2.6vw] lg:text-[1.03vw] pt-[8dvh] lg:pt-[0dvh] pb-[1dvh] lg:pb-[0.7dvh]"
+                              : ""
+                          }`}
+                        >
+                          {international}
+                        </p>
+                      </div>
                     </div>
-
-                    {/* 국내 + 해외 */}
-                    <p
-                      className={`flex-1 pr-6 ${
-                        j === 0
-                          ? "text-primaryC lg:block flex items-end text-[3.3vw] md:text-[2.6vw] lg:text-[1.03vw] pt-[8dvh] lg:pt-[0dvh] pb-[1dvh] lg:pb-[0.7dvh]"
-                          : ""
-                      }`}
-                    >
-                      {lang === 'en' ? worksInfo[i + 1]?.[j] : worksInfo[i + 2]?.[j]}
-                    </p>
-                  </div>
-                </div>
-              ))
+                  );
+                }
+                return null; // Don't render anything if both are empty
+              })
             : null
         )
       ) : (
@@ -68,4 +77,5 @@ export default function Works({ textColor }) {
       )}
     </div>
   );
+  
 }
