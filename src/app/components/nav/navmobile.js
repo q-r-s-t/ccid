@@ -19,13 +19,7 @@ export default function Navmobile({ sectionOn }) {
   }`;
 
   return (
-    <div
-      className={`${programme.className} relative z-[700] fixed top-8 right-6`}
-    >
-      <div onClick={() => setIsOpen(false)}>
-        {isOpen && <LanguageToggle textColor="#f0f0ec" />}
-      </div>
-
+    <div className={`${programme.className} relative fixed top-8 right-6`}>
       <button
         className={`lg:hidden fixed z-[800] top-6 right-6 w-4 h-4 flex flex-col items-end justify-between transition-all transform`}
         onClick={toggleMenu}
@@ -48,13 +42,17 @@ export default function Navmobile({ sectionOn }) {
       </button>
 
       <ul
-        className={`lg:hidden text-left font-normal leading-relaxed text-2xl justify-center fixed top-0 left-0 pt-24 p-6 transform transition-all duration-[1000ms] ease-in-out ${
-            isOpen
-              ? "text-white opacity-100 bg-[rgba(132,116,232,0.5)] backdrop-blur w-full h-full"
-              : "text-black opacity-0 bg-[rgba(132,116,232,0)] w-full h-full"
-          }`}
+        className={`select-none lg:hidden text-left font-normal leading-relaxed text-2xl justify-center fixed top-0 left-0 pt-24 p-6 transform transition-all duration-[1000ms] ease-in-out ${
+          isOpen
+            ? "text-white opacity-100 bg-[rgba(132,116,232,0.5)] z-[700] backdrop-blur w-full h-full"
+            : "text-black opacity-0 bg-[rgba(132,116,232,0)] z-[-1] w-full h-full"
+        }`}
       >
-        <HeaderW />
+        <div onClick={() => setIsOpen(false)}>
+          {isOpen && <LanguageToggle textColor="#f0f0ec" />}
+        </div>
+
+        <HeaderW isOpen={isOpen} />
         <li>
           <a
             href="#about"
