@@ -8,7 +8,9 @@ import { programme } from "@/fonts/fonts";
 export default function Navmobile({ sectionOn }) {
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => {
-    setIsOpen((prev) => !prev); // 메뉴 토글 열기닫기
+    requestAnimationFrame(() => {
+      setIsOpen((prev) => !prev);
+    });
   };
   const closeMenu = () => {
     setIsOpen(false); // 메뉴 닫기
@@ -19,7 +21,7 @@ export default function Navmobile({ sectionOn }) {
   }`;
 
   return (
-    <div className={`${programme.className} relative fixed top-8 right-6`}>
+    <div className={`${programme.className} scrollbar-hide relative fixed top-8 right-6`}>
       <button
         className={`lg:hidden fixed z-[800] top-6 right-6 w-4 h-4 flex flex-col items-end justify-between transition-all transform`}
         onClick={toggleMenu}
@@ -42,7 +44,7 @@ export default function Navmobile({ sectionOn }) {
       </button>
 
       <ul
-        className={`select-none lg:hidden text-left font-normal leading-relaxed text-2xl justify-center fixed top-0 left-0 pt-24 p-6 transform transition-all duration-[1000ms] ease-in-out ${
+        className={`transform will-change-transform will-change-opacity select-none lg:hidden text-left font-normal leading-relaxed text-2xl justify-center fixed top-0 left-0 pt-24 p-6 transform transition-all duration-[1000ms] ease-in-out ${
           isOpen
             ? "text-white opacity-100 bg-[rgba(132,116,232,0.5)] z-[700] backdrop-blur w-full h-full"
             : "text-black opacity-0 bg-[rgba(132,116,232,0)] z-[-1] w-full h-full"
