@@ -11,7 +11,7 @@ export const metadata = {
     description: "We analyze the present to prototype the future",
     images: [
       {
-        url: "/img/ogcidc.png",
+        url: "/img/og_0305.png",
         width: 600,
         height: 315,
         alt: "CIDC",
