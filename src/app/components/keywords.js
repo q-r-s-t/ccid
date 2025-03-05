@@ -11,18 +11,18 @@ function KeywordItem({ id, title, description }) {
     const { lang } = useLanguageStore();
 
   return (
-    <li className="h-auto bg-gradient-to-t from-[rgba(93,0,156,0)] via-[rgba(93,0,156,0)] to-[rgba(93,0,156,0)] hover:bg-gradient-to-t hover:from-[rgba(93,0,156,0.2)] hover:via-[rgba(93,0,156,0)] hover:to-[rgba(93,0,156,0)] flex group overflow-hidden transition-all duration-700 ease-out border-b-[1px] border-primaryB hover:border-transparent py-2 lg:py-[0.9vh]">
+    <li className="h-auto bg-gradient-to-t from-[rgba(93,0,156,0)] via-[rgba(93,0,156,0)] to-[rgba(93,0,156,0)] hover:bg-gradient-to-t hover:from-[rgba(93,0,156,0.2)] hover:via-[rgba(93,0,156,0)] hover:to-[rgba(93,0,156,0)] lg:flex group overflow-hidden transition-all duration-700 ease-out border-b-[1px] border-primaryB hover:border-transparent py-2 lg:py-[0.9vh]">
       <div
         className={`transition-all duration-700 w-0 lg:w-[52%] group-hover:w-0 ${textStyle}`}
       >
         {/* {id} */}
       </div>
       <h3
-        className={`${lang === 'en' ? textStyle : textStyleKr} ${programme.className} transition-all duration-700 w-full lg:w-[48%] group-hover:w-[52%] tracking-[-0.02em] font-[370] group-hover:pt-[2px] group-hover:mb-[2vh]`}
+        className={`${lang === 'en' ? textStyle : textStyleKr} ${programme.className} transition-all duration-700 w-full lg:w-[48%] group-hover:lg:w-[52%] tracking-[-0.02em] font-[370] group-hover:pt-[2px] group-hover:mb-[2vh]`}
       >
         {title}
       </h3>
-      <div className={`${lang === 'en' ? 'leading-[1.55] text-[3vw] md:text-[2.85vw] lg:text-[1.15vw]' : 'leading-[1.8] text-[3.1vw] lg:text-[1.1vw]'} text-primaryB transition-all duration-700 w-0 ml-[4px] group-hover:w-[48%] font-[400] lg:group-hover:h-[30vh] group-hover:h-[37vh] h-0 opacity-0 group-hover:opacity-100 transition-all duration-700`}>
+      <div className={`${lang === 'en' ? 'leading-[1.55] text-[3vw] md:text-[2.85vw] lg:text-[1.15vw]' : 'leading-[1.8] text-[3.1vw] lg:text-[1.1vw]'} text-primaryB transition-all duration-700 w-0 ml-[4px] group-hover:w-full group-hover:lg:w-[48%] font-[400] lg:group-hover:h-[30vh] group-hover:h-[25vh] h-0 opacity-0 group-hover:opacity-100 transition-all duration-700`}>
         {description}
       </div>
     </li>
@@ -53,7 +53,6 @@ export default function Keywords() {
     fetchAboutData();
   }, []);
 
-  // console.log(aboutInfo);
   return (
     <ul
       className={`w-full h-full border-t-[1px] text-primaryB border-primaryB pb-[40%] flex flex-col`}
