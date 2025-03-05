@@ -39,7 +39,7 @@ export default function Cover() {
 
   return (
     <div
-      className={`${neuehaas.className} flex flex-col w-[100%] h-[100%] overflow-hidden lg:pt-[40dvh] pt-[37vh] px-6 lg:px-10`}
+      className={`${neuehaas.className} flex flex-col w-[100%] h-[100%] overflow-hidden lg:pt-[40dvh] pt-[30vh] px-6 lg:px-10`}
     >
       {typedWords.map((word, index) => (
         <div
