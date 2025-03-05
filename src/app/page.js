@@ -137,7 +137,7 @@ export default function Home() {
           id="contact"
           className="relative w-[100%] h-[100dvh] snap-end md:p-28 xl:p-40 p-6 content-center"
         >
-          <Contact borderRadius={borderRadius} />
+          <Contact borderRadius={borderRadius} sectionOn={sectionOn}/>
           <footer className="text-primaryB absolute bottom-0 left-0 w-full h-auto text-center p-4 md:p-8 font-[400] leading-[1.5] text-[2.6vw] md:text-[1.8vw] lg:text-[0.9vw] xl:text-[0.75vw]">
             © 2025 CIDC. All rights reserved.
           </footer>
