@@ -11,9 +11,9 @@ export const metadata = {
     description: "We analyze the present to prototype the future",
     images: [
       {
-        url: "/img/og_0305.png",
-        width: 600,
-        height: 315,
+        url: "/img/og800400.png",
+        width: 800,
+        height: 400,
         alt: "CIDC",
       },
     ],
