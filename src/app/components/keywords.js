@@ -11,9 +11,9 @@ function KeywordItem({ id, title, description }) {
     const { lang } = useLanguageStore();
 
   return (
-    <li className="h-auto hover:bg-gradient-to-t hover:from-[rgba(93,0,156,0.2)] hover:via-[rgba(93,0,156,0)] hover:to-[rgba(93,0,156,0)] flex group overflow-hidden transition-all duration-700 ease-out border-b-[1px] border-primaryB hover:border-transparent py-2 lg:py-[0.9vh]">
+    <li className="h-auto bg-gradient-to-t from-[rgba(93,0,156,0)] via-[rgba(93,0,156,0)] to-[rgba(93,0,156,0)] hover:bg-gradient-to-t hover:from-[rgba(93,0,156,0.2)] hover:via-[rgba(93,0,156,0)] hover:to-[rgba(93,0,156,0)] flex group overflow-hidden transition-all duration-700 ease-out border-b-[1px] border-primaryB hover:border-transparent py-2 lg:py-[0.9vh]">
       <div
-        className={`transition-all duration-700 font-founders w-0 lg:w-[52%] group-hover:w-0 ${textStyle}`}
+        className={`transition-all duration-700 w-0 lg:w-[52%] group-hover:w-0 ${textStyle}`}
       >
         {/* {id} */}
       </div>
