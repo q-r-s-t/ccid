@@ -139,7 +139,7 @@ export default function Home() {
         >
           <Contact borderRadius={borderRadius} />
           <footer className="text-primaryB absolute bottom-0 left-0 w-full h-auto text-center p-4 md:p-8 font-[400] leading-[1.5] text-[2.6vw] md:text-[1.8vw] lg:text-[0.9vw] xl:text-[0.75vw]">
-            © 2025 QrST Lab. All rights reserved.
+            © 2025 CIDC. All rights reserved.
           </footer>
         </section>
       </main>

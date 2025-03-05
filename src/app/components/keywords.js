@@ -39,7 +39,7 @@ export default function Keywords() {
         const res = await fetch(
           `${
             process.env.NODE_ENV === "production"
-              ? "https://qrstlab.vercel.app"
+              ? "https://cidc.vercel.app"
               : ""
           }/api/sheets`
         );
