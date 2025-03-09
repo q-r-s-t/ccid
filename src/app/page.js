@@ -123,7 +123,7 @@ export default function Home() {
         </section>
         <section
           id="works"
-          className={`transition-all duration-1000 w-full relative min-h-[100dvh] snap-start`}
+          className={`transition-all duration-1000 lg:content-center w-full relative min-h-[100dvh] snap-start`}
         >
           <Works textColor={textColor} />
         </section>
