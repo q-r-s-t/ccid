@@ -7,7 +7,7 @@ import Nav from "./components/nav/nav";
 import Navmobile from "./components/nav/navmobile";
 
 import Cover from "./components/landing/cover";
-import Aboutkeywords from "./components/about";
+import About from "./components/about";
 import Keywords from "./components/keywords";
 import Works from "./components/works/works";
 import Members from "./components/members";
@@ -139,7 +139,7 @@ export default function Home() {
           id="about"
           className="relative w-[100%] min-h-[100dvh] snap-start pt-20 4xl:pt-[5%] px-6 lg:px-10 content-center"
         >
-          <Aboutkeywords />
+          <About />
           <Keywords />
         </section>
         <section
