@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
-import { useLanguageStore } from "../store/languageStore";
-import { programme } from "@/fonts/fonts";
+import { useLanguageStore } from "../../store/languageStore";
+import { programme, pxGrotesk } from "@/fonts/fonts";
 
 export default function About() {
   const [aboutInfo, setAboutInfo] = useState([]);
@@ -36,11 +36,11 @@ export default function About() {
         Who We Are
       </h1>
 
-      <div className={`text-primaryB flex-1`}>
+      <div className={`${pxGrotesk.className} text-primaryB flex-1`}>
         {aboutInfo.length > 0 ? (
-          <pre className={`${programme.className} ${lang === 'en' ? 'leading-[1.55] text-[3vw] md:text-[2.85vw] lg:text-[1.15vw]' : 'leading-[1.8] text-[3.1vw] lg:text-[1.1vw]'} whitespace-pre-wrap mb-[4vh]`}>{lang === 'en' ? aboutInfo[0][0] : aboutInfo[0][1]}</pre>
+          <pre className={`${pxGrotesk.className} ${lang === 'en' ? 'leading-[1.55] text-[3vw] md:text-[2.85vw] lg:text-[1.15vw]' : 'leading-[1.8] text-[3.1vw] lg:text-[1.1vw]'} whitespace-pre-wrap mb-[4vh]`}>{lang === 'en' ? aboutInfo[0][0] : aboutInfo[0][1]}</pre>
         ) : (
-          <p>Loading...</p>
+          <p className='leading-[1.55] text-[3vw] md:text-[2.85vw] lg:text-[1.15vw]'>Loading...</p>
         )}
       </div>
     </div>

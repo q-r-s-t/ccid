@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { useLanguageStore } from "../store/languageStore";
+import { useLanguageStore } from "../../store/languageStore";
 import { programme } from "@/fonts/fonts";
 
 function KeywordItem({ id, title, description }) {
@@ -18,11 +18,11 @@ function KeywordItem({ id, title, description }) {
         {/* {id} */}
       </div>
       <h3
-        className={`${lang === 'en' ? textStyle : textStyleKr} ${programme.className} transition-all duration-700 w-full lg:w-[48%] group-hover:lg:w-[52%] tracking-[-0.02em] font-[370] group-hover:pt-[2px] group-hover:mb-[2vh]`}
+        className={`${lang === 'en' ? textStyle : textStyleKr} ${programme.className} transition-all duration-700 w-full lg:w-[48%] group-hover:lg:w-[52%] tracking-[-0.02em] group-hover:pt-[2px] group-hover:mb-[2vh]`}
       >
         {title}
       </h3>
-      <div className={`${lang === 'en' ? 'leading-[1.55] text-[3vw] md:text-[2.85vw] lg:text-[1.15vw]' : 'leading-[1.8] text-[3.1vw] lg:text-[1.1vw]'} text-primaryB transition-all duration-700 w-0 ml-[4px] group-hover:w-full group-hover:lg:w-[48%] font-[400] lg:group-hover:h-[30vh] group-hover:h-[25vh] h-0 opacity-0 group-hover:opacity-100 transition-all duration-700`}>
+      <div className={`${lang === 'en' ? 'leading-[1.55] text-[3vw] md:text-[2.85vw] lg:text-[1.15vw]' : 'leading-[1.8] text-[3.1vw] lg:text-[1.1vw]'} text-primaryB transition-all duration-700 w-0 ml-[4px] group-hover:w-full group-hover:lg:w-[48%] lg:group-hover:h-[30vh] group-hover:h-[25vh] h-0 opacity-0 group-hover:opacity-100 transition-all duration-700`}>
         {description}
       </div>
     </li>
