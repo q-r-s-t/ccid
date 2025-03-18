@@ -26,9 +26,6 @@ export default function About() {
 
     fetchAboutData();
   }, []);
-  
-  // console.log(lang)
-  // console.log(aboutInfo);
 
   return (
     <div className=" lg:flex gap-[4vw] items-start justify-start w-full min-h-[40dvh] py-[6vh] lg:py-[14vh] leading-[1.1] text-[6vw] md:text-[5vw] lg:text-[3.5vw]">

@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { neuehaas } from "@/fonts/fonts";
 
 export default function Cover() {
-  const words = ["Creative Intelligence Design Center", "We analyze the present to prototype the future",];
+  const words = ["Creative Intelligence Design Center", "Understanding the present, designing the future.",];
   const [typedWords, setTypedWords] = useState(words.map(() => ""));
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [currentCharIndex, setCurrentCharIndex] = useState(0);

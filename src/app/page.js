@@ -140,7 +140,7 @@ export default function Home() {
           id="about"
           className="relative w-[100%] min-h-[100dvh] snap-start pt-20 4xl:pt-[5%] px-6 lg:px-10 content-center"
         >
-          <About />
+          {/* <About /> */}
           <Desc />
           {/* <Keywords /> */}
         </section>

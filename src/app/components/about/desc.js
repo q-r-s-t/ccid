@@ -13,7 +13,6 @@ function DescItem({ id, title, description }) {
 
   return (
     <li className="h-auto bg-gradient-to-t from-[rgba(93,0,156,0.2)] via-[rgba(93,0,156,0)] to-[rgba(93,0,156,0)] lg:flex group overflow-hidden transition-all duration-700 ease-out py-2 lg:py-[2vh]">
-    
       <h3
         className={`${lang === 'en' ? textStyle : textStyleKr} ${programme.className} transition-all duration-700 w-full lg:w-[52%] tracking-[-0.02em] pt-[2px] mb-[2vh]`}
       >
@@ -52,7 +51,7 @@ export default function Desc() {
 
   return (
     <ul
-      className={`border-t-[1px] border-primaryB w-full h-full text-primaryB pb-[40%] flex flex-col`}
+      className={`border-primaryB w-full h-full text-primaryB pt-[15%] pb-[40%] flex flex-col`}
     >
       {aboutInfo.map((item, i) => (
         <DescItem key={i} id={String(i + 1).padStart(2, "0")} title={lang == 'en' ? item[0] : item[2]} description={lang === 'en' ? item[1] : item[3]} />
