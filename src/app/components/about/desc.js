@@ -14,7 +14,7 @@ function DescItem({ id, title, description }) {
   return (
     <li className="h-auto bg-gradient-to-t from-[rgba(93,0,156,0.2)] via-[rgba(93,0,156,0)] to-[rgba(93,0,156,0)] lg:flex group overflow-hidden transition-all duration-700 ease-out py-2 lg:py-[2vh] lg:px-[5vw]">
       <h3
-        className={`${lang === 'en' ? textStyle : textStyleKr} ${programme.className} transition-all duration-700 w-full lg:w-[52%] tracking-[-0.02em] pt-[2px] mb-[2vh]`}
+        className={`${lang === 'en' ? textStyle : textStyleKr} ${programme.className} transition-all duration-700 w-full lg:w-[52%] tracking-[-0.02em] pt-[2px] lg:pr-[1vw] mb-[2vh]`}
       >
         {title}
       </h3>
