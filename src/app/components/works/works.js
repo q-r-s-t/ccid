@@ -28,7 +28,7 @@ export default function Works({ textColor }) {
 
   return (
     <div
-      className={`text-primaryB pt-[12%] pb-[80%] ${lang === 'kr' ? 'lg:pt-[4dvh]' : 'lg:pt-[8%]'} lg:pb-[10%] w-full h-full font-[400]`}
+      className={`text-primaryB pt-[12%] pb-[80%] ${lang === 'kr' ? 'lg:pt-[4dvh]' : 'lg:pt-[8%]'} lg:pb-[10%] lg:px-[5vw] w-full h-full font-[400]`}
     >
       {worksInfo.length > 0 ? (
         worksInfo.map((row, i) =>

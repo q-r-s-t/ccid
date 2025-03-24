@@ -55,7 +55,7 @@ export default function Navmobile({ sectionOn }) {
         </div>
 
         <HeaderW isOpen={isOpen} />
-        <li>
+        <li className="text-center">
           <a
             href="#about"
             className="scroll-smooth"
@@ -70,7 +70,7 @@ export default function Navmobile({ sectionOn }) {
             about
           </a>
         </li>
-        <li>
+        <li className="text-center">
           <a
             href="#works"
             className="scroll-smooth"
@@ -85,7 +85,7 @@ export default function Navmobile({ sectionOn }) {
             works
           </a>
         </li>
-        <li>
+        <li className="text-center">
           <a
             href="#members"
             className="scroll-smooth"
@@ -100,7 +100,7 @@ export default function Navmobile({ sectionOn }) {
             people
           </a>
         </li>
-        <li>
+        <li className="text-center">
           <a
             href="#contact"
             className="scroll-smooth"
