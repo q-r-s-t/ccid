@@ -4,54 +4,49 @@ import { useState, useEffect } from "react";
 import { neuehaas } from "@/fonts/fonts";
 
 export default function Cover() {
-  const words = ["Creative Intelligence Design Center", "Understanding the present, designing the future.",];
+  const words = ["Creative Intelligence Design Center", "Understanding the present, designing the future."];
   const [typedWords, setTypedWords] = useState(words.map(() => ""));
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
-  const [currentCharIndex, setCurrentCharIndex] = useState(0);
 
   useEffect(() => {
     if (currentWordIndex >= words.length) return;
 
-    let charIndex = 0;
     const word = words[currentWordIndex];
+    let charIndex = 0;
 
-    const interval = setInterval(() => {
+    const typeNextChar = () => {
       setTypedWords((prev) => {
         const newWords = [...prev];
         newWords[currentWordIndex] = word.slice(0, charIndex + 1);
         return newWords;
       });
-      setCurrentCharIndex(charIndex);
 
       charIndex++;
 
-      if (charIndex === word.length) {
-        clearInterval(interval);
-        setTimeout(() => {
-          setCurrentWordIndex((prev) => prev + 1);
-          setCurrentCharIndex(0);
-        }, 500);
+      if (charIndex < word.length) {
+        // 타이핑 속도를 점진적으로 느리게 (처음은 50ms, 후반부는 150ms 이상)
+        const nextDelay = 20 + (charIndex / word.length) * 140;
+        setTimeout(typeNextChar, nextDelay);
+      } else {
+        setTimeout(() => setCurrentWordIndex((prev) => prev + 1), 500);
       }
-    }, 100);
+    };
 
-    return () => clearInterval(interval);
+    typeNextChar();
   }, [currentWordIndex]);
 
   return (
-    <div
-      className={`${neuehaas.className} flex flex-col w-[100%] h-[100%] overflow-hidden lg:pt-[40dvh] pt-[30vh] px-6 lg:px-10`}
-    >
+    <div className={`${neuehaas.className} flex flex-col w-full h-full overflow-hidden lg:pt-[40dvh] pt-[30vh] px-6 lg:px-10`}>
       {typedWords.map((word, index) => (
         <div
           key={index}
           className="text-center lg:text-left relative inline-block w-full h-[20vw] lg:h-[4.5vw] leading-[1.1] text-[7.5vw] lg:text-[3.5vw]"
         >
-          <span className={` ${index === currentWordIndex ? "border-r-2" : ""}` }>
+          <span className={`relative ${index === currentWordIndex ? "after:content-['|'] after:animate-blink" : ""}`}>
             {word}
           </span>
         </div>
       ))}
-     
     </div>
   );
 }
