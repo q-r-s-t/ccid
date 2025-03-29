@@ -103,7 +103,7 @@ export default function Contact({ borderRadius, sectionOn }) {
             className="leading-snug pb-1 relative hover:text-primaryB group"
           >
             {aboutInfo?.[0]?.[2] || "Loading..."}
-            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primaryB transition-all duration-300 ease-in-out group-hover:w-full inline-block"></span>
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primaryB transition-all duration-300 ease-in-out group-hover:opacity-100 opacity-0 group-hover:w-full inline-block"></span>
           </a>
         </div>
       </div>

@@ -36,7 +36,7 @@ function GET(request) {
             auth: auth
           }); // 여러 시트에서 데이터 가져오기
 
-          ranges = ["about!A1:D12", "works!A1:T6", "members!A1:E100", "desc!A1:D10"];
+          ranges = ["main!A1:A2", "about!A1:D12", "works!A1:T6", "members!A1:E100", "desc!A1:D10"];
           _context.next = 11;
           return regeneratorRuntime.awrap(sheets.spreadsheets.values.batchGet({
             spreadsheetId: spreadsheetId,
@@ -47,10 +47,11 @@ function GET(request) {
           response = _context.sent;
           // 데이터 정리
           data = {
-            about: response.data.valueRanges[0].values,
-            works: response.data.valueRanges[1].values,
-            members: response.data.valueRanges[2].values,
-            desc: response.data.valueRanges[3].values
+            main: response.data.valueRanges[0].values,
+            about: response.data.valueRanges[1].values,
+            works: response.data.valueRanges[2].values,
+            members: response.data.valueRanges[3].values,
+            desc: response.data.valueRanges[4].values
           }; // 데이터 출력
           // console.log("Fetched data from Google Sheets:", data);
           // console.log("Environment Variables:", process.env);

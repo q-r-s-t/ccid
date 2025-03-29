@@ -23,7 +23,7 @@ export async function GET(request) {
     const sheets = google.sheets({ version: "v4", auth });
 
     // 여러 시트에서 데이터 가져오기
-    const ranges = ["about!A1:D12", "works!A1:T6", "members!A1:E100", "desc!A1:D10"];
+    const ranges = ["main!A1:A2", "about!A1:D12", "works!A1:T6", "members!A1:E100", "desc!A1:D10"];
     const response = await sheets.spreadsheets.values.batchGet({
       spreadsheetId,
       ranges,
@@ -31,10 +31,11 @@ export async function GET(request) {
 
     // 데이터 정리
     const data = {
-      about: response.data.valueRanges[0].values,
-      works: response.data.valueRanges[1].values,
-      members: response.data.valueRanges[2].values,
-      desc: response.data.valueRanges[3].values,
+      main: response.data.valueRanges[0].values,
+      about: response.data.valueRanges[1].values,
+      works: response.data.valueRanges[2].values,
+      members: response.data.valueRanges[3].values,
+      desc: response.data.valueRanges[4].values,
     };
 
     // 데이터 출력

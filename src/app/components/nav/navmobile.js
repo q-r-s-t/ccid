@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import HeaderW from "../header/headerW";
+// import HeaderW from "../header/headerW";
 import LanguageToggle from "./lang";
 import { programme } from "@/fonts/fonts";
 
@@ -44,7 +44,7 @@ export default function Navmobile({ sectionOn }) {
       </button>
 
       <ul
-        className={`transform will-change-transform will-change-opacity select-none lg:hidden text-left font-normal leading-relaxed text-2xl justify-center fixed top-0 left-0 pt-24 p-6 transform transition-all duration-[1000ms] ease-in-out ${
+        className={`content-center transform will-change-transform will-change-opacity select-none lg:hidden text-left font-normal leading-relaxed text-2xl justify-center fixed top-0 left-0 transform transition-all duration-[1000ms] ease-in-out ${
           isOpen
             ? "text-white opacity-100 bg-[rgba(132,116,232,0.5)] z-[700] backdrop-blur w-full h-full"
             : "text-black opacity-0 bg-[rgba(132,116,232,0)] z-[-1] w-full h-full"
@@ -54,7 +54,7 @@ export default function Navmobile({ sectionOn }) {
           {isOpen && <LanguageToggle textColor="#f0f0ec" />}
         </div>
 
-        <HeaderW isOpen={isOpen} />
+        {/* <HeaderW isOpen={isOpen} /> */}
         <li className="text-center">
           <a
             href="#about"

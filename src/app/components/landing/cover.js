@@ -4,14 +4,38 @@ import { useState, useEffect } from "react";
 import { neuehaas } from "@/fonts/fonts";
 
 export default function Cover() {
-  const words = ["Creative Intelligence Design Center", "Understanding the present, designing the future."];
-  const [typedWords, setTypedWords] = useState(words.map(() => ""));
+  const [mainText, setMainText] = useState(null);
+  const [typedWords, setTypedWords] = useState([]);
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
 
   useEffect(() => {
-    if (currentWordIndex >= words.length) return;
+    const fetchAboutData = async () => {
+      try {
+        const res = await fetch(
+          `${
+            process.env.NODE_ENV === "production"
+              ? "https://cidc.vercel.app"
+              : ""
+          }/api/sheets`
+        );
+        const data = await res.json();
+        const flatText = data.main?.flat() || []; // `?.flat()` 사용하여 안전 처리
+        setMainText(flatText);
+        setTypedWords(flatText.map(() => "")); // 초기값 설정
+      } catch (error) {
+        console.error("Error fetching about data:", error);
+      }
+    };
 
-    const word = words[currentWordIndex];
+    fetchAboutData();
+  }, []);
+
+  console.log(mainText);
+
+  useEffect(() => {
+    if (!mainText || currentWordIndex >= mainText.length) return;
+
+    const word = mainText[currentWordIndex];
     let charIndex = 0;
 
     const typeNextChar = () => {
@@ -24,8 +48,7 @@ export default function Cover() {
       charIndex++;
 
       if (charIndex < word.length) {
-        // 타이핑 속도를 점진적으로 느리게 (처음은 50ms, 후반부는 150ms 이상)
-        const nextDelay = 20 + (charIndex / word.length) * 140;
+        const nextDelay = 10 + (charIndex / word.length) * 140;
         setTimeout(typeNextChar, nextDelay);
       } else {
         setTimeout(() => setCurrentWordIndex((prev) => prev + 1), 500);
@@ -33,18 +56,21 @@ export default function Cover() {
     };
 
     typeNextChar();
-  }, [currentWordIndex]);
+  }, [currentWordIndex, mainText]);
 
   return (
-    <div className={`${neuehaas.className} flex flex-col w-full h-full overflow-hidden lg:pt-[40dvh] pt-[30vh] px-6 lg:px-10`}>
+    <div className={`${neuehaas.className} flex flex-col w-full h-full lg:pt-[40dvh] pt-[30vh] px-6 lg:px-10`}>
       {typedWords.map((word, index) => (
         <div
           key={index}
           className="text-center lg:text-left relative inline-block w-full h-[20vw] lg:h-[4.5vw] leading-[1.1] text-[7.5vw] lg:text-[3.5vw]"
         >
-          <span className={`relative ${index === currentWordIndex ? "after:content-['|'] after:animate-blink" : ""}`}>
+          <pre className={`${neuehaas.className} lg:hidden whitespace-pre-wrap overflow-hidden relative ${index === currentWordIndex ? "after:content-['|'] after:animate-blink" : ""}`}>
             {word}
-          </span>
+          </pre>
+          <p className={`hidden lg:block overflow-hidden relative ${index === currentWordIndex ? "after:content-['|'] after:animate-blink" : ""}`}>
+            {word}
+          </p>
         </div>
       ))}
     </div>
