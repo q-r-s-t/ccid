@@ -11,7 +11,7 @@ export default function WorksMotion() {
         const res = await fetch(
           `${
             process.env.NODE_ENV === "production"
-              ? "https://cidc.vercel.app"
+              ? "https://c-c-i-d.vercel.app"
               : ""
           }/api/sheets`
         );
