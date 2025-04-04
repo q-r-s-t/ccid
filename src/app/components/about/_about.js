@@ -8,7 +8,7 @@ export default function About() {
     const fetchAboutData = async () => {
       try {
         const res = await fetch(
-          `${process.env.NODE_ENV === "production" ? "https://cidc.vercel.app" : ""}/api/sheets`
+          `${process.env.NODE_ENV === "production" ? "https://c-c-i-d.vercel.app" : ""}/api/sheets`
         );
         const data = await res.json();
         setAboutInfo(data.about); // about 시트 데이터 
