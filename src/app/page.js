@@ -27,7 +27,7 @@ export default function Home() {
         const res = await fetch(
           `${
             process.env.NODE_ENV === "production"
-              ? "https://cidc.vercel.app"
+              ? "/api/sheets"
               : ""
           }/api/sheets`
         );
