@@ -84,7 +84,7 @@ export default function Cover() {
               className={\`\${neuehaas.className} lg:hidden whitespace-pre-wrap overflow-hidden relative \${index === currentWordIndex ? "after:content-['|'] after:animate-blink" : ""}\`}
             >
               {word.split("").map((char, i) => (
-                <span key={i} style={i < 15 && coloredWords[index] ? colorStyle : undefined}>
+                <span key={i} style={i < 5 && coloredWords[index] ? colorStyle : undefined}>
                   {char}
                 </span>
               ))}
@@ -93,7 +93,7 @@ export default function Cover() {
               className={\`hidden lg:block overflow-hidden relative \${index === currentWordIndex ? "after:content-['|'] after:animate-blink" : ""}\`}
             >
               {word.split("").map((char, i) => (
-                <span key={i} style={i < 39 && coloredWords[index] ? colorStyle : undefined}>
+                <span key={i} style={i < 15 && coloredWords[index] ? colorStyle : undefined}>
                   {char}
                 </span>
               ))}
