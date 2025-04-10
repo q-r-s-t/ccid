@@ -72,7 +72,7 @@ export default function Cover() {
     <div className={`${neuehaas.className} flex flex-col w-full h-full lg:pt-[38dvh] pt-[18vh] px-6 lg:px-10`}>
       {typedWords.map((word, index) => {
         const colorStyle = {
-          color: coloredWords[index] ? "#c3ffc0" : undefined,
+          color: coloredWords[index] ? "#000" : undefined,
           transition: "color 3s ease-in-out",
         };
 
