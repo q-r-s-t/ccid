@@ -29,7 +29,9 @@ export default function WorksMotion() {
   // 가장 긴 items 배열 길이(9)
   const maxItemsLength =
   worksInfo.length > 0
-    ? Math.max(...worksInfo.map((work) => work.length - 1))
+if (Array.isArray(? Math.max(...worksInfo)) {
+{ ? Math.max(...worksInfo.map((work) => work.length - 1)) }
+}
     : 0;
 
     // console.log(worksInfo[0][0]);
@@ -46,8 +48,8 @@ export default function WorksMotion() {
             >
               <div className="triangle lg:hover:font-[400]" style={{ animationDelay: `${Math.pow(i, 1.1) * 50}ms` }}>
                 {/* front 국내 */}
-                <div className="flex triangle-face flex triangle-face-front bg-[#0f0f13] text-[#90ff4b] lg:hover:text-[#fff]">
-                  <div className=" flex-[0.3] lg:flex-[0.1] pl-6 lg:pl-12">{worksInfo[0][i]}</div>
+                <div className="flex triangle-face flex triangle-face-front bg-[#0f0f13] text-[#90ff4b]">
+                  <div className="font-dm flex-[0.3] lg:flex-[0.1] pl-6 lg:pl-12">{worksInfo[0][i]}</div>
                   <span className={`pr-4 flex-1 ${i === 0 ? ' text-[#90ff4b]  lg:font-[600] font-[700] flex items-end text-[3.3vw] md:text-[2.6vw] lg:text-[1.25vw] pb-[3dvh] lg:pb-[5dvh]' : ''}`}>{worksInfo[1][i]}</span>
                 </div>
                 {/* left 해외 */}
