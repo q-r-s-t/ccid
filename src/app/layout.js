@@ -3,18 +3,18 @@ import "./globals.css";
 import { pxGrotesk } from "@/fonts/fonts";
 
 export const metadata = {
-  title: "Creative Intelligence Design Center",
-  description: "We analyze the present to prototype the future",
-  keywords: "cidc, creative, karts, design, ai, lab, convergence",
+  title: "Center for Creative Intelligence Design",
+  description: "Shaping the future through insight, innovation and impact",
+  keywords: "CCID, creative, intelligence, karts, design, ai, lab, convergence",
   openGraph: {
-    title: "Creative Intelligence Design Center",
-    description: "We analyze the present to prototype the future",
+    title: "Center for Creative Intelligence Design",
+    description: "Shaping the future through insight, innovation and impact"
     images: [
       {
         url: "/img/og800400.png",
         width: 800,
         height: 400,
-        alt: "CIDC",
+        alt: "CCID",
       },
     ],
   },
