@@ -51,7 +51,7 @@ export default function Works({ textColor }) {
                             j === 0 ? "hidden" : ""
                           }  font-dmmono flex-[0.35] lg:pl-[22.5%] lg:text-[1.1vw] lg:flex-[0.1] pl-6 lg:pl-12`}
                         >
-                          "'"+{year}
+                          '{year}
                         </div>
   
                         {/* 국내 + 해외 */}
