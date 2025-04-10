@@ -8,7 +8,7 @@ export const metadata = {
   keywords: "CCID, creative, intelligence, karts, design, ai, lab, convergence",
   openGraph: {
     title: "Center for Creative Intelligence Design",
-    description: "Shaping the future through insight, innovation and impact"
+    description: "Shaping the future through insight, innovation and impact",
     images: [
       {
         url: "/img/og800400.png",
