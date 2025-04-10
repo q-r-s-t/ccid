@@ -58,21 +58,47 @@ export default function Cover() {
     typeNextChar();
   }, [currentWordIndex, mainText]);
 
+{typedWords.map((word, index) => {
+  const [colorReady, setColorReady] = useState(false);
+
+  useEffect(() => {
+    if (index === currentWordIndex) {
+      const timer = setTimeout(() => setColorReady(true), 3000);
+      return () => clearTimeout(timer);
+    } else {
+      setColorReady(false); // reset color state when index moves on
+    }
+  }, [currentWordIndex]);
+
+  const sharedStyles = {
+    color: colorReady ? "#c3ffc0" : undefined,
+    transition: "color 3s ease",
+  };
+
   return (
-    <div className={`${neuehaas.className} flex flex-col w-full h-full lg:pt-[40dvh] pt-[30vh] px-6 lg:px-10`}>
-      {typedWords.map((word, index) => (
-        <div
-          key={index}
-          className="text-center lg:text-left relative inline-block w-full h-[20vw] lg:h-[4.5vw] leading-[1.1] text-[7.5vw] lg:text-[3.5vw]"
-        >
-          <pre className={`${neuehaas.className} lg:hidden whitespace-pre-wrap overflow-hidden relative ${index === currentWordIndex ? "after:content-['|'] after:animate-blink" : ""}`}>
-            {word}
-          </pre>
-          <p className={`hidden lg:block overflow-hidden relative ${index === currentWordIndex ? "after:content-['|'] after:animate-blink" : ""}`}>
-            {word}
-          </p>
-        </div>
-      ))}
+    <div
+      key={index}
+      className="text-center lg:text-left relative inline-block w-full h-[20vw] lg:h-[4.5vw] leading-[1.1] text-[7.5vw] lg:text-[3.5vw]"
+    >
+      <pre
+        className={`${neuehaas.className} lg:hidden whitespace-pre-wrap overflow-hidden relative ${
+          index === currentWordIndex ? "after:content-['|'] after:animate-blink" : ""
+        }`}
+        style={sharedStyles}
+      >
+        {word}
+      </pre>
+      <p
+        className={`hidden lg:block overflow-hidden relative ${
+          index === currentWordIndex ? "after:content-['|'] after:animate-blink" : ""
+        }`}
+        style={sharedStyles}
+      >
+        {word}
+      </p>
     </div>
   );
+})}
+
+
 }
