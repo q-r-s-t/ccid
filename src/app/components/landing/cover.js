@@ -48,7 +48,7 @@ export default function Cover() {
       charIndex++;
 
       if (charIndex < word.length) {
-        const nextDelay = 10 + (charIndex / word.length) * 140;
+        const nextDelay = 18 + (charIndex / word.length) * 180;
         setTimeout(typeNextChar, nextDelay);
       } else {
         // delay color change after full word typed
@@ -58,10 +58,10 @@ export default function Cover() {
             updated[currentWordIndex] = true;
             return updated;
           });
-        }, 3000);
+        }, 1800);
 
         // move to next word
-        setTimeout(() => setCurrentWordIndex((prev) => prev + 1), 500);
+        setTimeout(() => setCurrentWordIndex((prev) => prev + 1), 380);
       }
     };
 
@@ -69,7 +69,7 @@ export default function Cover() {
   }, [currentWordIndex, mainText]);
 
   return (
-    <div className={`${neuehaas.className} flex flex-col w-full h-full lg:pt-[40dvh] pt-[30vh] px-6 lg:px-10`}>
+    <div className={`${neuehaas.className} flex flex-col w-full h-full lg:pt-[38dvh] pt-[18vh] px-6 lg:px-10`}>
       {typedWords.map((word, index) => {
         const colorStyle = {
           color: coloredWords[index] ? "#c3ffc0" : undefined,
