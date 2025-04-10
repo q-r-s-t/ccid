@@ -192,7 +192,7 @@ export default function Members() {
                 />
                 <div className="flex flex-col justify-center pr-4 lg:pt-0 lg:pl-2">
                   <h3
-                    className={`pb-1 leading-none text-[3vw] md:text-[1.9vw] lg:text-[0.95vw]`}
+                    className="pb-1 leading-none text-[3vw] md:text-[1.9vw] lg:text-[0.95vw]"
                   >
                     {member[1]}
                   </h3>
