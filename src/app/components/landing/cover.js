@@ -6,6 +6,7 @@ import { neuehaas } from "@/fonts/fonts";
 export default function Cover() {
   const [mainText, setMainText] = useState(null);
   const [typedWords, setTypedWords] = useState([]);
+  const [coloredWords, setColoredWords] = useState([]);
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
 
   useEffect(() => {
@@ -19,9 +20,10 @@ export default function Cover() {
           }/api/sheets`
         );
         const data = await res.json();
-        const flatText = data.main?.flat() || []; // `?.flat()` 사용하여 안전 처리
+        const flatText = data.main?.flat() || [];
         setMainText(flatText);
-        setTypedWords(flatText.map(() => "")); // 초기값 설정
+        setTypedWords(flatText.map(() => ""));
+        setColoredWords(flatText.map(() => false)); // 초기값 false
       } catch (error) {
         console.error("Error fetching about data:", error);
       }
@@ -29,8 +31,6 @@ export default function Cover() {
 
     fetchAboutData();
   }, []);
-
-  console.log(mainText);
 
   useEffect(() => {
     if (!mainText || currentWordIndex >= mainText.length) return;
@@ -51,6 +51,16 @@ export default function Cover() {
         const nextDelay = 10 + (charIndex / word.length) * 140;
         setTimeout(typeNextChar, nextDelay);
       } else {
+        // delay color change after full word typed
+        setTimeout(() => {
+          setColoredWords((prev) => {
+            const updated = [...prev];
+            updated[currentWordIndex] = true;
+            return updated;
+          });
+        }, 3000);
+
+        // move to next word
         setTimeout(() => setCurrentWordIndex((prev) => prev + 1), 500);
       }
     };
@@ -59,21 +69,37 @@ export default function Cover() {
   }, [currentWordIndex, mainText]);
 
   return (
-    
     <div className={`${neuehaas.className} flex flex-col w-full h-full lg:pt-[40dvh] pt-[30vh] px-6 lg:px-10`}>
-      {typedWords.map((word, index) => (
-        <div
-          key={index}
-          className="text-center lg:text-left relative inline-block w-full h-[20vw] lg:h-[4.5vw] leading-[1.1] text-[7.5vw] lg:text-[3.5vw]"
-        >
-          <pre className={`${neuehaas.className} lg:hidden whitespace-pre-wrap overflow-hidden relative ${index === currentWordIndex ? "after:content-['|'] after:animate-blink" : ""}`}>
-            {word}
-          </pre>
-          <p className={`hidden lg:block overflow-hidden relative ${index === currentWordIndex ? "after:content-['|'] after:animate-blink" : ""}`}>
-            {word}
-          </p>
-        </div>
-      ))}
+      {typedWords.map((word, index) => {
+        const colorStyle = {
+          color: coloredWords[index] ? "#c3ffc0" : undefined,
+          transition: "color 3s ease",
+        };
+
+        return (
+          <div
+            key={index}
+            className="text-center lg:text-left relative inline-block w-full h-[20vw] lg:h-[4.5vw] leading-[1.1] text-[7.5vw] lg:text-[3.5vw]"
+          >
+            <pre
+              className={`${neuehaas.className} lg:hidden whitespace-pre-wrap overflow-hidden relative ${
+                index === currentWordIndex ? "after:content-['|'] after:animate-blink" : ""
+              }`}
+              style={colorStyle}
+            >
+              {word}
+            </pre>
+            <p
+              className={`hidden lg:block overflow-hidden relative ${
+                index === currentWordIndex ? "after:content-['|'] after:animate-blink" : ""
+              }`}
+              style={colorStyle}
+            >
+              {word}
+            </p>
+          </div>
+        );
+      })}
     </div>
   );
 }
