@@ -48,7 +48,7 @@ export default function Cover() {
       charIndex++;
 
       if (charIndex < word.length) {
-        const nextDelay = 18 + (charIndex / word.length) * 180;
+        const nextDelay = 8 + (charIndex / word.length) * 80;
         setTimeout(typeNextChar, nextDelay);
       } else {
         // delay color change after full word typed
@@ -58,7 +58,7 @@ export default function Cover() {
             updated[currentWordIndex] = true;
             return updated;
           });
-        }, 1800);
+        }, 800);
 
         // move to next word
         setTimeout(() => setCurrentWordIndex((prev) => prev + 1), 380);
@@ -73,19 +73,18 @@ export default function Cover() {
       {typedWords.map((word, index) => {
         const colorStyle = {
           color: coloredWords[index] ? "#c3ffc0" : undefined,
-          transition: "color 3s ease",
+          transition: "color 3s ease-in-out",
         };
 
         return (
           <div
             key={index}
-            className="text-center lg:text-left relative inline-block w-full h-[20vw] lg:h-[4.5vw] leading-[1.1] text-[7.5vw] lg:text-[3.5vw]"
+            className="text-center lg:text-left relative inline-block w-full h-[20vw] lg:h-[4.5vw] leading-[1.2] text-[7.5vw] lg:text-[3.5vw]"
           >
             <pre
               className={`${neuehaas.className} lg:hidden whitespace-pre-wrap overflow-hidden relative ${
                 index === currentWordIndex ? "after:content-['|'] after:animate-blink" : ""
               }`}
-              style={colorStyle}
             >
               {word}
             </pre>
