@@ -27,6 +27,7 @@ export default {
         vtfvictorianna: ["VTFvictoriannaThin", "sans-serif"],
         tinygothic: ["TinyGothic", "sans-serif"],
         pretendard: ["Pretendard", "sans-serif"],
+        dmmono: ['"DM Mono"', 'monospace'], 
       },
     },
   },
