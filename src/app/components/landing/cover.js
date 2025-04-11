@@ -68,7 +68,7 @@ export default function Cover() {
   }, [currentWordIndex, mainText]);
 
   return (
-    <div className={\`\${neuehaas.className} flex flex-col w-full h-full lg:pt-[38dvh] pt-[18vh] px-6 lg:px-10\`}>
+    <div className={\`\${neuehaas.className} flex flex-col w-full h-full lg:pt-[38dvh] pt-[28vh] px-6 lg:px-10\`}>
       {typedWords.map((word, index) => {
         const colorStyle = {
           color: "#000",
@@ -78,7 +78,7 @@ export default function Cover() {
         return (
           <div
             key={index}
-            className="text-center lg:text-left relative inline-block w-full h-[20vw] lg:h-[4.5vw] leading-[1.2] text-[7.5vw] lg:text-[3.5vw]"
+            className="text-center lg:text-left relative inline-block w-full h-[20vw] lg:h-[4.5vw] leading-[1.1] lg:leading-[1.2] text-[7.5vw] lg:text-[3.5vw]"
           >
             <pre
               className={\`\${neuehaas.className} lg:hidden whitespace-pre-wrap overflow-hidden relative \${index === currentWordIndex ? "after:content-['|'] after:animate-blink" : ""}\`}
