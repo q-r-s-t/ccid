@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useEffect } from "react";
@@ -23,7 +24,7 @@ export default function Cover() {
         const flatText = data.main?.flat() || [];
         setMainText(flatText);
         setTypedWords(flatText.map(() => ""));
-        setColoredWords(flatText.map(() => false)); // 초기값 false
+        setColoredWords(flatText.map(() => false));
       } catch (error) {
         console.error("Error fetching about data:", error);
       }
@@ -51,7 +52,6 @@ export default function Cover() {
         const nextDelay = 8 + (charIndex / word.length) * 80;
         setTimeout(typeNextChar, nextDelay);
       } else {
-        // delay color change after full word typed
         setTimeout(() => {
           setColoredWords((prev) => {
             const updated = [...prev];
@@ -60,7 +60,6 @@ export default function Cover() {
           });
         }, 800);
 
-        // move to next word
         setTimeout(() => setCurrentWordIndex((prev) => prev + 1), 380);
       }
     };
@@ -69,11 +68,11 @@ export default function Cover() {
   }, [currentWordIndex, mainText]);
 
   return (
-    <div className={`${neuehaas.className} flex flex-col w-full h-full lg:pt-[38dvh] pt-[30vh] px-6 lg:px-10`}>
+    <div className={\`\${neuehaas.className} flex flex-col w-full h-full lg:pt-[38dvh] pt-[30vh] px-6 lg:px-10\`}>
       {typedWords.map((word, index) => {
         const colorStyle = {
           color: coloredWords[index] ? "#000" : undefined,
-          transition: "color 3s ease-in-out",
+          transition: coloredWords[index] ? "color 3s ease-in-out" : undefined,
         };
 
         return (
@@ -82,17 +81,13 @@ export default function Cover() {
             className="text-center lg:text-left relative inline-block w-full h-[20vw] lg:h-[4.5vw] leading-[1.2] text-[7.5vw] lg:text-[3.5vw]"
           >
             <pre
-              className={`${neuehaas.className} lg:hidden whitespace-pre-wrap overflow-hidden relative ${
-                index === currentWordIndex ? "after:content-['|'] after:animate-blink" : ""
-              }`}
+              className={\`\${neuehaas.className} lg:hidden whitespace-pre-wrap overflow-hidden relative \${index === currentWordIndex ? "after:content-['|'] after:animate-blink" : ""}\`}
               style={colorStyle}
             >
               {word}
             </pre>
             <p
-              className={`hidden lg:block overflow-hidden relative ${
-                index === currentWordIndex ? "after:content-['|'] after:animate-blink" : ""
-              }`}
+              className={\`hidden lg:block overflow-hidden relative \${index === currentWordIndex ? "after:content-['|'] after:animate-blink" : ""}\`}
               style={colorStyle}
             >
               {word}
