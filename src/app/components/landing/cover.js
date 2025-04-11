@@ -85,6 +85,7 @@ export default function Cover() {
               className={`${neuehaas.className} lg:hidden whitespace-pre-wrap overflow-hidden relative ${
                 index === currentWordIndex ? "after:content-['|'] after:animate-blink" : ""
               }`}
+              style={colorStyle}
             >
               {word}
             </pre>
