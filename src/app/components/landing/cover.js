@@ -59,7 +59,7 @@ export default function Cover() {
 
   const getGradientColor = (index) => {
     if (index <= 60) return "#fff"; // dark green
-    if (index <= 30) return "#888"; // medium green
+    if (index <= 30) return "#000"; // medium green
     if (index <= 10) return "#000"; // light green
     
     return undefined;
@@ -71,7 +71,7 @@ export default function Cover() {
         const shouldApplyColor = index <= currentWordIndex;
         const color = shouldApplyColor ? getGradientColor(index) : undefined;
         const colorStyle = {
-          color,
+          color || "#000",,
           transition: color ? "color 3s ease-in-out" : undefined,
         };
 
