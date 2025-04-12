@@ -23,7 +23,7 @@ function DescItem({ id, title, description, imageUrl }) {
         </pre>
       </div>
 
-      {typeof imageUrl === "string" && imageUrl.startsWith("http") && (
+      {typeof imageUrl === "string" && imageUrl.startsWith("http") && imageUrl !== "null" && (
         <div className="w-full lg:w-[48%] mb-[2vh]">
           <img
             src={imageUrl}
