@@ -57,41 +57,32 @@ export default function Cover() {
     typeNextChar();
   }, [currentWordIndex, mainText]);
 
-  const getGradientColor = (index) => {
-    if (index <= 10) return "#fff"; // light green
-    else if (index <= 30) return "#888"; // medium green
-    else if (index <= 60) return "#000"; // dark green
-    
-    
-    
-    return undefined;
-  };
-
   return (
     <div className={`${neuehaas.className} flex flex-col w-full h-full lg:pt-[38dvh] pt-[30vh] px-6 lg:px-10`}>
       {typedWords.map((word, index) => {
         const shouldApplyColor = index <= currentWordIndex;
-        const color = shouldApplyColor ? getGradientColor(index) : undefined;
-        const colorStyle = {
-          color || "#000",
-          transition: color ? "color 3s ease-in-out" : undefined,
-        };
+        const colorStyle = shouldApplyColor
+          ? {
+              color: "#fff",
+              transition: "color 3s ease-in-out",
+            }
+          : {};
 
         return (
           <div
             key={index}
-            className="text-center lg:text-left relative inline-block w-full h-[20vw] lg:h-[4.5vw] leading-[1.2] text-[7.5vw] lg:text-[3.5vw]"
-          > 
+            className="text-center lg:text-left relative inline-block w-full h-[20vw] lg:h-[4.5vw] lg:leading-[1.28] leading-[1.2] text-[7.5vw] lg:text-[3vw]"
+          >
             <pre
-              className={`${neuehaas.className} lg:hidden whitespace-pre-wrap overflow-hidden relative ${
+              className={`text-black ${neuehaas.className} lg:hidden whitespace-pre-wrap overflow-hidden relative ${
                 index === currentWordIndex ? "after:content-['|'] after:animate-blink" : ""
               }`}
               style={colorStyle}
-            > 
+            >
               {word}
             </pre>
             <p
-              className={`hidden lg:block overflow-hidden relative ${
+              className={`text-black hidden lg:block overflow-hidden relative ${
                 index === currentWordIndex ? "after:content-['|'] after:animate-blink" : ""
               }`}
               style={colorStyle}
