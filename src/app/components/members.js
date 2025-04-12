@@ -100,8 +100,6 @@ export default function Members() {
         );
 
         const data = await res.json();
-        // console.log(data);
-
         // 동적으로 분류
         const categorizedMembers = data.members.reduce((acc, member) => {
           const category = member[0]; // 첫 번째 항목을 키로 사용
