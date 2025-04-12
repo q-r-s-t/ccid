@@ -70,9 +70,10 @@ export default function Cover() {
   return (
     <div className={`${neuehaas.className} flex flex-col w-full h-full lg:pt-[38dvh] pt-[30vh] px-6 lg:px-10`}>
       {typedWords.map((word, index) => {
+        const shouldApplyColor = index <= 30 && coloredWords[index];
         const colorStyle = {
-          color: coloredWords[index] ? "#000" : undefined,
-          transition: coloredWords[index] ? "color 3s ease-in-out" : undefined,
+          color: shouldApplyColor ? "#000" : undefined,
+          transition: shouldApplyColor ? "color 3s ease-in-out" : undefined,
         };
 
         return (
