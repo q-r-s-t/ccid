@@ -58,9 +58,9 @@ export default function Cover() {
   }, [currentWordIndex, mainText]);
 
   const getGradientColor = (index) => {
-    if (index <= 60) return "#228b22"; // dark green
-    if (index <= 30) return "#90ee90"; // medium green
-    if (index <= 10) return "#c3ffc0"; // light green
+    if (index <= 60) return "#000"; // dark green
+    if (index <= 30) return "#000"; // medium green
+    if (index <= 10) return "#000"; // light green
      
     
     return undefined;
