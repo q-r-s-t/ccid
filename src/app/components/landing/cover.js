@@ -7,7 +7,6 @@ import { neuehaas } from "@/fonts/fonts";
 export default function Cover() {
   const [mainText, setMainText] = useState(null);
   const [typedWords, setTypedWords] = useState([]);
-  const [coloredWords, setColoredWords] = useState([]);
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
 
   useEffect(() => {
@@ -24,7 +23,6 @@ export default function Cover() {
         const flatText = data.main?.flat() || [];
         setMainText(flatText);
         setTypedWords(flatText.map(() => ""));
-        setColoredWords(flatText.map(() => false));
       } catch (error) {
         console.error("Error fetching about data:", error);
       }
@@ -52,14 +50,6 @@ export default function Cover() {
         const nextDelay = 8 + (charIndex / word.length) * 80;
         setTimeout(typeNextChar, nextDelay);
       } else {
-        setTimeout(() => {
-          setColoredWords((prev) => {
-            const updated = [...prev];
-            updated[currentWordIndex] = true;
-            return updated;
-          });
-        }, 800);
-
         setTimeout(() => setCurrentWordIndex((prev) => prev + 1), 380);
       }
     };
@@ -68,16 +58,16 @@ export default function Cover() {
   }, [currentWordIndex, mainText]);
 
   const getGradientColor = (index) => {
+    if (index <= 10) return "#c3ffc0"; // light green
+    if (index <= 20) return "#90ee90"; // medium green
     if (index <= 30) return "#228b22"; // dark green
-  if (index <= 20) return "#90ee90"; // medium green
-  if (index <= 10) return "#c3ffc0"; // light green
     return undefined;
   };
 
   return (
     <div className={`${neuehaas.className} flex flex-col w-full h-full lg:pt-[38dvh] pt-[30vh] px-6 lg:px-10`}>
       {typedWords.map((word, index) => {
-        const shouldApplyColor = coloredWords[index];
+        const shouldApplyColor = index <= currentWordIndex;
         const color = shouldApplyColor ? getGradientColor(index) : undefined;
         const colorStyle = {
           color,
