@@ -58,10 +58,9 @@ export default function Cover() {
   }, [currentWordIndex, mainText]);
 
   const getGradientColor = (index) => {
-    if (index <= 60) return "#fff"; // dark green
-    if (index <= 30) return "#fff"; // medium green
-    if (index <= 10) return "#fff"; // light green
-     
+    if (index <= 60) return "#000"; // dark green
+    if (index <= 30) return "#000"; // medium green
+    if (index <= 10) return "#000"; // light green
     
     return undefined;
   };
@@ -86,9 +85,8 @@ export default function Cover() {
                 index === currentWordIndex ? "after:content-['|'] after:animate-blink" : ""
               }`}
               style={colorStyle}
-            > <span style="color:#000">
+            > 
               {word}
-              </span>
             </pre>
             <p
               className={`hidden lg:block overflow-hidden relative ${
