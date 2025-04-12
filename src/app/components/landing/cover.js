@@ -8,6 +8,7 @@ export default function Cover() {
   const [mainText, setMainText] = useState(null);
   const [typedWords, setTypedWords] = useState([]);
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
+  const [colorize, setColorize] = useState(false);
 
   useEffect(() => {
     const fetchAboutData = async () => {
@@ -50,24 +51,31 @@ export default function Cover() {
         const nextDelay = 8 + (charIndex / word.length) * 80;
         setTimeout(typeNextChar, nextDelay);
       } else {
-        setTimeout(() => setCurrentWordIndex((prev) => prev + 1), 380);
+        setTimeout(() => {
+          if (currentWordIndex + 1 === mainText.length) {
+            setTimeout(() => setColorize(true), 3000); // ← delay here!
+          }
+          setCurrentWordIndex((prev) => prev + 1);
+        }, 380);
       }
     };
 
     typeNextChar();
   }, [currentWordIndex, mainText]);
 
+  const getGradientColor = (index) => {
+    const maxIndex = 30;
+    const ratio = Math.min(index / maxIndex, 1);
+    const r = Math.round(195 - 195 * ratio);
+    const g = Math.round(255 - 80 * ratio);
+    const b = Math.round(192 - 192 * ratio);
+    return `rgb(${r}, ${g}, ${b})`;
+  };
+
   return (
     <div className={`${neuehaas.className} flex flex-col w-full h-full lg:pt-[38dvh] pt-[30vh] px-6 lg:px-10`}>
       {typedWords.map((word, index) => {
-        const isColored = index <= currentWordIndex;
-        let color;
-        if (isColored) {
-          if (index <= 10) color = "#c3ffc0";
-          else if (index <= 20) color = "#90ee90";
-          else if (index <= 30) color = "#228b22";
-        }
-
+        const color = colorize ? getGradientColor(index) : undefined;
         const colorStyle = {
           color,
           transition: color ? "color 3s ease-in-out" : undefined,
