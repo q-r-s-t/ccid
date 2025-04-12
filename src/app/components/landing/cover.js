@@ -71,7 +71,7 @@ export default function Cover() {
         return (
           <div
             key={index}
-            className="text-center lg:text-left relative inline-block w-full h-[20vw] lg:h-[4.5vw] leading-[1.13] text-[7.5vw] lg:text-[3vw]"
+            className="text-center background-none lg:text-left relative inline-block w-full h-[20vw] lg:h-[4.5vw] leading-[1.13] text-[7.5vw] lg:text-[3vw]"
           >
             <pre
               className={`text-black ${neuehaas.className} lg:hidden whitespace-pre-wrap overflow-hidden relative ${
@@ -82,7 +82,7 @@ export default function Cover() {
               {word}
             </pre>
             <p
-              className={`text-black hidden lg:block overflow-hidden relative ${
+              className={`text-black background-none hidden lg:block overflow-hidden relative ${
                 index === currentWordIndex ? "after:content-['|'] after:animate-blink" : ""
               }`}
               style={colorStyle}
