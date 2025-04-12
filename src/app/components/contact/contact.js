@@ -104,7 +104,7 @@ export default function Contact({ borderRadius, sectionOn }) {
         >
           {aboutInfo?.[0]?.[2] || "Loading..."}
           <span
-            className="absolute bottom-0 left-0 w-0 h-0.5 bg-primaryB transition-all duration-[600ms] ease-in-out group-hover:w-full group-hover:bg-[#fff]"
+            className="absolute bottom-0 left-0 w-0 h-0.5 bg-primaryB transition-all duration-[3800ms] ease-in-out group-hover:w-full group-hover:bg-[#fff]"
           ></span>
         </a>
         </div>
