@@ -18,7 +18,7 @@ function DescItem({ id, title, description }) {
       >
         {title}
       </h3>
-      <pre className={`whitespace-pre-wrap ${pxGrotesk.className} pb-[15vh] ${lang === 'en' ? 'leading-[1.55] text-[3.8vw] md:text-[2.85vw] lg:text-[1.15vw]' : 'leading-[1.8] text-[3.8vw] lg:text-[1.1vw]'} text-primaryB transition-all duration-700 ml-[4px] w-full lg:w-[48%] transition-all duration-700`}>
+      <pre className={`whitespace-pre-wrap ${pxGrotesk.className} pb-[15vh] ${lang === 'en' ? 'leading-[1.38] lg:leading-[1.55] text-[3.8vw] md:text-[2.85vw] lg:text-[1.15vw]' : 'leading-[1.8] text-[3.8vw] lg:text-[1.1vw]'} text-primaryB transition-all duration-700 ml-[4px] w-full lg:w-[48%] transition-all duration-700`}>
         {description}
       </pre>
     </li> 
