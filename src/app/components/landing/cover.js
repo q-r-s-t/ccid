@@ -57,20 +57,20 @@ export default function Cover() {
     typeNextChar();
   }, [currentWordIndex, mainText]);
 
-  const getSmoothGradient = (index) => {
-    const maxIndex = word.length;
-    const ratio = Math.min(index / maxIndex, 1); // 0 ~ 1
-    const r = 0 // 195 → 0
-    const g = 0;   // 255 → 175
-    const b = 0;  // 192 → 0
-    return `rgb(${r}, ${g}, ${b})`;
+  const getGradientColor = (index) => {
+    if (index <= 60) return "#228b22"; // dark green
+    if (index <= 30) return "#90ee90"; // medium green
+    if (index <= 10) return "#c3ffc0"; // light green
+     
+    
+    return undefined;
   };
 
   return (
     <div className={`${neuehaas.className} flex flex-col w-full h-full lg:pt-[38dvh] pt-[30vh] px-6 lg:px-10`}>
       {typedWords.map((word, index) => {
-        const isColored = index <= currentWordIndex;
-        const color = isColored ? getSmoothGradient(index) : undefined;
+        const shouldApplyColor = index <= currentWordIndex;
+        const color = shouldApplyColor ? getGradientColor(index) : undefined;
         const colorStyle = {
           color,
           transition: color ? "color 3s ease-in-out" : undefined,
