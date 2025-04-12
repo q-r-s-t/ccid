@@ -58,9 +58,9 @@ export default function Cover() {
   }, [currentWordIndex, mainText]);
 
   const getGradientColor = (index) => {
-    if (index <= 60) return "#000"; // dark green
-    if (index <= 30) return "#000"; // medium green
-    if (index <= 10) return "#000"; // light green
+    if (index <= 60) return "#fff"; // dark green
+    if (index <= 30) return "#fff"; // medium green
+    if (index <= 10) return "#fff"; // light green
      
     
     return undefined;
@@ -80,12 +80,12 @@ export default function Cover() {
           <div
             key={index}
             className="text-center lg:text-left relative inline-block w-full h-[20vw] lg:h-[4.5vw] leading-[1.2] text-[7.5vw] lg:text-[3.5vw]"
-          >
+          > 
             <pre
               className={`${neuehaas.className} lg:hidden whitespace-pre-wrap overflow-hidden relative ${
                 index === currentWordIndex ? "after:content-['|'] after:animate-blink" : ""
               }`}
-              style={colorStyle}
+              style={colorStyle style="color:#000"}
             >
               {word}
             </pre>
