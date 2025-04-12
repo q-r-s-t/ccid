@@ -47,7 +47,7 @@ export default function Cover() {
       charIndex++;
 
       if (charIndex < word.length) {
-        const nextDelay = 8 + (charIndex / word.length) * 80;
+        const nextDelay = 30 + (charIndex / word.length) * 88;
         setTimeout(typeNextChar, nextDelay);
       } else {
         setTimeout(() => setCurrentWordIndex((prev) => prev + 1), 380);
@@ -64,14 +64,14 @@ export default function Cover() {
         const colorStyle = shouldApplyColor
           ? {
               color: "#fff",
-              transition: "color 3s ease-in-out",
+              transition: "color 8s ease-in-out",
             }
           : {};
 
         return (
           <div
             key={index}
-            className="text-center lg:text-left relative inline-block w-full h-[20vw] lg:h-[4.5vw] lg:leading-[1.28] leading-[1.2] text-[7.5vw] lg:text-[3vw]"
+            className="text-center lg:text-left relative inline-block w-full h-[20vw] lg:h-[4.5vw] leading-[1.18] text-[7.5vw] lg:text-[3vw]"
           >
             <pre
               className={`text-black ${neuehaas.className} lg:hidden whitespace-pre-wrap overflow-hidden relative ${
