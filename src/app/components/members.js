@@ -1,84 +1,3 @@
-// const members = {
-//   labHead: [
-//     {
-//       role: "Lab Head",
-//       name: "Q Shim",
-//       imageUrl:
-//         "https://www.karts.ac.kr/cmm/fms/getImage.do?atchFileId=FILE_000000000146962&width=300&height=410",
-//       email: "shim.kyuha@gmail.com",
-//       description:
-//         "디자인 컨버전스 콜렉티브 큐알에스티의 대표로서 다양한 분야의 융합을 통해 새로운 가치를 발굴하는 컴퓨테이셔널 디자이너이자 크리에이터, 심규하입니다.",
-//     },
-//   ],
-//   visitingResearcher: [
-//     {
-//       role: "Visiting Researcher",
-//       name: "R Shim",
-//       imageUrl:
-//       "https://www.karts.ac.kr/cmm/fms/getImage.do?atchFileId=FILE_000000000146962&width=300&height=410",
-//       email: "shim.r@gmail.com",
-//       description: "UX/UI디자인 데이터 시각화",
-//     },
-//     {
-//       role: "Visiting Researcher",
-//       name: "R Shim",
-//       imageUrl:
-//       "https://www.karts.ac.kr/cmm/fms/getImage.do?atchFileId=FILE_000000000146962&width=300&height=410",
-//       email: "shim.r@gmail.com",
-//       description: "UX/UI디자인 데이터 시각화",
-//     },
-//     {
-//       role: "Visiting Researcher",
-//       name: "R Shim",
-//       imageUrl:
-//       "https://www.karts.ac.kr/cmm/fms/getImage.do?atchFileId=FILE_000000000146962&width=300&height=410",
-//       email: "shim.r@gmail.com",
-//       description: "UX/UI디자인 데이터 시각화",
-//     },
-//   ],
-//   studentResearcher: [
-//     {
-//       role: "Student Researcher",
-//       name: "R Shim",
-//       imageUrl:
-//       "https://www.karts.ac.kr/cmm/fms/getImage.do?atchFileId=FILE_000000000146962&width=300&height=410",
-//       email: "shim.r@gmail.com",
-//       description: "UX/UI디자인 데이터 시각화",
-//     },
-//     {
-//       role: "Student Researcher",
-//       name: "R Shim",
-//       imageUrl:
-//       "https://www.karts.ac.kr/cmm/fms/getImage.do?atchFileId=FILE_000000000146962&width=300&height=410",
-//       email: "shim.r@gmail.com",
-//       description: "UX/UI디자인 데이터 시각화",
-//     },
-//     {
-//       role: "Student Researcher",
-//       name: "R Shim",
-//       imageUrl:
-//       "https://www.karts.ac.kr/cmm/fms/getImage.do?atchFileId=FILE_000000000146962&width=300&height=410",
-//       email: "shim.r@gmail.com",
-//       description: "UX/UI디자인 데이터 시각화",
-//     },
-//     {
-//       role: "Student Researcher",
-//       name: "R Shim",
-//       imageUrl:
-//       "https://www.karts.ac.kr/cmm/fms/getImage.do?atchFileId=FILE_000000000146962&width=300&height=410",
-//       email: "shim.r@gmail.com",
-//       description: "UX/UI디자인 데이터 시각화",
-//     },
-//     {
-//       role: "Student Researcher",
-//       name: "R Shim",
-//       imageUrl:
-//       "https://www.karts.ac.kr/cmm/fms/getImage.do?atchFileId=FILE_000000000146962&width=300&height=410",
-//       email: "shim.r@gmail.com",
-//       description: "UX/UI디자인 데이터 시각화",
-//     },
-//   ],
-// };
 "use client";
 
 import { useEffect, useState } from "react";
@@ -189,7 +108,7 @@ export default function Members() {
                     {member[1]}
                   </h3>
                   {member[3] && (
-                    <h2 className="pb-1 leading-none text-[3.2vw] md:text-[1.6vw] lg:text-[0.75vw]">
+                    <h2 className="pb-1 leading-none text-[2.8vw] md:text-[1.6vw] lg:text-[0.75vw]">
                       {member[3]}
                     </h2>
                   )}{" "}
