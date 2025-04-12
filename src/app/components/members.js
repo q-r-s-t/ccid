@@ -108,7 +108,7 @@ export default function Members() {
                     {member[1]}
                   </h3>
                   {member[3] && (
-                    <h2 className="pb-1 leading-none text-[2.8vw] md:text-[1.6vw] lg:text-[0.75vw]">
+                    <h2 className="pb-1 leading-none text-[2.6vw] md:text-[1.6vw] lg:text-[0.75vw]">
                       {member[3]}
                     </h2>
                   )}{" "}
