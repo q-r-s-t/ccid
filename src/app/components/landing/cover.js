@@ -71,7 +71,7 @@ export default function Cover() {
         const shouldApplyColor = index <= currentWordIndex;
         const color = shouldApplyColor ? getGradientColor(index) : undefined;
         const colorStyle = {
-          color || "#000",,
+          color || "#000",
           transition: color ? "color 3s ease-in-out" : undefined,
         };
 
