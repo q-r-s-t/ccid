@@ -49,7 +49,7 @@ export default function Works({ textColor }) {
                         <div
                           className={`${j === 1 ? `${lang === 'en' ? 'lg:mt-[0vh]' : 'lg:mt-[2vh]'}` : ''} ${
                             j === 0 ? "hidden" : ""
-                          }  font-dmmono flex-[0.35] lg:pl-[22.5%] lg:text-[1.1vw] lg:flex-[0.1] pl-6 lg:pl-12`}
+                          }  font-dmmono flex-[0.35] lg:pl-[22.5%] lg:text-[1vw] lg:flex-[0.1] pl-6 lg:pl-12`}
                         >
                           {year}
                         </div>
