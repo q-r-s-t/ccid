@@ -8,7 +8,6 @@ export default function Cover() {
   const [mainText, setMainText] = useState(null);
   const [typedWords, setTypedWords] = useState([]);
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
-  const [colorize, setColorize] = useState(false);
 
   useEffect(() => {
     const fetchAboutData = async () => {
@@ -51,31 +50,27 @@ export default function Cover() {
         const nextDelay = 8 + (charIndex / word.length) * 80;
         setTimeout(typeNextChar, nextDelay);
       } else {
-        setTimeout(() => {
-          if (currentWordIndex + 1 === mainText.length) {
-            setTimeout(() => setColorize(true), 3000); // ← delay here!
-          }
-          setCurrentWordIndex((prev) => prev + 1);
-        }, 380);
+        setTimeout(() => setCurrentWordIndex((prev) => prev + 1), 380);
       }
     };
 
     typeNextChar();
   }, [currentWordIndex, mainText]);
 
-  const getGradientColor = (index) => {
-    const maxIndex = 30;
-    const ratio = Math.min(index / maxIndex, 1);
-    const r = Math.round(195 - 195 * ratio);
-    const g = Math.round(255 - 80 * ratio);
-    const b = Math.round(192 - 192 * ratio);
+  const getSmoothGradient = (index) => {
+    const maxIndex = word.length;
+    const ratio = Math.min(index / maxIndex, 1); // 0 ~ 1
+    const r = 0 // 195 → 0
+    const g = 0;   // 255 → 175
+    const b = 0;  // 192 → 0
     return `rgb(${r}, ${g}, ${b})`;
   };
 
   return (
     <div className={`${neuehaas.className} flex flex-col w-full h-full lg:pt-[38dvh] pt-[30vh] px-6 lg:px-10`}>
       {typedWords.map((word, index) => {
-        const color = colorize ? getGradientColor(index) : undefined;
+        const isColored = index <= currentWordIndex;
+        const color = isColored ? getSmoothGradient(index) : undefined;
         const colorStyle = {
           color,
           transition: color ? "color 3s ease-in-out" : undefined,
