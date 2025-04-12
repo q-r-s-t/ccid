@@ -67,13 +67,21 @@ export default function Cover() {
     typeNextChar();
   }, [currentWordIndex, mainText]);
 
+  const getGradientColor = (index) => {
+    if (index <= 10) return "#c3ffc0"; // light green
+    if (index <= 20) return "#90ee90"; // medium green
+    if (index <= 30) return "#228b22"; // dark green
+    return undefined;
+  };
+
   return (
     <div className={`${neuehaas.className} flex flex-col w-full h-full lg:pt-[38dvh] pt-[30vh] px-6 lg:px-10`}>
       {typedWords.map((word, index) => {
-        const shouldApplyColor = index <= 30 && coloredWords[index];
+        const shouldApplyColor = coloredWords[index];
+        const color = shouldApplyColor ? getGradientColor(index) : undefined;
         const colorStyle = {
-          color: shouldApplyColor ? "#000" : undefined,
-          transition: shouldApplyColor ? "color 3s ease-in-out" : undefined,
+          color,
+          transition: color ? "color 3s ease-in-out" : undefined,
         };
 
         return (
