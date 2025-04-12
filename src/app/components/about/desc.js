@@ -21,7 +21,7 @@ function DescItem({ id, title, description }) {
       <pre className={`whitespace-pre-wrap ${pxGrotesk.className} pb-[15vh] ${lang === 'en' ? 'leading-[1.55] text-[3vw] md:text-[2.85vw] lg:text-[1.15vw]' : 'leading-[1.8] text-[3.1vw] lg:text-[1.1vw]'} text-primaryB transition-all duration-700 ml-[4px] w-full lg:w-[48%] transition-all duration-700`}>
         {description}
       </pre>
-    </li>
+    </li> 
   );
 }
 
@@ -35,7 +35,7 @@ export default function Desc() {
         const res = await fetch(
           `${
             process.env.NODE_ENV === "production"
-              ? "https://c-c-i-d.vercel.app"
+              ? "https://cidc.vercel.app"
               : ""
           }/api/sheets`
         );
