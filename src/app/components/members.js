@@ -82,13 +82,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Inter } from "next/font/google";
 import { pxGrotesk, pretendardB } from "@/fonts/fonts";
-
-const inter = Inter({
-  subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-});
 
 export default function Members() {
   const [membersInfo, setMembersInfo] = useState({});
