@@ -50,7 +50,7 @@ export default function Cover() {
         const nextDelay = 18 + (charIndex / word.length) * 88;
         setTimeout(typeNextChar, nextDelay);
       } else {
-        setTimeout(() => setCurrentWordIndex((prev) => prev + 1), 80);
+        setTimeout(() => setCurrentWordIndex((prev) => prev + 1), 380);
       }
     };
 
