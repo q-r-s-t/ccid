@@ -98,7 +98,7 @@ export default function Contact({ borderRadius, sectionOn }) {
         <div className="z-[1]">
           <a
             href={\`mailto:\${aboutInfo?.[0]?.[2] || ""}\`}
-            className="leading-snug pb-1 relative group text-black hover:text-white transition-colors duration-[1800ms]"
+            className="leading-snug pb-1 relative group text-black hover:text-white transition-colors delay-[1s] duration-[3800ms]"
           >
             {aboutInfo?.[0]?.[2] || "Loading..."}
             <span
