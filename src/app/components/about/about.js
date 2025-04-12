@@ -13,9 +13,9 @@ export default function About() {
         const res = await fetch(
           `${
             process.env.NODE_ENV === "production"
-              ? "https://c-c-i-d.vercel.app"
+              ? "https://cidc.vercel.app"
               : ""
-          }/api/sheets`
+          }/api/sheets` 
         );
         const data = await res.json();
         setAboutInfo(data.about); // about 시트 데이터
