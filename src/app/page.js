@@ -138,11 +138,11 @@ export default function Home() {
         </section>
         <section
           id="about"
-          className="relative w-[100%] min-h-[100dvh] snap-start pt-20 4xl:pt-[5%] px-0 lg:px-0 content-center"
+          className="relative w-[100%] min-h-[100dvh] snap-start pt-20 lg:pt-18 4xl:pt-[3%] px-0 lg:px-0 content-center"
         >
           {/* <About />
           <Keywords /> */}
-          <Desc /> 
+          <Desc/> 
           
         </section>
         <section
