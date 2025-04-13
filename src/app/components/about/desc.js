@@ -15,7 +15,7 @@ function DescItem({ id, title, description, imageUrl }) {
   return (
     <li className="h-auto bg-gradient-to-t from-[rgba(93,0,156,0.2)] via-[rgba(93,0,156,0)] to-[rgba(93,0,156,0)] lg:flex group overflow-hidden transition-all duration-700 ease-out py-2 lg:py-[2vh] lg:px-[5vw]">
       <h3  
-        className={`${lang === 'en' ? textStyle : textStyleKr} ${neuehaas.className} transition-all duration-700 w-full lg:w-[52%] tracking-[0] pt-[2px] lg:pr-[1vw] mb-[2vh]`}
+        className={`${lang === 'en' ? textStyle : textStyleKr} ${neuehaas.className} transition-all duration-700 w-full lg:w-[52%] tracking-[0.03] pt-[2px] lg:pr-[1vw] mb-[2vh]`}
       >
         {title}
       </h3>
@@ -29,7 +29,7 @@ function DescItem({ id, title, description, imageUrl }) {
             loading="lazy"
           />
         )}
-        <pre className={`whitespace-pre-wrap ${pxGrotesk.className} px-[1em] pb-[3vh] ${lang === 'en' ? 'leading-[1.18] text-[3vw] md:text-[2.85vw] lg:text-[1.15vw]' : 'leading-[1.8] text-[3.1vw] lg:text-[1.1vw]'} text-primaryB transition-all duration-700 ml-[4px] w-full`}>
+        <pre className={`whitespace-pre-wrap ${pxGrotesk.className} px-[1.3em] pb-[3vh] ${lang === 'en' ? 'leading-[1.38] text-[3vw] md:text-[2.85vw] lg:text-[1.15vw]' : 'leading-[1.8] text-[3.1vw] lg:text-[1.1vw]'} text-primaryB transition-all duration-700 ml-[4px] w-full`}>
           {description}
         </pre>
       </div>
