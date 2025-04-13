@@ -58,7 +58,7 @@ export default function Cover() {
   }, [currentWordIndex, mainText]);
 
   return (
-    <div className={`font-Founders flex flex-col w-full h-full lg:pt-[38dvh] pt-[28vh] px-6 lg:px-10`}>
+    <div className={`${pxGrotesk.className} flex flex-col w-full h-full lg:pt-[38dvh] pt-[28vh] px-6 lg:px-10`}>
       {typedWords.map((word, index) => {
         const shouldApplyColor = index <= currentWordIndex;
         const colorStyle = shouldApplyColor
@@ -71,7 +71,7 @@ export default function Cover() {
         return (
           <div
             key={index}
-            className="text-center lg:text-left relative inline-block w-full lg:h-[24vw] h-[26vw] lg:h-[3.8vw] leading-[1.1] lg:leading-[1.3] text-[7.5vw] lg:text-[3vw]"
+            className="text-center lg:text-left relative inline-block w-full lg:h-[24vw] h-[26vw] lg:h-[3.8vw] leading-[1.1] lg:leading-[1.3] text-[7.5vw] lg:text-[38px]"
           >
             <pre
               className={`text-black font-Founders lg:hidden whitespace-pre-wrap overflow-hidden relative ${
