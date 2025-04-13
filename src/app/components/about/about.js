@@ -19,6 +19,7 @@ export default function About() {
         );
         const data = await res.json();
         setAboutInfo(data.about); // about 시트 데이터
+        console.log("about\n"+data.about);
       } catch (error) {
         console.error("Error fetching about data:", error);
       }
