@@ -42,14 +42,14 @@ export default function Works({ textColor }) {
                   return (
                     <div key={`${i}-${j}`} className="relative">
                       <div
-                        className={` ${lang === 'en' ? 'leading-[1.4] mb-[0.5vh]' : 'lg:leading-[1.5] leading-[1.3] mb-[1.1vh] lg:mb-[0.3vh]'} relative flex text-[2.8vw] md:text-[2.4vw] lg:text-[1vw]  
+                        className={` ${lang === 'en' ? 'leading-[1.4] mb-[0.5vh]' : 'lg:leading-[1.5] leading-[1.1] mb-[1.1vh] lg:mb-[0.3vh]'} relative flex text-[2.8vw] md:text-[2.4vw] lg:text-[1vw]  
                         ${j === 0 ? `text-primaryC lg:pl-10 lg:h-[7dvh] lg:absolute lg:top-0 pl-6 lg:left-0 lg:w-[20vw]` : ""}`}
                       >
                         {/* 년도 */}
                         <div
                           className={`${j === 1 ? `${lang === 'en' ? 'lg:mt-[0vh]' : 'lg:mt-[2vh]'}` : ''} ${
                             j === 0 ? "hidden" : ""
-                          }  ${pxGrotesk.className} flex-[0.35] lg:pl-[22.5%] text-[1.8vw] lg:text-[1vw] lg:flex-[0.1] pl-6 lg:pl-12`}
+                          }  ${pxGrotesk.className} flex-[0.35] lg:pl-[22.5%] lg:flex-[0.1] pl-6 lg:pl-12`}
                         >
                           {year}
                         </div>
