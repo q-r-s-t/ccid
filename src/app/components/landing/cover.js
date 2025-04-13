@@ -3,7 +3,6 @@
 
 import { useState, useEffect } from "react";
 import { pxGrotesk } from "@/fonts/fonts";
-import { programme } from "@/fonts/fonts";
 
 export default function Cover() {
   const [mainText, setMainText] = useState(null);
