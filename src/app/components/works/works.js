@@ -49,7 +49,7 @@ export default function Works({ textColor }) {
                         <div
                           className={`${j === 1 ? `${lang === 'en' ? 'lg:mt-[0vh]' : 'lg:mt-[2vh]'}` : ''} ${
                             j === 0 ? "hidden" : ""
-                          }  ${pxGrotesk.className} flex-[0.35] lg:pl-[22.5%] lg:flex-[0.1] pl-6 lg:pl-12`}
+                          }  ${pxGrotesk.className} flex-[0.35] lg:pl-[22.5%] lg:flex-[0.1] pl-6 lg:pl-12 tracking-1.8`}
                         >
                           {year}
                         </div>
