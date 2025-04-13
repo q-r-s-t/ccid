@@ -140,10 +140,7 @@ export default function Home() {
           id="about"
           className="relative w-[100%] min-h-[100dvh] snap-start pt-20 lg:pt-18 4xl:pt-[3%] px-0 lg:px-0 content-center"
         >
-          {/* <About />
-          <Keywords /> */}
           <Desc/> 
-          
         </section>
         <section
           id="works"
