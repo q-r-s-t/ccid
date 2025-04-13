@@ -71,10 +71,10 @@ export default function Cover() {
         return (
           <div
             key={index}
-            className="text-center lg:text-left relative inline-block w-full h-[24vw] lg:h-[3.8vw] leading-[1.3] lg:leading-[1.3] text-[7.5vw] lg:text-[3vw]"
+            className="text-center lg:text-left relative inline-block w-full min-h-[10vw] lg:h-[3.8vw] leading-[1.3] lg:leading-[1.3] text-[7.5vw] lg:text-[3vw] py-1"
           >
             <pre
-              className={`text-black ${neuehaas.className} lg:hidden whitespace-pre-wrap overflow-hidden relative ${
+              className={`${neuehaas.className} lg:hidden whitespace-pre-wrap overflow-hidden relative ${
                 index === currentWordIndex ? "after:content-['|'] after:animate-blink" : ""
               }`}
               style={colorStyle}
@@ -82,7 +82,7 @@ export default function Cover() {
               {word}
             </pre>
             <p
-              className={`text-black hidden lg:block overflow-hidden relative ${
+              className={`hidden lg:block overflow-hidden relative ${
                 index === currentWordIndex ? "after:content-['|'] after:animate-blink" : ""
               }`}
               style={colorStyle}
@@ -90,6 +90,7 @@ export default function Cover() {
               {word}
             </p>
           </div>
+
         );
       })}
     </div>
