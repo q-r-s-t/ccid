@@ -51,7 +51,6 @@ export default function Desc() {
         );
         const data = await res.json();
         setAboutInfo(data.desc); // desc 시트 데이터
-        console.log("desc\n" + data.desc);
       } catch (error) {
         console.error("Error fetching about data:", error);
       }
