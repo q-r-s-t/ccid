@@ -23,12 +23,11 @@ export default function About() {
         console.error("Error fetching about data:", error);
       }
     };
-
     fetchAboutData();
   }, []);
 
   return (
-    <div className=" lg:flex items-start justify-start w-full min-h-[40dvh] py-[6vh] lg:py-[14vh] leading-[1.1] text-[6vw] md:text-[5vw] lg:text-[3.5vw]">
+    <div className=" lg:flex gap-[4vw] items-start justify-start w-full min-h-[40dvh] py-[6vh] lg:py-[14vh] leading-[1.1] text-[6vw] md:text-[5vw] lg:text-[3.5vw]">
       <h1 className={`${programme.className} text-primaryB mb-4 flex-1 leading-none text-[6vw] mt-[-0.5vh] lg:mt-[-3.5vh]`}>
         Who We Are
       </h1>
