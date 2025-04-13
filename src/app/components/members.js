@@ -66,8 +66,8 @@ export default function Members() {
                 alt={`${member[1]} profile`}
                 className={`mb-2 filter grayscale w-[150px] h-[150px] md:w-[190px] md:h-[190px] lg:w-[10vw] lg:h-[10vw] rounded-full object-cover object-top`}
               />
-              <div className="md:flex-1 mt-[4]">
-                <h2 className="leading-[1.1] text-[3.8vw] md:text-[3vw] lg:text-[1vw]">{member[1]}</h2>
+              <div className="md:flex-1">
+                <h2 className="leading-[1.1] text-[3.8vw] md:text-[3vw] mt-[4] lg:text-[1vw]">{member[1]}</h2>
                 <pre className={`${pxGrotesk.className} pt-[0.5vh] whitespace-pre-wrap leading-[1.1] text-[3.3vw] md:text-[2.1vw] lg:text-[0.88vw]`}>{member[3]}</pre>
                 <div className="border-l-[1px] border-current mt-[2.5] pl-3 lg:pl-[0.5vw]">
                   {/* <h3 className="pb-3 md:pb-2 leading-[1.3] text-[3vw] md:text-[1.9vw] lg:text-[0.8vw]">Career</h3> */}
