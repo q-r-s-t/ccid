@@ -18,6 +18,13 @@
   transition: background-color 2s ease-in-out;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@500&display=swap');
+.font-ibm{
+  font-family: "Azeret Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
 * {
   word-break: keep-all;
 }
