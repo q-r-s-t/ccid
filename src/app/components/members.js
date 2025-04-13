@@ -101,22 +101,22 @@ export default function Members() {
                   alt={`${member[1]} profile`}
                   className="filter grayscale flex-shrink-0 mr-4 lg:mr-[0.7vw] w-[70px] h-[70px] lg:w-[6vw] lg:h-[6vw] 2xl:w-[5vw] 2xl:h-[5vw] rounded-full object-cover object-top"
                 />
-                <div className="flex flex-col justify-center pr-4 lg:pt-0 lg:pl-2">
+                <div className="flex flex-col justify-center pr-3 lg:pt-0 lg:pl-2">
                   <h3
                     className={`${pxGrotesk.className} pb-1 leading-[1.1] text-[3vw] md:text-[1.9vw] lg:text-[0.95vw]`}
                   >
                     {member[1]}
                   </h3>
                   {member[3] && (
-                    <h2 className="pb-1 leading-none text-[2.6vw] md:text-[1.6vw] lg:text-[0.75vw]">
+                    <h2 className="pb-1 leading-none text-[2.6vw] md:text-[1.6vw] lg:text-[0.8vw]">
                       {member[3]}
                     </h2>
                   )}{" "}
                   <pre
                     className={`whitespace-pre-wrap  ${
                       member[3]
-                        ? "leading-tight text-[2.6vw] md:text-[1.6vw] lg:text-[0.75vw]"
-                        : "leading-[1.3] text-[2.3vw] md:text-[1.2vw] lg:text-[0.6vw]"
+                        ? "leading-tight text-[2.6vw] md:text-[1.6vw] lg:text-[0.8vw]"
+                        : "leading-[1.3] text-[2.3vw] md:text-[1.2vw] lg:text-[0.8vw]"
                     } ${pxGrotesk.className}`}
                   >
                     {member[4]}
