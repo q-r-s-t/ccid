@@ -12,33 +12,27 @@ function DescItem({ id, title, description, imageUrl }) {
   const { lang } = useLanguageStore();
 
   return (
-    <li className="h-auto bg-gradient-to-t from-[rgba(93,0,156,0.2)] via-[rgba(93,0,156,0)] to-[rgba(93,0,156,0)] lg:flex group flex-col overflow-hidden transition-all duration-700 ease-out py-2 lg:py-[2vh] lg:px-[5vw]">
+    <li className="h-auto bg-gradient-to-t from-[rgba(93,0,156,0.2)] via-[rgba(93,0,156,0)] to-[rgba(93,0,156,0)] lg:flex group overflow-hidden transition-all duration-700 ease-out py-2 lg:py-[2vh] lg:px-[5vw]">
       <h3
-        className={`${lang === 'en' ? textStyle : textStyleKr} ${programme.className} transition-all duration-700 w-full tracking-[-0.02em] pt-[2px] mb-[2vh]`}
+        className={`${lang === 'en' ? textStyle : textStyleKr} ${programme.className} transition-all duration-700 w-full lg:w-[52%] tracking-[-0.02em] pt-[2px] lg:pr-[1vw] mb-[2vh]`}
       >
         {title}
       </h3>
+      <div className="w-full lg:w-[48%]">
+        <pre className={`whitespace-pre-wrap ${pxGrotesk.className} pb-[3vh] ${lang === 'en' ? 'leading-[1.38] text-[3vw] md:text-[2.85vw] lg:text-[1.15vw]' : 'leading-[1.8] text-[3.1vw] lg:text-[1.1vw]'} text-primaryB transition-all duration-700 ml-[4px] w-full`}>
+          {description}
+        </pre>
 
-      <pre
-        className={`whitespace-pre-wrap ${pxGrotesk.className} pb-[2vh] ${
-          lang === 'en'
-            ? 'leading-[1.38] text-[3vw] md:text-[2.85vw] lg:text-[1.15vw]'
-            : 'leading-[1.8] text-[3.1vw] lg:text-[1.1vw]'
-        } text-primaryB transition-all duration-700 ml-[4px] w-full`}
-      >
-        {description}
-      </pre>
-
-      {typeof imageUrl === "string" && imageUrl.startsWith("http") && (
-        <div className="w-full mt-[2vh]">
+        {/* ✅ 이미지 있을 때만 렌더링 */}
+        {typeof imageUrl === "string" && imageUrl.startsWith("http") && (
           <img
             src={imageUrl}
             alt={title}
             className="w-full h-auto object-cover rounded-md"
             loading="lazy"
           />
-        </div>
-      )}
+        )}
+      </div>
     </li>
   );
 }
