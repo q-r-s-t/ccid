@@ -23,7 +23,7 @@ function DescItem({ id, title, description, imageUrl }) {
           <img
             src={imageUrl}
             alt={title}
-            className="w-full h-auto object-cover rounded-md mb-[3vw]"
+            className="w-full h-auto object-cover rounded-md mb-[1.8vw]"
             loading="lazy"
           />
         )}
