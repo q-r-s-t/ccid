@@ -2,7 +2,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { neuehaas } from "@/fonts/fonts";
+import { pxGrotesk } from "@/fonts/fonts";
 
 export default function Cover() {
   const [mainText, setMainText] = useState(null);
@@ -58,7 +58,7 @@ export default function Cover() {
   }, [currentWordIndex, mainText]);
 
   return (
-    <div className={`${neuehaas.className} flex flex-col w-full h-full lg:pt-[38dvh] pt-[30vh] px-6 lg:px-10`}>
+    <div className={`${pxGrotesk.className} flex flex-col w-full h-full lg:pt-[38dvh] pt-[30vh] px-6 lg:px-10`}>
       {typedWords.map((word, index) => {
         const shouldApplyColor = index <= currentWordIndex;
         const colorStyle = shouldApplyColor
@@ -74,7 +74,7 @@ export default function Cover() {
             className="text-center lg:text-left relative inline-block w-full lg:h-[24vw] h-[28vw] lg:h-[3.8vw] leading-[1.3] lg:leading-[1.3] text-[7.5vw] lg:text-[3vw]"
           >
             <pre
-              className={`text-black ${neuehaas.className} lg:hidden whitespace-pre-wrap overflow-hidden relative ${
+              className={`text-black ${pxGrotesk.className} lg:hidden whitespace-pre-wrap overflow-hidden relative ${
                 index === currentWordIndex ? "after:content-['|'] after:animate-blink" : ""
               }`}
               style={colorStyle}
