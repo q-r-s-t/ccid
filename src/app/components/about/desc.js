@@ -27,7 +27,7 @@ function DescItem({ id, title, description, imageUrl }) {
             loading="lazy"
           />
         )}
-        <pre className={`whitespace-pre-wrap ${pxGrotesk.className} lg:pt-[2.5em] pt-[.3em] px-[8px] lg:px-[1.3em] pb-[3.8vh] ${lang === 'en' ? 'leading-[1.3] lg:leading-[1.38] text-[2.8vw] md:text-[2.4vw] lg:text-[1vw]' : 'leading-[1.8] text-[3.1vw] lg:text-[1.1vw]'} text-primaryB transition-all duration-700 ml-[4px] w-full`}>
+        <pre className={`whitespace-pre-wrap ${pxGrotesk.className} lg:pt-[2.3em] pt-[.3em] px-[8px] lg:px-[1.3em] pb-[3.8vh] ${lang === 'en' ? 'leading-[1.3] lg:leading-[1.38] text-[2.8vw] md:text-[2.4vw] lg:text-[1vw]' : 'leading-[1.8] text-[3.1vw] lg:text-[1.1vw]'} text-primaryB transition-all duration-700 ml-[4px] w-full`}>
           {description}
         </pre>
       </div>
