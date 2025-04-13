@@ -104,7 +104,7 @@ export default function Home() {
 
   return (
     <div
-      className="w-[100%] absolute scrollbar-hide bg-white z-[-2]"
+      className="w-[100%] absolute scrollbar-hide bg-white z-[-2] overflow-x-hidden"
       // onMouseMove={handleMouseMove}
     >
       <Header sectionOn={sectionOn} />
