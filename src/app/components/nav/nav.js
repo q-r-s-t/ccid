@@ -58,7 +58,7 @@ export default function Nav({ sectionOn }) {
       className={`${programme.className} text-white hidden lg:block z-[500]`}
     >
       <ul className=" z-[500] font-[300] leading-tight lg:text-[1.2vw] fixed top-0 pt-4 mx-auto w-[100%] transition-all duration-300 transform">
-        <LanguageToggle sectionOn={sectionOn} />
+       {/* <LanguageToggle sectionOn={sectionOn} /> */}
 
         <div className="group z-[500] gap-12 4xl:gap-20 lg:flex justify-center ">
           <span
