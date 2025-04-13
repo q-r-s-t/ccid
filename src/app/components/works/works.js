@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useLanguageStore } from "@/app/store/languageStore";
-// import { pretendardB } from "@/fonts/fonts";
 
 export default function Works({ textColor }) {
   const [worksInfo, setWorksInfo] = useState([]);
@@ -49,7 +48,7 @@ export default function Works({ textColor }) {
                         <div
                           className={`${j === 1 ? `${lang === 'en' ? 'lg:mt-[0vh]' : 'lg:mt-[2vh]'}` : ''} ${
                             j === 0 ? "hidden" : ""
-                          }  font-dmmono flex-[0.35] lg:pl-[22.5%] text-[1.8vw] lg:text-[.8vw] lg:flex-[0.1] pt-[3px] pl-6 lg:pl-12`}
+                          }  font-ibm flex-[0.35] lg:pl-[22.5%] text-[1.8vw] lg:text-[.8vw] lg:flex-[0.1] pt-[3px] pl-6 lg:pl-12`}
                         >
                           {year}
                         </div>
