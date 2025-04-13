@@ -18,6 +18,10 @@
   transition: background-color 2s ease-in-out;
 }
 
+.program_set{
+  font-feature-settings: 'ss01' 1, 'ss02' 1, 'salt' 1;
+}
+
 * {
   word-break: keep-all;
 }
