@@ -71,7 +71,7 @@ export default function Cover() {
         return (
           <div
             key={index}
-            className="text-center lg:text-left relative inline-block w-full h-[20vw] lg:h-[4.5vw] leading-[1] text-[7.5vw] lg:text-[3vw]"
+            className="text-center lg:text-left relative inline-block w-full h-[20vw] lg:h-[4.5vw] leading-[1] lg:leading-[0.8] text-[7.5vw] lg:text-[3vw]"
           >
             <pre
               className={`text-black ${neuehaas.className} lg:hidden whitespace-pre-wrap overflow-hidden relative ${
