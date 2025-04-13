@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useLanguageStore } from "../../store/languageStore";
-import { programme } from "@/fonts/fonts";
 import { pxGrotesk } from "@/fonts/fonts";
 
 function DescItem({ id, title, description, imageUrl }) {
