@@ -1,20 +1,7 @@
 import "./globals.css";
 // import { Inter } from "next/font/google";
 import { pxGrotesk } from "@/fonts/fonts";
-import { useEffect } from "react";
 
-useEffect(() => {
-  const handleTouchMove = (e) => {
-    if (window.innerWidth <= 768 && Math.abs(e.touches[0].clientX) > 0) {
-      e.preventDefault();
-    }
-  };
-  document.body.addEventListener('touchmove', handleTouchMove, { passive: false });
-
-  return () => {
-    document.body.removeEventListener('touchmove', handleTouchMove);
-  };
-}, []);
 
 export const metadata = {
   title: "Center for Creative Intelligence Design",
