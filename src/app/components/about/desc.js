@@ -60,7 +60,7 @@ export default function Desc() {
   }, []);
 
   return (
-    <ul className="border-primaryB w-full h-full mt-[1vw] px-0 text-primaryB pt-[8%] pb-[18%] flex flex-col">
+    <ul className="border-primaryB w-full h-full mt-[1.3vw] px-0 text-primaryB pt-[8%] pb-[18%] flex flex-col">
       {aboutInfo.map((item, i) => (
         <DescItem
           key={i}
