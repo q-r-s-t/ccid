@@ -19,18 +19,12 @@
 }
 
 @font-face {
-  font-family: 'FoundersGroteskMono';
+  font-family: 'Founders';
   src: url('/fonts/FoundersGroteskMono-Regular.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
-.font-ibm{
-  font-family: "IBM Plex Mono", monospace;
-  font-weight: 500;
-  font-style: normal;
-}
 * {
   word-break: keep-all;
 }
