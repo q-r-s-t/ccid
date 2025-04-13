@@ -5,24 +5,14 @@
   font-style: normal;
 }
 
-/* p {
-  font-size: 14px;
-  line-height: 18px;
-} */
+@font-face {
+  font-family: 'pretendardR';
+  src: url('/fonts/Pretendard-Regular.subset.woff2') format('woff2'), url('/fonts/Pretendard-Regular.subset.woff') format('woff');;
+  font-weight: Regular;
+  font-style: normal;
+}
+
 
 span.ml-ko {
   font-family: 'pretendardB', sans-serif;
-}
-
-span.ml-num {
-  font-family: 'Nanum Gothic', Arial, sans-serif;
-  font-size: 15px;
-}
-
-span.ml-punct {
-  font-family: 'Nanum Gothic', Arial, sans-serif;
-  font-size: 14px;
-  /*below two lines are for baseline shift */
-  position: relative;
-  top: 0;
 }
