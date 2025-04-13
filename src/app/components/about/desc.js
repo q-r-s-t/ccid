@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { useLanguageStore } from "../../store/languageStore";
 import { programme } from "@/fonts/fonts";
 import { pxGrotesk } from "@/fonts/fonts";
-import { neuehaas } from "@/fonts/fonts";
 
 function DescItem({ id, title, description, imageUrl }) {
   const textStyle =
@@ -29,7 +28,7 @@ function DescItem({ id, title, description, imageUrl }) {
             loading="lazy"
           />
         )}
-        <pre className={`whitespace-pre-wrap ${pxGrotesk.className} pt-[1.8em] px-[1em] lg:px-[1.3em] pb-[3.8vh] ${lang === 'en' ? 'leading-[1.3] lg:leading-[1.38] text-[3vw] md:text-[2.85vw] lg:text-[1.15vw]' : 'leading-[1.8] text-[3.1vw] lg:text-[1.1vw]'} text-primaryB transition-all duration-700 ml-[4px] w-full`}>
+        <pre className={`whitespace-pre-wrap ${pxGrotesk.className} lg:pt-[2em] pt-[.3em] px-[1em] lg:px-[1.3em] pb-[3.8vh] ${lang === 'en' ? 'leading-[1.3] lg:leading-[1.38] text-[3vw] md:text-[2.85vw] lg:text-[1.15vw]' : 'leading-[1.8] text-[3.1vw] lg:text-[1.1vw]'} text-primaryB transition-all duration-700 ml-[4px] w-full`}>
           {description}
         </pre>
       </div>
