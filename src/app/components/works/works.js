@@ -54,9 +54,8 @@ export default function Works({ textColor }) {
                           {year}
                         </div>
   
-                        {/* 국내 + 해외 */}
                         <p
-                          className={`indent-except-first-line flex-1 pr-6 
+                          className={`indent-except-first flex-1 pr-6 
                             ${j === 0 
                               ? `text-primaryC pretendardR lg:block flex items-end text-[3.3vw] md:text-[2.6vw] lg:text-[1.03vw] leading-[0.88] lg:leading-[1.1] pt-[8dvh] lg:pt-[0dvh] pb-[1dvh] lg:pb-[0.7dvh] ${lang === 'en' ? 'lg:mt-[0vh]' : 'lg:mt-[2vh]'}`
                               : ""} 
@@ -64,6 +63,7 @@ export default function Works({ textColor }) {
                         >
                           {international}
                         </p>
+
                       </div>
                     </div>
                   );
