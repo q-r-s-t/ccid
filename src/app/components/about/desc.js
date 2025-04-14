@@ -11,9 +11,9 @@ function DescItem({ id, title, description, imageUrl }) {
   const { lang } = useLanguageStore();
 
   return (
-    <li className="h-auto bg-gradient-to-t from-[rgba(93,0,156,0.2)] via-[rgba(93,0,156,0)] to-[rgba(93,0,156,0)] lg:flex group overflow-hidden transition-all duration-700 ease-out py-2 lg:py-[2vh] lg:px-[5vw]">
+    <li className="h-auto bg-gradient-to-t from-[rgba(93,0,156,0.2)] via-[rgba(93,0,156,0)] to-[rgba(93,0,156,0)] lg:flex group overflow-hidden transition-all duration-700 ease-out py-2 lg:py-[2vh] lg:px-">
       <h3  
-        className={`${lang === 'en' ? textStyle : textStyleKr} ${pxGrotesk.className} transition-all duration-700 w-full lg:w-[52%] tracking-[0.03] pt-[0.8em] px-[8px] lg:px-[1.3em] lg:pr-[1vw] mb-[2vh]`}
+        className={`${lang === 'en' ? textStyle : textStyleKr} ${pxGrotesk.className} transition-all duration-700 w-full lg:w-[52%] tracking-[0.03] pt-[0.8em] px-[3vh] lg:px-[1.3em] lg:pr-[1vw] mb-[2vh]`}
       >
         {title}
       </h3>
