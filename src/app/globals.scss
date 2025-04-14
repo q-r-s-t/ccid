@@ -35,3 +35,11 @@ html {
     font-size: 14px;
   }
 }
+
+.indent-except-first-line {
+  text-indent: 1.5em; /* apply to all lines */
+}
+
+.indent-except-first-line::first-line {
+  text-indent: 0 !important; /* cancel on first line */
+}
