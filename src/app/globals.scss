@@ -36,10 +36,11 @@ html {
   }
 }
 
-.indent-except-first-line {
-  text-indent: 1.5em; /* apply to all lines */
+/* globals.css or wherever your global styles are */
+.indent-except-first {
+  text-indent: 1.5em;        /* indent all lines */
 }
 
-.indent-except-first-line::first-line {
-  text-indent: 0 !important; /* cancel on first line */
+.indent-except-first::first-line {
+  text-indent: 0 !important; /* remove indent on first line */
 }
