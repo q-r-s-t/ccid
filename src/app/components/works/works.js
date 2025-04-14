@@ -1,5 +1,5 @@
 "use client";
-import "../globals.css";
+import "../../globals.scss";
 import { useEffect, useState } from "react";
 import { useLanguageStore } from "@/app/store/languageStore";
 import { pxGrotesk } from "@/fonts/fonts";
