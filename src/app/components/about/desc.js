@@ -13,7 +13,7 @@ function DescItem({ id, title, description, imageUrl }) {
   return (
     <li className="h-auto bg-gradient-to-t from-[rgba(93,0,156,0.2)] via-[rgba(93,0,156,0)] to-[rgba(93,0,156,0)] lg:flex group overflow-hidden transition-all duration-700 ease-out py-2 lg:py-[2vh] lg:px-">
       <h3  
-        className={`${lang === 'en' ? textStyle : textStyleKr} ${pxGrotesk.className} transition-all duration-700 w-full lg:w-[52%] tracking-[0.03] pt-[0.8em] px-[0vh] lg:px-[1.3em] lg:pr-[1vw] mb-[0vh] lg:mb-[2vh]`}
+        className={`${lang === 'en' ? textStyle : textStyleKr} ${pxGrotesk.className} transition-all duration-700 w-full lg:w-[52%] tracking-[0.03] pt-[0.8em] px-0 lg:px-0 lg:pr-[1vw] mb-[0vh] lg:mb-[2vh]`}
       >
         {title}
       </h3>
@@ -27,7 +27,7 @@ function DescItem({ id, title, description, imageUrl }) {
             loading="lazy"
           />
         )}
-        <pre className={`whitespace-pre-wrap ${pxGrotesk.className} lg:pt-[2.3em] pt-[.3em] px-[1.8vh] lg:px-[1.3vh] pr-3vh pb-[3.8vh] ${lang === 'en' ? 'leading-[1.3] lg:leading-[1.38] text-[2.8vw] md:text-[2.4vw] lg:text-[1vw]' : 'leading-[1.8] text-[3.1vw] lg:text-[1.1vw]'} text-primaryB transition-all duration-700 ml-[4px] w-full`}>
+        <pre className={`whitespace-pre-wrap ${pxGrotesk.className} lg:pt-[2.3em] pt-[.3em] px-[1.8vh] lg:px-[1.3vh] pr-[3vh] pb-[3.8vh] ${lang === 'en' ? 'leading-[1.3] lg:leading-[1.38] text-[2.8vw] md:text-[2.4vw] lg:text-[1vw]' : 'leading-[1.8] text-[3.1vw] lg:text-[1.1vw]'} text-primaryB transition-all duration-700 ml-[4px] w-full`}>
           {description}
         </pre>
       </div>
