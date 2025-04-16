@@ -2,7 +2,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { neuehaas } from "@/fonts/fonts";
 
 export default function Cover() {
   const [mainText, setMainText] = useState(null);
