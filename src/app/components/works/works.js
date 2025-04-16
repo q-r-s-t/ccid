@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useLanguageStore } from "@/app/store/languageStore";
 import { pxGrotesk } from "@/fonts/fonts";
+import { neuehaas } from "@/fonts/fonts";
 
 export default function Works({ textColor }) {
   const [worksInfo, setWorksInfo] = useState([]);
