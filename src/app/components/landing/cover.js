@@ -64,7 +64,7 @@ export default function Cover() {
         const colorStyle = shouldApplyColor
           ? {
               color: "#fff",
-              transition: "color 3.8s ease-in-out",
+              transition: "color 10.8s ease-in-out",
             }
           : {};
 
