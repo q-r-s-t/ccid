@@ -75,7 +75,9 @@ export default function Cover() {
           >
             <pre
               className={`${neuehaas.className} text-black tracking-[1px] lg:hidden whitespace-pre-wrap overflow-hidden relative ${
-                index === currentWordIndex ? "after:content-['|'] after:animate-blink" : ""
+                index === currentWordIndex
+                  ? "after:content-['|'] after:animate-blink animate-fadeInUp"
+                  : ""
               }`}
               style={colorStyle}
             >
@@ -83,7 +85,9 @@ export default function Cover() {
             </pre>
             <p
               className={`${neuehaas.className} text-black tracking-[-1px] hidden lg:block overflow-hidden relative ${
-                index === currentWordIndex ? "after:content-['|'] after:animate-blink" : ""
+                index === currentWordIndex
+                  ? "after:content-['|'] after:animate-blink animate-fadeInUp"
+                  : ""
               }`}
               style={colorStyle}
             >
