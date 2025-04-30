@@ -36,17 +36,3 @@ html {
   }
 }
 
-@keyframes blink {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-}
-
-.blinking-cursor::after {
-  content: '|';
-  animation: blink 3s step-end infinite;
-  color: #8f8; /* Adjust color as needed */
-}
