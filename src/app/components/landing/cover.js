@@ -57,13 +57,30 @@ export default function Cover() {
     typeNextChar();
   }, [currentWordIndex, mainText]);
 
+  const [startAnim, setStartAnim] = useState(false);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setStartAnim(true);
+    }, 3000); // 3 seconds
+
+    return () => clearTimeout(timeout);
+  }, []);
+  const scaleStyle = startAnim
+    ? {
+        scale: 2,
+        transition: "color 8s ease-in-out",
+      }
+    : {};
+
+
   return (
     <div className={`flex flex-col w-full h-full lg:pt-[38dvh] pt-[28vh] px-6 lg:px-10`}>
       {typedWords.map((word, index) => {
         const shouldApplyColor = index <= currentWordIndex;
         const colorStyle = shouldApplyColor
           ? {
-              color: "#fff",
+              color: "#afa",
               transition: "color 3.8s ease-in-out",
             }
           : {};
@@ -77,7 +94,7 @@ export default function Cover() {
               className={`${neuehaas.className} text-black tracking-[1px] lg:hidden whitespace-pre-wrap overflow-hidden relative ${
                 index === currentWordIndex ? 'blinking-cursor' : ''
               }`}
-              style={colorStyle}
+              style={{ ...colorStyle, ...scaleStyle }}
             >
               {word}
             </pre>
@@ -85,7 +102,7 @@ export default function Cover() {
               className={`${neuehaas.className} text-black tracking-[-1px] hidden lg:block overflow-hidden relative ${
                 index === currentWordIndex ? 'blinking-cursor' : ''
               }`}
-              style={colorStyle}
+              style={{ ...colorStyle, ...scaleStyle }}
             >
               {word}
             </p>
