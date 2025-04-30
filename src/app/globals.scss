@@ -40,10 +40,12 @@ html {
   @keyframes fadeInUp {
     0% {
       opacity: 0;
+      color:'#00ff00';
       transform: translateY(8px) scale(0.98);
     }
     100% {
       opacity: 1;
+      color:'#ff0000';
       transform: translateY(0) scale(1);
     }
   }
