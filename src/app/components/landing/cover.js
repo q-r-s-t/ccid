@@ -69,7 +69,7 @@ export default function Cover() {
   const scaleStyle = startAnim
     ? {
         scale: 2,
-        transition: "color 8s ease-in-out",
+        transition: "scale 8s ease-in-out",
       }
     : {};
 
