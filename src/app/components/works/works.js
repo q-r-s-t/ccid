@@ -68,17 +68,21 @@ export default function Works({ textColor }) {
                                 if (index === 0) {
                                   return (
                                     <span key={index}>
-                                      {part.split('').map((char, charIndex) => (
-                                        <span 
-                                          key={charIndex} 
-                                          className="char-reveal"
-                                          style={{ 
-                                            display: 'inline-block',
-                                            width: char === " " ? '0.3em' : 'auto',
-                                            animationDelay: `${charIndex * 800}ms`
-                                          }}
-                                        >
-                                          {char}
+                                      {part.split(' ').map((word, wordIndex) => (
+                                        <span key={wordIndex} className="inline-block mr-1">
+                                          {word.split('').map((char, charIndex) => (
+                                            <span 
+                                              key={charIndex} 
+                                              className={`char-reveal ${char === char.toLowerCase() ? 'lowercase-animated' : ''}`}
+                                              style={{ 
+                                                display: 'inline-block',
+                                                width: char === " " ? '0.3em' : 'auto',
+                                                animationDelay: `${wordIndex * 800 + charIndex * 200}ms`
+                                              }}
+                                            >
+                                              {char}
+                                            </span>
+                                          ))}
                                         </span>
                                       ))}
                                     </span>
