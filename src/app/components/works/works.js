@@ -81,7 +81,7 @@ export default function Works({ textColor }) {
                                                 style={{ 
                                                   display: 'inline-block',
                                                   width: char === " " ? '0.3em' : 'auto',
-                                                  animationDelay: `${wordIndex * 800}ms${isLowerCase ? ', 0s' : ''}`
+                                                  '--word-delay': `${wordIndex * 800}ms`
                                                 }}
                                               >
                                                 {char}

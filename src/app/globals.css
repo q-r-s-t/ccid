@@ -38,9 +38,9 @@ html {
 }
 
 @keyframes pulsePurple {
-  0% { color: #cfc; }
-  50% { color: #000; }
-  100% { color: #cfc; }
+  0% { color: #000; }
+  50% { color: #cfc; }
+  100% { color: #000; }
 }
 
 @keyframes fadeIn {
@@ -67,4 +67,5 @@ html {
 
 .lowercase-pulse {
   animation: pulsePurple 8s ease-in-out infinite;
+  animation-delay: var(--word-delay);
 }
