@@ -77,7 +77,12 @@ html {
 }
 
 .lowercase-animated {
-  animation: lowercasePulse 3s ease-in-out infinite;
+  animation: lowercasePulse 0.8s ease-in-out infinite;
+  animation-play-state: running;
+}
+
+.lowercase-paused {
+  animation-play-state: paused;
 }
 
 .lowercase-pulse {
