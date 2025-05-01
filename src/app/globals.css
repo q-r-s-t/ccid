@@ -37,8 +37,18 @@ html {
   50% { opacity: 0; }
 }
 
+@keyframes pulsePurple {
+  0% { color: #8a2be2; }
+  50% { color: #ffffff; }
+  100% { color: #8a2be2; }
+}
+
 .blinking-cursor::after {
   content: '|';
   animation: blink 1s step-end infinite;
   color: #fff;
+}
+
+.pulse-text {
+  animation: pulsePurple 3s ease-in-out infinite;
 }
