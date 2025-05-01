@@ -6,6 +6,7 @@ import { useState, useRef, useEffect } from "react";
 export default function Nav({ sectionOn }) {
   const [boxPosition, setBoxPosition] = useState(0);
   const [boxWidth, setBoxWidth] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
   const linkRefs = useRef([]);
 
   const calculatePositionAndWidth = (index) => {
@@ -30,14 +31,15 @@ export default function Nav({ sectionOn }) {
   useEffect(() => {
     const sections = ["about", "works", "members", "contact"];
     const index = sections.indexOf(sectionOn); // Find the index of the section
-    if (index !== -1) {
+    if (index !== -1 && isHovered) {
       const { position, width } = calculatePositionAndWidth(index);
       setBoxPosition(position);
       setBoxWidth(width);
     }
-  }, [sectionOn]);
+  }, [sectionOn, isHovered]);
 
   const handleHover = (e, index) => {
+    setIsHovered(true);
     const { position, width } = calculatePositionAndWidth(index);
     setBoxPosition(position);
     setBoxWidth(width);
@@ -63,6 +65,8 @@ export default function Nav({ sectionOn }) {
         <div className="group z-[500] gap-12 4xl:gap-20 lg:flex justify-center ">
           <span
             className={`select-none z-[-1] transition-all duration-300 ease-out absolute px-2 border-[.12vw] ${
+              !isHovered ? 'opacity-0' : 'opacity-100'
+            } ${
               sectionOn === "cover"
                 ? "border-transparent group-hover:border-primaryW"
                 : "border-primaryB"
