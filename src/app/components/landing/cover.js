@@ -75,18 +75,8 @@ export default function Cover() {
     <div className={`flex flex-col w-full h-full lg:pt-[38dvh] pt-[28vh] px-6 lg:px-10`}>
       {typedWords.map((word, index) => {
         const shouldApplyColor = index <= currentWordIndex;
-        const lineColors = ["#afa", "#8f8", "#6f6", "#4f4"]; // Different shades of green
-        const color = shouldApplyColor ? lineColors[index % lineColors.length] : "black";
+        const color = shouldApplyColor ? "#afa" : "black";
         const transition = shouldApplyColor ? "color 3.8s ease-in-out" : "";
-        
-        // Split the word at ":" and handle the parts
-        const [beforeColon, afterColon] = word.split(":");
-        const displayText = beforeColon ? (
-          <>
-            <span className="pulse-text" style={{ ...scaleStyle }}>{beforeColon}</span>
-            <span style={{ color, ...scaleStyle }}>{afterColon ? `:${afterColon}` : ":"}</span>
-          </>
-        ) : word;
 
         return (
           <div
@@ -97,17 +87,17 @@ export default function Cover() {
               className={`${neuehaas.className} tracking-[1px] lg:hidden whitespace-pre-wrap overflow-hidden relative ${
                 index === currentWordIndex ? "blinking-cursor" : ""
               }`}
-              style={{ transition, ...scaleStyle }}
+              style={{ color, transition, ...scaleStyle }}
             >
-              {displayText}
+              {word}
             </pre>
             <p
               className={`${neuehaas.className} tracking-[-1px] hidden lg:block overflow-hidden relative ${
                 index === currentWordIndex ? "blinking-cursor" : ""
               }`}
-              style={{ transition, ...scaleStyle }}
+              style={{ color, transition, ...scaleStyle }}
             >
-              {displayText}
+              {word}
             </p>
           </div>
         );
