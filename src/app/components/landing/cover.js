@@ -78,6 +78,15 @@ export default function Cover() {
         const lineColors = ["#afa", "#8f8", "#6f6", "#4f4"]; // Different shades of green
         const color = shouldApplyColor ? lineColors[index % lineColors.length] : "black";
         const transition = shouldApplyColor ? "color 3.8s ease-in-out" : "";
+        
+        // Split the word at ":" and handle the parts
+        const [beforeColon, afterColon] = word.split(":");
+        const displayText = beforeColon ? (
+          <>
+            <span style={{ color: "#8a2be2", ...scaleStyle }}>{beforeColon}</span>
+            <span style={{ color, ...scaleStyle }}>{afterColon ? `:${afterColon}` : ":"}</span>
+          </>
+        ) : word;
 
         return (
           <div
@@ -88,17 +97,17 @@ export default function Cover() {
               className={`${neuehaas.className} tracking-[1px] lg:hidden whitespace-pre-wrap overflow-hidden relative ${
                 index === currentWordIndex ? "blinking-cursor" : ""
               }`}
-              style={{ color, transition, ...scaleStyle }}
+              style={{ transition, ...scaleStyle }}
             >
-              {word}
+              {displayText}
             </pre>
             <p
               className={`${neuehaas.className} tracking-[-1px] hidden lg:block overflow-hidden relative ${
                 index === currentWordIndex ? "blinking-cursor" : ""
               }`}
-              style={{ color, transition, ...scaleStyle }}
+              style={{ transition, ...scaleStyle }}
             >
-              {word}
+              {displayText}
             </p>
           </div>
         );
