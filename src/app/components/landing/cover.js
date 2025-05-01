@@ -65,13 +65,18 @@ export default function Cover() {
 
     return () => clearTimeout(timeout);
   }, []);
-  const scaleStyle = startAnim ? { scale: 1.1, transition: "scale 8s ease-in-out" } : {};
+  const scaleStyle = startAnim ? { 
+    scale: 1.05,
+    transformOrigin: 'left center',
+    transition: "scale 8s ease-in-out" 
+  } : { transformOrigin: 'left center' };
 
   return (
     <div className={`flex flex-col w-full h-full lg:pt-[38dvh] pt-[28vh] px-6 lg:px-10`}>
       {typedWords.map((word, index) => {
         const shouldApplyColor = index <= currentWordIndex;
-        const color = shouldApplyColor ? "#afa" : "black";
+        const lineColors = ["#afa", "#8f8", "#6f6", "#4f4"]; // Different shades of green
+        const color = shouldApplyColor ? lineColors[index % lineColors.length] : "black";
         const transition = shouldApplyColor ? "color 3.8s ease-in-out" : "";
 
         return (
