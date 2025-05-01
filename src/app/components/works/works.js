@@ -32,10 +32,7 @@ export default function Works({ textColor }) {
     <div
       className={`text-primaryB pt-[12%] pb-[80%] ${lang === 'kr' ? 'lg:pt-[4dvh]' : 'lg:pt-[8%]'} lg:pb-[10%] lg:px-[5vw] w-full h-full font-[400]`}
     >
-      <h1 className={`${programme.className} text-primaryB mb-4 flex-1 leading-none text-[6vw] mt-[-0.5vh] lg:mt-[-3.5vh]`}>
-        Selected Projects
-      </h1>
-
+      <pre className={`${pxGrotesk.className} ${lang === 'en' ? 'leading-[1.55] text-[3vw] md:text-[2.85vw] lg:text-[1.15vw]' : 'leading-[1.8] text-[3.1vw] lg:text-[1.1vw]'} whitespace-pre-wrap mb-[4vh]`}>Selected Projects</pre>
       {worksInfo.length > 0 ? (
         worksInfo.map((row, i) =>
           i % 3 === 0
