@@ -66,28 +66,19 @@ export default function Works({ textColor }) {
                           {international && international.includes(':') 
                             ? international.split(':').map((part, index) => {
                                 if (index === 0) {
-                                  // Split into words while preserving spaces
-                                  const words = part.split(/(\s+)/).filter(Boolean);
                                   return (
                                     <span key={index}>
-                                      {words.map((word, wordIndex) => (
-                                        <span key={wordIndex}>
-                                          {word.split('').map((char, charIndex) => {
-                                            const isLowerCase = char >= 'a' && char <= 'z';
-                                            return (
-                                              <span 
-                                                key={charIndex} 
-                                                className={`char-reveal ${isLowerCase ? 'lowercase-pulse' : ''}`}
-                                                style={{ 
-                                                  display: 'inline-block',
-                                                  width: char === " " ? '0.3em' : 'auto',
-                                                  '--word-delay': `${wordIndex * 800}ms`
-                                                }}
-                                              >
-                                                {char}
-                                              </span>
-                                            );
-                                          })}
+                                      {part.split('').map((char, charIndex) => (
+                                        <span 
+                                          key={charIndex} 
+                                          className="char-reveal"
+                                          style={{ 
+                                            display: 'inline-block',
+                                            width: char === " " ? '0.3em' : 'auto',
+                                            animationDelay: `${charIndex * 800}ms`
+                                          }}
+                                        >
+                                          {char}
                                         </span>
                                       ))}
                                     </span>

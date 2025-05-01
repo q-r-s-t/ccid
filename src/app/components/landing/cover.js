@@ -66,7 +66,7 @@ export default function Cover() {
     return () => clearTimeout(timeout);
   }, []);
   const scaleStyle = startAnim ? { 
-    scale: 1.03,
+    scale: 0.88,
     transformOrigin: 'left center',
     transition: "scale 11s ease-in-out" 
   } : { transformOrigin: 'left center' };
@@ -75,8 +75,7 @@ export default function Cover() {
     <div className={`flex flex-col w-full h-full lg:pt-[38dvh] pt-[28vh] px-6 lg:px-10`}>
       {typedWords.map((word, index) => {
         const shouldApplyColor = index <= currentWordIndex;
-        const color = shouldApplyColor ? "#afa" : "black";
-        const transition = shouldApplyColor ? "color 3.8s ease-in-out" : "";
+        const [firstPart, secondPart] = word.split('.').filter(Boolean);
 
         return (
           <div
@@ -87,17 +86,47 @@ export default function Cover() {
               className={`${neuehaas.className} tracking-[1px] lg:hidden whitespace-pre-wrap overflow-hidden relative ${
                 index === currentWordIndex ? "blinking-cursor" : ""
               }`}
-              style={{ color, transition, ...scaleStyle }}
+              style={{ ...scaleStyle }}
             >
-              {word}
+              {firstPart && <span className="first-part">{firstPart}</span>}
+              {secondPart && (
+                <span>
+                  {secondPart.split('').map((char, charIndex) => (
+                    <span
+                      key={charIndex}
+                      className="wave-text"
+                      style={{
+                        animationDelay: `${charIndex * 0.2}s`
+                      }}
+                    >
+                      {char}
+                    </span>
+                  ))}
+                </span>
+              )}
             </pre>
             <p
               className={`${neuehaas.className} tracking-[-1px] hidden lg:block overflow-hidden relative ${
                 index === currentWordIndex ? "blinking-cursor" : ""
               }`}
-              style={{ color, transition, ...scaleStyle }}
+              style={{ ...scaleStyle }}
             >
-              {word}
+              {firstPart && <span className="first-part">{firstPart}</span>}
+              {secondPart && (
+                <span>
+                  {secondPart.split('').map((char, charIndex) => (
+                    <span
+                      key={charIndex}
+                      className="wave-text"
+                      style={{
+                        animationDelay: `${charIndex * 0.2}s`
+                      }}
+                    >
+                      {char}
+                    </span>
+                  ))}
+                </span>
+              )}
             </p>
           </div>
         );
