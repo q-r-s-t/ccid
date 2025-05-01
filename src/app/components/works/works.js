@@ -63,7 +63,13 @@ export default function Works({ textColor }) {
                               : ""} 
                             ${j === 1 ? `${lang === 'en' ? 'lg:mt-[0vh]' : 'lg:mt-[2vh]'}` : ``}`}
                         >
-                          {international}
+                          {international && international.split(':').map((part, index) => {
+                            if (index === 0) {
+                              return <span key={index} className="pulse-text">{part}</span>;
+                            } else {
+                              return <span key={index}>:{part}</span>;
+                            }
+                          })}
                         </p>
 
                       </div>
