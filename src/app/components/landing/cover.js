@@ -1,4 +1,3 @@
-
 "use client";
 
 import { neuehaas } from "@/fonts/fonts";
@@ -66,24 +65,14 @@ export default function Cover() {
 
     return () => clearTimeout(timeout);
   }, []);
-  const scaleStyle = startAnim
-    ? {
-        scale: 1.1,
-        transition: "scale 8s ease-in-out",
-      }
-    : {};
-
+  const scaleStyle = startAnim ? { scale: 1.1, transition: "scale 8s ease-in-out" } : {};
 
   return (
     <div className={`flex flex-col w-full h-full lg:pt-[38dvh] pt-[28vh] px-6 lg:px-10`}>
       {typedWords.map((word, index) => {
         const shouldApplyColor = index <= currentWordIndex;
-        const colorStyle = shouldApplyColor
-          ? {
-              color: "#afa",
-              transition: "color 3.8s ease-in-out",
-            }
-          : {};
+        const color = shouldApplyColor ? "#afa" : "black";
+        const transition = shouldApplyColor ? "color 3.8s ease-in-out" : "";
 
         return (
           <div
@@ -91,22 +80,21 @@ export default function Cover() {
             className="text-center lg:text-left relative inline-block w-full lg:h-[24vw] h-[26vw] lg:h-[3.8vw] leading-[1.1] lg:leading-[1.3] text-[7.5vw] lg:text-[3vw]"
           >
             <pre
-              className={`${neuehaas.className} text-black tracking-[1px] lg:hidden whitespace-pre-wrap overflow-hidden relative ${
-                index === currentWordIndex ? 'blinking-cursor' : ''
+              className={`${neuehaas.className} tracking-[1px] lg:hidden whitespace-pre-wrap overflow-hidden relative ${
+                index === currentWordIndex ? "blinking-cursor" : ""
               }`}
-              style={{ ...colorStyle, ...scaleStyle }}
+              style={{ color, transition, ...scaleStyle }}
             >
               {word}
             </pre>
             <p
-              className={`${neuehaas.className} text-black tracking-[-1px] hidden lg:block overflow-hidden relative ${
-                index === currentWordIndex ? 'blinking-cursor' : ''
+              className={`${neuehaas.className} tracking-[-1px] hidden lg:block overflow-hidden relative ${
+                index === currentWordIndex ? "blinking-cursor" : ""
               }`}
-              style={{ ...colorStyle, ...scaleStyle }}
+              style={{ color, transition, ...scaleStyle }}
             >
               {word}
             </p>
-
           </div>
         );
       })}
