@@ -69,8 +69,8 @@ export default function Works({ textColor }) {
                                   return (
                                     <span key={index}>
                                       {part.split(' ').map((word, wordIndex) => {
-                                        // Calculate random pause duration between 3-10 seconds
-                                        const pauseDuration = Math.floor(Math.random() * 7 + 3) * 1000;
+                                        // Calculate random pause duration between 3-8 seconds
+                                        const pauseDuration = Math.floor(Math.random() * 5 + 3) * 1000;
                                         // Calculate total animation time for the word
                                         const wordAnimationTime = word.length * 800;
                                         // Calculate total delay including pause
