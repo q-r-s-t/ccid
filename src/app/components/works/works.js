@@ -71,9 +71,11 @@ export default function Works({ textColor }) {
                                       {part.split('').map((char, charIndex) => (
                                         <span 
                                           key={charIndex} 
-                                          className="char-reveal"
+                                          className={char === " " ? "" : "char-reveal"}
                                           style={{ 
-                                            animationDelay: `${charIndex * 100}ms, ${charIndex * 100}ms`
+                                            animationDelay: `${charIndex * 300}ms, ${charIndex * 300}ms`,
+                                            display: 'inline-block',
+                                            width: char === " " ? '0.3em' : 'auto'
                                           }}
                                         >
                                           {char}

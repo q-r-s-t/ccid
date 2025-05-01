@@ -39,7 +39,7 @@ html {
 
 @keyframes pulsePurple {
   0% { color: #cfc; }
-  50% { color: #ffffff; }
+  50% { color: #000; }
   100% { color: #cfc; }
 }
 
