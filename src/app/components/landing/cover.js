@@ -83,7 +83,7 @@ export default function Cover() {
         const [beforeColon, afterColon] = word.split(":");
         const displayText = beforeColon ? (
           <>
-            <span style={{ color: "#8a2be2", ...scaleStyle }}>{beforeColon}</span>
+            <span className="pulse-text" style={{ ...scaleStyle }}>{beforeColon}</span>
             <span style={{ color, ...scaleStyle }}>{afterColon ? `:${afterColon}` : ":"}</span>
           </>
         ) : word;
