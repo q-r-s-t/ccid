@@ -66,16 +66,19 @@ export default function Works({ textColor }) {
                           {international && international.includes(':') 
                             ? international.split(':').map((part, index) => {
                                 if (index === 0) {
+                                  const chars = part.split('');
+                                  const totalRevealTime = chars.length * 800; // Total time for all characters to appear
                                   return (
                                     <span key={index}>
-                                      {part.split('').map((char, charIndex) => (
+                                      {chars.map((char, charIndex) => (
                                         <span 
                                           key={charIndex} 
                                           className={char === " " ? "" : "char-reveal"}
                                           style={{ 
-                                            animationDelay: `${charIndex * 800}ms, ${charIndex * 800}ms`,
                                             display: 'inline-block',
-                                            width: char === " " ? '0.3em' : 'auto'
+                                            width: char === " " ? '0.3em' : 'auto',
+                                            '--appear-delay': `${charIndex * 800}ms`,
+                                            '--color-delay': `${totalRevealTime}ms`
                                           }}
                                         >
                                           {char}
