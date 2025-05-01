@@ -66,22 +66,28 @@ export default function Works({ textColor }) {
                           {international && international.includes(':') 
                             ? international.split(':').map((part, index) => {
                                 if (index === 0) {
-                                  const chars = part.split('');
-                                  const totalRevealTime = chars.length * 800; // Total time for all characters to appear
+                                  // Split into words while preserving spaces
+                                  const words = part.split(/(\s+)/).filter(Boolean);
                                   return (
                                     <span key={index}>
-                                      {chars.map((char, charIndex) => (
-                                        <span 
-                                          key={charIndex} 
-                                          className={char === " " ? "" : "char-reveal"}
-                                          style={{ 
-                                            display: 'inline-block',
-                                            width: char === " " ? '0.3em' : 'auto',
-                                            '--appear-delay': `${charIndex * 800}ms`,
-                                            '--color-delay': `${totalRevealTime}ms`
-                                          }}
-                                        >
-                                          {char}
+                                      {words.map((word, wordIndex) => (
+                                        <span key={wordIndex}>
+                                          {word.split('').map((char, charIndex) => {
+                                            const isLowerCase = char >= 'a' && char <= 'z';
+                                            return (
+                                              <span 
+                                                key={charIndex} 
+                                                className={`char-reveal ${isLowerCase ? 'lowercase-pulse' : ''}`}
+                                                style={{ 
+                                                  display: 'inline-block',
+                                                  width: char === " " ? '0.3em' : 'auto',
+                                                  animationDelay: `${wordIndex * 800}ms${isLowerCase ? ', 0s' : ''}`
+                                                }}
+                                              >
+                                                {char}
+                                              </span>
+                                            );
+                                          })}
                                         </span>
                                       ))}
                                     </span>
