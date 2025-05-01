@@ -73,7 +73,7 @@ export default function Works({ textColor }) {
                                           key={charIndex} 
                                           className={char === " " ? "" : "char-reveal"}
                                           style={{ 
-                                            animationDelay: `${charIndex * 300}ms, ${charIndex * 300}ms`,
+                                            animationDelay: `${charIndex * 800}ms, ${charIndex * 800}ms`,
                                             display: 'inline-block',
                                             width: char === " " ? '0.3em' : 'auto'
                                           }}
