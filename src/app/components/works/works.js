@@ -66,7 +66,21 @@ export default function Works({ textColor }) {
                           {international && international.includes(':') 
                             ? international.split(':').map((part, index) => {
                                 if (index === 0) {
-                                  return <span key={index} className="pulse-text">{part}</span>;
+                                  return (
+                                    <span key={index}>
+                                      {part.split('').map((char, charIndex) => (
+                                        <span 
+                                          key={charIndex} 
+                                          className="char-reveal"
+                                          style={{ 
+                                            animationDelay: `${charIndex * 100}ms, ${charIndex * 100}ms`
+                                          }}
+                                        >
+                                          {char}
+                                        </span>
+                                      ))}
+                                    </span>
+                                  );
                                 } else {
                                   return <span key={index}>:{part}</span>;
                                 }
