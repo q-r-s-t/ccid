@@ -67,7 +67,7 @@ html {
 }
 
 .pulse-text {
-  animation: pulsePurple 8s ease-in-out infinite;
+  animation: pulsePurple 3s ease-in-out infinite;
   display: inline-block;
 }
 
@@ -77,11 +77,11 @@ html {
 }
 
 .lowercase-animated {
-  animation: lowercasePulse 8s ease-in-out infinite;
+  animation: lowercasePulse 3s ease-in-out infinite;
 }
 
 .lowercase-pulse {
-  animation: pulsePurple 8s ease-in-out infinite;
+  animation: pulsePurple 3s ease-in-out infinite;
   animation-delay: var(--word-delay);
 }
 
