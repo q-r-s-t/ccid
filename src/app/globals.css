@@ -51,4 +51,5 @@ html {
 
 .pulse-text {
   animation: pulsePurple 3s ease-in-out infinite;
+  display: inline-block;
 }
