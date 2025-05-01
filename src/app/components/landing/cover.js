@@ -62,13 +62,13 @@ export default function Cover() {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setStartAnim(true);
-    }, 3000); // 3 seconds
+    }, 800); // 3 seconds
 
     return () => clearTimeout(timeout);
   }, []);
   const scaleStyle = startAnim
     ? {
-        scale: 2,
+        scale: 1.1,
         transition: "scale 8s ease-in-out",
       }
     : {};
