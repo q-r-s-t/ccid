@@ -32,6 +32,10 @@ export default function Works({ textColor }) {
     <div
       className={`text-primaryB pt-[12%] pb-[80%] ${lang === 'kr' ? 'lg:pt-[4dvh]' : 'lg:pt-[8%]'} lg:pb-[10%] lg:px-[5vw] w-full h-full font-[400]`}
     >
+      <h1 className={`${programme.className} text-primaryB mb-4 flex-1 leading-none text-[6vw] mt-[-0.5vh] lg:mt-[-3.5vh]`}>
+        Selected Projects
+      </h1>
+
       {worksInfo.length > 0 ? (
         worksInfo.map((row, i) =>
           i % 3 === 0
