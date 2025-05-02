@@ -38,9 +38,9 @@ html {
 }
 
 @keyframes pulsePurple {
-  0% { color: #cfc; }
+  0% { color: #5d009c; }
   50% { color: #000; }
-  100% { color: #cfc; }
+  100% { color: #5d009c; }
 }
 
 @keyframes fadeIn {
@@ -55,9 +55,9 @@ html {
 }
 
 @keyframes lowercasePulse {
-  0% { color: #cfc; }
+  0% { color: #5d009c; }
   50% { color: #000; }
-  100% { color: #cfc; }
+  100% { color: #5d009c; }
 }
 
 .blinking-cursor::after {
