@@ -73,12 +73,12 @@ html {
 
 .char-reveal {
   display: inline-block;
-  color: black;
+  opacity: 0;
+  animation: fadeIn 0.3s ease-out forwards, pulsePurple 8s ease-in-out infinite;
 }
 
 .lowercase-animated {
-  animation: lowercasePulse 0.8s ease-in-out infinite;
-  animation-play-state: running;
+  animation: lowercasePulse 3s ease-in-out infinite;
 }
 
 .lowercase-paused {

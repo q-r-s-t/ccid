@@ -69,37 +69,19 @@ export default function Works({ textColor }) {
                                 if (index === 0) {
                                   return (
                                     <span key={index}>
-                                      {part.split(' ').map((word, wordIndex) => {
-                                        // Calculate random pause duration between 3-8 seconds
-                                        const pauseDuration = Math.floor(Math.random() * 5 + 3) * 1000;
-                                        // Calculate total animation time for the word
-                                        const wordAnimationTime = word.length * 800;
-                                        // Calculate total delay including pause
-                                        const totalDelay = wordIndex * (wordAnimationTime + pauseDuration);
-                                        
-                                        return (
-                                          <span key={wordIndex} className="inline-block mr-1">
-                                            {word.split('').map((char, charIndex) => {
-                                              const isLowercase = char === char.toLowerCase();
-                                              const shouldPause = charIndex === word.length - 1;
-                                              
-                                              return (
-                                                <span 
-                                                  key={charIndex} 
-                                                  className={`char-reveal ${isLowercase ? 'lowercase-animated' : ''} ${shouldPause ? 'lowercase-paused' : ''}`}
-                                                  style={{ 
-                                                    display: 'inline-block',
-                                                    width: char === " " ? '0.3em' : 'auto',
-                                                    animationDelay: `${totalDelay + charIndex * 800}ms`
-                                                  }}
-                                                >
-                                                  {char}
-                                                </span>
-                                              );
-                                            })}
-                                          </span>
-                                        );
-                                      })}
+                                      {part.split('').map((char, charIndex) => (
+                                        <span 
+                                          key={charIndex} 
+                                          className="char-reveal"
+                                          style={{ 
+                                            display: 'inline-block',
+                                            width: char === " " ? '0.3em' : 'auto',
+                                            animationDelay: `${charIndex * 800}ms`
+                                          }}
+                                        >
+                                          {char}
+                                        </span>
+                                      ))}
                                     </span>
                                   );
                                 } else {
