@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useLanguageStore } from "@/app/store/languageStore";
 import { pxGrotesk } from "@/fonts/fonts";
 import { neuehaas } from "@/fonts/fonts";
+import { programme } from "@/fonts/fonts";
 
 export default function Works({ textColor }) {
   const [worksInfo, setWorksInfo] = useState([]);
@@ -29,9 +30,9 @@ export default function Works({ textColor }) {
   }, []);
 
   return (
-    <div className="w-full">
+    <>
       <div className="lg:flex gap-[4vw] items-start justify-start w-full min-h-[40dvh] py-[6vh] lg:py-[14vh] leading-[1.1] text-[6vw] md:text-[5vw] lg:text-[3.5vw]">
-        <h1 className={`${neuehaas.className} text-primaryB mb-4 flex-1 leading-none text-[6vw] mt-[-0.5vh] lg:mt-[-3.5vh]`}>
+        <h1 className={`${programme.className} text-primaryB mb-4 flex-1 leading-none text-[6vw] mt-[-0.5vh] lg:mt-[-3.5vh]`}>
           Selected Projects
         </h1>
       </div>
@@ -44,7 +45,7 @@ export default function Works({ textColor }) {
               ? row.map((col, j) => {
                   const year = worksInfo[i][j];
                   const international = lang === 'en' ? worksInfo[i + 1]?.[j] : worksInfo[i + 2]?.[j];
-    
+        
                   // Check if both values are not empty
                   if ((year !== undefined && year !== "") || (international !== undefined && international !== "")) {
                     return (
@@ -61,7 +62,7 @@ export default function Works({ textColor }) {
                           >
                             {year}
                           </div>
-    
+        
                           <p
                             className={`indent-except-first flex-1 pr-6 
                               ${j === 0 
@@ -96,7 +97,7 @@ export default function Works({ textColor }) {
                               : international
                             }
                           </p>
-    
+        
                         </div>
                       </div>
                     );
@@ -109,7 +110,7 @@ export default function Works({ textColor }) {
           <div>Loading...</div>
         )}
       </div>
-    </div>
+    </>
   );
   
 }
