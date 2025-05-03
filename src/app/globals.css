@@ -2,20 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Root variables */
-:root {
-  --rounded-radius: 9999px;
-}
-
-/* Utility classes */
-.dynamic-rounded {
-  border-radius: var(--rounded-radius);
-}
-
-.transition-bg {
-  transition: background-color 2s ease-in-out;
-}
-
 /* Global styles */
 * {
   word-break: keep-all;
@@ -39,8 +25,8 @@ html {
 
 @keyframes pulsePurple {
   0% { color: #000; }
-  50% { color: #888; }
-  100% { color: #000; }
+  50% { color: #666; }
+  100% { color: #5d009c; }
 }
 
 @keyframes fadeIn {
@@ -54,40 +40,16 @@ html {
   100% { color: black; }
 }
 
-@keyframes lowercasePulse {
-  0% { color: #000; }
-  50% { color: #888; }
-  100% { color: #000; }
-}
-
 .blinking-cursor::after {
   content: '|';
   animation: blink 1s step-end infinite;
   color: #fff;
 }
 
-.pulse-text {
-  animation: pulsePurple 3s ease-in-out infinite;
-  display: inline-block;
-}
-
 .char-reveal {
   display: inline-block;
   opacity: 0;
   animation: fadeIn 0.3s ease-out forwards, pulsePurple 3s ease-in-out infinite;
-}
-
-.lowercase-animated {
-  animation: lowercasePulse 3s ease-in-out infinite;
-}
-
-.lowercase-paused {
-  animation-play-state: paused;
-}
-
-.lowercase-pulse {
-  animation: pulsePurple 3s ease-in-out infinite;
-  animation-delay: var(--word-delay);
 }
 
 .wave-text {
