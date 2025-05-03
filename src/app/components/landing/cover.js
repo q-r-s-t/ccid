@@ -96,7 +96,8 @@ export default function Cover() {
                       key={charIndex}
                       className="wave-text"
                       style={{
-                        animationDelay: `${charIndex * 0.2}s`
+                        animationDelay: `${charIndex * 400}ms`,
+                        opacity: 1
                       }}
                     >
                       {char}
@@ -119,7 +120,8 @@ export default function Cover() {
                       key={charIndex}
                       className="wave-text"
                       style={{
-                        animationDelay: `${charIndex * 0.2}s`
+                        animationDelay: `${charIndex * 400}ms`,
+                        opacity: 1
                       }}
                     >
                       {char}
