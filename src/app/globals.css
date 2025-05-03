@@ -24,9 +24,9 @@ html {
 }
 
 @keyframes pulsePurple {
-  0% { color: #000; }
-  50% { color: #666; }
-  100% { color: #5d009c; }
+  0% { color: #fff; }
+  50% { color: #5d009c; }
+  100% { color: #fff; }
 }
 
 @keyframes fadeIn {
@@ -48,8 +48,8 @@ html {
 
 .char-reveal {
   display: inline-block;
-  opacity: 0;
-  animation: fadeIn 0.3s ease-out forwards, pulsePurple 3s ease-in-out infinite;
+  color: #fff;
+  animation: pulsePurple 3s ease-in-out infinite;
 }
 
 .wave-text {

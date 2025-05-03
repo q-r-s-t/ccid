@@ -69,7 +69,7 @@ export default function Works({ textColor }) {
                               ? international.split(':').map((part, index) => {
                                   if (index === 0) {
                                     return (
-                                      <span key={index}>
+                                      <span key={index} className="border-b border-current pb-[1px]">
                                         {part.split('').map((char, charIndex) => (
                                           <span 
                                             key={charIndex} 
@@ -77,8 +77,7 @@ export default function Works({ textColor }) {
                                             style={{ 
                                               display: 'inline-block',
                                               width: char === " " ? '0.3em' : 'auto',
-                                              animationDelay: `${charIndex * 400}ms`,
-                                              opacity: 1
+                                              animationDelay: `${charIndex * 400}ms`
                                             }}
                                           >
                                             {char}
