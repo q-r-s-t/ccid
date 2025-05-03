@@ -77,7 +77,8 @@ export default function Works({ textColor }) {
                                             style={{ 
                                               display: 'inline-block',
                                               width: char === " " ? '0.3em' : 'auto',
-                                              animationDelay: `${charIndex * 800}ms`
+                                              animationDelay: `${charIndex * 400}ms`,
+                                              opacity: 1
                                             }}
                                           >
                                             {char}

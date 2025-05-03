@@ -74,7 +74,7 @@ html {
 .char-reveal {
   display: inline-block;
   opacity: 0;
-  animation: fadeIn 0.3s ease-out forwards, pulsePurple 8s ease-in-out infinite;
+  animation: fadeIn 0.3s ease-out forwards, pulsePurple 3s ease-in-out infinite;
 }
 
 .lowercase-animated {
