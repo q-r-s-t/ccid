@@ -7,6 +7,8 @@ export default function Cover() {
   const [mainText, setMainText] = useState(null);
   const [typedWords, setTypedWords] = useState([]);
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
+  const [showColorTransition, setShowColorTransition] = useState(false);
+  const [showWave, setShowWave] = useState(false);
 
   useEffect(() => {
     const fetchAboutData = async () => {
@@ -49,7 +51,17 @@ export default function Cover() {
         const nextDelay = 18 + (charIndex / word.length) * 88;
         setTimeout(typeNextChar, nextDelay);
       } else {
-        setTimeout(() => setCurrentWordIndex((prev) => prev + 1), 380);
+        setTimeout(() => {
+          setCurrentWordIndex((prev) => prev + 1);
+          if (currentWordIndex === mainText.length - 1) {
+            setTimeout(() => {
+              setShowColorTransition(true);
+              setTimeout(() => {
+                setShowWave(true);
+              }, 1000);
+            }, 800);
+          }
+        }, 380);
       }
     };
 
@@ -94,7 +106,7 @@ export default function Cover() {
                   {secondPart.split('').map((char, charIndex) => (
                     <span
                       key={charIndex}
-                      className="char-reveal"
+                      className={`char-reveal ${showColorTransition ? 'visible' : ''} ${showWave ? 'wave' : ''}`}
                       style={{
                         animationDelay: `${charIndex * 400}ms`,
                         opacity: 0,
@@ -120,7 +132,7 @@ export default function Cover() {
                   {secondPart.split('').map((char, charIndex) => (
                     <span
                       key={charIndex}
-                      className="char-reveal"
+                      className={`char-reveal ${showColorTransition ? 'visible' : ''} ${showWave ? 'wave' : ''}`}
                       style={{
                         animationDelay: `${charIndex * 400}ms`,
                         opacity: 0,

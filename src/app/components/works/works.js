@@ -69,7 +69,7 @@ export default function Works({ textColor }) {
                               ? international.split(':').map((part, index) => {
                                   if (index === 0) {
                                     return (
-                                      <span key={index} className="border-b-2 border-[#5d009c] pb-[1px] text-black">
+                                      <span key={index} className="border-b-2 border-[#5d009c] pb-0 text-black">
                                         {part}
                                       </span>
                                     );
