@@ -40,6 +40,17 @@ html {
   100% { color: black; }
 }
 
+@keyframes charReveal {
+  0% {
+    opacity: 0;
+    color: #fff;
+  }
+  100% {
+    opacity: 1;
+    color: #000;
+  }
+}
+
 .blinking-cursor::after {
   content: '|';
   animation: blink 1s step-end infinite;
@@ -49,7 +60,7 @@ html {
 .char-reveal {
   display: inline-block;
   color: #fff;
-  animation: pulsePurple 3s ease-in-out infinite;
+  animation: charReveal 0.8s forwards;
 }
 
 .wave-text {
