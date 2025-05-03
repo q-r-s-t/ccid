@@ -66,7 +66,7 @@ export default function Cover() {
     return () => clearTimeout(timeout);
   }, []);
   const scaleStyle = startAnim ? { 
-    scale: 0.88,
+    scale: 0.95,
     transformOrigin: 'left center',
     transition: "scale 11s ease-in-out" 
   } : { transformOrigin: 'left center' };
