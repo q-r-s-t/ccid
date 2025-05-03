@@ -94,10 +94,12 @@ export default function Cover() {
                   {secondPart.split('').map((char, charIndex) => (
                     <span
                       key={charIndex}
-                      className="wave-text"
+                      className="char-reveal"
                       style={{
                         animationDelay: `${charIndex * 400}ms`,
-                        opacity: 1
+                        opacity: 0,
+                        display: 'inline-block',
+                        width: char === " " ? '0.3em' : 'auto'
                       }}
                     >
                       {char}
@@ -118,10 +120,12 @@ export default function Cover() {
                   {secondPart.split('').map((char, charIndex) => (
                     <span
                       key={charIndex}
-                      className="wave-text"
+                      className="char-reveal"
                       style={{
                         animationDelay: `${charIndex * 400}ms`,
-                        opacity: 1
+                        opacity: 0,
+                        display: 'inline-block',
+                        width: char === " " ? '0.3em' : 'auto'
                       }}
                     >
                       {char}
