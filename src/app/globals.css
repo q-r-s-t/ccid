@@ -55,9 +55,18 @@ html {
 }
 
 @keyframes textWave {
-  0% { color: #fff; }
-  50% { color: #000; }
-  100% { color: #fff; }
+  0% { 
+    opacity: 0;
+    color: black;
+  }
+  50% { 
+    opacity: 1;
+    color: white;
+  }
+  100% { 
+    opacity: 1;
+    color: black;
+  }
 }
 
 .blinking-cursor::after {
@@ -87,11 +96,12 @@ html {
 
 .first-part {
   color: white;
+  opacity: 1;
 }
 
 .gradient-border {
   border-bottom: 2px solid transparent;
-  border-image-source: linear-gradient(to right, #fff, #5d009c);
+  border-image-source: linear-gradient(to left, #d9a8fa, #5d009c);
   border-image-slice: 1;
 }
 

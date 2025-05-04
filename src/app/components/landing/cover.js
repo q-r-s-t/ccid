@@ -94,7 +94,7 @@ export default function Cover() {
                   {secondPart.split('').map((char, charIndex) => (
                     <span
                       key={charIndex}
-                      className="char-reveal"
+                      className="wave-text"
                       style={{
                         animationDelay: `${charIndex * 400}ms`,
                         opacity: 0,
@@ -120,7 +120,7 @@ export default function Cover() {
                   {secondPart.split('').map((char, charIndex) => (
                     <span
                       key={charIndex}
-                      className="char-reveal"
+                      className="wave-text"
                       style={{
                         animationDelay: `${charIndex * 400}ms`,
                         opacity: 0,
