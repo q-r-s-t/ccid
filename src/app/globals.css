@@ -69,6 +69,15 @@ html {
   }
 }
 
+@keyframes gradientBorder {
+  0% {
+    border-image-source: linear-gradient(to left, #a778e8, #fff);
+  }
+  100% {
+    border-image-source: linear-gradient(to right, #a778e8, #fff);
+  }
+}
+
 .blinking-cursor::after {
   content: '|';
   animation: blink 1s step-end infinite;
@@ -103,6 +112,7 @@ html {
   border-bottom: 2px solid transparent;
   border-image-source: linear-gradient(to left, #a778e8, #fff);
   border-image-slice: 1;
+  animation: gradientBorder 3s ease-in-out forwards;
 }
 
 .char-reveal {

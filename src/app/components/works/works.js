@@ -51,9 +51,7 @@ export default function Works({ textColor }) {
                         > 
                           {/* selected */}
                           <div
-                            className={`${j === 1 ? `${lang === 'en' ? 'lg:mt-[0vh]' : 'lg:mt-[2vh]'}` : ''} ${
-                              j === 0 ? "hidden" : ""
-                            }  ${pxGrotesk.className} flex-[0.35] lg:pl-[22.5%] lg:flex-[0.1] pl-6 lg:pl-12 tracking-1.8`}
+                            className={`${pxGrotesk.className} ${lang === 'en' ? 'leading-[1.55] text-[3vw] md:text-[2.85vw] lg:text-[1.15vw]' : 'leading-[1.8] text-[3.1vw] lg:text-[1.1vw]'} whitespace-pre-wrap mb-[4vh]`}
                           >
                             {year}
                           </div>
