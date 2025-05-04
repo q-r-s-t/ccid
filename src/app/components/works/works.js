@@ -21,7 +21,7 @@ export default function Works({ textColor }) {
           }/api/sheets`
         );
         const data = await res.json();
-        setWorksInfo(data.works); // works 시트 데이터 저장
+        setWorksInfo(data.works);
       } catch (error) {
         console.error("Error fetching works data:", error);
       }
@@ -41,7 +41,6 @@ export default function Works({ textColor }) {
                   const year = worksInfo[i][j];
                   const international = lang === 'en' ? worksInfo[i + 1]?.[j] : worksInfo[i + 2]?.[j];
         
-                  // Check if both values are not empty
                   if ((year !== undefined && year !== "") || (international !== undefined && international !== "")) {
                     return (
                       <div key={`${i}-${j}`} className="relative">
@@ -49,7 +48,7 @@ export default function Works({ textColor }) {
                           className={` ${lang === 'en' ? 'leading-[1.4] mb-[0.5vh]' : 'lg:leading-[1.5] leading-[1.1] mb-[1.1vh] lg:mb-[0.3vh]'} relative flex text-[2.8vw] md:text-[2.4vw] lg:text-[1vw]  
                           ${j === 0 ? `text-primaryC lg:pl-10 lg:h-[7dvh] lg:absolute lg:top-0 pl-6 lg:left-0 lg:w-[20vw]` : ""}`}               
                         > 
-                          {/* selected */}
+                          <span className="text-[3vw] md:text-[2.85vw] lg:text-[1.15vw]">{/* selected */}</span>
                           <div
                             className={`${j === 1 ? `${lang === 'en' ? 'lg:mt-[0vh]' : 'lg:mt-[2vh]'}` : ''} ${
                               j === 0 ? "hidden" : ""
@@ -85,7 +84,7 @@ export default function Works({ textColor }) {
                       </div>
                     );
                   }
-                  return null; // Don't render anything if both are empty
+                  return null;
                 })
               : null
           )
@@ -95,5 +94,4 @@ export default function Works({ textColor }) {
       </div>
     </>
   );
-  
 }
