@@ -58,7 +58,7 @@ export default function Works({ textColor }) {
                           <p
                             className={`indent-except-first flex-1 pr-6 
                               ${j === 0 
-                                ? `${i === 0 && j === 0 ? '${pxGrotesk.className} pl-6 lg:pl-10 lg:flex gap-[4vw] text-primaryB text-[6vw] md:text-[5vw] lg:text-[3vw]' : 'text-primaryC'} pretendardR lg:block flex items-end text-[3.3vw] md:text-[2.6vw] lg:text-[1.03vw] leading-[0.88] lg:leading-[1.1] pt-[8dvh] lg:pt-[0dvh] pb-[1dvh] lg:pb-[0.7dvh] ${lang === 'en' ? 'lg:mt-[0vh]' : 'lg:mt-[2vh]'}`
+                                ? `${i === 0 && j === 0 ? '${neuehaas.className} pl-6 lg:pl-10 lg:flex gap-[4vw] text-primaryB text-[6vw] md:text-[5vw] lg:text-[3vw]' : 'text-primaryC'} pretendardR lg:block flex items-end text-[3.3vw] md:text-[2.6vw] lg:text-[1.03vw] leading-[0.88] lg:leading-[1.1] pt-[8dvh] lg:pt-[0dvh] pb-[1dvh] lg:pb-[0.7dvh] ${lang === 'en' ? 'lg:mt-[0vh]' : 'lg:mt-[2vh]'}`
                                 : ""} 
                               ${j === 1 ? `${lang === 'en' ? 'lg:mt-[0vh]' : 'lg:mt-[2vh]'}` : ``}`}
                           >
