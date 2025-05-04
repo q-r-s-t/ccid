@@ -127,28 +127,28 @@ export default function Cover() {
               style={{ ...scaleStyle }}
             >
               {firstPart && <span className="first-part">{firstPart}</span>}
-              {secondPart && (
-                <span>
-                  {secondPart.split('').map((char, charIndex) => (
-                    <span
-                      key={charIndex}
-                      className={`char-reveal ${showColorTransition ? 'visible' : ''} ${showWave ? 'wave' : ''}`}
-                      style={{
-                        animationDelay: `${charIndex * 400}ms`,
-                        opacity: 0,
-                        display: 'inline-block',
-                        width: char === " " ? '0.3em' : 'auto'
-                      }}
-                    >
-                      {char}
-                    </span>
-                  ))}
-                </span>
-              )}
-            </p>
-          </div>
-        );
-      })}
+              {secondPart.split('').map((char, charIndex) => {
+                const isExcluded = /[A-Z.]/.test(char); // keep uppercase and period unchanged
+
+                if (isExcluded) {
+                  return <span key={charIndex}>{char}</span>;
+                }
+
+                return (
+                  <span
+                    key={charIndex}
+                    className={`char-reveal ${showColorTransition ? 'visible' : ''} ${showWave ? 'wave' : ''}`}
+                    style={{
+                      animationDelay: `${charIndex * 120}ms`,
+                      animationFillMode: 'forwards',
+                      display: 'inline-block',
+                      width: char === " " ? '0.3em' : 'auto',
+                    }}
+                  >
+                    {char}
+                  </span>
+                );
+              })}
     </div>
   );
 }

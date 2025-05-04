@@ -94,3 +94,28 @@ html {
   border-image-source: linear-gradient(to right, #fff, #5d009c);
   border-image-slice: 1;
 }
+
+.char-reveal {
+  opacity: 0;
+  color: black;
+  display: inline-block;
+  transition: color 1s ease-in-out, opacity 1s ease-in-out;
+}
+
+.char-reveal.visible {
+  opacity: 1;
+  color: white;
+}
+
+.char-reveal.wave {
+  animation: waveColor 2s ease-in-out forwards;
+}
+
+@keyframes waveColor {
+  0% {
+    color: black;
+  }
+  100% {
+    color: white;
+  }
+}
