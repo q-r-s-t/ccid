@@ -109,10 +109,10 @@ html {
 }
 
 .gradient-border {
-  border-bottom: 2px solid transparent;
+  border-bottom: 1px solid transparent;
   border-image-source: linear-gradient(to left, #a778e8, #fff);
   border-image-slice: 1;
-  border-image-width: 2px;
+  border-image-width: 0 0 1px 0;
   animation: gradientBorder 3s ease-in-out infinite;
 }
 
