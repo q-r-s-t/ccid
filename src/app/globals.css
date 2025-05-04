@@ -101,7 +101,7 @@ html {
 
 .gradient-border {
   border-bottom: 2px solid transparent;
-  border-image-source: linear-gradient(to left, #d9a8fa, #5d009c);
+  border-image-source: linear-gradient(to left, #d9a8fa, #fff);
   border-image-slice: 1;
 }
 
