@@ -69,8 +69,7 @@ export default function Works({ textColor }) {
                               ? international.split(':').map((part, index) => {
                                   if (index === 0) {
                                     return (
-                                      <span key={index} className="relative pb-0 text-black">
-                                        <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-white to-[#5d009c]"></span>
+                                      <span key={index} className="gradient-border pb-0 text-black">
                                         {part}
                                       </span>
                                     );

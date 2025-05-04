@@ -88,3 +88,9 @@ html {
 .first-part {
   color: white;
 }
+
+.gradient-border {
+  border-bottom: 2px solid transparent;
+  border-image-source: linear-gradient(to left, #fff, #5d009c);
+  border-image-slice: 1;
+}
