@@ -122,7 +122,7 @@ html {
   border-image-source: linear-gradient(to left, #a778e8, #fff);
   border-image-slice: 1;
   border-image-width: 0 0 1px 0;
-  animation: gradientBorder 3s ease-in-out infinite;
+  animation: gradientBorder 8s ease-in-out infinite;
 }
 
 .char-reveal {
