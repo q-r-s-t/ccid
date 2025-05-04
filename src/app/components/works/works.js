@@ -38,6 +38,8 @@ export default function Works({ textColor }) {
           worksInfo.map((row, i) =>
             i % 3 === 0
               ? row.map((col, j) => {
+                  console.log(i+"-"+j+":"+ worksInfo[i][j]);
+                  console.log(i+"-"+j+":"+ worksInfo[i + 1]?.[j]);
                   const year = worksInfo[i][j];
                   const international = lang === 'en' ? worksInfo[i + 1]?.[j] : worksInfo[i + 2]?.[j];
         
