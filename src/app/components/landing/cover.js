@@ -115,24 +115,7 @@ export default function Cover() {
               style={{ ...scaleStyle }}
             >
               {firstPart && <span className="first-part">{firstPart}</span>}
-              {secondPart && (
-                <span>
-                  {secondPart.split('').map((char, charIndex) => (
-                    <span
-                      key={charIndex}
-                      className="wave-text"
-                      style={{
-                        animationDelay: `${charIndex * 400}ms`,
-                        opacity: 0,
-                        display: 'inline-block',
-                        width: char === " " ? '0.3em' : 'auto'
-                      }}
-                    >
-                      {char}
-                    </span>
-                  ))}
-                </span>
-              )}
+             
             </p>
           </div>
         );
