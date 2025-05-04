@@ -75,7 +75,9 @@ export default function Cover() {
     <div className={`flex flex-col w-full h-full lg:pt-[38dvh] pt-[28vh] px-6 lg:px-10`}>
       {typedWords.map((word, index) => {
         const shouldApplyColor = index <= currentWordIndex;
-        const [firstPart, secondPart] = word.split('.').filter(Boolean);
+        const dotIndex = word.indexOf('.');
+        const beforeDot = dotIndex >= 0 ? word.slice(0, dotIndex + 1) : word;
+        const afterDot = dotIndex >= 0 ? word.slice(dotIndex + 1) : '';
 
         return (
           <div
@@ -88,11 +90,10 @@ export default function Cover() {
               }`}
               style={{ ...scaleStyle }}
             >
-              {firstPart && <span className="first-part">{firstPart}</span>}
-              {secondPart && (
+              <span className="first-part">{beforeDot}</span>
+              {afterDot && (
                 <span>
-                  {"."}
-                  {secondPart.split('').map((char, charIndex) => (
+                  {afterDot.split('').map((char, charIndex) => (
                     <span
                       key={charIndex}
                       className="wave-text"
@@ -115,11 +116,10 @@ export default function Cover() {
               }`}
               style={{ ...scaleStyle }}
             >
-              {firstPart && <span className="first-part">{firstPart}</span>}
-              {secondPart && (
+              <span className="first-part">{beforeDot}</span>
+              {afterDot && (
                 <span>
-                  {"."}
-                  {secondPart.split('').map((char, charIndex) => (
+                  {afterDot.split('').map((char, charIndex) => (
                     <span
                       key={charIndex}
                       className="wave-text"
