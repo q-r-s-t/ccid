@@ -47,9 +47,10 @@ export default function Works({ textColor }) {
                         <div
                           className={` ${lang === 'en' ? 'leading-[1.4] mb-[0.5vh]' : 'lg:leading-[1.5] leading-[1.1] mb-[1.1vh] lg:mb-[0.3vh]'} relative flex text-[2.8vw] md:text-[2.4vw] lg:text-[1vw]  
                           ${j === 0 ? `text-primaryC lg:pl-10 lg:h-[7dvh] lg:absolute lg:top-0 pl-6 lg:left-0 lg:w-[20vw]` : ""}
-                          }               
+                          ${i === 0 && j === 0 ? 'first-item' : 'lg:py-[14vh] leading-[1.1] text-[6vw] md:text-[5vw] lg:text-[3.5vw] lg:absolute lg:top-0 pl-6 lg:left-0 lg:w-[20vw]'}
+                          ${i === 0 && j === 1 ? 'text-primaryC lg:pl-10 lg:h-[7dvh] lg:absolute lg:top-0 pl-6 lg:left-0 lg:w-[20vw]' : ''}`}               
                         > 
-                          <span className="text-[3vw] md:text-[2.85vw] lg:text-[1.15vw] text-primaryC lg:pl-10 lg:h-[7dvh] lg:absolute lg:top-0 pl-6 lg:left-0 lg:w-[20vw]">{/* selected */}</span>
+                         {/* selected */}
                           <div
                             className={`${j === 1 ? `${lang === 'en' ? 'lg:mt-[0vh]' : 'lg:mt-[2vh]'}` : ''} ${
                               j === 0 ? "hidden" : ""
