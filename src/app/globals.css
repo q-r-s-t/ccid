@@ -139,3 +139,19 @@ html {
     color: white;
   }
 }
+
+.first-item {
+  position: relative;
+  animation: firstItemReveal 1.5s ease-out forwards;
+}
+
+@keyframes firstItemReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
