@@ -46,8 +46,9 @@ export default function Works({ textColor }) {
                       <div key={`${i}-${j}`} className="relative">
                         <div
                           className={` ${lang === 'en' ? 'leading-[1.4] mb-[0.5vh]' : 'lg:leading-[1.5] leading-[1.1] mb-[1.1vh] lg:mb-[0.3vh]'} relative flex text-[2.8vw] md:text-[2.4vw] lg:text-[1vw]  
-                          ${j === 0 && !(i === 0 && j === 0) ? `text-primaryC lg:pl-10 lg:h-[7dvh] lg:absolute lg:top-0 pl-6 lg:left-0 lg:w-[20vw]` : ""}
-                          `}               
+                          ${j === 0 && !(i === 0 && j === 0) ? `text-primaryC lg:pl-10 lg:h-[7dvh] lg:absolute lg:top-0 pl-6 lg:left-0 lg:w-[20vw]`}
+                           ${i === 0 && j === 1 ? 'text-primaryB lg:py-[14vh] leading-[1.1] text-[6vw] md:text-[5vw] lg:text-[3.5vw]'}
+                           `}               
                         > 
                          {/* selected */}
                           <div
@@ -63,8 +64,7 @@ export default function Works({ textColor }) {
                               ${j === 0 
                                 ? `text-primaryC pretendardR lg:block flex items-end text-[3.3vw] md:text-[2.6vw] lg:text-[1.03vw] leading-[0.88] lg:leading-[1.1] pt-[8dvh] lg:pt-[0dvh] pb-[1dvh] lg:pb-[0.7dvh] ${lang === 'en' ? 'lg:mt-[0vh]' : 'lg:mt-[2vh]'}`
                                 : ""} 
-                              ${j === 1 ? `${lang === 'en' ? 'lg:mt-[0vh]' : 'lg:mt-[2vh]'}` : ``}
-                            ${i === 0 && j === 1 ? 'text-primaryB lg:py-[14vh] leading-[1.1] text-[6vw] md:text-[5vw] lg:text-[3.5vw]' : ''}`}
+                              ${j === 1 ? `${lang === 'en' ? 'lg:mt-[0vh]' : 'lg:mt-[2vh]'}` : ``}`}
                           >
                             {international && international.includes(':') 
                               ? international.split(':').map((part, index) => {
