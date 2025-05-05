@@ -35,10 +35,10 @@ export default function Cover() {
   useEffect(() => {
     if (!mainText || currentWordIndex >= mainText.length) {
       setIsTypingComplete(true);
-      // Add 1 second delay after typing is complete before starting wave animation
+      // Add 2 second delay after typing is complete before starting wave animation
       setTimeout(() => {
         setStartWaveAnim(true);
-      }, 1000);
+      }, 2000);
       return;
     }
 

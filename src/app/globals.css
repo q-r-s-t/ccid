@@ -58,10 +58,10 @@ html {
   0% { 
     color: white;
   }
-  10% { 
+  5% { 
     color: black;
   }
-  40% { 
+  45% { 
     color: black;
   }
   50% { 
@@ -112,7 +112,7 @@ html {
 .wave-text {
   display: inline-block;
   color: white;
-  animation: textWave 20s ease-in-out infinite;
+  animation: textWave 30s ease-in-out infinite;
   opacity: 1;
 }
 
