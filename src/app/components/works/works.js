@@ -59,7 +59,7 @@ export default function Works({ textColor }) {
                             className={`indent-except-first flex-1 pr-6 ${
                               j === 0 
                                 ? i === 0 && j === 0 
-                                  ? `${neuehaas.className} lg:flex gap-[4vw] text-primaryB text-[6vw] md:text-[5vw] lg:text-[3.5vw] lg:block items-end text-[3.3vw] md:text-[2.6vw] lg:text-[1.03vw] leading-[0.88] lg:leading-[1.1] pt-[8dvh] lg:pt-[0dvh] pb-[1dvh] lg:pb-[0.7dvh]`
+                                  ? `${neuehaas.className} lg:flex gap-[4vw] text-primaryB lg:block items-end leading-[1.55] text-[3vw] md:text-[2.85vw] lg:text-[1.15vw] pt-[8dvh] lg:pt-[0dvh] pb-[1dvh] lg:pb-[0.7dvh]`
                                   : ''
                                 : ''
                             }`}
