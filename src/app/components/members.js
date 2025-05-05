@@ -43,9 +43,6 @@ export default function Members() {
   if (isLoading) {
     return (
       <div className="flex justify-center items-center h-screen">
-        <h3 className={`${neuehaas.className} text-[5vw] md:text-[4.5vw] lg:text-[2.2vw] tracking-[-0.03] pt-[0.8em] px-[2.1vh] lg:mr-[1vw] mb-[1vh] lg:mb-[2vh]`}>
-          Team
-        </h3>
         <p className="text-lg md:text-xl">Loading members...</p>
       </div>
     );
@@ -57,79 +54,90 @@ export default function Members() {
 
   return (
     <div className="py-[10dvh] text-primaryC">
-      {firstCategory && (
-        <div className="mb-20 lg:mb-[7vh]">
-          <h1 className="leading-[1.8] text-[3.7vw] md:text-[2.9vw] lg:text-[1.05vw] mb-[1.6vh]">
-            {firstCategory[0]}
-          </h1>
-          {firstCategory[1].map((member, index) => (
-            <div key={index} className="md:flex gap-8 lg:gap-6 xl:gap-[3vw]">
-              <img
-                src={member[2]}
-                alt={`${member[1]} profile`}
-                className={`mb-2 filter grayscale w-[150px] h-[150px] md:w-[190px] md:h-[190px] lg:w-[10vw] lg:h-[10vw] rounded-full object-cover object-top`}
-              />
-              <div className="md:flex-1">
-                <h2 className="leading-[1.1] text-[3.8vw] pt-[1.5vh] md:text-[3vw] mt-[4] lg:text-[1vw]">{member[1]}</h2>
-                <pre className={`${pxGrotesk.className} pt-[0.5vh] whitespace-pre-wrap leading-[1.1] text-[3.3vw] md:text-[2.1vw] lg:text-[0.88vw]`}>{member[3]}</pre>
-                <div className="border-l-[1px] border-current mt-[2.5] pl-3 lg:pl-[0.5vw]">
-                  {/* <h3 className="pb-3 md:pb-2 leading-[1.3] text-[3vw] md:text-[1.9vw] lg:text-[0.8vw]">Career</h3> */}
-                  <div className="leading-[1.3] text-[3vw] md:text-[1.7vw] lg:text-[0.7vw] mt-1">
-                    <pre
-                      className={`whitespace-pre-wrap ${pxGrotesk.className}`}
-                    >
-                      {member[4]}
-                    </pre>
+      <h3 className={`${neuehaas.className} text-[5vw] md:text-[4.5vw] lg:text-[2.2vw] tracking-[-0.03] pt-[0.8em] px-[2.1vh] lg:mr-[1vw] mb-[1vh] lg:mb-[2vh]`}>
+        Team
+      </h3>
+      {isLoading ? (
+        <div className="flex justify-center items-center h-screen">
+          <p className="text-lg md:text-xl">Loading members...</p>
+        </div>
+      ) : (
+        <>
+          {firstCategory && (
+            <div className="mb-20 lg:mb-[7vh]">
+              <h1 className="leading-[1.8] text-[3.7vw] md:text-[2.9vw] lg:text-[1.05vw] mb-[1.6vh]">
+                {firstCategory[0]}
+              </h1>
+              {firstCategory[1].map((member, index) => (
+                <div key={index} className="md:flex gap-8 lg:gap-6 xl:gap-[3vw]">
+                  <img
+                    src={member[2]}
+                    alt={`${member[1]} profile`}
+                    className={`mb-2 filter grayscale w-[150px] h-[150px] md:w-[190px] md:h-[190px] lg:w-[10vw] lg:h-[10vw] rounded-full object-cover object-top`}
+                  />
+                  <div className="md:flex-1">
+                    <h2 className="leading-[1.1] text-[3.8vw] pt-[1.5vh] md:text-[3vw] mt-[4] lg:text-[1vw]">{member[1]}</h2>
+                    <pre className={`${pxGrotesk.className} pt-[0.5vh] whitespace-pre-wrap leading-[1.1] text-[3.3vw] md:text-[2.1vw] lg:text-[0.88vw]`}>{member[3]}</pre>
+                    <div className="border-l-[1px] border-current mt-[2.5] pl-3 lg:pl-[0.5vw]">
+                      {/* <h3 className="pb-3 md:pb-2 leading-[1.3] text-[3vw] md:text-[1.9vw] lg:text-[0.8vw]">Career</h3> */}
+                      <div className="leading-[1.3] text-[3vw] md:text-[1.7vw] lg:text-[0.7vw] mt-1">
+                        <pre
+                          className={`whitespace-pre-wrap ${pxGrotesk.className}`}
+                        >
+                          {member[4]}
+                        </pre>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
+              ))}
+            </div>
+          )}
+
+          {otherCategories.map(([category, members]) => (
+            <div key={category} className="mb-12 md:mb-20 lg:mb-[5vh]">
+              <h1 className="leading-[1.8] text-[3.7vw] md:text-[2.9vw] lg:text-[1.05vw] mb-[2vh]">
+                {category}
+              </h1>
+              <ul className="md:flex flex-wrap">
+                {members.map((member, index) => (
+                  <li
+                    key={index}
+                    className="pb-[1.5vh] lg:pb-[2vh] md:w-1/2 lg:w-1/4 flex items-center"
+                  >
+                    <img
+                      src={member[2]}
+                      alt={`${member[1]} profile`}
+                      className="filter grayscale flex-shrink-0 mr-4 lg:mr-[0.7vw] w-[70px] h-[70px] lg:w-[8vw] lg:h-[6vw] 2xl:w-[5vw] 2xl:h-[5vw] rounded-full object-cover object-top"
+                    />
+                    <div className="flex flex-col justify-center pr-3 lg:pt-0 lg:pl-2">
+                      <h3
+                        className={`${pxGrotesk.className} pb-1 leading-[1.1] text-[3vw] md:text-[1.9vw] lg:text-[0.95vw]`}
+                      >
+                        {member[1]}
+                      </h3>
+                      {member[3] && (
+                        <h2 className="pb-1 leading-none text-[2.6vw] md:text-[1.6vw] lg:text-[0.8vw]">
+                          {member[3]}
+                        </h2>
+                      )}{" "}
+                      <pre
+                        className={`whitespace-pre-wrap  ${
+                          member[3]
+                            ? "leading-tight text-[2.6vw] md:text-[1.6vw] lg:text-[0.7vw]"
+                            : "leading-[1.18] text-[2.3vw] md:text-[1.2vw] lg:text-[0.7vw]"
+                        } ${pxGrotesk.className}`}
+                      >
+                        {member[4]}
+                      </pre>
+                    </div>
+                  </li>
+                ))}
+              </ul>
             </div>
           ))}
-        </div>
+        </>
       )}
-
-      {otherCategories.map(([category, members]) => (
-        <div key={category} className="mb-12 md:mb-20 lg:mb-[5vh]">
-          <h1 className="leading-[1.8] text-[3.7vw] md:text-[2.9vw] lg:text-[1.05vw] mb-[2vh]">
-            {category}
-          </h1>
-          <ul className="md:flex flex-wrap">
-            {members.map((member, index) => (
-              <li
-                key={index}
-                className="pb-[1.5vh] lg:pb-[2vh] md:w-1/2 lg:w-1/4 flex items-center"
-              >
-                <img
-                  src={member[2]}
-                  alt={`${member[1]} profile`}
-                  className="filter grayscale flex-shrink-0 mr-4 lg:mr-[0.7vw] w-[70px] h-[70px] lg:w-[8vw] lg:h-[6vw] 2xl:w-[5vw] 2xl:h-[5vw] rounded-full object-cover object-top"
-                />
-                <div className="flex flex-col justify-center pr-3 lg:pt-0 lg:pl-2">
-                  <h3
-                    className={`${pxGrotesk.className} pb-1 leading-[1.1] text-[3vw] md:text-[1.9vw] lg:text-[0.95vw]`}
-                  >
-                    {member[1]}
-                  </h3>
-                  {member[3] && (
-                    <h2 className="pb-1 leading-none text-[2.6vw] md:text-[1.6vw] lg:text-[0.8vw]">
-                      {member[3]}
-                    </h2>
-                  )}{" "}
-                  <pre
-                    className={`whitespace-pre-wrap  ${
-                      member[3]
-                        ? "leading-tight text-[2.6vw] md:text-[1.6vw] lg:text-[0.7vw]"
-                        : "leading-[1.18] text-[2.3vw] md:text-[1.2vw] lg:text-[0.7vw]"
-                    } ${pxGrotesk.className}`}
-                  >
-                    {member[4]}
-                  </pre>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
-      ))}
     </div>
   );
 }
