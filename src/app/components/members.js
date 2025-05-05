@@ -2,10 +2,15 @@
 
 import { useEffect, useState } from "react";
 import { pxGrotesk, neuehaas } from "@/fonts/fonts";
+import { useLanguageStore } from "@/app/store/languageStore";
 
 export default function Members() {
   const [membersInfo, setMembersInfo] = useState({});
   const [isLoading, setIsLoading] = useState(true); // 로딩 상태
+  const { lang } = useLanguageStore();
+
+  const textStyle = "leading-none text-[6vw] md:text-[5vw] lg:text-[2.4vw]";
+  const textStyleKr = "leading-[1.3] mt-[-0.3vh] text-[5vw] md:text-[4.5vw] lg:text-[2.2vw]";
 
   useEffect(() => {
     const fetchMembersData = async () => {
@@ -54,7 +59,7 @@ export default function Members() {
 
   return (
     <div className="py-[10dvh] text-primaryC">
-      <h3 className={`${neuehaas.className} text-primaryB text-[5vw] md:text-[4.5vw] lg:text-[2.2vw] tracking-[-0.03] pt-[0.8em] lg:mr-[1vw] mb-[1vh] lg:mb-[2vh]`}>
+      <h3 className={`${lang === 'en' ? textStyle : textStyleKr} ${neuehaas.className} text-primaryB tracking-[-0.03] pt-[0.8em] px-[2.1vh] lg:mr-[1vw] mb-[1vh] lg:mb-[2vh] transition-all duration-700 ease-out`}>
         Team
       </h3>
       {isLoading ? (

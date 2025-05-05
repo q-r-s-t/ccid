@@ -8,7 +8,7 @@ function DescItem({ id, title, description, imageUrl }) {
   const textStyle =
     "leading-none text-[6vw] md:text-[5vw] lg:text-[2.4vw]";
   const textStyleKr =
-    "font-[450] leading-[1.3] mt-[-0.3vh] text-[5vw] md:text-[4.5vw] lg:text-[2.2vw]";
+    "leading-[1.3] mt-[-0.3vh] text-[5vw] md:text-[4.5vw] lg:text-[2.2vw]";
   const { lang } = useLanguageStore();
 
   return (
