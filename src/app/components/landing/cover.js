@@ -9,6 +9,7 @@ export default function Cover() {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [isTypingComplete, setIsTypingComplete] = useState(false);
   const [startWaveAnim, setStartWaveAnim] = useState(false);
+  const [activeWords, setActiveWords] = useState([]);
 
   useEffect(() => {
     const fetchAboutData = async () => {
@@ -35,7 +36,6 @@ export default function Cover() {
   useEffect(() => {
     if (!mainText || currentWordIndex >= mainText.length) {
       setIsTypingComplete(true);
-      // Add 2 second delay after typing is complete before starting wave animation
       setTimeout(() => {
         setStartWaveAnim(true);
       }, 2000);
@@ -64,6 +64,17 @@ export default function Cover() {
 
     typeNextChar();
   }, [currentWordIndex, mainText]);
+
+  useEffect(() => {
+    if (startWaveAnim) {
+      const words = mainText[1]?.split(' ') || [];
+      words.forEach((_, index) => {
+        setTimeout(() => {
+          setActiveWords(prev => [...prev, index]);
+        }, index * 800);
+      });
+    }
+  }, [startWaveAnim, mainText]);
 
   const [startAnim, setStartAnim] = useState(false);
 
@@ -103,9 +114,8 @@ export default function Cover() {
                   {word.split(' ').map((subWord, wordIndex) => (
                     <span
                       key={wordIndex}
-                      className="wave-text"
+                      className={`wave-text ${activeWords.includes(wordIndex) ? 'active' : ''}`}
                       style={{
-                        animationDelay: `${wordIndex * 800}ms`,
                         display: 'inline-block',
                         marginRight: '0.3em'
                       }}
@@ -129,9 +139,8 @@ export default function Cover() {
                   {word.split(' ').map((subWord, wordIndex) => (
                     <span
                       key={wordIndex}
-                      className="wave-text"
+                      className={`wave-text ${activeWords.includes(wordIndex) ? 'active' : ''}`}
                       style={{
-                        animationDelay: `${wordIndex * 800}ms`,
                         display: 'inline-block',
                         marginRight: '0.3em'
                       }}

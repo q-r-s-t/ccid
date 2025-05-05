@@ -114,6 +114,11 @@ html {
   color: white;
   animation: textWave 30s ease-in-out infinite;
   opacity: 1;
+  animation-play-state: paused;
+}
+
+.wave-text.active {
+  animation-play-state: running;
 }
 
 .first-part {
