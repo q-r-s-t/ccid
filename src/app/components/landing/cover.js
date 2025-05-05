@@ -8,6 +8,7 @@ export default function Cover() {
   const [typedWords, setTypedWords] = useState([]);
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [isTypingComplete, setIsTypingComplete] = useState(false);
+  const [startWaveAnim, setStartWaveAnim] = useState(false);
 
   useEffect(() => {
     const fetchAboutData = async () => {
@@ -34,6 +35,10 @@ export default function Cover() {
   useEffect(() => {
     if (!mainText || currentWordIndex >= mainText.length) {
       setIsTypingComplete(true);
+      // Add 1 second delay after typing is complete before starting wave animation
+      setTimeout(() => {
+        setStartWaveAnim(true);
+      }, 1000);
       return;
     }
 
@@ -93,14 +98,14 @@ export default function Cover() {
               }`}
               style={{ ...scaleStyle }}
             >
-              {isSecondPart && isTypingComplete ? (
+              {isSecondPart && startWaveAnim ? (
                 <span>
                   {word.split(' ').map((subWord, wordIndex) => (
                     <span
                       key={wordIndex}
                       className="wave-text"
                       style={{
-                        animationDelay: `${wordIndex * 500}ms`,
+                        animationDelay: `${wordIndex * 800}ms`,
                         display: 'inline-block',
                         marginRight: '0.3em'
                       }}
@@ -119,14 +124,14 @@ export default function Cover() {
               }`}
               style={{ ...scaleStyle }}
             >
-              {isSecondPart && isTypingComplete ? (
+              {isSecondPart && startWaveAnim ? (
                 <span>
                   {word.split(' ').map((subWord, wordIndex) => (
                     <span
                       key={wordIndex}
                       className="wave-text"
                       style={{
-                        animationDelay: `${wordIndex * 500}ms`,
+                        animationDelay: `${wordIndex * 800}ms`,
                         display: 'inline-block',
                         marginRight: '0.3em'
                       }}
