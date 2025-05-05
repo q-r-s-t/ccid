@@ -7,6 +7,7 @@ export default function Cover() {
   const [mainText, setMainText] = useState(null);
   const [typedWords, setTypedWords] = useState([]);
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
+  const [isTypingComplete, setIsTypingComplete] = useState(false);
 
   useEffect(() => {
     const fetchAboutData = async () => {
@@ -31,7 +32,10 @@ export default function Cover() {
   }, []);
 
   useEffect(() => {
-    if (!mainText || currentWordIndex >= mainText.length) return;
+    if (!mainText || currentWordIndex >= mainText.length) {
+      setIsTypingComplete(true);
+      return;
+    }
 
     const word = mainText[currentWordIndex];
     let charIndex = 0;
@@ -76,9 +80,7 @@ export default function Cover() {
     <div className={`flex flex-col w-full h-full lg:pt-[38dvh] pt-[28vh] px-6 lg:px-10`}>
       {typedWords.map((word, index) => {
         const shouldApplyColor = index <= currentWordIndex;
-        const commaIndex = word.indexOf(',');
-        const beforeComma = commaIndex >= 0 ? word.slice(0, commaIndex + 1) : word;
-        const afterComma = commaIndex >= 0 ? word.slice(commaIndex + 1) : '';
+        const isSecondPart = index === 1; // Second part of the text
 
         return (
           <div
@@ -91,15 +93,14 @@ export default function Cover() {
               }`}
               style={{ ...scaleStyle }}
             >
-              <span className="first-part">{beforeComma}</span>
-              {afterComma && (
+              {isSecondPart && isTypingComplete ? (
                 <span>
-                  {afterComma.split('').map((char, charIndex) => (
+                  {word.split('').map((char, charIndex) => (
                     <span
                       key={charIndex}
                       className="wave-text"
                       style={{
-                        animationDelay: `${charIndex * 400}ms`,
+                        animationDelay: `${charIndex * 600}ms`, // Slower timing
                         opacity: 0,
                         display: 'inline-block',
                         width: char === " " ? '0.3em' : 'auto'
@@ -109,6 +110,8 @@ export default function Cover() {
                     </span>
                   ))}
                 </span>
+              ) : (
+                <span className="first-part">{word}</span>
               )}
             </pre>
             <p
@@ -117,15 +120,14 @@ export default function Cover() {
               }`}
               style={{ ...scaleStyle }}
             >
-              <span className="first-part">{beforeComma}</span>
-              {afterComma && (
+              {isSecondPart && isTypingComplete ? (
                 <span>
-                  {afterComma.split('').map((char, charIndex) => (
+                  {word.split('').map((char, charIndex) => (
                     <span
                       key={charIndex}
                       className="wave-text"
                       style={{
-                        animationDelay: `${charIndex * 400}ms`,
+                        animationDelay: `${charIndex * 600}ms`, // Slower timing
                         opacity: 0,
                         display: 'inline-block',
                         width: char === " " ? '0.3em' : 'auto'
@@ -135,6 +137,8 @@ export default function Cover() {
                     </span>
                   ))}
                 </span>
+              ) : (
+                <span className="first-part">{word}</span>
               )}
             </p>
           </div>
