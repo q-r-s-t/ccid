@@ -58,7 +58,7 @@ export default function Cover() {
         const nextDelay = 18 + (charIndex / word.length) * 88;
         setTimeout(typeNextChar, nextDelay);
       } else {
-        setTimeout(() => setCurrentWordIndex((prev) => prev + 1), 380);
+        setTimeout(() => setCurrentWordIndex((prev) => prev + 1), 80);
       }
     };
 
@@ -71,7 +71,7 @@ export default function Cover() {
       words.forEach((_, index) => {
         setTimeout(() => {
           setActiveWords(prev => [...prev, index]);
-        }, index * 300);
+        }, index * 80);
       });
     }
   }, [startWaveAnim, mainText]);
