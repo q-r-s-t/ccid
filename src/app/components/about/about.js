@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useLanguageStore } from "../../store/languageStore";
-import { programme, pxGrotesk } from "@/fonts/fonts";
+import { neuehaas, pxGrotesk } from "@/fonts/fonts";
 
 export default function About() {
   const [aboutInfo, setAboutInfo] = useState([]);
