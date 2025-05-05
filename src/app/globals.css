@@ -112,7 +112,7 @@ html {
 .wave-text {
   display: inline-block;
   color: white;
-  animation: textWave 30s ease-in-out infinite;
+  animation: textWave 10s ease-in-out infinite;
   opacity: 1;
   animation-play-state: paused;
 }

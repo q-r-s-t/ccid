@@ -71,7 +71,7 @@ export default function Cover() {
       words.forEach((_, index) => {
         setTimeout(() => {
           setActiveWords(prev => [...prev, index]);
-        }, index * 800);
+        }, index * 300);
       });
     }
   }, [startWaveAnim, mainText]);
@@ -96,7 +96,7 @@ export default function Cover() {
     <div className={`flex flex-col w-full h-full lg:pt-[38dvh] pt-[28vh] px-6 lg:px-10`}>
       {typedWords.map((word, index) => {
         const shouldApplyColor = index <= currentWordIndex;
-        const isSecondPart = index === 1; // Second part of the text
+        const isSecondPart = index === 1;
 
         return (
           <div
@@ -117,7 +117,8 @@ export default function Cover() {
                       className={`wave-text ${activeWords.includes(wordIndex) ? 'active' : ''}`}
                       style={{
                         display: 'inline-block',
-                        marginRight: '0.3em'
+                        marginRight: '0.3em',
+                        animationDelay: `${wordIndex * 300}ms`
                       }}
                     >
                       {subWord}
@@ -142,7 +143,8 @@ export default function Cover() {
                       className={`wave-text ${activeWords.includes(wordIndex) ? 'active' : ''}`}
                       style={{
                         display: 'inline-block',
-                        marginRight: '0.3em'
+                        marginRight: '0.3em',
+                        animationDelay: `${wordIndex * 300}ms`
                       }}
                     >
                       {subWord}
