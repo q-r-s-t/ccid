@@ -43,9 +43,9 @@ export default function Members() {
   if (isLoading) {
     return (
       <div className="flex justify-center items-center h-screen">
-        <h1 className={`${pxGrotesk.className} lg:flex gap-[4vw] text-primaryB text-[6vw] md:text-[5vw] lg:text-[3.5vw] lg:block items-end text-[3.3vw] md:text-[2.6vw] lg:text-[1.03vw] leading-[0.88] lg:leading-[1.1] pt-[8dvh] lg:pt-[0dvh] pb-[1dvh] lg:pb-[0.7dvh]`}>
-        Team
-        </h1>
+        <h3 className={`${neuehaas.className} text-[5vw] md:text-[4.5vw] lg:text-[2.2vw] tracking-[-0.03] pt-[0.8em] px-[2.1vh] lg:mr-[1vw] mb-[1vh] lg:mb-[2vh]`}>
+          Team
+        </h3>
         <p className="text-lg md:text-xl">Loading members...</p>
       </div>
     );
