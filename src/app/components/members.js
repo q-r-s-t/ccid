@@ -54,7 +54,7 @@ export default function Members() {
 
   return (
     <div className="py-[10dvh] text-primaryC">
-      <h3 className={`${neuehaas.className} text-[5vw] md:text-[4.5vw] lg:text-[2.2vw] tracking-[-0.03] pt-[0.8em] px-[2.1vh] lg:mr-[1vw] mb-[1vh] lg:mb-[2vh]`}>
+      <h3 className={`${neuehaas.className} text-primaryB text-[5vw] md:text-[4.5vw] lg:text-[2.2vw] tracking-[-0.03] pt-[0.8em] lg:mr-[1vw] mb-[1vh] lg:mb-[2vh]`}>
         Team
       </h3>
       {isLoading ? (
