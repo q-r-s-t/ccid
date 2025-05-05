@@ -61,10 +61,11 @@ export default function Cover() {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setStartAnim(true);
-    }, 800); // 3 seconds
+    }, 800);
 
     return () => clearTimeout(timeout);
   }, []);
+
   const scaleStyle = startAnim ? { 
     scale: 0.95,
     transformOrigin: 'left center',
@@ -75,9 +76,9 @@ export default function Cover() {
     <div className={`flex flex-col w-full h-full lg:pt-[38dvh] pt-[28vh] px-6 lg:px-10`}>
       {typedWords.map((word, index) => {
         const shouldApplyColor = index <= currentWordIndex;
-        const dotIndex = word.indexOf('.');
-        const beforeDot = dotIndex >= 0 ? word.slice(0, dotIndex + 1) : word;
-        const afterDot = dotIndex >= 0 ? word.slice(dotIndex + 1) : '';
+        const commaIndex = word.indexOf(',');
+        const beforeComma = commaIndex >= 0 ? word.slice(0, commaIndex + 1) : word;
+        const afterComma = commaIndex >= 0 ? word.slice(commaIndex + 1) : '';
 
         return (
           <div
@@ -90,10 +91,10 @@ export default function Cover() {
               }`}
               style={{ ...scaleStyle }}
             >
-              <span className="first-part">{beforeDot}</span>
-              {afterDot && (
+              <span className="first-part">{beforeComma}</span>
+              {afterComma && (
                 <span>
-                  {afterDot.split('').map((char, charIndex) => (
+                  {afterComma.split('').map((char, charIndex) => (
                     <span
                       key={charIndex}
                       className="wave-text"
@@ -116,10 +117,10 @@ export default function Cover() {
               }`}
               style={{ ...scaleStyle }}
             >
-              <span className="first-part">{beforeDot}</span>
-              {afterDot && (
+              <span className="first-part">{beforeComma}</span>
+              {afterComma && (
                 <span>
-                  {afterDot.split('').map((char, charIndex) => (
+                  {afterComma.split('').map((char, charIndex) => (
                     <span
                       key={charIndex}
                       className="wave-text"

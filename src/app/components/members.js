@@ -59,9 +59,6 @@ export default function Members() {
 
   return (
     <div className="py-[10dvh] text-primaryC">
-      <h3 className={`${lang === 'en' ? textStyle : textStyleKr} ${neuehaas.className} text-primaryB tracking-[-0.03] pt-[0.8em] px-[2.1vh] lg:mr-[1vw] mb-[1vh] lg:mb-[2vh] transition-all duration-700 ease-out`}>
-        Team
-      </h3>
       {isLoading ? (
         <div className="flex justify-center items-center h-screen">
           <p className="text-lg md:text-xl">Loading members...</p>
