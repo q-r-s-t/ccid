@@ -58,8 +58,14 @@ html {
   0% { 
     color: white;
   }
-  50% { 
+  30% { 
     color: black;
+  }
+  60% { 
+    color: black;
+  }
+  90% { 
+    color: white;
   }
   100% { 
     color: white;
@@ -100,13 +106,13 @@ html {
 }
 
 .char-reveal.wave {
-  animation: textWave 3s ease-in-out infinite;
+  animation: textWave 8s ease-in-out infinite;
 }
 
 .wave-text {
   display: inline-block;
   color: white;
-  animation: textWave 3s ease-in-out infinite;
+  animation: textWave 10s ease-in-out infinite;
   opacity: 1;
 }
 

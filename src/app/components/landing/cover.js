@@ -94,21 +94,8 @@ export default function Cover() {
               style={{ ...scaleStyle }}
             >
               {isSecondPart && isTypingComplete ? (
-                <span>
-                  {word.split('').map((char, charIndex) => (
-                    <span
-                      key={charIndex}
-                      className="wave-text"
-                      style={{
-                        animationDelay: `${charIndex * 600}ms`,
-                        opacity: 1,
-                        display: 'inline-block',
-                        width: char === " " ? '0.3em' : 'auto'
-                      }}
-                    >
-                      {char}
-                    </span>
-                  ))}
+                <span className="wave-text">
+                  {word}
                 </span>
               ) : (
                 <span className="first-part" style={{ opacity: 1 }}>{word}</span>
@@ -121,21 +108,8 @@ export default function Cover() {
               style={{ ...scaleStyle }}
             >
               {isSecondPart && isTypingComplete ? (
-                <span>
-                  {word.split('').map((char, charIndex) => (
-                    <span
-                      key={charIndex}
-                      className="wave-text"
-                      style={{
-                        animationDelay: `${charIndex * 600}ms`,
-                        opacity: 1,
-                        display: 'inline-block',
-                        width: char === " " ? '0.3em' : 'auto'
-                      }}
-                    >
-                      {char}
-                    </span>
-                  ))}
+                <span className="wave-text">
+                  {word}
                 </span>
               ) : (
                 <span className="first-part" style={{ opacity: 1 }}>{word}</span>
