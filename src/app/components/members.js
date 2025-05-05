@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { pxGrotesk, pretendardB } from "@/fonts/fonts";
+import { pxGrotesk, neuehaas } from "@/fonts/fonts";
 
 export default function Members() {
   const [membersInfo, setMembersInfo] = useState({});
@@ -43,6 +43,9 @@ export default function Members() {
   if (isLoading) {
     return (
       <div className="flex justify-center items-center h-screen">
+        <h1 className={`${pxGrotesk.className} lg:flex gap-[4vw] text-primaryB text-[6vw] md:text-[5vw] lg:text-[3.5vw] lg:block items-end text-[3.3vw] md:text-[2.6vw] lg:text-[1.03vw] leading-[0.88] lg:leading-[1.1] pt-[8dvh] lg:pt-[0dvh] pb-[1dvh] lg:pb-[0.7dvh]`}>
+        Team
+        </h1>
         <p className="text-lg md:text-xl">Loading members...</p>
       </div>
     );
