@@ -56,16 +56,13 @@ html {
 
 @keyframes textWave {
   0% { 
-    opacity: 0;
-    color: black;
-  }
-  50% { 
-    opacity: 1;
     color: white;
   }
-  100% { 
-    opacity: 1;
+  50% { 
     color: black;
+  }
+  100% { 
+    color: white;
   }
 }
 
@@ -108,8 +105,9 @@ html {
 
 .wave-text {
   display: inline-block;
-  color: black;
+  color: white;
   animation: textWave 3s ease-in-out infinite;
+  opacity: 1;
 }
 
 .first-part {
