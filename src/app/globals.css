@@ -59,10 +59,10 @@ html {
     filter: blur(0px);
   }
   5% { 
-    filter: blur(30px);
+    filter: blur(8px);
   }
   45% { 
-    filter: blur(30px);
+    filter: blur(8px);
   }
   50% { 
     filter: blur(0px);
@@ -112,7 +112,7 @@ html {
 .wave-text {
   display: inline-block;
   filter: blur(0px);
-  animation: textWave 10s ease-in-out infinite;
+  animation: textWave 15s ease-in-out infinite;
   opacity: 1;
   animation-play-state: paused;
 }
