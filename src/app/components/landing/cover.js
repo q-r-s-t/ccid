@@ -66,8 +66,8 @@ export default function Cover() {
   }, [currentWordIndex, mainText]);
 
   useEffect(() => {
-    if (startWaveAnim) {
-      const words = mainText[1]?.split(' ') || [];
+    if (startWaveAnim && mainText && mainText[1]) {
+      const words = mainText[1].split(' ') || [];
       words.forEach((_, index) => {
         setTimeout(() => {
           setActiveWords(prev => [...prev, index]);
@@ -109,7 +109,7 @@ export default function Cover() {
               }`}
               style={{ ...scaleStyle }}
             >
-              {isSecondPart && startWaveAnim ? (
+              {isSecondPart && startWaveAnim && mainText && mainText[1] ? (
                 <span>
                   {word.split(' ').map((subWord, wordIndex) => (
                     <span
@@ -118,7 +118,7 @@ export default function Cover() {
                       style={{
                         display: 'inline-block',
                         marginRight: '0.3em',
-                        animationDelay: `${wordIndex * 300}ms`
+                        animationDelay: `${wordIndex * 80}ms`
                       }}
                     >
                       {subWord}
@@ -135,7 +135,7 @@ export default function Cover() {
               }`}
               style={{ ...scaleStyle }}
             >
-              {isSecondPart && startWaveAnim ? (
+              {isSecondPart && startWaveAnim && mainText && mainText[1] ? (
                 <span>
                   {word.split(' ').map((subWord, wordIndex) => (
                     <span
@@ -144,7 +144,7 @@ export default function Cover() {
                       style={{
                         display: 'inline-block',
                         marginRight: '0.3em',
-                        animationDelay: `${wordIndex * 300}ms`
+                        animationDelay: `${wordIndex * 80}ms`
                       }}
                     >
                       {subWord}
