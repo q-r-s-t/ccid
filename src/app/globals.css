@@ -56,19 +56,19 @@ html {
 
 @keyframes textWave {
   0% { 
-    filter: blur(0px);
+    color: black;
   }
   5% { 
-    filter: blur(8px);
+    color: black;
   }
   45% { 
-    filter: blur(8px);
+    color: black;
   }
   50% { 
-    filter: blur(0px);
+    color: white;
   }
   100% { 
-    filter: blur(0px);
+    color: white;
   }
 }
 
@@ -111,7 +111,7 @@ html {
 
 .wave-text {
   display: inline-block;
-  filter: blur(0px);
+  color: black;
   animation: textWave 15s ease-in-out infinite;
   opacity: 1;
   animation-play-state: paused;

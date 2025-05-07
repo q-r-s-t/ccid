@@ -38,7 +38,7 @@ export default function Cover() {
       setIsTypingComplete(true);
       setTimeout(() => {
         setStartWaveAnim(true);
-      }, 2000);
+      }, 1000);
       return;
     }
 
@@ -67,12 +67,7 @@ export default function Cover() {
 
   useEffect(() => {
     if (startWaveAnim && mainText && mainText[1]) {
-      const words = mainText[1].split(' ') || [];
-      words.forEach((_, index) => {
-        setTimeout(() => {
-          setActiveWords(prev => [...prev, index]);
-        }, index * 80);
-      });
+      setActiveWords([0]);
     }
   }, [startWaveAnim, mainText]);
 
@@ -98,6 +93,38 @@ export default function Cover() {
         const shouldApplyColor = index <= currentWordIndex;
         const isSecondPart = index === 1;
 
+        if (isSecondPart && startWaveAnim && mainText && mainText[1]) {
+          return (
+            <div
+              key={index}
+              className="text-center lg:text-left relative inline-block w-full lg:h-[24vw] h-[26vw] lg:h-[3.8vw] leading-[1.1] lg:leading-[1.3] text-[7.5vw] lg:text-[3vw]"
+            >
+              <pre
+                className={`${neuehaas.className} tracking-[1px] lg:hidden whitespace-pre-wrap overflow-hidden relative ${
+                  index === currentWordIndex ? "blinking-cursor" : ""
+                }`}
+                style={{ ...scaleStyle }}
+              >
+                <span className="first-part">cciD Center for Creative Intelligence Design</span>
+                <span className={`wave-text ${activeWords.includes(0) ? 'active' : ''}`}>
+                  {word}
+                </span>
+              </pre>
+              <p
+                className={`${neuehaas.className} tracking-[-1px] hidden lg:block overflow-hidden relative ${
+                  index === currentWordIndex ? "blinking-cursor" : ""
+                }`}
+                style={{ ...scaleStyle }}
+              >
+                <span className="first-part">cciD Center for Creative Intelligence Design</span>
+                <span className={`wave-text ${activeWords.includes(0) ? 'active' : ''}`}>
+                  {word}
+                </span>
+              </p>
+            </div>
+          );
+        }
+
         return (
           <div
             key={index}
@@ -109,25 +136,7 @@ export default function Cover() {
               }`}
               style={{ ...scaleStyle }}
             >
-              {isSecondPart && startWaveAnim && mainText && mainText[1] ? (
-                <span>
-                  {word.split(' ').map((subWord, wordIndex) => (
-                    <span
-                      key={wordIndex}
-                      className={`wave-text ${activeWords.includes(wordIndex) ? 'active' : ''}`}
-                      style={{
-                        display: 'inline-block',
-                        marginRight: '0.3em',
-                        animationDelay: `${wordIndex * 80}ms`
-                      }}
-                    >
-                      {subWord}
-                    </span>
-                  ))}
-                </span>
-              ) : (
-                <span className="first-part" style={{ opacity: 1 }}>{word}</span>
-              )}
+              <span className="first-part" style={{ opacity: 1 }}>{word}</span>
             </pre>
             <p
               className={`${neuehaas.className} tracking-[-1px] hidden lg:block overflow-hidden relative ${
@@ -135,25 +144,7 @@ export default function Cover() {
               }`}
               style={{ ...scaleStyle }}
             >
-              {isSecondPart && startWaveAnim && mainText && mainText[1] ? (
-                <span>
-                  {word.split(' ').map((subWord, wordIndex) => (
-                    <span
-                      key={wordIndex}
-                      className={`wave-text ${activeWords.includes(wordIndex) ? 'active' : ''}`}
-                      style={{
-                        display: 'inline-block',
-                        marginRight: '0.3em',
-                        animationDelay: `${wordIndex * 80}ms`
-                      }}
-                    >
-                      {subWord}
-                    </span>
-                  ))}
-                </span>
-              ) : (
-                <span className="first-part" style={{ opacity: 1 }}>{word}</span>
-              )}
+              <span className="first-part" style={{ opacity: 1 }}>{word}</span>
             </p>
           </div>
         );
