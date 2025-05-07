@@ -55,7 +55,8 @@ export default function Cover() {
       charIndex++;
 
       if (charIndex < word.length) {
-        const nextDelay = 18 + (charIndex / word.length) * 88;
+        const progress = charIndex / word.length;
+        const nextDelay = Math.max(5, 50 * (1 - progress * 0.8));
         setTimeout(typeNextChar, nextDelay);
       } else {
         setTimeout(() => setCurrentWordIndex((prev) => prev + 1), 80);
