@@ -82,9 +82,9 @@ export default function Cover() {
   }, []);
 
   const scaleStyle = startAnim ? { 
-    scale: 0.95,
+    scale: 0.88,
     transformOrigin: 'left center',
-    transition: "scale 11s ease-in-out" 
+    transition: "scale 18s ease-out" 
   } : { transformOrigin: 'left center' };
 
   return (
