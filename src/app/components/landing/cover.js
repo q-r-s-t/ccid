@@ -11,6 +11,8 @@ export default function Cover() {
   const [startWaveAnim, setStartWaveAnim] = useState(false);
   const [activeWords, setActiveWords] = useState([]);
 
+  const WAVE_ANIMATION_DURATION = 8000; // ms, matches .wave-text animation duration
+
   useEffect(() => {
     const fetchAboutData = async () => {
       try {
@@ -68,7 +70,11 @@ export default function Cover() {
 
   useEffect(() => {
     if (startWaveAnim && mainText && mainText[1]) {
-      setActiveWords([0]);
+      setActiveWords([0]); // Start wave on typedWords[1]
+      // After wave effect on typedWords[1], trigger wave on typedWords[0]
+      setTimeout(() => {
+        setActiveWords([0, 1]);
+      }, WAVE_ANIMATION_DURATION);
     }
   }, [startWaveAnim, mainText]);
 
@@ -97,7 +103,13 @@ export default function Cover() {
           }`}
           style={{ ...scaleStyle }}
         >
-          <span className="first-part" style={{ opacity: 1 }}>{typedWords[0]}</span>
+          {startWaveAnim && mainText && mainText[0] ? (
+            <span className={`wave-text ${activeWords.includes(1) ? 'active' : ''}`}>
+              {typedWords[0]}
+            </span>
+          ) : (
+            <span className="first-part" style={{ opacity: 1 }}>{typedWords[0]}</span>
+          )}
         </pre>
         <p
           className={`${neuehaas.className} tracking-[-1px] hidden lg:block overflow-hidden relative ${
@@ -105,7 +117,13 @@ export default function Cover() {
           }`}
           style={{ ...scaleStyle }}
         >
-          <span className="first-part" style={{ opacity: 1 }}>{typedWords[0]}</span>
+          {startWaveAnim && mainText && mainText[0] ? (
+            <span className={`wave-text ${activeWords.includes(1) ? 'active' : ''}`}>
+              {typedWords[0]}
+            </span>
+          ) : (
+            <span className="first-part" style={{ opacity: 1 }}>{typedWords[0]}</span>
+          )}
         </p>
       </div>
 

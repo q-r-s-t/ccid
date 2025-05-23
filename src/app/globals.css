@@ -127,11 +127,8 @@ html {
 }
 
 .gradient-border {
-  border-bottom: 1px solid transparent;
-  border-image-source: linear-gradient(to left, #a778e8, #fff);
-  border-image-slice: 1;
-  border-image-width: 0 0 1px 0;
-  animation: gradientBorder 8s ease-in-out infinite;
+  border-bottom: 2px solid #fff;
+  /* Removed gradient/background for plain white underline */
 }
 
 .char-reveal {
