@@ -19,7 +19,7 @@ export default function Cover() {
         const res = await fetch(
           `${
             process.env.NODE_ENV === "production"
-              ? "https://c-c-i-d.vercel.app"
+              ? ""
               : ""
           }/api/sheets`
         );
