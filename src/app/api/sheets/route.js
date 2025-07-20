@@ -38,14 +38,15 @@ export async function GET(request) {
       desc: response.data.valueRanges[4].values,
     };
 
-    // 데이터 출력
-    // console.log("Fetched data from Google Sheets:", data);
-    // console.log("Environment Variables:", process.env);
-    // console.log(members)
     // JSON 응답 반환
     return new Response(JSON.stringify(data), {
       status: 200,
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": request.headers.get("origin") || "*",
+        "Access-Control-Allow-Methods": "GET, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type",
+      },
     });
   } catch (error) {
     console.error("Error fetching spreadsheet data:", error);
@@ -54,7 +55,25 @@ export async function GET(request) {
         message: "Failed to fetch spreadsheet data",
         success: false,
       }),
-      { status: 500, headers: { "Content-Type": "application/json" } }
+      {
+        status: 500,
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": request.headers.get("origin") || "*",
+        },
+      }
     );
   }
+}
+
+// CORS preflight 대응
+export async function OPTIONS(request) {
+  return new Response(null, {
+    status: 204,
+    headers: {
+      "Access-Control-Allow-Origin": request.headers.get("origin") || "*",
+      "Access-Control-Allow-Methods": "GET, OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type",
+    },
+  });
 }
