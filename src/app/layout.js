@@ -12,7 +12,7 @@ export const metadata = {
     description: "Shaping the future through insight, innovation and impact",
     images: [
       {
-        url: "/img/og800400.png",
+        url: "/img/og800.png",
         width: 800,
         height: 400,
         alt: "CCID",
