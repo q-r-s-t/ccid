@@ -75,7 +75,7 @@ export default function Members() {
                   <img
                     src={member[2]}
                     alt={`${member[1]} profile`}
-                    className={`mb-2 filter grayscale w-[150px] h-[150px] md:w-[190px] md:h-[190px] lg:w-[200px] lg:h-[200px] rounded-full object-cover object-top`}
+                    className={`mb-2 filter grayscale w-[150px] h-[150px] md:w-[190px] md:h-[190px] lg:w-[10vw] lg:h-[10vw] xl:w-[12vw] xl:h-[12vw] 2xl:w-[14vw] 2xl:h-[14vw] rounded-full object-cover object-top`}
                   />
                   <div className="md:flex-1">
                     <h2 className="leading-[1.1] text-[3.8vw] pt-[1.5vh] md:text-[3vw] mt-[4] lg:text-[1vw]">{member[1]}</h2>
@@ -110,7 +110,7 @@ export default function Members() {
                     <img
                       src={member[2]}
                       alt={`${member[1]} profile`}
-                      className="filter grayscale flex-shrink-0 mr-4 lg:mr-[0.7vw] w-[70px] h-[70px] lg:w-[120px] lg:h-[120px] 2xl:w-[140px] 2xl:h-[140px] rounded-full object-cover object-top"
+                      className="filter grayscale flex-shrink-0 mr-4 lg:mr-[0.7vw] w-[70px] h-[70px] lg:w-[6vw] lg:h-[6vw] xl:w-[7vw] xl:h-[7vw] 2xl:w-[8vw] 2xl:h-[8vw] rounded-full object-cover object-top"
                     />
                     <div className="flex flex-col justify-center pr-3 lg:pt-0 lg:pl-2">
                       <h3
