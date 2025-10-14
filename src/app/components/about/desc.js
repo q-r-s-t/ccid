@@ -10,6 +10,16 @@ function DescItem({ id, title, description, imageUrl }) {
   const textStyleKr =
     "leading-[1.3] mt-[-0.3vh] text-[5vw] md:text-[4.5vw] lg:text-[2.2vw]";
   const { lang } = useLanguageStore();
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  // Preload image when component mounts
+  useEffect(() => {
+    if (typeof imageUrl === "string" && imageUrl.startsWith("http")) {
+      const img = new Image();
+      img.onload = () => setImageLoaded(true);
+      img.src = imageUrl;
+    }
+  }, [imageUrl]);
 
   return (
     <li className="h-auto bg-gradient-to-t from-[rgba(93,0,156,0.2)] via-[rgba(93,0,156,0)] to-[rgba(93,0,156,0)] lg:flex group overflow-hidden transition-all duration-700 ease-out py-2 lg:py-[2vh] lg:px-[5vw]">
@@ -20,13 +30,20 @@ function DescItem({ id, title, description, imageUrl }) {
       </h3>
       <div className="w-full lg:w-[48%]">
         {typeof imageUrl === "string" && imageUrl.startsWith("http") && (
-          <img
-            src={imageUrl}
-            alt={title}
-            className="w-full h-auto object-cover rounded-md mb-[1.3vw]"
-            referrerPolicy="no-referrer"
-            loading="lazy"
-          />
+          <div className="w-full mb-[1.3vw]">
+            {imageLoaded ? (
+              <img
+                src={imageUrl}
+                alt={title}
+                className="w-full h-auto object-cover rounded-md transition-opacity duration-300"
+                referrerPolicy="no-referrer"
+              />
+            ) : (
+              <div className="w-full h-[200px] bg-gray-200 rounded-md animate-pulse flex items-center justify-center">
+                <span className="text-gray-400">Loading...</span>
+              </div>
+            )}
+          </div>
         )}
         <pre className={`whitespace-pre-wrap ${pxGrotesk.className} lg:pt-[2.3em] pt-[.3em] px-[1.8vh] pr-[3.8vh] pb-[3.8vh] ${lang === 'en' ? 'leading-[1.3] lg:leading-[1.38] text-[2.8vw] md:text-[2.4vw] lg:text-[1vw]' : 'leading-[1.8] text-[3.1vw] lg:text-[1.1vw]'} text-primaryB transition-all duration-700 ml-[4px] w-full`}>
           {description}
