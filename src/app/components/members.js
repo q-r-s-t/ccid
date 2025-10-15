@@ -75,7 +75,7 @@ export default function Members() {
                   <img
                     src={member[2]}
                     alt={`${member[1]} profile`}
-                    className={`mb-2 filter grayscale w-[146px] h-[146px] md:w-[186px] md:h-[186px] lg:w-[88px] lg:h-[88px] xl:w-[99px] xl:h-[99px] 2xl:w-[111px] 2xl:h-[111px] rounded-full object-cover object-top`}
+                    className="filter grayscale flex-shrink-0 mr-4 w-[8vw] h-[8vw] rounded-full object-cover object-top"
                   />
                   <div className="md:flex-1">
                     <h2 className="leading-[1.1] text-[20px] md:text-[26px] lg:text-[18px] pt-[1.5vh] mt-[4]">{member[1]}</h2>
@@ -110,7 +110,7 @@ export default function Members() {
                     <img
                       src={member[2]}
                       alt={`${member[1]} profile`}
-                      className="filter grayscale flex-shrink-0 mr-4 lg:mr-[0.7vw] w-[70px] h-[70px] lg:w-[6vw] lg:h-[6vw] xl:w-[7vw] xl:h-[7vw] 2xl:w-[8vw] 2xl:h-[8vw] rounded-full object-cover object-top"
+                      className="filter grayscale flex-shrink-0 mr-4 w-[6vw] h-[6vw] rounded-full object-cover object-top"
                     />
                     <div className="flex flex-col justify-center pr-3 lg:pt-0 lg:pl-2 w-[78px] lg:w-[6.66vw] xl:w-[7.77vw] 2xl:w-[8.88vw]">
                       <h3
