@@ -75,14 +75,14 @@ export default function Members() {
                   <img
                     src={member[2]}
                     alt={`${member[1]} profile`}
-                    className={`mb-2 filter grayscale w-[150px] h-[150px] md:w-[190px] md:h-[190px] lg:w-[10vw] lg:h-[10vw] xl:w-[12vw] xl:h-[12vw] 2xl:w-[14vw] 2xl:h-[14vw] rounded-full object-cover object-top`}
+                    className={`mb-2 filter grayscale w-[146px] h-[146px] md:w-[186px] md:h-[186px] lg:w-[88px] lg:h-[88px] xl:w-[99px] xl:h-[99px] 2xl:w-[111px] 2xl:h-[111px] rounded-full object-cover object-top`}
                   />
                   <div className="md:flex-1">
-                    <h2 className="leading-[1.1] text-[18px] md:text-[24px] lg:text-[16px] pt-[1.5vh] mt-[4]">{member[1]}</h2>
-                    <pre className={`${pxGrotesk.className} pt-[0.5vh] whitespace-pre-wrap leading-[1.1] text-[16px] md:text-[18px] lg:text-[14px]`}>{member[3]}</pre>
+                    <h2 className="leading-[1.1] text-[20px] md:text-[26px] lg:text-[18px] pt-[1.5vh] mt-[4]">{member[1]}</h2>
+                    <pre className={`${pxGrotesk.className} pt-[0.5vh] whitespace-pre-wrap leading-[1.1] text-[18px] md:text-[20px] lg:text-[16px]`}>{member[3]}</pre>
                     <div className="border-l-[1px] border-current mt-[2.5] pl-3 lg:pl-[0.5vw]">
                       {/* <h3 className="pb-3 md:pb-2 leading-[1.3] text-[3vw] md:text-[1.9vw] lg:text-[0.8vw]">Career</h3> */}
-                      <div className="leading-[1.3] text-[14px] md:text-[16px] lg:text-[12px] mt-1">
+                      <div className="leading-[1.3] text-[16px] md:text-[18px] lg:text-[14px] mt-1">
                         <pre
                           className={`whitespace-pre-wrap ${pxGrotesk.className}`}
                         >
@@ -119,15 +119,15 @@ export default function Members() {
                         {member[1]}
                       </h3>
                       {member[3] && (
-                        <h2 className="pb-1 leading-none text-[14px] md:text-[16px] lg:text-[13px]">
+                        <h2 className="pb-1 leading-none text-[12px] md:text-[14px] lg:text-[14px]">
                           {member[3]}
                         </h2>
                       )}{" "}
                       <pre
                         className={`whitespace-pre-wrap  ${
                           member[3]
-                            ? "leading-tight text-[12px] md:text-[14px] lg:text-[11px]"
-                            : "leading-[1.18] text-[12px] md:text-[14px] lg:text-[11px]"
+                            ? "leading-tight text-[12px] md:text-[14px] lg:text-[14px]"
+                            : "leading-[1.18] text-[12px] md:text-[14px] lg:text-[14px]"
                         } ${pxGrotesk.className}`}
                       >
                         {member[4]}
