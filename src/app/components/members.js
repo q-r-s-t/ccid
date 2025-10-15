@@ -112,7 +112,7 @@ export default function Members() {
                       alt={`${member[1]} profile`}
                       className="filter grayscale flex-shrink-0 mr-4 lg:mr-[0.7vw] w-[70px] h-[70px] lg:w-[6vw] lg:h-[6vw] xl:w-[7vw] xl:h-[7vw] 2xl:w-[8vw] 2xl:h-[8vw] rounded-full object-cover object-top"
                     />
-                    <div className="flex flex-col justify-center pr-3 lg:pt-0 lg:pl-2">
+                    <div className="flex flex-col justify-center pr-3 lg:pt-0 lg:pl-2 w-[78px] lg:w-[6.66vw] xl:w-[7.77vw] 2xl:w-[8.88vw]">
                       <h3
                         className={`${pxGrotesk.className} pb-1 leading-[1.1] text-[16px] md:text-[18px] lg:text-[15px]`}
                       >
