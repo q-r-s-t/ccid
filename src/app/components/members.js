@@ -78,11 +78,11 @@ export default function Members() {
                     className="filter grayscale flex-shrink-0 mr-4 w-[11vw] h-[11vw] min-w-[140px] min-h-[140px] rounded-full object-cover object-top"
                   />
                   <div className="md:flex-1">
-                    <h2 className="leading-[1.1] text-[18px] md:text-[26px] lg:text-[18px] pt-[1.5vh] mt-[4]">{member[1]}</h2>
-                    <pre className={`${pxGrotesk.className} pt-[0.5vh] whitespace-pre-wrap leading-[1.1] text-[16px] md:text-[18px] lg:text-[16px]`}>{member[3]}</pre>
+                    <h2 className="leading-[1.1] text-[16px] md:text-[26px] lg:text-[18px] pt-[1.5vh] mt-[4]">{member[1]}</h2>
+                    <pre className={`${pxGrotesk.className} pt-[0.5vh] whitespace-pre-wrap leading-[1.1] text-[14px] md:text-[18px] lg:text-[16px]`}>{member[3]}</pre>
                     <div className="border-l-[1px] border-current mt-[2.5] pl-3 lg:pl-[0.5vw]">
                       {/* <h3 className="pb-3 md:pb-2 leading-[1.3] text-[3vw] md:text-[1.9vw] lg:text-[0.8vw]">Career</h3> */}
-                      <div className="leading-[1.3] text-[16px] md:text-[18px] lg:text-[14px] mt-1">
+                      <div className="leading-[1.3] text-[12px] md:text-[18px] lg:text-[14px] mt-1">
                         <pre
                           className={`whitespace-pre-wrap ${pxGrotesk.className}`}
                         >
@@ -112,7 +112,7 @@ export default function Members() {
                       alt={`${member[1]} profile`}
                       className="filter grayscale flex-shrink-0 mr-4 w-[6vw] h-[6vw] min-w-[70px] min-h-[70px] rounded-full object-cover object-top"
                     />
-                    <div className="flex flex-col justify-center pr-3 lg:pt-0 lg:pl-2 min-w-[120px] ">
+                    <div className="flex flex-col justify-center pr-3 lg:pt-0 lg:pl-2 min-w-[180px] ">
                       <h3
                         className={`${pxGrotesk.className} pb-1 leading-[1.1] text-[16px] md:text-[18px] lg:text-[15px]`}
                       >
